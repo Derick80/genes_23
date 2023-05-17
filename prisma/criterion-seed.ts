@@ -77,7 +77,7 @@ export const criterions = [
 
   {
     evidenceType: "allelic_data",
-    criterionName: "PM3,",
+    criterionName: "PM3",
     criterionBaseWeight: "Moderate",
     definition:
       "M: For recessive disorders, detected in trans with a pathogenic variant",

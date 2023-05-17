@@ -1,6 +1,3 @@
-import { useMatches } from "@remix-run/react";
-import { useMemo } from "react";
-
 // Use this to split up the classification criteria into an array of objects
 export async function parseACMGAnnotation(array: Record<string, string>) {
   const dataTypes = [];

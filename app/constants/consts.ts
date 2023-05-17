@@ -1,3 +1,21 @@
+export const radios = [
+  {
+    option: "Very Strong",
+  },
+  {
+    option: "Strong",
+  },
+  {
+    option: "Moderate",
+  },
+  {
+    option: "Supporting",
+  },
+  {
+    option: "Stand alone",
+  },
+];
+
 export const criteria = [
   {
     id: "1",

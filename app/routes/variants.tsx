@@ -1,6 +1,5 @@
 import type { LoaderArgs } from "@remix-run/node";
-import { isAuthenticated } from "~/server/auth/auth.server";
-import { json, redirect } from "@remix-run/node";
+import { json } from "@remix-run/node";
 import { variants } from "~/constants/variants";
 import { useLoaderData } from "@remix-run/react";
 import { DotsVerticalIcon, InfoCircledIcon } from "@radix-ui/react-icons";
@@ -74,12 +73,13 @@ export function VariantCardFront({ variant }: { variant: VariantCardType }) {
 }
 
 export function VariantCardBack({ variant }: { variant: VariantCardType }) {
-  const [flip, setFlip] = React.useState(false);
 
   return (
     <div
-      className="flex h-auto w-[450px] flex-col gap-1 overflow-hidden rounded-md border-red-500 bg-red-500 p-2"
+      className="flex h-auto w-full flex-col gap-1 overflow-hidden rounded-md border-red-500  p-2"
       key={variant.id}
+   
+
     >
       <div className="flex flex-row items-center justify-between gap-2">
         <h5 className="text-xl font-bold text-gray-900">{variant.symbol}</h5>
@@ -94,21 +94,44 @@ export function VariantCardBack({ variant }: { variant: VariantCardType }) {
             {variant.ref}&gt;{variant.alt}
           </span>
 
-          <span className="text-xs text-gray-500">{variant.gnomad}</span>
+          <span className="text-xs text-gray-500">{variant.gnomad  }</span>
         </div>
-        <div className="flex w-full flex-row gap-2">
-          <h6 className="text-xs text-gray-500">Details</h6>
+        <div className="flex w-full flex-col gap-2">
           <div className="flex w-full flex-col gap-2">
-            <h5 className="text-xs text-gray-500">inSilico</h5>
-            <span className="text-xs text-gray-500">{variant.sift}</span>
+            <div className="flex flex-col gap-2
+               p-1 rounded-md
+            ">
+            <h5 className="text-xs text-gray-500 text-left font-semibold">inSilico</h5>
+            <div className="flex flex-row gap-1">
+  <p className="text-xs text-gray-500">Combined:</p>
+<p className="text-xs text-gray-500">
+ 
+  {sortInSilico({polyphen: variant.polyphen, sift: variant.sift})}</p>
+
+</div>    
+           <div className="flex flex-row gap-2">
+            <p className="text-xs text-gray-500">SIFT:</p>
+           <span className="text-xs text-gray-500">{variant.sift}</span>
+            <p className="text-xs text-gray-500">PolyPhen:</p>
+
             <span className="text-xs text-gray-500">{variant.polyphen}</span>
+            </div>
+
+
+
+
+
+            
+            
+            </div>
           </div>
-          <div className="flex w-full flex-col gap-2">
-            <h5 className="text-xs text-gray-500">Inheritance</h5>
-            <span className="text-xs text-gray-500">{variant.inheritance}</span>
+          <div className="flex w-full flex-row gap-1">
+            <h5 className="text-xs text-gray-500 font-semibold">Inheritance:</h5>
+            <span className="text-xs text-gray-500">{
+              variant.inheritance === "Autosomal Dominant" ? "A.D" : "A.R"
+            }</span>
           </div>
         </div>
-        <div className="flex w-full flex-row gap-2">1</div>
       </div>
     </div>
   );
@@ -118,13 +141,17 @@ export function VariantSummaryCard({ variant }: { variant: VariantCardType }) {
 
   return (
     <div
-      className="flex h-auto w-[450px] flex-col gap-1 overflow-hidden rounded-md border p-2"
+      className="flex h-auto w-full flex-col gap-1 overflow-hidden rounded-md border p-2"
       key={variant.id}
     >
       {flip ? (
-        <VariantCardBack variant={variant} />
+
+
+
+          <VariantCardBack variant={variant} />
       ) : (
-        <VariantCardFront variant={variant} />
+     
+          <VariantCardFront variant={variant} />
       )}
       <div className="flex flex-row justify-end gap-2">
         <DotsVerticalIcon />
@@ -135,3 +162,28 @@ export function VariantSummaryCard({ variant }: { variant: VariantCardType }) {
     </div>
   );
 }
+
+
+function sortInSilico({polyphen, sift}: {polyphen: string, sift: string}) {
+  const phen = polyphen.toLowerCase()
+  const sifted = sift.toLowerCase()
+
+  if (phen === "benign" && sift === "benign") {
+    return "Benign"
+  } else if (phen === "benign" && sifted === "deleterious") {
+    return "Likely Benign"
+  } else if (phen === "possibly damaging" && sifted === "tolerated") {
+    return "Likely Benign"
+  } else if (phen === "possibly damaging" && sifted === "deleterious") {
+    return "Likely Pathogenic"
+  } else if (phen === "probably damaging" && sifted === "tolerated") {
+    return "Likely Pathogenic"
+  } else if (phen === "probably damaging" && sifted === "deleterious") {
+    return "Pathogenic"
+  } else {
+    return "Unknown"
+  }
+
+}
+  
+    

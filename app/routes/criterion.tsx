@@ -1,38 +1,12 @@
-import { Criterion } from "@prisma/client";
+import type { Criterion } from "@prisma/client";
 import { ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons";
-import { Item } from "@radix-ui/react-select";
 import type { LoaderArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import {
-  Link,
-  Outlet,
-  useFetcher,
-  useLoaderData,
-  useMatches,
-  useParams,
-} from "@remix-run/react";
-import { log } from "console";
+import { Link, Outlet, useLoaderData, useMatches } from "@remix-run/react";
 import React from "react";
-import { textFormat, useMatchesData } from "~/functions";
+import { textFormat } from "~/functions";
 import { prisma } from "~/server/prisma.server";
 
-export const radios = [
-  {
-    option: "Very Strong",
-  },
-  {
-    option: "Strong",
-  },
-  {
-    option: "Moderate",
-  },
-  {
-    option: "Supporting",
-  },
-  {
-    option: "Stand alone",
-  },
-];
 export async function loader({ request }: LoaderArgs) {
   const searchParam =
     new URLSearchParams(request.url.split("?")[1]).get("searchParam") || "";
@@ -49,13 +23,18 @@ export async function loader({ request }: LoaderArgs) {
     },
   });
 
-  const criteria = await prisma.criterion.findMany({
-    orderBy: {
-      evidenceType: "asc",
+  // generate a list of unique column names
+  const columnNames = criterion.reduce(
+    (acc: string[], cur: typeof criterion[0]) => {
+      if (!acc.includes(cur.evidenceType)) {
+        acc.push(cur.evidenceType);
+      }
+      return acc;
     },
-  });
+    [] as string[]
+  );
 
-  return json({ criteria, criterion });
+  return json({ criterion, columnNames });
 }
 
 export type CriterionLoaderData = {
@@ -74,18 +53,6 @@ export type CriterionLoaderData = {
 
 export default function Criterio() {
   const data = useLoaderData<typeof loader>();
-
-  const columnNames = data.criterion.reduce(
-    (acc: string[], cur: typeof data.criterion[0]) => {
-      if (!acc.includes(cur.evidenceType)) {
-        acc.push(cur.evidenceType);
-      }
-      return acc;
-    },
-    [] as string[]
-  );
-
-  console.log(columnNames, "columnNames");
 
   return (
     <div className="flex min-h-screen w-full flex-col p-1">
@@ -106,14 +73,14 @@ export default function Criterio() {
         </p>
 
         <div className="flex flex-col gap-2 p-1">
-          {columnNames.map((column) => {
+          {data.columnNames.map((column) => {
             return (
               <div
                 key={column}
                 className="items-cener flex w-full flex-col gap-2"
               >
                 <div className="flex flex-row gap-2">
-                  <ColumnFetcher searchParam={column} />
+                  <CriteriaFetcher searchParam={column} />
                 </div>
               </div>
             );
@@ -124,17 +91,15 @@ export default function Criterio() {
   );
 }
 
-function ColumnFetcher({ searchParam }: { searchParam: string }) {
+function CriteriaFetcher({ searchParam }: { searchParam: string }) {
   const matches = useMatches();
 
   const criterion = matches.find((match) => match.pathname === "/criterion")
     ?.data.criterion as Criterion[];
 
-  const byGROUP = criterion?.filter((criterion) => {
+  const byEvidenceType = criterion?.filter((criterion) => {
     return criterion.evidenceType === searchParam;
-  }) as Criterion[];  
-
-  console.log(byGROUP, "byGROUP");
+  }) as Criterion[];
 
   const [open, setOpen] = React.useState(false);
   return (
@@ -143,7 +108,7 @@ function ColumnFetcher({ searchParam }: { searchParam: string }) {
         open ? "rounded-md border border-gray-500" : "rounded-md border"
       }`}
     >
-      <div  className="flex flex-row items-center gap-2">
+      <div className="flex flex-row items-center gap-2">
         <h3 className="text-xl font-bold">{textFormat(searchParam)}</h3>
         <button
           className="flex flex-row items-center gap-2"
@@ -155,7 +120,7 @@ function ColumnFetcher({ searchParam }: { searchParam: string }) {
 
       {open ? (
         <div className="flex flex-col gap-2 p-1">
-          {byGROUP?.map((criterion) => {
+          {byEvidenceType?.map((criterion) => {
             return (
               <div key={criterion.id} className="flex flex-col gap-2">
                 <Link to={`/criterion/${criterion.id}`}>
@@ -164,7 +129,7 @@ function ColumnFetcher({ searchParam }: { searchParam: string }) {
                   </h3>
                 </Link>
                 <div className="flex flex-row gap-2">
-                  <FormatDefinnition definition={criterion.definition} />
+                  <FormatDefinition definition={criterion.definition} />
                 </div>
 
                 {criterion.example ? (
@@ -198,7 +163,7 @@ function ColumnFetcher({ searchParam }: { searchParam: string }) {
   );
 }
 
-function FormatDefinnition({ definition }: { definition: string }) {
+function FormatDefinition({ definition }: { definition: string }) {
   function sortMe(definition: string) {
     const toString = definition.toString();
 
