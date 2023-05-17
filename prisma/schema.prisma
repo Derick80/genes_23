@@ -1,0 +1,82 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @unique @default(cuid())
+  email String @unique
+  password String
+  username String @unique
+
+}
+
+
+model Gene {
+  id String @id @unique @default(cuid())
+  symbol String @unique
+  variants Variant[]
+
+}
+
+
+model Variant {
+  id String @id @unique @default(cuid())
+  gene Gene @relation(fields: [geneId], references: [id], onDelete: Cascade)
+  geneId String
+  symbol String @unique
+  transcript String
+  hgvs String
+  protein String
+  cdna String
+  aa String
+  chr String
+  pos Int
+  ref String
+  alt String
+  hgnc String
+  omim String
+  clinvar String
+  sift String
+  polyphen String
+  zygosity String
+  vaf Float
+  crierion Criterion[]
+
+}
+
+
+
+model CriteriaCategory {
+  id String @id @unique @default(cuid())
+  category String
+  criteria Criteria[]
+}
+
+model Criteria {
+  id String @id @unique @default(cuid())
+  criteriaCategory CriteriaCategory @relation(fields: [criteriaCategoryId], references: [id], onDelete: Cascade)
+  criteriaCategoryId String
+  criteria String
+  weight Float
+}
+
+model Criterion {
+  id String @id @unique @default(cuid())
+  criterionName String @unique
+  criterionBaseWeight String
+  evidenceType String
+  definition String
+  example String?
+  caveat String?
+  variant Variant? @relation(fields: [variantId], references: [id], onDelete: Cascade)
+  variantId String?
+
+}
