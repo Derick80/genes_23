@@ -9,6 +9,11 @@ module.exports = {
     unstable_dev: true,
   },
   ignoredRouteFiles: ["**/.*"],
+  server:
+    process.env.NETLIFY || process.env.NETLIFY_LOCAL
+      ? "./server.ts"
+      : undefined,
+  serverBuildPath: ".netlify/functions-internal/server.js",
   // appDirectory: "app",
   // assetsBuildDirectory: "public/build",
   // serverBuildPath: "build/index.js",
