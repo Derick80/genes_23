@@ -19,17 +19,24 @@ export const radios = [
 export const criteria = [
   {
     id: "1",
-    name: "population",
+    name: "Population",
     strength: [
       {
+        id: "0",
+        value: "",
+        label: "Pick a Criterion",
+
+      },
+
+      {
         id: "1",
-        value: "PM2_1",
+        value: "PM2_2",
         label: "PM2",
       },
       {
         id: "2",
         value: "PM2_1",
-        label: "PM_Supporting",
+        label: "PM2_Supporting",
       },
       {
         id: "3",
@@ -50,8 +57,14 @@ export const criteria = [
   },
   {
     id: "2",
-    name: "functionalComputational",
+    name: "Functional and Computational",
     strength: [
+      {
+        id: "0",
+        value: "",
+        label: "Pick a Criterion",
+
+      },
       {
         id: "1",
         value: "PS3_4",
@@ -81,8 +94,13 @@ export const criteria = [
   },
   {
     id: "3",
-    name: "protein",
-    strength: [
+    name: "Protein",
+    strength: [{
+      id: "0",
+      value: "",
+      label: "Pick a Criterion",
+
+    },
       {
         id: "1",
         value: "PVS1_8",
@@ -152,8 +170,13 @@ export const criteria = [
   },
   {
     id: "4",
-    name: "reputableSource",
-    strength: [
+    name: "Reputable Source",
+    strength: [{
+      id: "0",
+      value: "",
+      label: "Pick a Criterion",
+
+    },
       {
         id: "1",
         value: "PP5_1",
@@ -169,8 +192,13 @@ export const criteria = [
   },
   {
     id: "5",
-    name: "caseLevel",
-    strength: [
+    name: "Case Level",
+    strength: [{
+      id: "0",
+      value: "",
+      label: "Pick a Criterion",
+
+    },
       {
         id: "1",
         value: "PS4_4",
@@ -224,3 +252,26 @@ export const criteria = [
     ],
   },
 ];
+export   const scoreMatrix = [
+  {
+    name: 'Benign',
+    score:[-7,-100]
+  },
+  {
+    name: 'Likely Benign',
+    score:[-1,-6]
+  },
+  {
+    name: 'Variant of Uncertain Significance',
+    score:[0,5]
+  },
+  {
+    name: 'Likely Pathogenic',
+    score:[6,9]
+  },
+  {
+    name: 'Pathogenic',
+    score:[10,100]
+  },
+
+]

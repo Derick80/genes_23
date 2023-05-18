@@ -1,7 +1,7 @@
 import type { LoaderArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { variants } from "~/constants/variants";
-import { useLoaderData } from "@remix-run/react";
+import { Link, NavLink, Outlet, useLoaderData } from "@remix-run/react";
 import { DotsVerticalIcon, InfoCircledIcon } from "@radix-ui/react-icons";
 import React from "react";
 export async function loader({ request, params }: LoaderArgs) {
@@ -13,7 +13,10 @@ export default function VariantRoute() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-10 py-2">
+            
+
       <main className="flex flex-1 flex-col items-center gap-2 px-20 text-center">
+      <Outlet />
         <h1 className="text-6xl font-bold">Variant</h1>
 
         {data.variants.map((variant) => (
@@ -51,12 +54,15 @@ export function VariantCardFront({ variant }: { variant: VariantCardType }) {
   const [flip, setFlip] = React.useState(false);
 
   return (
+    <div className="flex  w-full flex-col gap-1 border-2 rounded-md p-2">
     <div
-      className="flex h-auto w-[450px] flex-col gap-1 overflow-hidden rounded-md p-2"
+      className="flex h-auto w-full flex-col gap-1 overflow-hidden rounded-md p-2"
       key={variant.id}
     >
       <div className="flex flex-row items-center justify-between gap-2">
-        <h5 className="text-xl font-bold text-gray-900">{variant.symbol}</h5>
+       <Link to={`/variants/${variant.id}`}> <h5 className="text-xl font-bold text-gray-900">{variant.symbol}</h5></Link>
+       
+
         <span className="text-xs text-gray-500">{variant.cdna}</span>
         <span className="text-xs text-gray-500">{variant.aa}</span>
         <span className="text-xs text-gray-500">ClassificationHolder</span>
@@ -68,6 +74,7 @@ export function VariantCardFront({ variant }: { variant: VariantCardType }) {
           <span className="text-xs text-gray-500">{variant.vaf}% VAF</span>
         </div>
       </div>
+    </div>
     </div>
   );
 }
