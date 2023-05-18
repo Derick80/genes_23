@@ -1,5 +1,6 @@
 import { useMatches } from "@remix-run/react";
 import { useMemo } from "react";
+import { scoreMatrix } from "./constants/consts";
 
 export async function useMatchesData(
   id: string
@@ -57,13 +58,38 @@ const score = subcategory === 'B' ? Number(value.slice(-1))*-1 : Number(value.sl
   }, 0)
   setTotals(total)
   // find the classification name from the scoreMatrix array that corresponds to the total score
-  const classification = scoreMatrix.find((score) => {
-    const [min, max] = score.score
-    return total >= min && total <= max
-  })
-  if(classification) {
-    setClassification(classification.name)
-  }else {
-    setClassification('No classification')
+  
+
+
+  const classification = getMoreNumbers(total)
+  setClassification(classification)
+    console.log(classification);
+    
+  
+  
+}
+
+function getClassification(total:number){
+  if(total <= -3 ) {
+    return 'Benign'
+  } else if (total >= -2 && total <= 2) {
+    return 'Likely Benign'
+  }
+  else if (total >= 3 && total <= 6) {
+    return 'Variant of Uncertain Significance'
+  }
+  else if (total >= 7 && total <= 10) {
+    return 'Likely Pathogenic'
+  } else return 'Pathogenic'
+
+
+}
+
+
+function getMoreNumbers(total:number){
+  for(const score of scoreMatrix){
+    if(total >= score.score[0] && total <= score.score[1]){
+      return score.name
+    }
   }
 }

@@ -1,11 +1,8 @@
-import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons";
-import * as Select from "@radix-ui/react-select";
 
 import { ActionArgs, LoaderArgs, json } from "@remix-run/node";
 import { Form } from "@remix-run/react";
-import clsx from "clsx";
 import React from "react";
-import SelectBox from "~/components/select-box";
+import { set } from "zod";
 import BayesTable from "~/constants/bayes-table";
 import { criteria } from "~/constants/consts";
 import { getACMGClassification } from "~/server/functions.server";
@@ -66,7 +63,7 @@ export default function BetaRoute() {
     const subcategory = value.substring(0, 1);
       
     // score is the last letter of the value and corresponds to the bayes score from Tavtigian et al 2020
-  const score = subcategory === 'B' ? Number(value.slice(-1))*-1 : Number(value.slice(-1))
+  const score = Number(value.slice(-1))
 
     // shortenedEvidenceType is the first 3 letters of the name of the EvidenceType eg Population = pop
     const shortenedEvidenceType = name.split(' ')[0];
@@ -78,38 +75,51 @@ export default function BetaRoute() {
     // if the newCriteria array already contains a value that starts with the shortenedEvidenceType eg pop B 1 then replace that value with the new combo value
     if(newCriteria.some((criteria) => criteria.startsWith(shortenedEvidenceType))) {
       const index = newCriteria.findIndex((criteria) => criteria.startsWith(shortenedEvidenceType))
-      newCriteria[index] = shortenedEvidenceType + ' ' + subcategory  + score
+      newCriteria[index] =shortenedEvidenceType + '_' + subcategory +  '_'  + score
     }else {
       // if the newCriteria array does not contain a value that starts with the shortenedEvidenceType eg pop B 1 then add the combo value to the newCriteria array
-      newCriteria.push(combo)
+      newCriteria.push(shortenedEvidenceType + '_' + subcategory +  '_'  + score)
     }
     // set the criterias state to the newCriteria array
-
+    const [population, functional, protein, reputableSource, caseLevel] = newCriteria
+    console.log(population, 'population');
+    
     setCriterias(newCriteria);
     console.log(newCriteria, 'newCriteria');
     
     // sum the total score from the newCriteria array and set the total state to the sum of the array which corresponds to the total bayes score and set the classification state to the classification name eg Benign
-    const total = newCriteria.reduce((acc, curr) => {
-      const score = Number(curr.slice(-2))
+    const trimmedCriteria = newCriteria.map((criteria) => criteria.slice(-3))
+    console.log(trimmedCriteria, 'trimmedCriteria');
 
-
-      
-      return acc + Number(curr.slice(-2)
-      )
-    }, 0)
-    setTotals(total)
-    // find the classification name from the scoreMatrix array that corresponds to the total score
-    const classification = scoreMatrix.find((score) => {
-      const [min, max] = score.score
-      return total >= min && total <= max
-    })
-    if(classification) {
-      setClassification(classification.name)
-    }else {
-      setClassification('No classification')
-    }
-  }
+    const subTotal = getNumbers(trimmedCriteria)
+   const total = subTotal.reduce((a, b) => a + b, 0)
+    console.log(total, 'total');
+   setTotals(total)
+    
   
+   if(total <= -7) {
+    setClassification('Benign')
+    }else if(total >= -6 && total <= -1) {
+      setClassification('Likely Benign')
+    }else if(total >= 0 && total <= 5) {
+      setClassification('Uncertain Significance')
+    }else if(total >= 6 && total <= 9) {
+      setClassification('Likely Pathogenic')
+
+    }else if(total >= 10) {
+      setClassification('Pathogenic')
+    }else {
+      setClassification('No Classification')
+    }
+  
+  
+   
+//  const mappedName = mapScoreToName(scoreMatrix, total)
+//   console.log(mappedName, 'mappedName');
+//   setClassification(mappedName)
+
+  }
+
   
   
  
@@ -173,4 +183,34 @@ export default function BetaRoute() {
         </div>
     </div>
   );
+}
+
+
+function getNumbers(trimmedCriteria: string[]) {
+  const myArray =[] as number[]
+  trimmedCriteria.forEach((criteria) => {
+    if(criteria.startsWith('B')) {
+      const number = -Number(criteria.slice(-1))
+      myArray.push(number)
+    }else if(criteria.startsWith('P')) {
+      const number = Number(criteria.slice(-1))
+      myArray.push(number)
+    }
+  })
+  return myArray
+
+    
+  
+}
+
+function mapScoreToName(scoreMatrix: any, total: number) {
+  for (const entry of scoreMatrix) {
+    const [minScore, maxScore] = entry.score;
+    console.log(minScore, 'minScore');
+    g
+    if (total >= minScore && total <= maxScore) {
+      return entry.name;
+    }
+  }
+  return 'No Classification'; // Return a default value if the total doesn't fall within any range
 }
