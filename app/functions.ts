@@ -24,7 +24,7 @@ export function textFormat(text: string) {
   return firstLetter + middle + " " + endofword;
 }
 
-
+// UP
 
 export  function handleCriteriaSelection(event: React.ChangeEvent<HTMLSelectElement>,
   criterias: string[],
