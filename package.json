@@ -31,6 +31,7 @@
     "zodix": "^0.4.0"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.2.5",
     "@remix-run/dev": "^1.16.0",
     "@remix-run/eslint-config": "^1.16.0",
     "@types/node": "^18.15.11",
