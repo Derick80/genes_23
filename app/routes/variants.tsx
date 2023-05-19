@@ -71,7 +71,9 @@ function CardFront({handleFlip,variant}:{
   return(
     <div className="absolute flex flex-col w-full h-full [ backface-visibility:hidden]">
   <div className="flex grow h-auto w-full flex-col gap-3 overflow-hidden justify-between rounded-md border p-2">
+    <Link to={`/variants/${variant.id}/annotate`}>
     <h3 className="text-xl font-bold text-slate-50">{variant.symbol}</h3>
+    </Link>
     <div className="flex flex-row items-center justify-between gap-3">
       <div className="flex flex-col gap-1 items-start w-1/2">
         <span className="text-xs text-gray-500">

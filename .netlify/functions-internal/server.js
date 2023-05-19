@@ -1742,7 +1742,11 @@ var CardContainer = ({ variant }) => {
 function CardFront({ handleFlip, variant }) {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "absolute flex flex-col w-full h-full [ backface-visibility:hidden]", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex grow h-auto w-full flex-col gap-3 overflow-hidden justify-between rounded-md border p-2", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("h3", { className: "text-xl font-bold text-slate-50", children: variant.symbol }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_react10.Link, { to: `/variants/${variant.id}/annotate`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("h3", { className: "text-xl font-bold text-slate-50", children: variant.symbol }, void 0, !1, {
+        fileName: "app/routes/variants.tsx",
+        lineNumber: 75,
+        columnNumber: 5
+      }, this) }, void 0, !1, {
         fileName: "app/routes/variants.tsx",
         lineNumber: 74,
         columnNumber: 5
@@ -1752,77 +1756,77 @@ function CardFront({ handleFlip, variant }) {
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs font-semibold text-left text-slate-50", children: "HGVS:" }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 78,
+              lineNumber: 80,
               columnNumber: 13
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: variant.hgvs }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 79,
+              lineNumber: 81,
               columnNumber: 11
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 77,
+            lineNumber: 79,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs font-semibold text-left text-slate-50", children: "Protein:" }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 83,
+              lineNumber: 85,
               columnNumber: 13
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: variant.protein }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 84,
+              lineNumber: 86,
               columnNumber: 11
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 82,
+            lineNumber: 84,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs font-semibold text-left text-slate-50", children: "cDNA:" }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 89,
+              lineNumber: 91,
               columnNumber: 13
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: variant.cdna }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 90,
+              lineNumber: 92,
               columnNumber: 11
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 88,
+            lineNumber: 90,
             columnNumber: 1
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/variants.tsx",
-          lineNumber: 76,
+          lineNumber: 78,
           columnNumber: 7
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex flex-col gap-2 w-1/2 items-start ", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs font-semibold text-left text-slate-50", children: "Transcript:" }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 96,
+              lineNumber: 98,
               columnNumber: 13
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: variant.transcript }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 97,
+              lineNumber: 99,
               columnNumber: 13
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 95,
+            lineNumber: 97,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs font-semibold text-left text-slate-50", children: "CPRA:" }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 100,
+              lineNumber: 102,
               columnNumber: 13
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: [
@@ -1835,54 +1839,54 @@ function CardFront({ handleFlip, variant }) {
               variant.alt
             ] }, void 0, !0, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 101,
+              lineNumber: 103,
               columnNumber: 11
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 99,
+            lineNumber: 101,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs font-semibold text-left text-slate-50", children: "AA:" }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 109,
+              lineNumber: 111,
               columnNumber: 13
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: variant.aa }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 110,
+              lineNumber: 112,
               columnNumber: 11
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 108,
+            lineNumber: 110,
             columnNumber: 9
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/variants.tsx",
-          lineNumber: 94,
+          lineNumber: 96,
           columnNumber: 9
         }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/variants.tsx",
-        lineNumber: 75,
+        lineNumber: 77,
         columnNumber: 5
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs font-semibold text-slate-50 text-center", children: "Description" }, void 0, !1, {
           fileName: "app/routes/variants.tsx",
-          lineNumber: 117,
+          lineNumber: 119,
           columnNumber: 10
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: variant.description }, void 0, !1, {
           fileName: "app/routes/variants.tsx",
-          lineNumber: 118,
+          lineNumber: 120,
           columnNumber: 11
         }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/variants.tsx",
-        lineNumber: 116,
+        lineNumber: 118,
         columnNumber: 10
       }, this)
     ] }, void 0, !0, {
@@ -1892,15 +1896,15 @@ function CardFront({ handleFlip, variant }) {
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex flex-row justify-end gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("button", { onClick: handleFlip, children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_react_icons.InfoCircledIcon, {}, void 0, !1, {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 124,
+      lineNumber: 126,
       columnNumber: 5
     }, this) }, void 0, !1, {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 123,
+      lineNumber: 125,
       columnNumber: 3
     }, this) }, void 0, !1, {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 122,
+      lineNumber: 124,
       columnNumber: 3
     }, this)
   ] }, void 0, !0, {
@@ -1913,25 +1917,25 @@ function CardBack({ handleFlip, variant }) {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "absolute flex flex-col w-full h-full [ backface-visibility:hidden]", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex grow h-auto w-full flex-col gap-1 overflow-hidden rounded-md border p-2", children: "back" }, void 0, !1, {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 138,
+      lineNumber: 140,
       columnNumber: 5
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex flex-row justify-end gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("button", { onClick: handleFlip, children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_react_icons.InfoCircledIcon, {}, void 0, !1, {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 143,
+      lineNumber: 145,
       columnNumber: 5
     }, this) }, void 0, !1, {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 142,
+      lineNumber: 144,
       columnNumber: 3
     }, this) }, void 0, !1, {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 141,
+      lineNumber: 143,
       columnNumber: 3
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/variants.tsx",
-    lineNumber: 137,
+    lineNumber: 139,
     columnNumber: 5
   }, this);
 }
@@ -1946,13 +1950,13 @@ function VariantCardFront({ variant }) {
     !1,
     {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 178,
+      lineNumber: 180,
       columnNumber: 7
     },
     this
   ) }, void 0, !1, {
     fileName: "app/routes/variants.tsx",
-    lineNumber: 177,
+    lineNumber: 179,
     columnNumber: 5
   }, this);
 }
@@ -1965,22 +1969,22 @@ function VariantCardBack({ variant }) {
         /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex flex-row items-center justify-between gap-2", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("h5", { className: "text-xl font-bold text-gray-900", children: variant.symbol }, void 0, !1, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 195,
+            lineNumber: 197,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: variant.hgvs }, void 0, !1, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 197,
+            lineNumber: 199,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: variant.protein }, void 0, !1, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 198,
+            lineNumber: 200,
             columnNumber: 9
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/variants.tsx",
-          lineNumber: 194,
+          lineNumber: 196,
           columnNumber: 7
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex h-full flex-col gap-2", children: [
@@ -1995,17 +1999,17 @@ function VariantCardBack({ variant }) {
               variant.alt
             ] }, void 0, !0, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 202,
+              lineNumber: 204,
               columnNumber: 11
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: variant.gnomad }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 207,
+              lineNumber: 209,
               columnNumber: 11
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 201,
+            lineNumber: 203,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex w-full flex-col gap-2", children: [
@@ -2018,13 +2022,13 @@ function VariantCardBack({ variant }) {
                 children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("h5", { className: "text-left text-xs font-semibold text-gray-500", children: "inSilico" }, void 0, !1, {
                     fileName: "app/routes/variants.tsx",
-                    lineNumber: 216,
+                    lineNumber: 218,
                     columnNumber: 15
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex flex-row gap-1", children: [
                     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: "Combined:" }, void 0, !1, {
                       fileName: "app/routes/variants.tsx",
-                      lineNumber: 220,
+                      lineNumber: 222,
                       columnNumber: 17
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: sortInSilico({
@@ -2032,38 +2036,38 @@ function VariantCardBack({ variant }) {
                       sift: variant.sift
                     }) }, void 0, !1, {
                       fileName: "app/routes/variants.tsx",
-                      lineNumber: 221,
+                      lineNumber: 223,
                       columnNumber: 17
                     }, this)
                   ] }, void 0, !0, {
                     fileName: "app/routes/variants.tsx",
-                    lineNumber: 219,
+                    lineNumber: 221,
                     columnNumber: 15
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex flex-row gap-2", children: [
                     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: "SIFT:" }, void 0, !1, {
                       fileName: "app/routes/variants.tsx",
-                      lineNumber: 229,
+                      lineNumber: 231,
                       columnNumber: 17
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: variant.sift }, void 0, !1, {
                       fileName: "app/routes/variants.tsx",
-                      lineNumber: 230,
+                      lineNumber: 232,
                       columnNumber: 17
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: "PolyPhen:" }, void 0, !1, {
                       fileName: "app/routes/variants.tsx",
-                      lineNumber: 231,
+                      lineNumber: 233,
                       columnNumber: 17
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: variant.polyphen }, void 0, !1, {
                       fileName: "app/routes/variants.tsx",
-                      lineNumber: 233,
+                      lineNumber: 235,
                       columnNumber: 17
                     }, this)
                   ] }, void 0, !0, {
                     fileName: "app/routes/variants.tsx",
-                    lineNumber: 228,
+                    lineNumber: 230,
                     columnNumber: 15
                   }, this)
                 ]
@@ -2072,39 +2076,39 @@ function VariantCardBack({ variant }) {
               !0,
               {
                 fileName: "app/routes/variants.tsx",
-                lineNumber: 211,
+                lineNumber: 213,
                 columnNumber: 13
               },
               this
             ) }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 210,
+              lineNumber: 212,
               columnNumber: 11
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex w-full flex-row gap-1", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("h5", { className: "text-xs font-semibold text-gray-500", children: "Inheritance:" }, void 0, !1, {
                 fileName: "app/routes/variants.tsx",
-                lineNumber: 240,
+                lineNumber: 242,
                 columnNumber: 13
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: variant.inheritance === "Autosomal Dominant" ? "A.D" : "A.R" }, void 0, !1, {
                 fileName: "app/routes/variants.tsx",
-                lineNumber: 243,
+                lineNumber: 245,
                 columnNumber: 13
               }, this)
             ] }, void 0, !0, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 239,
+              lineNumber: 241,
               columnNumber: 11
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 209,
+            lineNumber: 211,
             columnNumber: 9
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/variants.tsx",
-          lineNumber: 200,
+          lineNumber: 202,
           columnNumber: 7
         }, this)
       ]
@@ -2113,7 +2117,7 @@ function VariantCardBack({ variant }) {
     !0,
     {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 190,
+      lineNumber: 192,
       columnNumber: 5
     },
     this
@@ -2128,31 +2132,31 @@ function VariantSummaryCard({ variant }) {
       children: [
         flip ? /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(VariantCardBack, { variant }, void 0, !1, {
           fileName: "app/routes/variants.tsx",
-          lineNumber: 261,
+          lineNumber: 263,
           columnNumber: 9
         }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(VariantCardFront, { variant }, void 0, !1, {
           fileName: "app/routes/variants.tsx",
-          lineNumber: 263,
+          lineNumber: 265,
           columnNumber: 9
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex flex-row justify-end gap-2", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_react_icons.DotsVerticalIcon, {}, void 0, !1, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 266,
+            lineNumber: 268,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("button", { onClick: () => setFlip(!flip), children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_react_icons.InfoCircledIcon, {}, void 0, !1, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 268,
+            lineNumber: 270,
             columnNumber: 11
           }, this) }, void 0, !1, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 267,
+            lineNumber: 269,
             columnNumber: 9
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/variants.tsx",
-          lineNumber: 265,
+          lineNumber: 267,
           columnNumber: 7
         }, this)
       ]
@@ -2161,7 +2165,7 @@ function VariantSummaryCard({ variant }) {
     !0,
     {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 256,
+      lineNumber: 258,
       columnNumber: 5
     },
     this
@@ -2581,7 +2585,7 @@ function Beta() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-VY57SGNN.js", imports: ["/build/_shared/chunk-LKOPCC2G.js", "/build/_shared/chunk-GUPKMWBY.js", "/build/_shared/chunk-ABY47LC6.js", "/build/_shared/chunk-K5T3FGKP.js", "/build/_shared/chunk-J2OVIFEL.js", "/build/_shared/chunk-HH3BOLTW.js", "/build/_shared/chunk-MQESCB4Y.js", "/build/_shared/chunk-R6ILELA2.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-B425AKYU.js", imports: ["/build/_shared/chunk-AD5N26LG.js", "/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-FOZJTYA2.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-SF7XFLQY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-VRWQBHC6.js", imports: ["/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-5OCX6GQC.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-XO4T4KQE.js", imports: ["/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-MEF4RQMC.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-IMSY2VB2.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-KS6AXZ2P.js", imports: ["/build/_shared/chunk-XSQKSV4C.js", "/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-2MLBXEYR.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-5AJO74DI.js", imports: ["/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "025029cf", hmr: { runtime: "/build/_shared/chunk-J2OVIFEL.js", timestamp: 1684473323544 }, url: "/build/manifest-025029CF.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-VY57SGNN.js", imports: ["/build/_shared/chunk-LKOPCC2G.js", "/build/_shared/chunk-GUPKMWBY.js", "/build/_shared/chunk-ABY47LC6.js", "/build/_shared/chunk-K5T3FGKP.js", "/build/_shared/chunk-J2OVIFEL.js", "/build/_shared/chunk-HH3BOLTW.js", "/build/_shared/chunk-MQESCB4Y.js", "/build/_shared/chunk-R6ILELA2.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-B425AKYU.js", imports: ["/build/_shared/chunk-AD5N26LG.js", "/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-FOZJTYA2.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-SF7XFLQY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-VRWQBHC6.js", imports: ["/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-5OCX6GQC.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-XO4T4KQE.js", imports: ["/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-MEF4RQMC.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-IMSY2VB2.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-DDB25TWD.js", imports: ["/build/_shared/chunk-5TXSSD53.js", "/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-DJFH73UU.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-5AJO74DI.js", imports: ["/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "c8bc3138", hmr: { runtime: "/build/_shared/chunk-J2OVIFEL.js", timestamp: 1684513779044 }, url: "/build/manifest-C8BC3138.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { unstable_dev: !0, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !1, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_react_stream_exports }, dev = { websocketPort: 3004 }, routes = {
