@@ -3,7 +3,7 @@ import { json } from "@remix-run/node";
 import { variants } from "~/constants/variants";
 import { Link, NavLink, Outlet, useLoaderData } from "@remix-run/react";
 import { DotsVerticalIcon, InfoCircledIcon } from "@radix-ui/react-icons";
-import React from "react";
+import React, { useCallback } from "react";
 export async function loader({ request, params }: LoaderArgs) {
   return json({ variants });
 }
@@ -11,20 +11,143 @@ export async function loader({ request, params }: LoaderArgs) {
 export default function VariantRoute() {
   const data = useLoaderData<typeof loader>();
 
+
+
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-10 py-2">
       <main className="flex flex-1 flex-col items-center gap-2 px-20 text-center">
         <Outlet />
         <h1 className="text-6xl font-bold">Variant</h1>
 
-        {data.variants.map((variant) => (
-          <VariantSummaryCard variant={variant} key={variant.id} />
-        ))}
+      {data.variants.map((variant) => (
+        <CardContainer 
+        key={variant.id}
+        variant={variant} />
+      ))} 
+
+
+
       </main>
+
     </div>
+
   );
 }
 
+const CardContainer = ({variant}:{
+  variant: VariantCardType
+
+})=>{
+  const [flip, setFlip] = React.useState(false);
+
+  const handleFlip = useCallback(() => {
+    setFlip((flip) => !flip)
+  }, []);
+
+  return(
+    <div
+    key={variant.id}
+  className="w-[450px] h-[350px] bg-gray-800 rounded-md border-2 p-2 ">
+<div className="w-full h-full items-center relative transition-transform duration-800 preserve-3d transform-gpu">
+ {
+    flip ? <CardBack
+    variant={variant}
+    handleFlip={handleFlip} /> : <CardFront
+    variant={variant}
+    handleFlip={handleFlip} />
+ }
+
+
+</div>
+</div>
+  )
+}
+
+
+function CardFront({handleFlip,variant}:{
+  handleFlip: ()=>void, variant: VariantCardType
+}){
+
+  return(
+    <div className="absolute flex flex-col w-full h-full [ backface-visibility:hidden]">
+  <div className="flex grow h-auto w-full flex-col gap-3 overflow-hidden justify-between rounded-md border p-2">
+    <Link to={`/variants/${variant.id}/annotate`}>
+    <h3 className="text-xl font-bold text-slate-50">{variant.symbol}</h3>
+    </Link>
+    <div className="flex flex-row items-center justify-between gap-3">
+      <div className="flex flex-col gap-1 items-start w-1/2">
+        <span className="text-xs text-gray-500">
+            <p className="text-xs font-semibold text-left text-slate-50">HGVS:</p>
+          <p  className="text-xs text-gray-500">{variant.hgvs}</p>
+          
+          </span>
+        <span className="text-xs text-gray-500">
+            <p className="text-xs font-semibold text-left text-slate-50">Protein:</p>
+          <p  className="text-xs text-gray-500">{variant.protein}</p>
+
+
+        </span>
+<span className="text-xs text-gray-500">
+            <p className="text-xs font-semibold text-left text-slate-50">cDNA:</p>
+          <p  className="text-xs text-gray-500">{variant.cdna}</p>
+</span>
+
+        </div>
+        <div className="flex flex-col gap-2 w-1/2 items-start ">
+          <span className="text-xs text-gray-500">
+            <p className="text-xs font-semibold text-left text-slate-50">Transcript:</p>
+            <p className="text-xs text-gray-500">{variant.transcript}</p>
+          </span>
+          <span className="text-xs text-gray-500">
+            <p className="text-xs font-semibold text-left text-slate-50">CPRA:</p>
+          <p  className="text-xs text-gray-500">
+
+          chr{variant.chr}:{variant.pos}{variant.ref}&gt;{variant.alt}
+          
+
+          </p>
+          </span>
+        <span className="text-xs text-gray-500">
+            <p className="text-xs font-semibold text-left text-slate-50">AA:</p>
+          <p  className="text-xs text-gray-500">{variant.aa}</p>
+          </span>
+          </div>
+
+          </div>
+          
+         <div className="flex flex-col gap-2">
+         <p className="text-xs font-semibold text-slate-50 text-center">Description</p>
+          <p className="text-xs text-gray-500">{variant.description}</p>
+          </div>
+          </div>
+
+  <div className="flex flex-row justify-end gap-2">
+  <button onClick={handleFlip}>
+    <InfoCircledIcon />
+  </button>
+  </div>
+</div>
+  )
+}
+
+function CardBack({handleFlip,variant}:{
+  handleFlip: ()=>void, variant: VariantCardType
+}){
+
+  return(
+    
+    <div className="absolute flex flex-col w-full h-full [ backface-visibility:hidden]">
+    <div className="flex grow h-auto w-full flex-col gap-1 overflow-hidden rounded-md border p-2">
+    back
+  </div>
+  <div className="flex flex-row justify-end gap-2">
+  <button onClick={handleFlip}>
+    <InfoCircledIcon />
+  </button>
+  </div>
+    </div>
+)
+}
 export type VariantCardType = {
   id: string;
   symbol: string;
@@ -46,6 +169,7 @@ export type VariantCardType = {
   zygosity: string;
   inheritance: string;
   vaf: string;
+  description: string;
 };
 
 export function VariantCardFront({ variant }: { variant: VariantCardType }) {
@@ -54,28 +178,10 @@ export function VariantCardFront({ variant }: { variant: VariantCardType }) {
   return (
     <div className="flex  w-full flex-col gap-1 rounded-md border-2 p-2">
       <div
-        className="flex h-auto w-full flex-col gap-1 overflow-hidden rounded-md p-2"
+        className="bg-transparent flex h-[350px] w-[350px] flex-col gap-1 overflow-hidden rounded-md p-2"
         key={variant.id}
       >
-        <div className="flex flex-row items-center justify-between gap-2">
-          <Link to={`/variants/${variant.id}`}>
-            {" "}
-            <h5 className="text-xl font-bold text-gray-900">
-              {variant.symbol}
-            </h5>
-          </Link>
-
-          <span className="text-xs text-gray-500">{variant.cdna}</span>
-          <span className="text-xs text-gray-500">{variant.aa}</span>
-          <span className="text-xs text-gray-500">ClassificationHolder</span>
-        </div>
-        <div className="flex flex-row gap-2">
-          <div className="flex w-full flex-col items-start gap-2">
-            <h5 className=" text-base">Details</h5>
-            <span className="text-xs text-gray-500">{variant.zygosity}</span>
-            <span className="text-xs text-gray-500">{variant.vaf}% VAF</span>
-          </div>
-        </div>
+      
       </div>
     </div>
   );
