@@ -1,6 +1,5 @@
 import { useMatches } from "@remix-run/react";
 import { useMemo } from "react";
-import { scoreMatrix } from "./constants/consts";
 import { ZodError, ZodSchema } from "zod";
 
 export async function useMatchesData(

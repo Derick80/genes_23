@@ -65,6 +65,11 @@ export const criteria = [
     id: "1.1",
     name: 'Computational and Predictive',
     strength: [
+      {
+        id: "0",
+        value: "",
+        label: "Pick a Criterion",
+      },
       
       {
         id: "4",
@@ -167,6 +172,11 @@ export const criteria = [
     name: 'Segregation',
     strength: [
       {
+        id: "0",
+        value: "",
+        label: "Pick a Criterion",
+      },
+      {
         id: "5",
         value: "P_1",
         label: "PP1",
@@ -182,6 +192,11 @@ export const criteria = [
     id: "4.5",
     name: 'De Novo',
     strength: [
+      {
+        id: "0",
+        value: "",
+        label: "Pick a Criterion",
+      },  
       
         {
           id: '0.5',
@@ -199,6 +214,11 @@ export const criteria = [
     id: "4.6",
     name: 'Allelic',
     strength: [
+      {
+        id: "0",
+        value: "",
+        label: "Pick a Criterion",
+      },
       {
         id: "7",
         value: "B_1",

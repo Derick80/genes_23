@@ -143,7 +143,10 @@ React.useEffect(() => {
     }
   }, [])
   
+function handleReset():void{
+ setReset(!reset)
 
+}
   return (
     <div className="flex min-h-screen flex-col  p-2">
       <div
@@ -213,7 +216,7 @@ React.useEffect(() => {
            variant="warning_filled"
            size='base'
             type='button'
-          onClick={() => setReset(!reset)}>Reset</Button>
+          onClick={handleReset}>Reset</Button>
           </div>
 
         </Form>

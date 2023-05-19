@@ -146,7 +146,7 @@ __export(root_exports, {
 var import_node2 = require("@remix-run/node"), import_react3 = require("@remix-run/react");
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-XTJTYWAZ.css";
+var tailwind_default = "/build/_assets/tailwind-4Q64U5OH.css";
 
 // app/components/layout.tsx
 var import_remix = require("@clerk/remix"), import_react2 = require("@remix-run/react"), import_jsx_dev_runtime2 = require("react/jsx-dev-runtime");
@@ -692,6 +692,11 @@ var criteria = [
     name: "Computational and Predictive",
     strength: [
       {
+        id: "0",
+        value: "",
+        label: "Pick a Criterion"
+      },
+      {
         id: "4",
         value: "B_1",
         label: "BP4"
@@ -789,6 +794,11 @@ var criteria = [
     name: "Segregation",
     strength: [
       {
+        id: "0",
+        value: "",
+        label: "Pick a Criterion"
+      },
+      {
         id: "5",
         value: "P_1",
         label: "PP1"
@@ -805,6 +815,11 @@ var criteria = [
     name: "De Novo",
     strength: [
       {
+        id: "0",
+        value: "",
+        label: "Pick a Criterion"
+      },
+      {
         id: "0.5",
         value: "P_4",
         label: "PS2"
@@ -820,6 +835,11 @@ var criteria = [
     id: "4.6",
     name: "Allelic",
     strength: [
+      {
+        id: "0",
+        value: "",
+        label: "Pick a Criterion"
+      },
       {
         id: "7",
         value: "B_1",
@@ -928,9 +948,13 @@ function BetaRoute() {
   let handleClickOutside = (event) => {
     optionsRef.current && !optionsRef.current.contains(event.target) && setDropdown(!1);
   };
-  return import_react5.default.useEffect(() => (document.addEventListener("mouseleave", handleClickOutside), () => {
+  import_react5.default.useEffect(() => (document.addEventListener("mouseleave", handleClickOutside), () => {
     document.removeEventListener("mouseleave", handleClickOutside);
-  }), []), /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex min-h-screen flex-col  p-2", children: [
+  }), []);
+  function handleReset() {
+    setReset(!reset);
+  }
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex min-h-screen flex-col  p-2", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
       "div",
       {
@@ -947,7 +971,7 @@ function BetaRoute() {
             !1,
             {
               fileName: "app/routes/variants_.$id.annotate.tsx",
-              lineNumber: 153,
+              lineNumber: 156,
               columnNumber: 9
             },
             this
@@ -957,7 +981,7 @@ function BetaRoute() {
             criterias
           ] }, void 0, !0, {
             fileName: "app/routes/variants_.$id.annotate.tsx",
-            lineNumber: 156,
+            lineNumber: 159,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("p", { className: "text-xl font-bold", children: [
@@ -965,7 +989,7 @@ function BetaRoute() {
             totals !== 0 ? totals : 0
           ] }, void 0, !0, {
             fileName: "app/routes/variants_.$id.annotate.tsx",
-            lineNumber: 157,
+            lineNumber: 160,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("p", { className: "text-xl font-bold", children: [
@@ -973,7 +997,7 @@ function BetaRoute() {
             classification
           ] }, void 0, !0, {
             fileName: "app/routes/variants_.$id.annotate.tsx",
-            lineNumber: 160,
+            lineNumber: 163,
             columnNumber: 9
           }, this)
         ]
@@ -982,7 +1006,7 @@ function BetaRoute() {
       !0,
       {
         fileName: "app/routes/variants_.$id.annotate.tsx",
-        lineNumber: 149,
+        lineNumber: 152,
         columnNumber: 7
       },
       this
@@ -990,7 +1014,7 @@ function BetaRoute() {
     /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex w-full flex-row items-center gap-1", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(BayesTable, {}, void 0, !1, {
         fileName: "app/routes/variants_.$id.annotate.tsx",
-        lineNumber: 163,
+        lineNumber: 166,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
@@ -1012,7 +1036,7 @@ function BetaRoute() {
                 !1,
                 {
                   fileName: "app/routes/variants_.$id.annotate.tsx",
-                  lineNumber: 171,
+                  lineNumber: 174,
                   columnNumber: 15
                 },
                 this
@@ -1041,7 +1065,7 @@ function BetaRoute() {
                     !1,
                     {
                       fileName: "app/routes/variants_.$id.annotate.tsx",
-                      lineNumber: 188,
+                      lineNumber: 191,
                       columnNumber: 19
                     },
                     this
@@ -1051,14 +1075,14 @@ function BetaRoute() {
                 !1,
                 {
                   fileName: "app/routes/variants_.$id.annotate.tsx",
-                  lineNumber: 178,
+                  lineNumber: 181,
                   columnNumber: 15
                 },
                 this
               )
             ] }, void 0, !0, {
               fileName: "app/routes/variants_.$id.annotate.tsx",
-              lineNumber: 170,
+              lineNumber: 173,
               columnNumber: 13
             }, this)),
             /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex w-full flex-row items-center gap-1", children: [
@@ -1074,7 +1098,7 @@ function BetaRoute() {
                 !1,
                 {
                   fileName: "app/routes/variants_.$id.annotate.tsx",
-                  lineNumber: 205,
+                  lineNumber: 208,
                   columnNumber: 10
                 },
                 this
@@ -1085,21 +1109,21 @@ function BetaRoute() {
                   variant: "warning_filled",
                   size: "base",
                   type: "button",
-                  onClick: () => setReset(!reset),
+                  onClick: handleReset,
                   children: "Reset"
                 },
                 void 0,
                 !1,
                 {
                   fileName: "app/routes/variants_.$id.annotate.tsx",
-                  lineNumber: 212,
+                  lineNumber: 215,
                   columnNumber: 11
                 },
                 this
               )
             ] }, void 0, !0, {
               fileName: "app/routes/variants_.$id.annotate.tsx",
-              lineNumber: 204,
+              lineNumber: 207,
               columnNumber: 10
             }, this)
           ]
@@ -1108,19 +1132,19 @@ function BetaRoute() {
         !0,
         {
           fileName: "app/routes/variants_.$id.annotate.tsx",
-          lineNumber: 165,
+          lineNumber: 168,
           columnNumber: 9
         },
         this
       )
     ] }, void 0, !0, {
       fileName: "app/routes/variants_.$id.annotate.tsx",
-      lineNumber: 162,
+      lineNumber: 165,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/variants_.$id.annotate.tsx",
-    lineNumber: 148,
+    lineNumber: 151,
     columnNumber: 5
   }, this);
 }
@@ -2566,26 +2590,117 @@ var beta_exports = {};
 __export(beta_exports, {
   default: () => Beta
 });
-var import_jsx_dev_runtime15 = require("react/jsx-dev-runtime");
+var import_react15 = require("react"), import_jsx_dev_runtime15 = require("react/jsx-dev-runtime");
 function Beta() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(
     "div",
     {
-      className: ""
+      className: "",
+      children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(
+          Dropdown,
+          {
+            options
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/routes/beta.tsx",
+            lineNumber: 17,
+            columnNumber: 7
+          },
+          this
+        ),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)("div", { className: " z-0 relative", children: "lots of other stuff here" }, void 0, !1, {
+          fileName: "app/routes/beta.tsx",
+          lineNumber: 20,
+          columnNumber: 7
+        }, this)
+      ]
     },
     void 0,
-    !1,
+    !0,
     {
       fileName: "app/routes/beta.tsx",
-      lineNumber: 12,
+      lineNumber: 13,
       columnNumber: 5
     },
     this
   );
 }
+var options = [
+  "Option 1",
+  "Option 2",
+  "Option 3",
+  "Option 4",
+  "Option 5"
+], Dropdown = ({ options: options2 }) => {
+  let [isOpen, setIsOpen] = (0, import_react15.useState)(!1), [selectedOption, setSelectedOption] = (0, import_react15.useState)(""), handleOptionClick = (option) => {
+    setSelectedOption(option), setIsOpen(!1);
+  };
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)("div", { className: "dropdown", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(
+      "button",
+      {
+        className: "dropdown-toggle",
+        onClick: () => {
+          setIsOpen(!isOpen);
+        },
+        "data-toggle": "dropdown",
+        "aria-haspopup": "true",
+        "aria-expanded": isOpen ? "true" : "false",
+        children: selectedOption || "Select an option"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 53,
+        columnNumber: 7
+      },
+      this
+    ),
+    isOpen && /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(
+      "div",
+      {
+        className: "dropdown-menu",
+        "data-dropdown-menu": !0,
+        onClick: (e) => e.stopPropagation(),
+        children: options2.map((option) => /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(
+          "div",
+          {
+            className: "dropdown-menu-item",
+            onClick: () => handleOptionClick(option),
+            children: option
+          },
+          option,
+          !1,
+          {
+            fileName: "app/routes/beta.tsx",
+            lineNumber: 69,
+            columnNumber: 13
+          },
+          this
+        ))
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 63,
+        columnNumber: 9
+      },
+      this
+    )
+  ] }, void 0, !0, {
+    fileName: "app/routes/beta.tsx",
+    lineNumber: 52,
+    columnNumber: 5
+  }, this);
+};
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-VY57SGNN.js", imports: ["/build/_shared/chunk-LKOPCC2G.js", "/build/_shared/chunk-GUPKMWBY.js", "/build/_shared/chunk-ABY47LC6.js", "/build/_shared/chunk-K5T3FGKP.js", "/build/_shared/chunk-J2OVIFEL.js", "/build/_shared/chunk-HH3BOLTW.js", "/build/_shared/chunk-MQESCB4Y.js", "/build/_shared/chunk-R6ILELA2.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-B425AKYU.js", imports: ["/build/_shared/chunk-AD5N26LG.js", "/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-FOZJTYA2.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-SF7XFLQY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-VRWQBHC6.js", imports: ["/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-5OCX6GQC.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-XO4T4KQE.js", imports: ["/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-MEF4RQMC.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-IMSY2VB2.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-DDB25TWD.js", imports: ["/build/_shared/chunk-5TXSSD53.js", "/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-DJFH73UU.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-5AJO74DI.js", imports: ["/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "c8bc3138", hmr: { runtime: "/build/_shared/chunk-J2OVIFEL.js", timestamp: 1684513779044 }, url: "/build/manifest-C8BC3138.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-G753JLYT.js", imports: ["/build/_shared/chunk-LKOPCC2G.js", "/build/_shared/chunk-GUPKMWBY.js", "/build/_shared/chunk-ABY47LC6.js", "/build/_shared/chunk-I6ZPGZRO.js", "/build/_shared/chunk-J2OVIFEL.js", "/build/_shared/chunk-HH3BOLTW.js", "/build/_shared/chunk-MQESCB4Y.js", "/build/_shared/chunk-R6ILELA2.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-OS74BL5J.js", imports: ["/build/_shared/chunk-AAFCYTL3.js", "/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-FOZJTYA2.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-JDUANH7G.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-FSM5Z5UP.js", imports: ["/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-E7NTD34C.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-J3U5NUUY.js", imports: ["/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-EPJNXVMN.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-2KFVGJLG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-EMDHBV5B.js", imports: ["/build/_shared/chunk-W2BIZFUB.js", "/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-IHWG3OQV.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-BAKW3UTR.js", imports: ["/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "6070b452", hmr: { runtime: "/build/_shared/chunk-J2OVIFEL.js", timestamp: 1684527412078 }, url: "/build/manifest-6070B452.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { unstable_dev: !0, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !1, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_react_stream_exports }, dev = { websocketPort: 3004 }, routes = {
