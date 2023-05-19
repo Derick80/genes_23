@@ -1,8 +1,11 @@
-import type { LoaderArgs } from "@remix-run/node";
+import { useAuth } from "@clerk/remix";
+import type { ActionArgs, LoaderArgs } from "@remix-run/node";
 
 import { json, redirect } from "@remix-run/node";
 import { Form, useLoaderData } from "@remix-run/react";
+import { z } from "zod";
 import Button from "~/components/button";
+import { validateAction } from "~/functions";
 import { prisma } from "~/server/prisma.server";
 export async function loader({ request, params }: LoaderArgs) {
   const searchParam = params.splat || "";
@@ -42,19 +45,67 @@ export async function loader({ request, params }: LoaderArgs) {
   return json({ criterion, searchParam });
 }
 
+const schema = z.object({
+  criterionName: z.string(),
+  definition: z.string(),
+  evidenceType: z.string(),
+  example: z.string(),
+  criterionBaseWeight: z.string(),
+  caveat: z.string(),
+});
+
+type ActionInput = z.infer<typeof schema>;
+export async function action({request, params}: ActionArgs) {
+ const criterionId = params.splat
+const userId = useAuth
+if(!userId){
+  return redirect('/sign-in')
+}
+
+const {formData,errors} = await validateAction({request, schema})
+
+if(errors){
+  return json({errors})
+}
+const {criterionName, definition, evidenceType, example, criterionBaseWeight, caveat} = formData  as ActionInput
+
+const updated= await prisma.criterion.update({
+  where: {
+    id: criterionId
+  },
+  data: {
+    criterionName,
+    definition,
+    evidenceType,
+    example,
+    criterionBaseWeight,
+    caveat
+  }
+})
+
+if(updated){
+  return redirect('/criterion')
+}
+
+
+
+
+
+}
 export default function EditIndex() {
   const data = useLoaderData<typeof loader>();
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-10 py-2">
       <Form
-        className="flex w-full max-w-2xl flex-col gap-2 rounded-md border p-4 "
+        className="flex w-full max-w-2xl flex-col gap-2 rounded-md border p-4  "
         method="post"
       >
         <label className="text-xl font-bold" htmlFor="criterionName">
           Criterion Name
         </label>
         <input
+        className="border-2 border-gray-400 rounded-md p-2 text-black"
           type="text"
           name="criterionName"
           id="criterionName"
@@ -66,6 +117,7 @@ export default function EditIndex() {
             Definition
           </label>
           <input
+          className="border-2 border-gray-400 rounded-md p-2 text-black"
             type="text"
             name="definition"
             id="definition"
@@ -78,6 +130,7 @@ export default function EditIndex() {
             Evidence Type
           </label>
           <input
+          className="border-2 border-gray-400 rounded-md p-2 text-black"
             type="text"
             name="evidenceType"
             id="evidenceType"
@@ -90,6 +143,7 @@ export default function EditIndex() {
             Example
           </label>
           <input
+          className="border-2 border-gray-400 rounded-md p-2 text-black"
             type="text"
             name="example"
             id="example"
@@ -102,6 +156,7 @@ export default function EditIndex() {
             Criterion Base Weight
           </label>
           <select
+          className="border-2 border-gray-400 rounded-md p-2 text-black"
             name="criterionBaseWeight"
             id="criterionBaseWeight"
             defaultValue={data.criterion[0].criterionBaseWeight}
@@ -118,6 +173,7 @@ export default function EditIndex() {
             Caveat
           </label>
           <input
+          className="border-2 border-gray-400 rounded-md p-2 text-black"
             type="text"
             name="caveat"
             id="caveat"

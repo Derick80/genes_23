@@ -1,6 +1,6 @@
 export const criterions = [
   {
-    evidenceType: "computational_data",
+    evidenceType: "Computational and Predictive Data",
     criterionName: "PVS1",
     criterionBaseWeight: "Very Strong",
     definition:
@@ -11,7 +11,7 @@ export const criterions = [
   },
 
   {
-    evidenceType: "computational_data",
+    evidenceType: "Computational and Predictive Data",
     criterionName: "PS1",
     criterionBaseWeight: "Strong",
     definition:
@@ -21,7 +21,7 @@ export const criterions = [
   },
 
   {
-    evidenceType: "de_novo_data",
+    evidenceType: "De Novo Data",
     criterionName: "PS2",
     criterionBaseWeight: "Strong",
     definition:
@@ -32,7 +32,7 @@ export const criterions = [
   },
 
   {
-    evidenceType: "functional_data",
+    evidenceType: "Functional Data",
     criterionName: "PS3",
     criterionBaseWeight: "Strong",
     definition:
@@ -43,7 +43,7 @@ export const criterions = [
   },
 
   {
-    evidenceType: "population_data",
+    evidenceType: "Population Data",
     criterionName: "PS4",
     criterionBaseWeight: "Strong",
     definition:
@@ -54,7 +54,7 @@ export const criterions = [
   },
 
   {
-    evidenceType: "functional_data",
+    evidenceType: "Functional Data",
     criterionName: "PM1",
     criterionBaseWeight: "Moderate",
     definition:
@@ -65,7 +65,7 @@ export const criterions = [
       "Population data for indels may be poorly called by next generation sequencing.",
   },
   {
-    evidenceType: "population_data",
+    evidenceType: "Population Data",
     criterionName: "PM2",
     criterionBaseWeight: "Moderate",
     definition:
@@ -74,9 +74,19 @@ export const criterions = [
     caveat:
       "Caveat: Population data for indels may be poorly called by next generation sequencing.",
   },
+  {
+    evidenceType: "Population Data",
+    criterionName: "PM2_Supporting",
+    criterionBaseWeight: "Supporting",
+    definition:
+      "P:Absent from controls (or at extremely low frequency if recessive) in Exome Sequencing Project, 1000 Genomes or Exome Aggregation Consortium.",
+    example: "",
+    caveat:
+      "Caveat: Population data for indels may be poorly called by next generation sequencing.",
+  },
 
   {
-    evidenceType: "allelic_data",
+    evidenceType: "Allelic Data",
     criterionName: "PM3",
     criterionBaseWeight: "Moderate",
     definition:
@@ -87,7 +97,7 @@ export const criterions = [
   },
 
   {
-    evidenceType: "computational_data",
+    evidenceType: "Computational and Predictive Data",
     criterionName: "PM4",
     criterionBaseWeight: "Moderate",
     definition:
@@ -97,7 +107,7 @@ export const criterions = [
   },
 
   {
-    evidenceType: "computational_data",
+    evidenceType: "Computational and Predictive Data",
     criterionName: "PM5",
     criterionBaseWeight: "Moderate",
     definition:
@@ -108,7 +118,7 @@ export const criterions = [
   },
 
   {
-    evidenceType: "de_novo_data",
+    evidenceType: "De Novo Data",
     criterionName: "PM6",
     criterionBaseWeight: "Moderate",
     definition:
@@ -118,7 +128,7 @@ export const criterions = [
   },
 
   {
-    evidenceType: "segregation_data",
+    evidenceType: "Segregation Data",
     criterionName: "PP1",
     criterionBaseWeight: "Supporting",
     definition:
@@ -129,7 +139,7 @@ export const criterions = [
   },
 
   {
-    evidenceType: "functional_data",
+    evidenceType: "Functional Data",
     criterionName: "PP2",
     criterionBaseWeight: "Supporting",
     definition:
@@ -139,18 +149,18 @@ export const criterions = [
   },
 
   {
-    evidenceType: "computational_data",
+    evidenceType: "Computational and Predictive Data",
     criterionName: "PP3",
     criterionBaseWeight: "Supporting",
     definition:
-      "P:Multiple lines of computational evidence support a deleterious effect on the gene or gene product (conservation, evolutionary, splicing impact, etc.).",
+      "P:Multiple lines of Computational evidence support a deleterious effect on the gene or gene product (conservation, evolutionary, splicing impact, etc.).",
     example: "",
     caveat:
       "As many in silico algorithms use the same or very similar input for their predictions, each algorithm should not be counted as an independent criterion. PP3 can be used only once in any evaluation of a variant.",
   },
 
   {
-    evidenceType: "other_data",
+    evidenceType: "Other Data",
     criterionName: "PP4",
     criterionBaseWeight: "Supporting",
     definition:
@@ -160,7 +170,7 @@ export const criterions = [
   },
 
   {
-    evidenceType: "other_database",
+    evidenceType: "Other Database",
     criterionName: "PP5",
     criterionBaseWeight: "Supporting",
     definition:
@@ -170,7 +180,7 @@ export const criterions = [
   },
 
   {
-    evidenceType: "population_data",
+    evidenceType: "Population Data",
     criterionName: "BA1",
     criterionBaseWeight: "Stand alone",
     definition: "SA:Filtering Allele Frequency >.5%.",
@@ -179,7 +189,7 @@ export const criterions = [
   },
 
   {
-    evidenceType: "population_data",
+    evidenceType: "Population Data",
     criterionName: "BS1",
     criterionBaseWeight: "Strong",
     definition: "S:Filtering Allele Frequency >.05%.",
@@ -188,7 +198,7 @@ export const criterions = [
   },
 
   {
-    evidenceType: "population_data",
+    evidenceType: "Population Data",
     criterionName: "BS2",
     criterionBaseWeight: "Strong",
     definition:
@@ -198,7 +208,7 @@ export const criterions = [
   },
 
   {
-    evidenceType: "functional_data",
+    evidenceType: "Functional Data",
     criterionName: "BS3",
     criterionBaseWeight: "Strong",
     definition:
@@ -208,7 +218,7 @@ export const criterions = [
   },
 
   {
-    evidenceType: "segregation_data",
+    evidenceType: "Segregation Data",
     criterionName: "BS4",
     criterionBaseWeight: "Strong",
     definition: '"S:Lack of segregation in affected members of a family.',
@@ -218,7 +228,7 @@ export const criterions = [
   },
 
   {
-    evidenceType: "computational_data",
+    evidenceType: "Computational and Predictive Data",
     criterionName: "BP1",
     criterionBaseWeight: "Supporting",
     definition:
@@ -228,7 +238,7 @@ export const criterions = [
   },
 
   {
-    evidenceType: "allelic_data",
+    evidenceType: "Allelic Data",
     criterionName: "BP2",
     criterionBaseWeight: "Supporting",
     definition:
@@ -238,7 +248,7 @@ export const criterions = [
   },
 
   {
-    evidenceType: "computational_data",
+    evidenceType: "Computational and Predictive Data",
     criterionName: "BP3",
     criterionBaseWeight: "Supporting",
     definition:
@@ -248,18 +258,18 @@ export const criterions = [
   },
 
   {
-    evidenceType: "computational_data",
+    evidenceType: "Computational and Predictive Data",
     criterionName: "BP4",
     criterionBaseWeight: "Supporting",
     definition:
-      "P:Multiple lines of computational evidence suggest no impact on gene or gene product (conservation, evolutionary, splicing impact, etc)",
+      "P:Multiple lines of Computational evidence suggest no impact on gene or gene product (conservation, evolutionary, splicing impact, etc)",
     example: "",
     caveat:
       "Caveat: As many in silico algorithms use the same or very similar input for their predictions, each algorithm cannot be counted as an independent criterion. BP4 can be used only once in any evaluation of a variant",
   },
 
   {
-    evidenceType: "allelic_data",
+    evidenceType: "Allelic Data",
     criterionName: "BP5",
     criterionBaseWeight: "Supporting",
     definition:
@@ -269,7 +279,7 @@ export const criterions = [
   },
 
   {
-    evidenceType: "other_database",
+    evidenceType: "Other Database",
     criterionName: "BP6",
     criterionBaseWeight: "Supporting",
     definition:
@@ -279,7 +289,7 @@ export const criterions = [
   },
 
   {
-    evidenceType: "computational_data",
+    evidenceType: "Computational and Predictive Data",
     criterionName: "BP7",
     criterionBaseWeight: "Supporting",
     definition:

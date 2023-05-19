@@ -1,4 +1,9 @@
-import { LinksFunction, LoaderArgs, V2_MetaFunction, json } from "@remix-run/node";
+import {
+  LinksFunction,
+  LoaderArgs,
+  V2_MetaFunction,
+  json,
+} from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -30,18 +35,14 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
 ];
 
-export async function loader(args:LoaderArgs) {
-  return rootAuthLoader(args,({request})=>{
-    const {userId}  = request.auth
-if(!userId) return json({} as any,{status:401})
-    return ({
-      loadUser:true,
-    }
-        
-      )
-
-}
-  )
+export async function loader(args: LoaderArgs) {
+  return rootAuthLoader(args, ({ request }) => {
+    const { userId } = request.auth;
+    if (!userId) return json({} as any, { status: 401 });
+    return {
+      loadUser: true,
+    };
+  });
 }
 
 function App() {
@@ -90,7 +91,6 @@ function App() {
 //     </div>
 //   );
 // }
-
 
 export default ClerkApp(App);
 
