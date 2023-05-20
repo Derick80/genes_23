@@ -146,7 +146,7 @@ __export(root_exports, {
 var import_node2 = require("@remix-run/node"), import_react3 = require("@remix-run/react");
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-4Q64U5OH.css";
+var tailwind_default = "/build/_assets/tailwind-YCT5KL7H.css";
 
 // app/components/layout.tsx
 var import_remix = require("@clerk/remix"), import_react2 = require("@remix-run/react"), import_jsx_dev_runtime2 = require("react/jsx-dev-runtime");
@@ -2588,119 +2588,264 @@ function Documentation() {
 // app/routes/beta.tsx
 var beta_exports = {};
 __export(beta_exports, {
+  action: () => action3,
   default: () => Beta
 });
-var import_react15 = require("react"), import_jsx_dev_runtime15 = require("react/jsx-dev-runtime");
+var import_node9 = require("@remix-run/node");
+
+// app/components/dropdown.tsx
+var import_react15 = __toESM(require("react")), import_clsx2 = __toESM(require("clsx")), import_react_icons3 = require("@radix-ui/react-icons"), import_jsx_dev_runtime15 = require("react/jsx-dev-runtime"), Dropdown = ({ options: options2, name = "selection", width = "w-48" }) => {
+  let [isOpen, setIsOpen] = (0, import_react15.useState)(!1), [selectedOption, setSelectedOption] = (0, import_react15.useState)(""), handleToggle = () => {
+    setIsOpen(!isOpen);
+  }, handleIconClear = (event) => {
+    event.stopPropagation(), setSelectedOption("");
+  }, handleTextClear = (event) => {
+    setSelectedOption(""), setIsOpen(!1);
+  };
+  import_react15.default.useEffect(() => {
+    let handleKeyboardEvent = (event) => {
+      event.key === "Escape" && setIsOpen(!1);
+    };
+    return document.addEventListener("keydown", handleKeyboardEvent), () => {
+      document.removeEventListener("keydown", handleKeyboardEvent);
+    };
+  }, []);
+  let handleOptionSelect = (event) => {
+    let selectedOption2 = event.currentTarget.textContent;
+    setSelectedOption(selectedOption2 || ""), setIsOpen(!1);
+  };
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)("div", { className: (0, import_clsx2.default)(`relative inline-block ${width}`), children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)("div", { className: "block", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(
+        "button",
+        {
+          type: "button",
+          className: "flex w-full items-center justify-between rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2",
+          onClick: handleToggle,
+          children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)("div", { className: "flex w-full items-center justify-between", children: selectedOption ? /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(import_jsx_dev_runtime15.Fragment, { children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(
+                "span",
+                {
+                  className: "flex items-center",
+                  onClick: () => setSelectedOption(""),
+                  children: selectedOption
+                },
+                void 0,
+                !1,
+                {
+                  fileName: "app/components/dropdown.tsx",
+                  lineNumber: 60,
+                  columnNumber: 15
+                },
+                this
+              ),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)("button", { onClick: handleIconClear, children: /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(import_react_icons3.Cross2Icon, { className: "h-[15px] w-[15px]" }, void 0, !1, {
+                fileName: "app/components/dropdown.tsx",
+                lineNumber: 67,
+                columnNumber: 15
+              }, this) }, void 0, !1, {
+                fileName: "app/components/dropdown.tsx",
+                lineNumber: 66,
+                columnNumber: 15
+              }, this)
+            ] }, void 0, !0, {
+              fileName: "app/components/dropdown.tsx",
+              lineNumber: 59,
+              columnNumber: 17
+            }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)("span", { className: "flex items-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)("span", { className: "mr-3", children: "Select an option" }, void 0, !1, {
+              fileName: "app/components/dropdown.tsx",
+              lineNumber: 72,
+              columnNumber: 17
+            }, this) }, void 0, !1, {
+              fileName: "app/components/dropdown.tsx",
+              lineNumber: 71,
+              columnNumber: 15
+            }, this) }, void 0, !1, {
+              fileName: "app/components/dropdown.tsx",
+              lineNumber: 57,
+              columnNumber: 11
+            }, this),
+            isOpen ? /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(import_react_icons3.ChevronUpIcon, {}, void 0, !1, {
+              fileName: "app/components/dropdown.tsx",
+              lineNumber: 77,
+              columnNumber: 21
+            }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(import_react_icons3.ChevronDownIcon, {}, void 0, !1, {
+              fileName: "app/components/dropdown.tsx",
+              lineNumber: 77,
+              columnNumber: 41
+            }, this)
+          ]
+        },
+        void 0,
+        !0,
+        {
+          fileName: "app/components/dropdown.tsx",
+          lineNumber: 52,
+          columnNumber: 9
+        },
+        this
+      ),
+      isOpen && /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)("div", { className: "absolute left-0 right-0  mt-2 rounded-md border border-gray-300 bg-white shadow-lg", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)("div", { className: "absolute -top-3 right-[45%] h-6 w-6 rotate-45 border-l border-t border-gray-300 bg-white" }, void 0, !1, {
+          fileName: "app/components/dropdown.tsx",
+          lineNumber: 82,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)("ul", { className: "py-1", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(
+            "li",
+            {
+              className: "px-4 py-2 text-black hover:bg-gray-100",
+              onClick: handleTextClear,
+              children: "Clear"
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/components/dropdown.tsx",
+              lineNumber: 85,
+              columnNumber: 15
+            },
+            this
+          ),
+          options2.map((option, index) => /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(
+            "li",
+            {
+              onClick: handleOptionSelect,
+              className: "px-4 py-2 text-black hover:bg-gray-100",
+              children: option.label
+            },
+            option.id,
+            !1,
+            {
+              fileName: "app/components/dropdown.tsx",
+              lineNumber: 95,
+              columnNumber: 17
+            },
+            this
+          ))
+        ] }, void 0, !0, {
+          fileName: "app/components/dropdown.tsx",
+          lineNumber: 84,
+          columnNumber: 13
+        }, this)
+      ] }, void 0, !0, {
+        fileName: "app/components/dropdown.tsx",
+        lineNumber: 81,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/components/dropdown.tsx",
+      lineNumber: 51,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(
+      "input",
+      {
+        type: "hidden",
+        name,
+        value: selectedOption,
+        onChange: (e) => setSelectedOption(e.target.value)
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/components/dropdown.tsx",
+        lineNumber: 108,
+        columnNumber: 9
+      },
+      this
+    )
+  ] }, void 0, !0, {
+    fileName: "app/components/dropdown.tsx",
+    lineNumber: 50,
+    columnNumber: 5
+  }, this);
+}, dropdown_default = Dropdown;
+
+// app/routes/beta.tsx
+var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime");
+async function action3({ request, params }) {
+  return (0, import_node9.json)({});
+}
 function Beta() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
     "div",
     {
-      className: "",
-      children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(
-          Dropdown,
-          {
-            options
-          },
-          void 0,
-          !1,
-          {
-            fileName: "app/routes/beta.tsx",
-            lineNumber: 17,
-            columnNumber: 7
-          },
-          this
-        ),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)("div", { className: " z-0 relative", children: "lots of other stuff here" }, void 0, !1, {
+      className: "flex flex-col w-full gap-2",
+      children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+        "form",
+        {
+          method: "POST",
+          className: "flex flex-col gap-2",
+          children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+              dropdown_default,
+              {
+                options
+              },
+              void 0,
+              !1,
+              {
+                fileName: "app/routes/beta.tsx",
+                lineNumber: 23,
+                columnNumber: 3
+              },
+              this
+            ),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("button", { className: "bg-blue-500 text-white rounded-md p-2", children: "Submit" }, void 0, !1, {
+              fileName: "app/routes/beta.tsx",
+              lineNumber: 26,
+              columnNumber: 3
+            }, this)
+          ]
+        },
+        void 0,
+        !0,
+        {
           fileName: "app/routes/beta.tsx",
           lineNumber: 20,
-          columnNumber: 7
-        }, this)
-      ]
+          columnNumber: 3
+        },
+        this
+      )
     },
     void 0,
-    !0,
+    !1,
     {
       fileName: "app/routes/beta.tsx",
-      lineNumber: 13,
+      lineNumber: 17,
       columnNumber: 5
     },
     this
   );
 }
 var options = [
-  "Option 1",
-  "Option 2",
-  "Option 3",
-  "Option 4",
-  "Option 5"
-], Dropdown = ({ options: options2 }) => {
-  let [isOpen, setIsOpen] = (0, import_react15.useState)(!1), [selectedOption, setSelectedOption] = (0, import_react15.useState)(""), handleOptionClick = (option) => {
-    setSelectedOption(option), setIsOpen(!1);
-  };
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)("div", { className: "dropdown", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(
-      "button",
-      {
-        className: "dropdown-toggle",
-        onClick: () => {
-          setIsOpen(!isOpen);
-        },
-        "data-toggle": "dropdown",
-        "aria-haspopup": "true",
-        "aria-expanded": isOpen ? "true" : "false",
-        children: selectedOption || "Select an option"
-      },
-      void 0,
-      !1,
-      {
-        fileName: "app/routes/beta.tsx",
-        lineNumber: 53,
-        columnNumber: 7
-      },
-      this
-    ),
-    isOpen && /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(
-      "div",
-      {
-        className: "dropdown-menu",
-        "data-dropdown-menu": !0,
-        onClick: (e) => e.stopPropagation(),
-        children: options2.map((option) => /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(
-          "div",
-          {
-            className: "dropdown-menu-item",
-            onClick: () => handleOptionClick(option),
-            children: option
-          },
-          option,
-          !1,
-          {
-            fileName: "app/routes/beta.tsx",
-            lineNumber: 69,
-            columnNumber: 13
-          },
-          this
-        ))
-      },
-      void 0,
-      !1,
-      {
-        fileName: "app/routes/beta.tsx",
-        lineNumber: 63,
-        columnNumber: 9
-      },
-      this
-    )
-  ] }, void 0, !0, {
-    fileName: "app/routes/beta.tsx",
-    lineNumber: 52,
-    columnNumber: 5
-  }, this);
-};
+  {
+    id: "1",
+    label: "Option 1",
+    value: "option-1"
+  },
+  {
+    id: "2",
+    label: "Option 2",
+    value: "option-2"
+  },
+  {
+    id: "3",
+    label: "Option 3",
+    value: "option-3"
+  },
+  {
+    id: "4",
+    label: "Option 4",
+    value: "option-4"
+  }
+];
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-G753JLYT.js", imports: ["/build/_shared/chunk-LKOPCC2G.js", "/build/_shared/chunk-GUPKMWBY.js", "/build/_shared/chunk-ABY47LC6.js", "/build/_shared/chunk-I6ZPGZRO.js", "/build/_shared/chunk-J2OVIFEL.js", "/build/_shared/chunk-HH3BOLTW.js", "/build/_shared/chunk-MQESCB4Y.js", "/build/_shared/chunk-R6ILELA2.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-OS74BL5J.js", imports: ["/build/_shared/chunk-AAFCYTL3.js", "/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-FOZJTYA2.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-JDUANH7G.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-FSM5Z5UP.js", imports: ["/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-E7NTD34C.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-J3U5NUUY.js", imports: ["/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-EPJNXVMN.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-2KFVGJLG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-EMDHBV5B.js", imports: ["/build/_shared/chunk-W2BIZFUB.js", "/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-IHWG3OQV.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-BAKW3UTR.js", imports: ["/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "6070b452", hmr: { runtime: "/build/_shared/chunk-J2OVIFEL.js", timestamp: 1684527412078 }, url: "/build/manifest-6070B452.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-QRXJC4UM.js", imports: ["/build/_shared/chunk-LKOPCC2G.js", "/build/_shared/chunk-GUPKMWBY.js", "/build/_shared/chunk-ABY47LC6.js", "/build/_shared/chunk-TZ27RBAM.js", "/build/_shared/chunk-J2OVIFEL.js", "/build/_shared/chunk-HH3BOLTW.js", "/build/_shared/chunk-MQESCB4Y.js", "/build/_shared/chunk-R6ILELA2.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-4NU6JK4U.js", imports: ["/build/_shared/chunk-7OJRNDDL.js", "/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-FOZJTYA2.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-3FAPIQUI.js", imports: ["/build/_shared/chunk-D67KL4RH.js", "/build/_shared/chunk-A5NX5H24.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-UYFSHUNZ.js", imports: ["/build/_shared/chunk-A5NX5H24.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-O4VUVY7V.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-2R4OITB7.js", imports: ["/build/_shared/chunk-S4INFENK.js", "/build/_shared/chunk-D67KL4RH.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-UVZSOROF.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-DADUMF7O.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-UZDNX5RU.js", imports: ["/build/_shared/chunk-EEAORIME.js", "/build/_shared/chunk-A5NX5H24.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-J4OYTHOS.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-T4HE7LR6.js", imports: ["/build/_shared/chunk-S4INFENK.js", "/build/_shared/chunk-D67KL4RH.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "7baae9b2", hmr: { runtime: "/build/_shared/chunk-J2OVIFEL.js", timestamp: 1684573214137 }, url: "/build/manifest-7BAAE9B2.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { unstable_dev: !0, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !1, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_react_stream_exports }, dev = { websocketPort: 3004 }, routes = {

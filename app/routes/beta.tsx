@@ -1,7 +1,11 @@
-import { criterions } from "prisma/criterion-seed";
-import { useState, useEffect } from "react";
-import { criteria } from "~/constants/consts";
+import { ActionArgs, json } from "@remix-run/node";
+import Dropdown from "~/components/dropdown";
 
+
+export async function action({request, params}: ActionArgs) {
+
+return json({ })
+}
 
 export default function Beta() {
   
@@ -11,74 +15,45 @@ export default function Beta() {
 
   return (
     <div
-className=''
+className='flex flex-col w-full gap-2'
 >
+  <form 
+    method="POST"
+  className='flex flex-col gap-2'>
+  <Dropdown options={options}
   
-      <Dropdown
-        options={options}
-      />
-      <div className=' z-0 relative'>
-        lots of other stuff here
-        </div>
+  />
+  <button className='bg-blue-500 text-white rounded-md p-2'>Submit</button>
+  </form>
+     
     </div>
   );
 }
 
 const options = [
-  'Option 1',
-  'Option 2',
-  'Option 3',
-  'Option 4',
-  'Option 5',
+  {
+    id: "1",
+    label: 'Option 1',
+    value: 'option-1',
+  },
+  {
+    id: "2",
+    label: 'Option 2',
+    value: 'option-2',
+  },
+  {
+    id: "3",
+    label: 'Option 3',
+    value: 'option-3',
+  },
+  {
+    id: "4",
+    label: 'Option 4',
+    value: 'option-4',
+  },
+
 ];
-interface DropdownProps {
-  options: string[];
-}
 
-const Dropdown: React.FC<DropdownProps> = ({ options }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState('');
-
-  const handleOptionClick = (option: string) => {
-    setSelectedOption(option);
-    setIsOpen(false);
-  };
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
-  return (
-    <div className="dropdown">
-      <button
-        className="dropdown-toggle"
-        onClick={toggleDropdown}
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded={isOpen ? 'true' : 'false'}
-      >
-        {selectedOption || 'Select an option'}
-      </button>
-      {isOpen && (
-        <div
-          className="dropdown-menu"
-          data-dropdown-menu
-          onClick={(e) => e.stopPropagation()}
-        >
-          {options.map((option) => (
-            <div
-              key={option}
-              className="dropdown-menu-item"
-              onClick={() => handleOptionClick(option)}
-            >
-              {option}
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
 
 
 
