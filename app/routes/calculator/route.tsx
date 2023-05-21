@@ -1,80 +1,51 @@
-import type { ActionArgs, LoaderArgs } from "@remix-run/node";
-
-import { json, redirect } from "@remix-run/node";
 import { Form } from "@remix-run/react";
 import React from "react";
 import Button from "~/components/button";
 import BayesTable from "~/constants/bayes-table";
 import { criteria } from "~/constants/consts";
-import { getACMGClassification } from "~/server/functions.server";
+import InfoPanel from "./info";
 
-export async function loader({ request, params }: LoaderArgs) {
-  const id = params.id;
-  if (!id) return redirect("/variants");
+export default function Calculator() {
+  const strengths = criteria.map((strength) => strength.strength);
+  console.log(strengths, "strengths");
 
-  const populationData = criteria.find(
-    (criteria) => criteria.name === "Population"
-  );
-  const functionalData = criteria.find(
-    (criteria) => criteria.name === "Functional"
-  );
-  const proteinData = criteria.find((criteria) => criteria.name === "Protein");
-  const reputableSourceData = criteria.find(
-    (criteria) => criteria.name === "ReputableSource"
-  );
-  const caseLevelData = criteria.find(
-    (criteria) => criteria.name === "CaseLevel"
-  );
-
-  return json({
-    populationData,
-    functionalData,
-    proteinData,
-    reputableSourceData,
-    caseLevelData,
-  });
-}
-
-export async function action({ request }: ActionArgs) {
-  const formData = await request.formData();
-  const population = formData.get("population");
-  const functional = formData.get("functionalComputational");
-  const protein = formData.get("protein");
-  const reputableSource = formData.get("reputableSource");
-  const caseLevel = formData.get("caseLevel");
-
-  const data = Object.fromEntries(formData.entries()) as Record<string, string>;
-  console.log(data, "data");
-  // Use the following function to calculate the total classification
-  const totals = await getACMGClassification(data);
-  console.log(totals, "totals");
-  return json({ message: "updated" });
-}
-export default function BetaRoute() {
   const [criterias, setCriterias] = React.useState<string[]>([]);
+  const [criteriaDetail, setCriteriaDetail] = React.useState<string[]>([]);
   const [totals, setTotals] = React.useState<number>(0);
   const [classification, setClassification] =
     React.useState<string>("No classification");
   const [dropdown, setDropdown] = React.useState(false);
   const optionsRef = React.useRef<HTMLOptionElement>(null);
-  const [reset, setReset] = React.useState(false);
 
   const formRef = React.useRef<HTMLFormElement>(null);
   const calculatorRef = React.useRef<HTMLDivElement>(null);
-  React.useEffect(() => {
-    if (reset) {
-      formRef.current?.reset();
-    }
-  }, [reset]);
 
   // create a function to handle the choices from the select boxes
   function handleChoices(event: React.ChangeEvent<HTMLSelectElement>) {
     const { name, value } = event.target;
+    console.log(value, "value");
+
+    // overly complex way of doing this but...
+
+    const newValue = value.substring(0, value.indexOf("^"));
+    console.log(newValue, "newValue");
+    const newLabel = value.substring(value.indexOf("^") + 1);
+    console.log(newLabel, "newLabel");
+
+    //  update newCriterial detail with the newLabel but only if it doesn't already exist in the array
+    const newCriteriaDetail = [...criteriaDetail];
+    if (!newCriteriaDetail.includes(newLabel)) {
+      newCriteriaDetail.push(newLabel);
+    }
+    setCriteriaDetail(newCriteriaDetail);
+    console.log(newCriteriaDetail, "newCriteriaDetail");
+
+    // setCriteriaDetail([...criteriaDetail, value])
     // subcategory is the first letter of the value Benign = B or Pathogenic = P
-    const subcategory = value.substring(0, 1);
+    const subcategory = newValue.substring(0, 1);
 
     // score is the last letter of the value and corresponds to the bayes score from Tavtigian et al 2020
-    const score = Number(value.slice(-1));
+    const score = Number(newValue.slice(-1));
 
     // shortenedEvidenceType is the first 3 letters of the name of the EvidenceType eg Population = pop
     const shortenedEvidenceType = name.split(" ")[0];
@@ -141,78 +112,102 @@ export default function BetaRoute() {
   }, []);
 
   function handleReset(): void {
-    setReset(!reset);
+    if (calculatorRef.current?.innerText !== null) {
+      setClassification("No Classification");
+    }
+    formRef.current?.reset();
+    setCriterias([]);
+    setTotals(0);
   }
   return (
-    <div className="flex min-h-screen flex-col  p-2">
+    <div className="block">
       <div
         ref={calculatorRef}
-        className="flex w-full flex-col items-center gap-1"
+        className="block w-full flex-col items-center gap-1"
       >
-        <h3 className="text-2xl font-bold">ACMG Classification</h3>
-        <p className="text-xl font-bold"> {criterias}</p>
-        <p className="text-xl font-bold">
-          Total Score: {totals !== 0 ? totals : 0}
-        </p>
+        <h3 className="text-center text-2xl font-bold">ACMG Classification</h3>
+        <p className="text-xl font-bold">Criterias: {criterias}</p>
+        <span className="text-xl font-bold">
+          <p className="text-xl font-bold">
+            {" "}
+            Total Score: {totals !== 0 ? totals : 0}
+          </p>
+          {/* breakup criterialDetail by a comma */}
+          <p className="text-xl font-bold">
+            {" "}
+            Criteria: [
+            {criteriaDetail.map((criteria, index) => (
+              <span key={index}>
+                {index !== 0 ? ", " : ""}
+                {criteria}
+              </span>
+            ))}
+            ]
+          </p>
+        </span>
         <p className="text-xl font-bold">Classification: {classification}</p>
       </div>
-      <div className="flex w-full flex-row items-center gap-1">
-        <BayesTable />
+      <div className="flex w-full flex-col gap-1 md:flex-row md:justify-between">
+        <div className="w-full border border-blue-500 px-4 md:w-1/2">
+          <Form
+            id="form"
+            ref={formRef}
+            method="post"
+            className="flex flex-col gap-1"
+          >
+            {criteria.map((population) => (
+              <>
+                <label
+                  className="text-left font-semibold capitalize"
+                  key={population.id}
+                >
+                  {population.name}
+                </label>
 
-        <Form
-          id="form"
-          ref={formRef}
-          method="post"
-          className="flex w-1/2 flex-col gap-1"
-        >
-          {criteria.map((population) => (
-            <>
-              <label
-                className="text-left font-semibold capitalize"
-                key={population.id}
+                <select
+                  data-state={dropdown}
+                  id="select"
+                  title={population.name}
+                  className="rounded-md border border-gray-300 text-black"
+                  key={population.id}
+                  name={population.name}
+                  onChange={handleChoices}
+                >
+                  {population.strength.map((strength) => (
+                    <option
+                      ref={optionsRef}
+                      data-category-type={strength.value.slice(0, 1)}
+                      data-etype={strength.label}
+                      placeholder="Pick a Criterion"
+                      id={strength.label}
+                      key={strength.id}
+                      value={strength.value + "^" + strength.label}
+                      defaultChecked={false}
+                    >
+                      {strength.label}
+                    </option>
+                  ))}
+                </select>
+              </>
+            ))}
+            <div className="flex w-full flex-row items-center gap-1">
+              <Button variant="primary_filled" size="base" type="submit">
+                Submit
+              </Button>
+              <Button
+                variant="warning_filled"
+                size="base"
+                type="button"
+                onClick={handleReset}
               >
-                {population.name}
-              </label>
-
-              <select
-                data-state={dropdown}
-                id="select"
-                title={population.name}
-                className="rounded-md border border-gray-300 text-black"
-                key={population.id}
-                name={population.name}
-                onChange={handleChoices}
-              >
-                {population.strength.map((strength) => (
-                  <option
-                    ref={optionsRef}
-                    data-category-type={strength.value.slice(0, 1)}
-                    data-etype={population.name}
-                    placeholder="Pick a Criterion"
-                    key={strength.id}
-                    value={strength.value}
-                    defaultChecked={false}
-                  >
-                    {strength.label}
-                  </option>
-                ))}
-              </select>
-            </>
-          ))}
-          <div className="flex w-full flex-row items-center gap-1">
-            <Button variant="primary_filled" size="base" type="submit">
-              Submit
-            </Button>
-            <Button
-              variant="warning_filled"
-              size="base"
-              type="button"
-              onClick={handleReset}
-            >
-              Reset
-            </Button>
-          </div>
-        </Form>
+                Reset
+              </Button>
+            </div>
+          </Form>
+        </div>
+        <div className="w-full border border-red-500 px-4 md:w-1/2">
+          <InfoPanel />
+        </div>
       </div>
     </div>
   );

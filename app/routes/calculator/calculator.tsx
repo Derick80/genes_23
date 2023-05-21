@@ -1,71 +1,20 @@
-import type { ActionArgs, LoaderArgs } from "@remix-run/node";
-
-import { json, redirect } from "@remix-run/node";
 import { Form } from "@remix-run/react";
 import React from "react";
 import Button from "~/components/button";
 import BayesTable from "~/constants/bayes-table";
 import { criteria } from "~/constants/consts";
-import { getACMGClassification } from "~/server/functions.server";
+import InfoPanel from "./info";
 
-export async function loader({ request, params }: LoaderArgs) {
-  const id = params.id;
-  if (!id) return redirect("/variants");
-
-  const populationData = criteria.find(
-    (criteria) => criteria.name === "Population"
-  );
-  const functionalData = criteria.find(
-    (criteria) => criteria.name === "Functional"
-  );
-  const proteinData = criteria.find((criteria) => criteria.name === "Protein");
-  const reputableSourceData = criteria.find(
-    (criteria) => criteria.name === "ReputableSource"
-  );
-  const caseLevelData = criteria.find(
-    (criteria) => criteria.name === "CaseLevel"
-  );
-
-  return json({
-    populationData,
-    functionalData,
-    proteinData,
-    reputableSourceData,
-    caseLevelData,
-  });
-}
-
-export async function action({ request }: ActionArgs) {
-  const formData = await request.formData();
-  const population = formData.get("population");
-  const functional = formData.get("functionalComputational");
-  const protein = formData.get("protein");
-  const reputableSource = formData.get("reputableSource");
-  const caseLevel = formData.get("caseLevel");
-
-  const data = Object.fromEntries(formData.entries()) as Record<string, string>;
-  console.log(data, "data");
-  // Use the following function to calculate the total classification
-  const totals = await getACMGClassification(data);
-  console.log(totals, "totals");
-  return json({ message: "updated" });
-}
-export default function BetaRoute() {
+export default function Calculator() {
   const [criterias, setCriterias] = React.useState<string[]>([]);
   const [totals, setTotals] = React.useState<number>(0);
   const [classification, setClassification] =
     React.useState<string>("No classification");
   const [dropdown, setDropdown] = React.useState(false);
   const optionsRef = React.useRef<HTMLOptionElement>(null);
-  const [reset, setReset] = React.useState(false);
 
   const formRef = React.useRef<HTMLFormElement>(null);
   const calculatorRef = React.useRef<HTMLDivElement>(null);
-  React.useEffect(() => {
-    if (reset) {
-      formRef.current?.reset();
-    }
-  }, [reset]);
 
   // create a function to handle the choices from the select boxes
   function handleChoices(event: React.ChangeEvent<HTMLSelectElement>) {
@@ -141,10 +90,15 @@ export default function BetaRoute() {
   }, []);
 
   function handleReset(): void {
-    setReset(!reset);
+    if (calculatorRef.current?.innerText !== null) {
+      setClassification("No Classification");
+    }
+    formRef.current?.reset();
+    setCriterias([]);
+    setTotals(0);
   }
   return (
-    <div className="flex min-h-screen flex-col  p-2">
+    <div className="block">
       <div
         ref={calculatorRef}
         className="flex w-full flex-col items-center gap-1"
@@ -156,63 +110,68 @@ export default function BetaRoute() {
         </p>
         <p className="text-xl font-bold">Classification: {classification}</p>
       </div>
-      <div className="flex w-full flex-row items-center gap-1">
-        <BayesTable />
-
-        <Form
-          id="form"
-          ref={formRef}
-          method="post"
-          className="flex w-1/2 flex-col gap-1"
-        >
-          {criteria.map((population) => (
-            <>
-              <label
-                className="text-left font-semibold capitalize"
-                key={population.id}
-              >
-                {population.name}
-              </label>
-
-              <select
-                data-state={dropdown}
-                id="select"
-                title={population.name}
-                className="rounded-md border border-gray-300 text-black"
-                key={population.id}
-                name={population.name}
-                onChange={handleChoices}
-              >
-                {population.strength.map((strength) => (
-                  <option
-                    ref={optionsRef}
-                    data-category-type={strength.value.slice(0, 1)}
-                    data-etype={population.name}
-                    placeholder="Pick a Criterion"
-                    key={strength.id}
-                    value={strength.value}
-                    defaultChecked={false}
-                  >
-                    {strength.label}
-                  </option>
-                ))}
-              </select>
-            </>
-          ))}
-          <div className="flex w-full flex-row items-center gap-1">
-            <Button variant="primary_filled" size="base" type="submit">
-              Submit
-            </Button>
-            <Button
-              variant="warning_filled"
-              size="base"
-              type="button"
-              onClick={handleReset}
+      <div className="flex w-full flex-col items-center gap-1 md:flex-row">
+        <div className="flex flex-col md:flex-row md:gap-2">
+          <div className="w-full border border-blue-500 px-4 md:w-1/2">
+            <Form
+              id="form"
+              ref={formRef}
+              method="post"
+              className="flex w-1/2 flex-col gap-1"
             >
-              Reset
-            </Button>
+              {criteria.map((population) => (
+                <>
+                  <label
+                    className="text-left font-semibold capitalize"
+                    key={population.id}
+                  >
+                    {population.name}
+                  </label>
+
+                  <select
+                    data-state={dropdown}
+                    id="select"
+                    title={population.name}
+                    className="rounded-md border border-gray-300 text-black"
+                    key={population.id}
+                    name={population.name}
+                    onChange={handleChoices}
+                  >
+                    {population.strength.map((strength) => (
+                      <option
+                        ref={optionsRef}
+                        data-category-type={strength.value.slice(0, 1)}
+                        data-etype={population.name}
+                        placeholder="Pick a Criterion"
+                        key={strength.id}
+                        value={strength.value}
+                        defaultChecked={false}
+                      >
+                        {strength.label}
+                      </option>
+                    ))}
+                  </select>
+                </>
+              ))}
+              <div className="flex w-full flex-row items-center gap-1">
+                <Button variant="primary_filled" size="base" type="submit">
+                  Submit
+                </Button>
+                <Button
+                  variant="warning_filled"
+                  size="base"
+                  type="button"
+                  onClick={handleReset}
+                >
+                  Reset
+                </Button>
+              </div>
+            </Form>
           </div>
-        </Form>
+        </div>
+        <div className="w-full border border-red-500 px-4 md:w-1/2">
+          <InfoPanel />
+        </div>
       </div>
     </div>
   );

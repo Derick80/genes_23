@@ -20,7 +20,7 @@ export const variants = [
     zygosity: "Heterozygous",
     inheritance: "Autosomal Dominant",
     vaf: "0.5",
-    description:'This is a brca2 variant description'
+    description: "This is a brca2 variant description",
   },
   {
     id: "2",
@@ -43,7 +43,7 @@ export const variants = [
     zygosity: "Heterozygous",
     inheritance: "Autosomal Dominant",
     vaf: "0.5",
-    descriptions:'This is a EGFR variant description'
+    descriptions: "This is a EGFR variant description",
   },
   {
     id: "3",
@@ -66,7 +66,7 @@ export const variants = [
     zygosity: "Heterozygous",
     inheritance: "Autosomal Resessive",
     vaf: "0.5",
-    description:'This is a RYR1 variant description'
+    description: "This is a RYR1 variant description",
   },
   {
     id: "4",
@@ -89,6 +89,6 @@ export const variants = [
     zygosity: "Heterozygous",
     inheritance: "Autosomal Dominant",
     vaf: "0.5",
-    description:'This is a TP53 variant description'
+    description: "This is a TP53 variant description",
   },
 ];
