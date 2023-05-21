@@ -68,52 +68,42 @@ export type GroupData = {
     pathogenic?: string[];
   };
 };
+// define an object that will help convert outdated acmg strength to updated acmg strength
 
-const specialCases: {[key:string]: string} = {
+const specialCases: string[] = [
+  "PM2_Supporting",
+  "PVS1_Supporting",
+  "PVS1_Strong",
+  "PVS1_Moderate",
+];
+
+//  define a mapping from the special cases to their corresponding values
+const specialConversion: { [key: string]: string } = {
   PM2_Supporting: "P",
   PVS1_Supporting: "P",
   PVS1_Strong: "S",
-  PVS1_Moderate : "M"
-}
+  PVS1_Moderate: "M",
+};
 
-export const extractFirstTwoLetters =(arr: string[]) =>{
-    const specialCases:  string[] = [
-        "PM2_Supporting",
-        "PVS1_Supporting",
-        "PVS1_Strong",
-        "PVS1_Moderate",
-        ];
+//   define a function that will extract the first two letters of the acmg strength
+export const extractFirstTwoLetters = (arr: string[]) => {
+  const firstTwoLetters: string[] = [];
+  return arr.map((item) => {
+    const firstLetter = item[0];
+    console.log(firstLetter, "firstLetter");
 
-        const specialConversion: {[key:string]: string} = {
-            PM2_Supporting: "P",
-            PVS1_Supporting: "P",
-            PVS1_Strong: "S",
-            PVS1_Moderate : "M"
-          }
+    let firstTwoChars: string;
 
-
-      const firstTwoLetters: string[] = [];
-      return arr.map((item) => {
-        const firstLetter = item[0];
-        console.log(firstLetter, "firstLetter");
-        
-        let firstTwoChars: string 
-    
-        const underScoreIndex = item.indexOf('_');
-        if(underScoreIndex > -1 && specialCases.includes(item)){
-            firstTwoChars = item[0] + specialConversion[item]
-        }else{
-            firstTwoChars = item.substring(0,2)
-        }
-        firstTwoLetters.push(firstTwoChars)
-        return firstTwoChars
-        
+    const underScoreIndex = item.indexOf("_");
+    if (underScoreIndex > -1 && specialCases.includes(item)) {
+      firstTwoChars = item[0] + specialConversion[item];
+    } else {
+      firstTwoChars = item.substring(0, 2);
     }
-    )
-    
-
-
-}
+    firstTwoLetters.push(firstTwoChars);
+    return firstTwoChars;
+  });
+};
 // Define a mapping from strength letters to their corresponding values
 export const strengthValues: { [key: string]: number } = {
   V: 8,
@@ -124,56 +114,47 @@ export const strengthValues: { [key: string]: number } = {
 };
 
 //   Define a function to convert the output to numbers that correspond to the strength values
-export function convertToNumbers(arr:string[]
-    
-    ) {
-     const strengthValues: { [key: string]: number } = {
-        V: 8,
-        A: 8,
-        S: 4,
-        M: 2,
-        P: 1,
-      };
-  
-     const transformedValues= arr.map((item)=>{
-          const firstLetter = item[0];
-          
-          const secondLetter = item[1];
-          
-          const secondNumber= strengthValues[secondLetter];
-          const transformedNumber = firstLetter === 'B' ? -secondNumber : secondNumber;
-            return transformedNumber
-        })
-        const totalSum = transformedValues.reduce((sum,value)=> sum + value, 0)
+export function convertToNumbers(arr: string[]) {
+  const strengthValues: { [key: string]: number } = {
+    V: 8,
+    A: 8,
+    S: 4,
+    M: 2,
+    P: 1,
+  };
 
-        interface Classification{
-            totalSum: number;
-            classification: string;
-        }
-function getClass(totalSum: number): string {
-    
-        for(const item of scoreMatrix){
-            const [minScore, maxScore] = item.score;
-            if(totalSum >= minScore && totalSum <= maxScore){
-                return item.name
-            }
-        }
-        return "Indeterminate"
+  const transformedValues = arr.map((item) => {
+    const firstLetter = item[0];
 
+    const secondLetter = item[1];
+
+    const secondNumber = strengthValues[secondLetter];
+    const transformedNumber =
+      firstLetter === "B" ? -secondNumber : secondNumber;
+    return transformedNumber;
+  });
+  const totalSum = transformedValues.reduce((sum, value) => sum + value, 0);
+
+  interface Classification {
+    totalSum: number;
+    classification: string;
+  }
+  function getClass(totalSum: number): string {
+    for (const item of scoreMatrix) {
+      const [minScore, maxScore] = item.score;
+      if (totalSum >= minScore && totalSum <= maxScore) {
+        return item.name;
+      }
     }
-    const classification = getClass(totalSum)
-   
-    const obj = {} as Classification
+    return "Indeterminate";
+  }
+  const classification = getClass(totalSum);
 
-    obj.totalSum = totalSum;
-    obj.classification = classification;
-    return obj
+  const obj = {} as Classification;
 
-    
-
-
- 
-
+  obj.totalSum = totalSum;
+  obj.classification = classification;
+  return obj;
 }
 
 export const scoreMatrix = [
@@ -209,4 +190,3 @@ function getClassification(score: number): string {
 
   return "Indeterminate";
 }
-  

@@ -1,6 +1,6 @@
-import { ActionArgs, json } from "@remix-run/node";
+import type { ActionArgs } from "@remix-run/node";
+import { json } from "@remix-run/node";
 import ACMGCalculator from "~/components/acmg_calcv1";
-import Dropdown from "~/components/dropdown";
 
 export async function action({ request, params }: ActionArgs) {
   return json({});

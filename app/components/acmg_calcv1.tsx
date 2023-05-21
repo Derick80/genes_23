@@ -1,24 +1,28 @@
-import { log } from "console";
-import React, { useState } from "react";
-import { set } from "zod";
-import type { GroupData} from "~/constants/acmg-criteria";
-import { acmgCriteria,convertToNumbers, extractFirstTwoLetters, strengthValues } from "~/constants/acmg-criteria";
+import { useState } from "react";
+import {
+  acmgCriteria,
+  convertToNumbers,
+  extractFirstTwoLetters,
+  strengthValues,
+} from "~/constants/acmg-criteria";
 
 const ACMGCalculator = () => {
   const [selectedCriteria, setSelectedCriteria] = useState<
     Partial<
-      Record<keyof typeof acmgCriteria, { benign?: string; pathogenic?: string }>
+      Record<
+        keyof typeof acmgCriteria,
+        { benign?: string; pathogenic?: string }
+      >
     >
   >({});
-  const [scores, setScores] = useState<GroupData>({});
-const [criteriaArray, setCriteriaArray] = useState<string[]>([]);
+  const [criteriaArray, setCriteriaArray] = useState<string[]>([]);
   const handleSelect = (
     group: keyof typeof acmgCriteria,
     category: "benign" | "pathogenic",
     label: string
   ) => {
     const newSelectedCriteria = { ...selectedCriteria };
-    
+
     newSelectedCriteria[group] = {
       ...newSelectedCriteria[group],
       [category]: label,
@@ -27,7 +31,9 @@ const [criteriaArray, setCriteriaArray] = useState<string[]>([]);
     const pathogenicValues: string[] = [];
     const criteriaArray: string[] = [];
     for (const group in newSelectedCriteria) {
-      const { benign, pathogenic } = newSelectedCriteria[group as keyof typeof newSelectedCriteria]as { benign?: string; pathogenic?: string };
+      const { benign, pathogenic } = newSelectedCriteria[
+        group as keyof typeof newSelectedCriteria
+      ] as { benign?: string; pathogenic?: string };
 
       if (benign) {
         criteriaArray.push(benign);
@@ -39,7 +45,7 @@ const [criteriaArray, setCriteriaArray] = useState<string[]>([]);
     console.log(benignValues, "benignValues");
     console.log(pathogenicValues, "pathogenicValues");
     console.log(criteriaArray, "criteriaArray");
-    
+
     setSelectedCriteria(newSelectedCriteria);
     setCriteriaArray(criteriaArray);
     const splitCriteria = extractFirstTwoLetters(criteriaArray);
@@ -53,9 +59,7 @@ const [criteriaArray, setCriteriaArray] = useState<string[]>([]);
       <p className="text-2xl font-bold">
         ACMG selected criteria
         {JSON.stringify(selectedCriteria)}
-
       </p>
-
 
       <p className="text-2xl font-bold">
         ACMG scores
@@ -133,23 +137,13 @@ const [criteriaArray, setCriteriaArray] = useState<string[]>([]);
 
 export default ACMGCalculator;
 
+function CriteriaTracker({ criteria }: { criteria: string[] }) {
+  const rowData = criteria.join(" ");
 
-function CriteriaTracker({
-  criteria
-}:{
-  criteria: string[]
-}){
-const rowData = criteria.join(" ");
-
-  return(
-    <div className="flex flex-col gap-2">
-      {rowData}
-    </div>
-
-  )
+  return <div className="flex flex-col gap-2">{rowData}</div>;
 }
 
-const myData = ['BA1','PP4','PM2_Supporting']
+const myData = ["BA1", "PP4", "PM2_Supporting"];
 
 const processMyData = (myData: string[]): number[][] => {
   const processedData: number[][] = [];
@@ -158,19 +152,19 @@ const processMyData = (myData: string[]): number[][] => {
     let firstLetter: string;
     let secondLetter: string;
 
-    if (item.startsWith('B')) {
-      firstLetter = 'B';
-      const underscoreIndex = item.indexOf('_');
-      if (underscoreIndex > -1 && item.includes('_Supporting')) {
+    if (item.startsWith("B")) {
+      firstLetter = "B";
+      const underscoreIndex = item.indexOf("_");
+      if (underscoreIndex > -1 && item.includes("_Supporting")) {
         secondLetter = item[underscoreIndex + 1];
       } else {
         secondLetter = item[1];
       }
       processedData.push([-1, strengthValues[secondLetter]]);
-    } else if (item.startsWith('P')) {
-      firstLetter = 'P';
-      const underscoreIndex = item.indexOf('_');
-      if (underscoreIndex > -1 && item.includes('_Supporting')) {
+    } else if (item.startsWith("P")) {
+      firstLetter = "P";
+      const underscoreIndex = item.indexOf("_");
+      if (underscoreIndex > -1 && item.includes("_Supporting")) {
         secondLetter = item[underscoreIndex + 1];
       } else {
         secondLetter = item[1];
@@ -182,9 +176,4 @@ const processMyData = (myData: string[]): number[][] => {
   return processedData;
 };
 
-
-
-const myArrayToNumber = ["BA","PP","PM"]
-
-
-
+const myArrayToNumber = ["BA", "PP", "PM"];

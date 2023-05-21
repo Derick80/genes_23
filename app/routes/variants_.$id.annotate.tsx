@@ -1,15 +1,12 @@
-import { ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons";
 import type { ActionArgs, LoaderArgs } from "@remix-run/node";
 
 import { json, redirect } from "@remix-run/node";
-import { Form, useLoaderData } from "@remix-run/react";
-import { log } from "console";
+import { Form } from "@remix-run/react";
 import React from "react";
-import { set } from "zod";
 import Button from "~/components/button";
-import Select from "~/components/test-select";
 import BayesTable from "~/constants/bayes-table";
-import { criteria, scoreMatrix } from "~/constants/consts";
+import { criteria } from "~/constants/consts";
+import { getACMGClassification } from "~/server/functions.server";
 
 export async function loader({ request, params }: LoaderArgs) {
   const id = params.id;

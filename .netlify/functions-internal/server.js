@@ -795,6 +795,39 @@ var criteria = [
   }
 ];
 
+// app/server/functions.server.ts
+async function parseACMGAnnotation(array) {
+  let dataTypes = [];
+  for (let key in array)
+    if (array.hasOwnProperty(key)) {
+      let element = array[key], data = {
+        id: key,
+        name: element,
+        breakdown: {
+          category: element.split("", 1)[0],
+          strength: Number(element.split("_", 2)[1])
+        }
+      };
+      dataTypes.push(data);
+    }
+  return dataTypes.map((item) => item.breakdown);
+}
+async function reduceAndCalcACMGCategory(array) {
+  let pathogenicCriteria = array.filter((item) => item.category === "P"), benignCriteria = array.filter((item) => item.category === "B"), pathogenicStrength = pathogenicCriteria.reduce((acc, item) => acc += item.strength, 0), benignStrength = benignCriteria.reduce((acc, item) => -1 * (acc += item.strength), 0), total = pathogenicStrength + benignStrength, realTotal = total <= -7 ? "B" : total <= -2 ? "LB" : total <= 5 ? "VUS" : total <= 9 ? "LP" : "P";
+  return {
+    pathogenicCriteria,
+    benignCriteria,
+    pathogenicStrength,
+    benignStrength,
+    total,
+    realTotal
+  };
+}
+async function getACMGClassification(array) {
+  let t1 = await parseACMGAnnotation(array);
+  return await reduceAndCalcACMGCategory(t1);
+}
+
 // app/routes/variants_.$id.annotate.tsx
 var import_jsx_dev_runtime6 = require("react/jsx-dev-runtime");
 async function loader2({ request, params }) {
@@ -862,7 +895,7 @@ function BetaRoute() {
         children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("h3", { className: "text-2xl font-bold", children: "ACMG Classification" }, void 0, !1, {
             fileName: "app/routes/variants_.$id.annotate.tsx",
-            lineNumber: 155,
+            lineNumber: 152,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("p", { className: "text-xl font-bold", children: [
@@ -870,7 +903,7 @@ function BetaRoute() {
             criterias
           ] }, void 0, !0, {
             fileName: "app/routes/variants_.$id.annotate.tsx",
-            lineNumber: 156,
+            lineNumber: 153,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("p", { className: "text-xl font-bold", children: [
@@ -878,7 +911,7 @@ function BetaRoute() {
             totals !== 0 ? totals : 0
           ] }, void 0, !0, {
             fileName: "app/routes/variants_.$id.annotate.tsx",
-            lineNumber: 157,
+            lineNumber: 154,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("p", { className: "text-xl font-bold", children: [
@@ -886,7 +919,7 @@ function BetaRoute() {
             classification
           ] }, void 0, !0, {
             fileName: "app/routes/variants_.$id.annotate.tsx",
-            lineNumber: 160,
+            lineNumber: 157,
             columnNumber: 9
           }, this)
         ]
@@ -895,7 +928,7 @@ function BetaRoute() {
       !0,
       {
         fileName: "app/routes/variants_.$id.annotate.tsx",
-        lineNumber: 151,
+        lineNumber: 148,
         columnNumber: 7
       },
       this
@@ -903,7 +936,7 @@ function BetaRoute() {
     /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex w-full flex-row items-center gap-1", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(BayesTable, {}, void 0, !1, {
         fileName: "app/routes/variants_.$id.annotate.tsx",
-        lineNumber: 163,
+        lineNumber: 160,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
@@ -925,7 +958,7 @@ function BetaRoute() {
                 !1,
                 {
                   fileName: "app/routes/variants_.$id.annotate.tsx",
-                  lineNumber: 173,
+                  lineNumber: 170,
                   columnNumber: 15
                 },
                 this
@@ -954,7 +987,7 @@ function BetaRoute() {
                     !1,
                     {
                       fileName: "app/routes/variants_.$id.annotate.tsx",
-                      lineNumber: 190,
+                      lineNumber: 187,
                       columnNumber: 19
                     },
                     this
@@ -964,20 +997,20 @@ function BetaRoute() {
                 !1,
                 {
                   fileName: "app/routes/variants_.$id.annotate.tsx",
-                  lineNumber: 180,
+                  lineNumber: 177,
                   columnNumber: 15
                 },
                 this
               )
             ] }, void 0, !0, {
               fileName: "app/routes/variants_.$id.annotate.tsx",
-              lineNumber: 172,
+              lineNumber: 169,
               columnNumber: 13
             }, this)),
             /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex w-full flex-row items-center gap-1", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(Button, { variant: "primary_filled", size: "base", type: "submit", children: "Submit" }, void 0, !1, {
                 fileName: "app/routes/variants_.$id.annotate.tsx",
-                lineNumber: 206,
+                lineNumber: 203,
                 columnNumber: 13
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
@@ -993,14 +1026,14 @@ function BetaRoute() {
                 !1,
                 {
                   fileName: "app/routes/variants_.$id.annotate.tsx",
-                  lineNumber: 209,
+                  lineNumber: 206,
                   columnNumber: 13
                 },
                 this
               )
             ] }, void 0, !0, {
               fileName: "app/routes/variants_.$id.annotate.tsx",
-              lineNumber: 205,
+              lineNumber: 202,
               columnNumber: 11
             }, this)
           ]
@@ -1009,19 +1042,19 @@ function BetaRoute() {
         !0,
         {
           fileName: "app/routes/variants_.$id.annotate.tsx",
-          lineNumber: 165,
+          lineNumber: 162,
           columnNumber: 9
         },
         this
       )
     ] }, void 0, !0, {
       fileName: "app/routes/variants_.$id.annotate.tsx",
-      lineNumber: 162,
+      lineNumber: 159,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/variants_.$id.annotate.tsx",
-    lineNumber: 150,
+    lineNumber: 147,
     columnNumber: 5
   }, this);
 }
@@ -2760,27 +2793,24 @@ var acmgCriteria = {
     benign: ["BP5"],
     pathogenic: ["PP4"]
   }
-};
-var extractFirstTwoLetters = (arr) => {
-  let specialCases = [
-    "PM2_Supporting",
-    "PVS1_Supporting",
-    "PVS1_Strong",
-    "PVS1_Moderate"
-  ], specialConversion = {
-    PM2_Supporting: "P",
-    PVS1_Supporting: "P",
-    PVS1_Strong: "S",
-    PVS1_Moderate: "M"
-  }, firstTwoLetters = [];
-  return arr.map(
-    (item) => {
-      let firstLetter = item[0];
-      console.log(firstLetter, "firstLetter");
-      let firstTwoChars;
-      return item.indexOf("_") > -1 && specialCases.includes(item) ? firstTwoChars = item[0] + specialConversion[item] : firstTwoChars = item.substring(0, 2), firstTwoLetters.push(firstTwoChars), firstTwoChars;
-    }
-  );
+}, specialCases = [
+  "PM2_Supporting",
+  "PVS1_Supporting",
+  "PVS1_Strong",
+  "PVS1_Moderate"
+], specialConversion = {
+  PM2_Supporting: "P",
+  PVS1_Supporting: "P",
+  PVS1_Strong: "S",
+  PVS1_Moderate: "M"
+}, extractFirstTwoLetters = (arr) => {
+  let firstTwoLetters = [];
+  return arr.map((item) => {
+    let firstLetter = item[0];
+    console.log(firstLetter, "firstLetter");
+    let firstTwoChars;
+    return item.indexOf("_") > -1 && specialCases.includes(item) ? firstTwoChars = item[0] + specialConversion[item] : firstTwoChars = item.substring(0, 2), firstTwoLetters.push(firstTwoChars), firstTwoChars;
+  });
 };
 function convertToNumbers(arr) {
   let strengthValues2 = {
@@ -2794,7 +2824,7 @@ function convertToNumbers(arr) {
     return firstLetter === "B" ? -secondNumber : secondNumber;
   }).reduce((sum, value) => sum + value, 0);
   function getClass(totalSum2) {
-    for (let item of scoreMatrix2) {
+    for (let item of scoreMatrix) {
       let [minScore, maxScore] = item.score;
       if (totalSum2 >= minScore && totalSum2 <= maxScore)
         return item.name;
@@ -2804,7 +2834,7 @@ function convertToNumbers(arr) {
   let classification = getClass(totalSum), obj = {};
   return obj.totalSum = totalSum, obj.classification = classification, obj;
 }
-var scoreMatrix2 = [
+var scoreMatrix = [
   {
     name: "Benign",
     score: [-100, -7]
@@ -2829,7 +2859,7 @@ var scoreMatrix2 = [
 
 // app/components/acmg_calcv1.tsx
 var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), ACMGCalculator = () => {
-  let [selectedCriteria, setSelectedCriteria] = (0, import_react17.useState)({}), [scores, setScores] = (0, import_react17.useState)({}), [criteriaArray, setCriteriaArray] = (0, import_react17.useState)([]), handleSelect = (group, category, label) => {
+  let [selectedCriteria, setSelectedCriteria] = (0, import_react17.useState)({}), [criteriaArray, setCriteriaArray] = (0, import_react17.useState)([]), handleSelect = (group, category, label) => {
     let newSelectedCriteria = { ...selectedCriteria };
     newSelectedCriteria[group] = {
       ...newSelectedCriteria[group],
@@ -2852,7 +2882,7 @@ var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), ACMGCalculator 
       JSON.stringify(selectedCriteria)
     ] }, void 0, !0, {
       fileName: "app/components/acmg_calcv1.tsx",
-      lineNumber: 53,
+      lineNumber: 59,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-2xl font-bold", children: [
@@ -2860,26 +2890,26 @@ var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), ACMGCalculator 
       JSON.stringify(criteriaArray)
     ] }, void 0, !0, {
       fileName: "app/components/acmg_calcv1.tsx",
-      lineNumber: 60,
+      lineNumber: 64,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(CriteriaTracker, { criteria: criteriaArray }, void 0, !1, {
       fileName: "app/components/acmg_calcv1.tsx",
-      lineNumber: 64,
+      lineNumber: 68,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("form", { method: "POST", children: [
       Object.keys(acmgCriteria).map((group) => /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "mb-4", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h2", { className: "mb-2 text-center text-base font-semibold capitalize", children: group }, void 0, !1, {
           fileName: "app/components/acmg_calcv1.tsx",
-          lineNumber: 68,
+          lineNumber: 72,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex flex-col justify-around", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "mb-2", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { children: "Benign:" }, void 0, !1, {
               fileName: "app/components/acmg_calcv1.tsx",
-              lineNumber: 73,
+              lineNumber: 77,
               columnNumber: 17
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
@@ -2895,13 +2925,13 @@ var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), ACMGCalculator 
                 children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("option", { value: "", children: "--Please choose an option--" }, void 0, !1, {
                     fileName: "app/components/acmg_calcv1.tsx",
-                    lineNumber: 85,
+                    lineNumber: 89,
                     columnNumber: 19
                   }, this),
                   acmgCriteria[group].benign.map(
                     (label) => /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("option", { value: label, children: label }, label, !1, {
                       fileName: "app/components/acmg_calcv1.tsx",
-                      lineNumber: 88,
+                      lineNumber: 92,
                       columnNumber: 23
                     }, this)
                   )
@@ -2911,20 +2941,20 @@ var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), ACMGCalculator 
               !0,
               {
                 fileName: "app/components/acmg_calcv1.tsx",
-                lineNumber: 74,
+                lineNumber: 78,
                 columnNumber: 17
               },
               this
             )
           ] }, void 0, !0, {
             fileName: "app/components/acmg_calcv1.tsx",
-            lineNumber: 72,
+            lineNumber: 76,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { children: "Pathogenic:" }, void 0, !1, {
               fileName: "app/components/acmg_calcv1.tsx",
-              lineNumber: 96,
+              lineNumber: 100,
               columnNumber: 17
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
@@ -2939,12 +2969,12 @@ var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), ACMGCalculator 
                 children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("option", { value: "", children: "--Please choose an option--" }, void 0, !1, {
                     fileName: "app/components/acmg_calcv1.tsx",
-                    lineNumber: 107,
+                    lineNumber: 111,
                     columnNumber: 19
                   }, this),
                   acmgCriteria[group].pathogenic.map((label) => /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("option", { value: label, children: label }, label, !1, {
                     fileName: "app/components/acmg_calcv1.tsx",
-                    lineNumber: 111,
+                    lineNumber: 115,
                     columnNumber: 21
                   }, this))
                 ]
@@ -2953,24 +2983,24 @@ var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), ACMGCalculator 
               !0,
               {
                 fileName: "app/components/acmg_calcv1.tsx",
-                lineNumber: 97,
+                lineNumber: 101,
                 columnNumber: 17
               },
               this
             )
           ] }, void 0, !0, {
             fileName: "app/components/acmg_calcv1.tsx",
-            lineNumber: 95,
+            lineNumber: 99,
             columnNumber: 15
           }, this)
         ] }, void 0, !0, {
           fileName: "app/components/acmg_calcv1.tsx",
-          lineNumber: 71,
+          lineNumber: 75,
           columnNumber: 13
         }, this)
       ] }, group, !0, {
         fileName: "app/components/acmg_calcv1.tsx",
-        lineNumber: 67,
+        lineNumber: 71,
         columnNumber: 11
       }, this)),
       /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
@@ -2984,35 +3014,33 @@ var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), ACMGCalculator 
         !1,
         {
           fileName: "app/components/acmg_calcv1.tsx",
-          lineNumber: 120,
+          lineNumber: 124,
           columnNumber: 9
         },
         this
       ),
       /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("button", { className: "w-full rounded bg-blue-500 p-2 text-white", children: "Submit" }, void 0, !1, {
         fileName: "app/components/acmg_calcv1.tsx",
-        lineNumber: 126,
+        lineNumber: 130,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/components/acmg_calcv1.tsx",
-      lineNumber: 65,
+      lineNumber: 69,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/acmg_calcv1.tsx",
-    lineNumber: 52,
+    lineNumber: 58,
     columnNumber: 5
   }, this);
 }, acmg_calcv1_default = ACMGCalculator;
-function CriteriaTracker({
-  criteria: criteria2
-}) {
+function CriteriaTracker({ criteria: criteria2 }) {
   let rowData = criteria2.join(" ");
   return /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex flex-col gap-2", children: rowData }, void 0, !1, {
     fileName: "app/components/acmg_calcv1.tsx",
-    lineNumber: 145,
-    columnNumber: 5
+    lineNumber: 143,
+    columnNumber: 10
   }, this);
 }
 
@@ -3034,7 +3062,7 @@ function Beta() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-QRXJC4UM.js", imports: ["/build/_shared/chunk-LKOPCC2G.js", "/build/_shared/chunk-GUPKMWBY.js", "/build/_shared/chunk-ABY47LC6.js", "/build/_shared/chunk-TZ27RBAM.js", "/build/_shared/chunk-J2OVIFEL.js", "/build/_shared/chunk-HH3BOLTW.js", "/build/_shared/chunk-MQESCB4Y.js", "/build/_shared/chunk-R6ILELA2.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-ZRGO42PF.js", imports: ["/build/_shared/chunk-7OJRNDDL.js", "/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-UJ7DZ4SG.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-2EGZB6DV.js", imports: ["/build/_shared/chunk-VAV3AWZN.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-LTQ4DJ7Q.js", imports: ["/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-O4VUVY7V.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-BI2M2F2V.js", imports: ["/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-UVZSOROF.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-DADUMF7O.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-5UA2CLEY.js", imports: ["/build/_shared/chunk-V3RP5RFF.js", "/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-BLASU6X5.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-Q7G4BLON.js", imports: ["/build/_shared/chunk-VAV3AWZN.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "d5f83051", hmr: { runtime: "/build/_shared/chunk-J2OVIFEL.js", timestamp: 1684705614163 }, url: "/build/manifest-D5F83051.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-QRXJC4UM.js", imports: ["/build/_shared/chunk-LKOPCC2G.js", "/build/_shared/chunk-GUPKMWBY.js", "/build/_shared/chunk-ABY47LC6.js", "/build/_shared/chunk-TZ27RBAM.js", "/build/_shared/chunk-J2OVIFEL.js", "/build/_shared/chunk-HH3BOLTW.js", "/build/_shared/chunk-MQESCB4Y.js", "/build/_shared/chunk-R6ILELA2.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-ZRGO42PF.js", imports: ["/build/_shared/chunk-7OJRNDDL.js", "/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-N4GZYJNG.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-2EGZB6DV.js", imports: ["/build/_shared/chunk-VAV3AWZN.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-LTQ4DJ7Q.js", imports: ["/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-O4VUVY7V.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-BI2M2F2V.js", imports: ["/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-UVZSOROF.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-DADUMF7O.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-5UA2CLEY.js", imports: ["/build/_shared/chunk-V3RP5RFF.js", "/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-BLASU6X5.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-Q7G4BLON.js", imports: ["/build/_shared/chunk-VAV3AWZN.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "64b9b350", hmr: { runtime: "/build/_shared/chunk-J2OVIFEL.js", timestamp: 1684706270870 }, url: "/build/manifest-64B9B350.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { unstable_dev: !0, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !1, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_react_stream_exports }, dev = { websocketPort: 3002 }, routes = {
