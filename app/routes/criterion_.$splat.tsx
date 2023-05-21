@@ -55,42 +55,44 @@ const schema = z.object({
 });
 
 type ActionInput = z.infer<typeof schema>;
-export async function action({request, params}: ActionArgs) {
- const criterionId = params.splat
-const userId = useAuth
-if(!userId){
-  return redirect('/sign-in')
-}
+export async function action({ request, params }: ActionArgs) {
+  const criterionId = params.splat;
+  const userId = useAuth;
+  if (!userId) {
+    return redirect("/sign-in");
+  }
 
-const {formData,errors} = await validateAction({request, schema})
+  const { formData, errors } = await validateAction({ request, schema });
 
-if(errors){
-  return json({errors})
-}
-const {criterionName, definition, evidenceType, example, criterionBaseWeight, caveat} = formData  as ActionInput
-
-const updated= await prisma.criterion.update({
-  where: {
-    id: criterionId
-  },
-  data: {
+  if (errors) {
+    return json({ errors });
+  }
+  const {
     criterionName,
     definition,
     evidenceType,
     example,
     criterionBaseWeight,
-    caveat
+    caveat,
+  } = formData as ActionInput;
+
+  const updated = await prisma.criterion.update({
+    where: {
+      id: criterionId,
+    },
+    data: {
+      criterionName,
+      definition,
+      evidenceType,
+      example,
+      criterionBaseWeight,
+      caveat,
+    },
+  });
+
+  if (updated) {
+    return redirect("/criterion");
   }
-})
-
-if(updated){
-  return redirect('/criterion')
-}
-
-
-
-
-
 }
 export default function EditIndex() {
   const data = useLoaderData<typeof loader>();
@@ -105,7 +107,7 @@ export default function EditIndex() {
           Criterion Name
         </label>
         <input
-        className="border-2 border-gray-400 rounded-md p-2 text-black"
+          className="rounded-md border-2 border-gray-400 p-2 text-black"
           type="text"
           name="criterionName"
           id="criterionName"
@@ -117,7 +119,7 @@ export default function EditIndex() {
             Definition
           </label>
           <input
-          className="border-2 border-gray-400 rounded-md p-2 text-black"
+            className="rounded-md border-2 border-gray-400 p-2 text-black"
             type="text"
             name="definition"
             id="definition"
@@ -130,7 +132,7 @@ export default function EditIndex() {
             Evidence Type
           </label>
           <input
-          className="border-2 border-gray-400 rounded-md p-2 text-black"
+            className="rounded-md border-2 border-gray-400 p-2 text-black"
             type="text"
             name="evidenceType"
             id="evidenceType"
@@ -143,7 +145,7 @@ export default function EditIndex() {
             Example
           </label>
           <input
-          className="border-2 border-gray-400 rounded-md p-2 text-black"
+            className="rounded-md border-2 border-gray-400 p-2 text-black"
             type="text"
             name="example"
             id="example"
@@ -156,7 +158,7 @@ export default function EditIndex() {
             Criterion Base Weight
           </label>
           <select
-          className="border-2 border-gray-400 rounded-md p-2 text-black"
+            className="rounded-md border-2 border-gray-400 p-2 text-black"
             name="criterionBaseWeight"
             id="criterionBaseWeight"
             defaultValue={data.criterion[0].criterionBaseWeight}
@@ -173,7 +175,7 @@ export default function EditIndex() {
             Caveat
           </label>
           <input
-          className="border-2 border-gray-400 rounded-md p-2 text-black"
+            className="rounded-md border-2 border-gray-400 p-2 text-black"
             type="text"
             name="caveat"
             id="caveat"

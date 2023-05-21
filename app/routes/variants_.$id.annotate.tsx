@@ -58,20 +58,17 @@ export default function BetaRoute() {
   const [totals, setTotals] = React.useState<number>(0);
   const [classification, setClassification] =
     React.useState<string>("No classification");
-const [dropdown, setDropdown] = React.useState(false);
- const optionsRef = React.useRef<HTMLOptionElement>(null);
- const [reset, setReset] = React.useState(false);
+  const [dropdown, setDropdown] = React.useState(false);
+  const optionsRef = React.useRef<HTMLOptionElement>(null);
+  const [reset, setReset] = React.useState(false);
 
- const formRef = React.useRef<HTMLFormElement>(null);
-const calculatorRef = React.useRef<HTMLDivElement>(null);
-React.useEffect(() => {
-  if(reset){
-    formRef.current?.reset()
-   
-  }
-}, [reset])
-
-
+  const formRef = React.useRef<HTMLFormElement>(null);
+  const calculatorRef = React.useRef<HTMLDivElement>(null);
+  React.useEffect(() => {
+    if (reset) {
+      formRef.current?.reset();
+    }
+  }, [reset]);
 
   // create a function to handle the choices from the select boxes
   function handleChoices(event: React.ChangeEvent<HTMLSelectElement>) {
@@ -130,32 +127,32 @@ React.useEffect(() => {
     }
   }
 
-  const handleClickOutside= (event:MouseEvent): void => {
-    if(optionsRef.current && !optionsRef.current.contains(event.target as Node)){
-      setDropdown(false)
+  const handleClickOutside = (event: MouseEvent): void => {
+    if (
+      optionsRef.current &&
+      !optionsRef.current.contains(event.target as Node)
+    ) {
+      setDropdown(false);
     }
-  }
+  };
 
   React.useEffect(() => {
-    document.addEventListener('mouseleave', handleClickOutside)
+    document.addEventListener("mouseleave", handleClickOutside);
     return () => {
-      document.removeEventListener('mouseleave', handleClickOutside)
-    }
-  }, [])
-  
-function handleReset():void{
- setReset(!reset)
+      document.removeEventListener("mouseleave", handleClickOutside);
+    };
+  }, []);
 
-}
+  function handleReset(): void {
+    setReset(!reset);
+  }
   return (
     <div className="flex min-h-screen flex-col  p-2">
       <div
-      ref={calculatorRef}
-      
-      className="flex w-full flex-col items-center gap-1">
-        <h3
-
-        className="text-2xl font-bold">ACMG Classification</h3>
+        ref={calculatorRef}
+        className="flex w-full flex-col items-center gap-1"
+      >
+        <h3 className="text-2xl font-bold">ACMG Classification</h3>
         <p className="text-xl font-bold"> {criterias}</p>
         <p className="text-xl font-bold">
           Total Score: {totals !== 0 ? totals : 0}
@@ -166,9 +163,11 @@ function handleReset():void{
         <BayesTable />
 
         <Form
-        id='form'
+          id="form"
           ref={formRef}
-        method="post" className="flex w-1/2 flex-col gap-1">
+          method="post"
+          className="flex w-1/2 flex-col gap-1"
+        >
           {criteria.map((population) => (
             <>
               <label
@@ -179,8 +178,8 @@ function handleReset():void{
               </label>
 
               <select
-            data-state={dropdown}
-              id='select'
+                data-state={dropdown}
+                id="select"
                 title={population.name}
                 className="rounded-md border border-gray-300 text-black"
                 key={population.id}
@@ -189,10 +188,9 @@ function handleReset():void{
               >
                 {population.strength.map((strength) => (
                   <option
-
-                  ref={optionsRef}
-                  data-category-type={strength.value.slice(0, 1)}
-                  data-etype={population.name}
+                    ref={optionsRef}
+                    data-category-type={strength.value.slice(0, 1)}
+                    data-etype={population.name}
                     placeholder="Pick a Criterion"
                     key={strength.id}
                     value={strength.value}
@@ -204,26 +202,22 @@ function handleReset():void{
               </select>
             </>
           ))}
-         <div className="flex w-full flex-row items-center gap-1">
-         <Button
-          variant="primary_filled"
-          size='base'
-            type="submit"
-          >
-            Submit
-          </Button>
-          <Button 
-           variant="warning_filled"
-           size='base'
-            type='button'
-          onClick={handleReset}>Reset</Button>
+          <div className="flex w-full flex-row items-center gap-1">
+            <Button variant="primary_filled" size="base" type="submit">
+              Submit
+            </Button>
+            <Button
+              variant="warning_filled"
+              size="base"
+              type="button"
+              onClick={handleReset}
+            >
+              Reset
+            </Button>
           </div>
-
         </Form>
       </div>
-
     </div>
-
   );
 }
 
@@ -240,5 +234,3 @@ function getNumbers(trimmedCriteria: string[]) {
   });
   return myArray;
 }
-
-

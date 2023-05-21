@@ -1,32 +1,8 @@
-export const radios = [
-  {
-    option: "Very Strong",
-  },
-  {
-    option: "Strong",
-  },
-  {
-    option: "Moderate",
-  },
-  {
-    option: "Supporting",
-  },
-  {
-    option: "Stand alone",
-  },
-];
-
 export const criteria = [
   {
     id: "1",
     name: "Population",
     strength: [
-      {
-        id: "0",
-        value: "",
-        label: "Pick a Criterion",
-      },
-
       {
         id: "1",
         value: "P_2",
@@ -57,36 +33,31 @@ export const criteria = [
         value: "B_4",
         label: "BS2",
       },
-      
     ],
   },
   {
-
     id: "1.1",
-    name: 'Computational and Predictive',
+    name: "Computational and Predictive",
     strength: [
-      {
-        id: "0",
-        value: "",
-        label: "Pick a Criterion",
-      },
-      
       {
         id: "4",
         value: "B_1",
         label: "BP4",
-      }, {
+      },
+      {
         id: "10",
         value: "B_1",
         label: "BP1",
-      },{
+      },
+      {
         id: "12",
         value: "B_1",
         label: "BP7",
-      }, {
-        id:'4.5',
-        value:'P_1',
-        label:'PP3'
+      },
+      {
+        id: "4.5",
+        value: "P_1",
+        label: "PP3",
       },
       {
         id: "11",
@@ -135,11 +106,6 @@ export const criteria = [
     name: "Functional",
     strength: [
       {
-        id: "0",
-        value: "",
-        label: "Pick a Criterion",
-      },
-      {
         id: "1",
         value: "P_4",
         label: "PS3",
@@ -154,28 +120,19 @@ export const criteria = [
         value: "P_2",
         label: "PM1",
       },
-      
+
       {
         id: "9",
         value: "P_1",
         label: "PP2",
       },
-      
-     
     ],
   },
-  
-  
-  {
 
+  {
     id: "4.1",
-    name: 'Segregation',
+    name: "Segregation",
     strength: [
-      {
-        id: "0",
-        value: "",
-        label: "Pick a Criterion",
-      },
       {
         id: "5",
         value: "P_1",
@@ -190,40 +147,30 @@ export const criteria = [
   },
   {
     id: "4.5",
-    name: 'De Novo',
+    name: "De Novo",
     strength: [
       {
-        id: "0",
-        value: "",
-        label: "Pick a Criterion",
-      },  
-      
-        {
-          id: '0.5',
-          value: "P_4",
-          label: "PS2",
-        },
-        {
-          id: "3",
-          value: "P_2",
-          label: "PM6",
-        }
-      ],
-  } ,
+        id: "0.5",
+        value: "P_4",
+        label: "PS2",
+      },
+      {
+        id: "3",
+        value: "P_2",
+        label: "PM6",
+      },
+    ],
+  },
   {
     id: "4.6",
-    name: 'Allelic',
+    name: "Allelic",
     strength: [
-      {
-        id: "0",
-        value: "",
-        label: "Pick a Criterion",
-      },
       {
         id: "7",
         value: "B_1",
         label: "BP2",
-      },{
+      },
+      {
         id: "4",
         value: "P_2",
         label: "PM3",
@@ -234,11 +181,6 @@ export const criteria = [
     id: "4",
     name: "Other Database",
     strength: [
-      {
-        id: "0",
-        value: "",
-        label: "Pick a Criterion",
-      },
       {
         id: "1",
         value: "P_1",
@@ -257,52 +199,21 @@ export const criteria = [
     name: "Other Data",
     strength: [
       {
-        id: "0",
-        value: "",
-        label: "Pick a Criterion",
-      },
-     
-      
-     
-     
-      
-     
-      {
         id: "6",
         value: "P_1",
         label: "PP4",
       },
-      
+
       {
         id: "8",
         value: "B_1",
         label: "BP5",
       },
-      
-      
-      
     ],
   },
 ];
-export const scoreMatrix = [
-  {
-    name: "Benign",
-    score: [-100, -7],
-  },
-  {
-    name: "Likely Benign",
-    score: [-1, -6],
-  },
-  {
-    name: "Variant of Uncertain Significance",
-    score: [0, 5],
-  },
-  {
-    name: "Likely Pathogenic",
-    score: [6, 9],
-  },
-  {
-    name: "Pathogenic",
-    score: [10, 100],
-  },
-];
+
+type ScoreMatrixItem = {
+  name: string;
+  score: [number, number];
+};

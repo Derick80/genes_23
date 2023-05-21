@@ -146,102 +146,62 @@ __export(root_exports, {
 var import_node2 = require("@remix-run/node"), import_react3 = require("@remix-run/react");
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-XDPXME6P.css";
+var tailwind_default = "/build/_assets/tailwind-QFDLCKRB.css";
 
 // app/components/layout.tsx
 var import_remix = require("@clerk/remix"), import_react2 = require("@remix-run/react"), import_jsx_dev_runtime2 = require("react/jsx-dev-runtime");
 function Layout({ children }) {
   let { userId } = (0, import_remix.useAuth)();
   return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex min-h-screen flex-col bg-gray-900 p-1 text-gray-100", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("header", { className: "fixed left-0 right-0 top-0 z-50 flex flex-wrap items-center justify-between gap-2  shadow-md bg-gray-800 p-1 text-gray-100 ", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("header", { className: "fixed left-0 right-0 top-0 z-50 flex flex-wrap items-center justify-between gap-2  bg-gray-800 p-1 text-gray-100 shadow-md ", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-2xl font-bold", children: "ACMG Variant Classifications" }, void 0, !1, {
         fileName: "app/components/layout.tsx",
         lineNumber: 10,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("ul", { className: "flex gap-1", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
-          "li",
-          {
-            className: "font-semibold",
-            children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Link, { to: "/", children: "Home" }, void 0, !1, {
-              fileName: "app/components/layout.tsx",
-              lineNumber: 15,
-              columnNumber: 13
-            }, this)
-          },
-          void 0,
-          !1,
-          {
-            fileName: "app/components/layout.tsx",
-            lineNumber: 12,
-            columnNumber: 11
-          },
-          this
-        ),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
-          "li",
-          {
-            className: "font-semibold",
-            children: [
-              "            ",
-              /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Link, { to: "/criterion", children: "Criterion" }, void 0, !1, {
-                fileName: "app/components/layout.tsx",
-                lineNumber: 19,
-                columnNumber: 24
-              }, this)
-            ]
-          },
-          void 0,
-          !0,
-          {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("li", { className: "font-semibold", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Link, { to: "/", children: "Home" }, void 0, !1, {
+          fileName: "app/components/layout.tsx",
+          lineNumber: 13,
+          columnNumber: 13
+        }, this) }, void 0, !1, {
+          fileName: "app/components/layout.tsx",
+          lineNumber: 12,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("li", { className: "font-semibold", children: [
+          " ",
+          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Link, { to: "/criterion", children: "Criterion" }, void 0, !1, {
             fileName: "app/components/layout.tsx",
             lineNumber: 17,
-            columnNumber: 11
-          },
-          this
-        ),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
-          "li",
-          {
-            className: "font-semibold",
-            children: [
-              "            ",
-              /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Link, { to: "variants", children: "Variants" }, void 0, !1, {
-                fileName: "app/components/layout.tsx",
-                lineNumber: 23,
-                columnNumber: 24
-              }, this)
-            ]
-          },
-          void 0,
-          !0,
-          {
+            columnNumber: 13
+          }, this)
+        ] }, void 0, !0, {
+          fileName: "app/components/layout.tsx",
+          lineNumber: 15,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("li", { className: "font-semibold", children: [
+          " ",
+          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Link, { to: "variants", children: "Variants" }, void 0, !1, {
             fileName: "app/components/layout.tsx",
             lineNumber: 21,
-            columnNumber: 11
-          },
-          this
-        ),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
-          "li",
-          {
-            className: "font-semibold",
-            children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Link, { to: "/calculator", children: "Calculator" }, void 0, !1, {
-              fileName: "app/components/layout.tsx",
-              lineNumber: 27,
-              columnNumber: 11
-            }, this)
-          },
-          void 0,
-          !1,
-          {
-            fileName: "app/components/layout.tsx",
-            lineNumber: 25,
-            columnNumber: 11
-          },
-          this
-        )
+            columnNumber: 13
+          }, this)
+        ] }, void 0, !0, {
+          fileName: "app/components/layout.tsx",
+          lineNumber: 19,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("li", { className: "font-semibold", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Link, { to: "/calculator", children: "Calculator" }, void 0, !1, {
+          fileName: "app/components/layout.tsx",
+          lineNumber: 24,
+          columnNumber: 13
+        }, this) }, void 0, !1, {
+          fileName: "app/components/layout.tsx",
+          lineNumber: 23,
+          columnNumber: 11
+        }, this)
       ] }, void 0, !0, {
         fileName: "app/components/layout.tsx",
         lineNumber: 11,
@@ -250,33 +210,33 @@ function Layout({ children }) {
       userId ? /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_jsx_dev_runtime2.Fragment, { children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_remix.UserButton, {}, void 0, !1, {
           fileName: "app/components/layout.tsx",
-          lineNumber: 32,
+          lineNumber: 29,
           columnNumber: 13
         }, this),
         " ",
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Link, { to: "/sign-out", children: "Sign Out" }, void 0, !1, {
           fileName: "app/components/layout.tsx",
-          lineNumber: 32,
+          lineNumber: 29,
           columnNumber: 28
         }, this)
       ] }, void 0, !0, {
         fileName: "app/components/layout.tsx",
-        lineNumber: 31,
+        lineNumber: 28,
         columnNumber: 11
-      }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex gap-1 text-semibold", children: [
+      }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "text-semibold flex gap-1", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Link, { to: "/sign-in", children: "Sign In" }, void 0, !1, {
           fileName: "app/components/layout.tsx",
-          lineNumber: 36,
+          lineNumber: 33,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Link, { to: "/sign-up", children: "Sign Up" }, void 0, !1, {
           fileName: "app/components/layout.tsx",
-          lineNumber: 37,
+          lineNumber: 34,
           columnNumber: 13
         }, this)
       ] }, void 0, !0, {
         fileName: "app/components/layout.tsx",
-        lineNumber: 35,
+        lineNumber: 32,
         columnNumber: 11
       }, this)
     ] }, void 0, !0, {
@@ -284,49 +244,29 @@ function Layout({ children }) {
       lineNumber: 9,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("main", { className: "mt-20 relative flex-1", children }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("main", { className: "relative mt-20 flex-1", children }, void 0, !1, {
       fileName: "app/components/layout.tsx",
-      lineNumber: 41,
+      lineNumber: 38,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("footer", { className: "fixed left-0 right-0 bottom-0 z-50 h-10 justify-center flex  items-center bg-gray-800 text-gray-100 shadow-md", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("ul", { className: "flex gap-1", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
-        "li",
-        {
-          className: "font-semibold",
-          children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
-            import_react2.Link,
-            {
-              to: "/https://github.com/Derick80",
-              children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-sm", children: "Github" }, void 0, !1, {
-                fileName: "app/components/layout.tsx",
-                lineNumber: 49,
-                columnNumber: 15
-              }, this)
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/components/layout.tsx",
-              lineNumber: 47,
-              columnNumber: 13
-            },
-            this
-          )
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/components/layout.tsx",
-          lineNumber: 44,
-          columnNumber: 11
-        },
-        this
-      ),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("footer", { className: "fixed left-0 right-0 bottom-0 z-50 flex h-10 items-center  justify-center bg-gray-800 text-gray-100 shadow-md", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("ul", { className: "flex gap-1", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("li", { className: "font-semibold", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Link, { to: "/https://github.com/Derick80", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-sm", children: "Github" }, void 0, !1, {
+        fileName: "app/components/layout.tsx",
+        lineNumber: 43,
+        columnNumber: 15
+      }, this) }, void 0, !1, {
+        fileName: "app/components/layout.tsx",
+        lineNumber: 42,
+        columnNumber: 13
+      }, this) }, void 0, !1, {
+        fileName: "app/components/layout.tsx",
+        lineNumber: 41,
+        columnNumber: 11
+      }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("li", { className: "flex gap-1 font-semibold", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-sm ", children: "Copyright" }, void 0, !1, {
           fileName: "app/components/layout.tsx",
-          lineNumber: 53,
+          lineNumber: 47,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-sm", children: [
@@ -334,54 +274,34 @@ function Layout({ children }) {
           (/* @__PURE__ */ new Date()).getFullYear()
         ] }, void 0, !0, {
           fileName: "app/components/layout.tsx",
-          lineNumber: 56,
+          lineNumber: 48,
           columnNumber: 13
         }, this)
       ] }, void 0, !0, {
         fileName: "app/components/layout.tsx",
-        lineNumber: 52,
+        lineNumber: 46,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
-        "li",
-        {
-          className: "font-semibold",
-          children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
-            import_react2.Link,
-            {
-              to: "/https://twitter.com/Derick80",
-              children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-sm", children: "Twitter" }, void 0, !1, {
-                fileName: "app/components/layout.tsx",
-                lineNumber: 64,
-                columnNumber: 15
-              }, this)
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/components/layout.tsx",
-              lineNumber: 62,
-              columnNumber: 13
-            },
-            this
-          )
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/components/layout.tsx",
-          lineNumber: 59,
-          columnNumber: 11
-        },
-        this
-      )
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("li", { className: "font-semibold", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Link, { to: "/https://twitter.com/Derick80", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-sm", children: "Twitter" }, void 0, !1, {
+        fileName: "app/components/layout.tsx",
+        lineNumber: 52,
+        columnNumber: 15
+      }, this) }, void 0, !1, {
+        fileName: "app/components/layout.tsx",
+        lineNumber: 51,
+        columnNumber: 13
+      }, this) }, void 0, !1, {
+        fileName: "app/components/layout.tsx",
+        lineNumber: 50,
+        columnNumber: 11
+      }, this)
     ] }, void 0, !0, {
       fileName: "app/components/layout.tsx",
-      lineNumber: 43,
+      lineNumber: 40,
       columnNumber: 9
     }, this) }, void 0, !1, {
       fileName: "app/components/layout.tsx",
-      lineNumber: 42,
+      lineNumber: 39,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
@@ -670,11 +590,6 @@ var criteria = [
     name: "Population",
     strength: [
       {
-        id: "0",
-        value: "",
-        label: "Pick a Criterion"
-      },
-      {
         id: "1",
         value: "P_2",
         label: "PM2"
@@ -710,11 +625,6 @@ var criteria = [
     id: "1.1",
     name: "Computational and Predictive",
     strength: [
-      {
-        id: "0",
-        value: "",
-        label: "Pick a Criterion"
-      },
       {
         id: "4",
         value: "B_1",
@@ -782,11 +692,6 @@ var criteria = [
     name: "Functional",
     strength: [
       {
-        id: "0",
-        value: "",
-        label: "Pick a Criterion"
-      },
-      {
         id: "1",
         value: "P_4",
         label: "PS3"
@@ -813,11 +718,6 @@ var criteria = [
     name: "Segregation",
     strength: [
       {
-        id: "0",
-        value: "",
-        label: "Pick a Criterion"
-      },
-      {
         id: "5",
         value: "P_1",
         label: "PP1"
@@ -833,11 +733,6 @@ var criteria = [
     id: "4.5",
     name: "De Novo",
     strength: [
-      {
-        id: "0",
-        value: "",
-        label: "Pick a Criterion"
-      },
       {
         id: "0.5",
         value: "P_4",
@@ -855,11 +750,6 @@ var criteria = [
     name: "Allelic",
     strength: [
       {
-        id: "0",
-        value: "",
-        label: "Pick a Criterion"
-      },
-      {
         id: "7",
         value: "B_1",
         label: "BP2"
@@ -876,11 +766,6 @@ var criteria = [
     name: "Other Database",
     strength: [
       {
-        id: "0",
-        value: "",
-        label: "Pick a Criterion"
-      },
-      {
         id: "1",
         value: "P_1",
         label: "PP5"
@@ -896,11 +781,6 @@ var criteria = [
     id: "5",
     name: "Other Data",
     strength: [
-      {
-        id: "0",
-        value: "",
-        label: "Pick a Criterion"
-      },
       {
         id: "6",
         value: "P_1",
@@ -980,27 +860,17 @@ function BetaRoute() {
         ref: calculatorRef,
         className: "flex w-full flex-col items-center gap-1",
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
-            "h3",
-            {
-              className: "text-2xl font-bold",
-              children: "ACMG Classification"
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/routes/variants_.$id.annotate.tsx",
-              lineNumber: 156,
-              columnNumber: 9
-            },
-            this
-          ),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("h3", { className: "text-2xl font-bold", children: "ACMG Classification" }, void 0, !1, {
+            fileName: "app/routes/variants_.$id.annotate.tsx",
+            lineNumber: 155,
+            columnNumber: 9
+          }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("p", { className: "text-xl font-bold", children: [
             " ",
             criterias
           ] }, void 0, !0, {
             fileName: "app/routes/variants_.$id.annotate.tsx",
-            lineNumber: 159,
+            lineNumber: 156,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("p", { className: "text-xl font-bold", children: [
@@ -1008,7 +878,7 @@ function BetaRoute() {
             totals !== 0 ? totals : 0
           ] }, void 0, !0, {
             fileName: "app/routes/variants_.$id.annotate.tsx",
-            lineNumber: 160,
+            lineNumber: 157,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("p", { className: "text-xl font-bold", children: [
@@ -1016,7 +886,7 @@ function BetaRoute() {
             classification
           ] }, void 0, !0, {
             fileName: "app/routes/variants_.$id.annotate.tsx",
-            lineNumber: 163,
+            lineNumber: 160,
             columnNumber: 9
           }, this)
         ]
@@ -1025,7 +895,7 @@ function BetaRoute() {
       !0,
       {
         fileName: "app/routes/variants_.$id.annotate.tsx",
-        lineNumber: 152,
+        lineNumber: 151,
         columnNumber: 7
       },
       this
@@ -1033,7 +903,7 @@ function BetaRoute() {
     /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex w-full flex-row items-center gap-1", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(BayesTable, {}, void 0, !1, {
         fileName: "app/routes/variants_.$id.annotate.tsx",
-        lineNumber: 166,
+        lineNumber: 163,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
@@ -1055,7 +925,7 @@ function BetaRoute() {
                 !1,
                 {
                   fileName: "app/routes/variants_.$id.annotate.tsx",
-                  lineNumber: 174,
+                  lineNumber: 173,
                   columnNumber: 15
                 },
                 this
@@ -1084,7 +954,7 @@ function BetaRoute() {
                     !1,
                     {
                       fileName: "app/routes/variants_.$id.annotate.tsx",
-                      lineNumber: 191,
+                      lineNumber: 190,
                       columnNumber: 19
                     },
                     this
@@ -1094,34 +964,22 @@ function BetaRoute() {
                 !1,
                 {
                   fileName: "app/routes/variants_.$id.annotate.tsx",
-                  lineNumber: 181,
+                  lineNumber: 180,
                   columnNumber: 15
                 },
                 this
               )
             ] }, void 0, !0, {
               fileName: "app/routes/variants_.$id.annotate.tsx",
-              lineNumber: 173,
+              lineNumber: 172,
               columnNumber: 13
             }, this)),
             /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex w-full flex-row items-center gap-1", children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
-                Button,
-                {
-                  variant: "primary_filled",
-                  size: "base",
-                  type: "submit",
-                  children: "Submit"
-                },
-                void 0,
-                !1,
-                {
-                  fileName: "app/routes/variants_.$id.annotate.tsx",
-                  lineNumber: 208,
-                  columnNumber: 10
-                },
-                this
-              ),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(Button, { variant: "primary_filled", size: "base", type: "submit", children: "Submit" }, void 0, !1, {
+                fileName: "app/routes/variants_.$id.annotate.tsx",
+                lineNumber: 206,
+                columnNumber: 13
+              }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
                 Button,
                 {
@@ -1135,15 +993,15 @@ function BetaRoute() {
                 !1,
                 {
                   fileName: "app/routes/variants_.$id.annotate.tsx",
-                  lineNumber: 215,
-                  columnNumber: 11
+                  lineNumber: 209,
+                  columnNumber: 13
                 },
                 this
               )
             ] }, void 0, !0, {
               fileName: "app/routes/variants_.$id.annotate.tsx",
-              lineNumber: 207,
-              columnNumber: 10
+              lineNumber: 205,
+              columnNumber: 11
             }, this)
           ]
         },
@@ -1151,19 +1009,19 @@ function BetaRoute() {
         !0,
         {
           fileName: "app/routes/variants_.$id.annotate.tsx",
-          lineNumber: 168,
+          lineNumber: 165,
           columnNumber: 9
         },
         this
       )
     ] }, void 0, !0, {
       fileName: "app/routes/variants_.$id.annotate.tsx",
-      lineNumber: 165,
+      lineNumber: 162,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/variants_.$id.annotate.tsx",
-    lineNumber: 151,
+    lineNumber: 150,
     columnNumber: 5
   }, this);
 }
@@ -1256,7 +1114,14 @@ async function action2({ request, params }) {
   let { formData, errors } = await validateAction({ request, schema });
   if (errors)
     return (0, import_node4.json)({ errors });
-  let { criterionName, definition, evidenceType, example, criterionBaseWeight, caveat } = formData;
+  let {
+    criterionName,
+    definition,
+    evidenceType,
+    example,
+    criterionBaseWeight,
+    caveat
+  } = formData;
   if (await prisma.criterion.update({
     where: {
       id: criterionId
@@ -1282,13 +1147,13 @@ function EditIndex() {
       children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("label", { className: "text-xl font-bold", htmlFor: "criterionName", children: "Criterion Name" }, void 0, !1, {
           fileName: "app/routes/criterion_.$splat.tsx",
-          lineNumber: 104,
+          lineNumber: 106,
           columnNumber: 9
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(
           "input",
           {
-            className: "border-2 border-gray-400 rounded-md p-2 text-black",
+            className: "rounded-md border-2 border-gray-400 p-2 text-black",
             type: "text",
             name: "criterionName",
             id: "criterionName",
@@ -1299,7 +1164,7 @@ function EditIndex() {
           !1,
           {
             fileName: "app/routes/criterion_.$splat.tsx",
-            lineNumber: 107,
+            lineNumber: 109,
             columnNumber: 9
           },
           this
@@ -1307,13 +1172,13 @@ function EditIndex() {
         /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("label", { className: "text-xl font-bold", htmlFor: "definition", children: "Definition" }, void 0, !1, {
             fileName: "app/routes/criterion_.$splat.tsx",
-            lineNumber: 116,
+            lineNumber: 118,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(
             "input",
             {
-              className: "border-2 border-gray-400 rounded-md p-2 text-black",
+              className: "rounded-md border-2 border-gray-400 p-2 text-black",
               type: "text",
               name: "definition",
               id: "definition",
@@ -1324,26 +1189,26 @@ function EditIndex() {
             !1,
             {
               fileName: "app/routes/criterion_.$splat.tsx",
-              lineNumber: 119,
+              lineNumber: 121,
               columnNumber: 11
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/criterion_.$splat.tsx",
-          lineNumber: 115,
+          lineNumber: 117,
           columnNumber: 9
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("label", { className: "text-xl font-bold", htmlFor: "evidenceType", children: "Evidence Type" }, void 0, !1, {
             fileName: "app/routes/criterion_.$splat.tsx",
-            lineNumber: 129,
+            lineNumber: 131,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(
             "input",
             {
-              className: "border-2 border-gray-400 rounded-md p-2 text-black",
+              className: "rounded-md border-2 border-gray-400 p-2 text-black",
               type: "text",
               name: "evidenceType",
               id: "evidenceType",
@@ -1354,26 +1219,26 @@ function EditIndex() {
             !1,
             {
               fileName: "app/routes/criterion_.$splat.tsx",
-              lineNumber: 132,
+              lineNumber: 134,
               columnNumber: 11
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/criterion_.$splat.tsx",
-          lineNumber: 128,
+          lineNumber: 130,
           columnNumber: 9
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("label", { className: "text-xl font-bold", htmlFor: "example", children: "Example" }, void 0, !1, {
             fileName: "app/routes/criterion_.$splat.tsx",
-            lineNumber: 142,
+            lineNumber: 144,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(
             "input",
             {
-              className: "border-2 border-gray-400 rounded-md p-2 text-black",
+              className: "rounded-md border-2 border-gray-400 p-2 text-black",
               type: "text",
               name: "example",
               id: "example",
@@ -1384,53 +1249,53 @@ function EditIndex() {
             !1,
             {
               fileName: "app/routes/criterion_.$splat.tsx",
-              lineNumber: 145,
+              lineNumber: 147,
               columnNumber: 11
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/criterion_.$splat.tsx",
-          lineNumber: 141,
+          lineNumber: 143,
           columnNumber: 9
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("label", { className: "text-xl font-bold", htmlFor: "criterionBaseWeight", children: "Criterion Base Weight" }, void 0, !1, {
             fileName: "app/routes/criterion_.$splat.tsx",
-            lineNumber: 155,
+            lineNumber: 157,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(
             "select",
             {
-              className: "border-2 border-gray-400 rounded-md p-2 text-black",
+              className: "rounded-md border-2 border-gray-400 p-2 text-black",
               name: "criterionBaseWeight",
               id: "criterionBaseWeight",
               defaultValue: data.criterion[0].criterionBaseWeight,
               children: [
                 /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("option", { value: "P", children: "Supporting" }, void 0, !1, {
                   fileName: "app/routes/criterion_.$splat.tsx",
-                  lineNumber: 164,
+                  lineNumber: 166,
                   columnNumber: 13
                 }, this),
                 /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("option", { value: "M", children: "Moderate" }, void 0, !1, {
                   fileName: "app/routes/criterion_.$splat.tsx",
-                  lineNumber: 165,
+                  lineNumber: 167,
                   columnNumber: 13
                 }, this),
                 /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("option", { value: "S", children: "Strong" }, void 0, !1, {
                   fileName: "app/routes/criterion_.$splat.tsx",
-                  lineNumber: 166,
+                  lineNumber: 168,
                   columnNumber: 13
                 }, this),
                 /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("option", { value: "VS", children: "Very Strong" }, void 0, !1, {
                   fileName: "app/routes/criterion_.$splat.tsx",
-                  lineNumber: 167,
+                  lineNumber: 169,
                   columnNumber: 13
                 }, this),
                 /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("option", { value: "SA", children: "Stand Alone" }, void 0, !1, {
                   fileName: "app/routes/criterion_.$splat.tsx",
-                  lineNumber: 168,
+                  lineNumber: 170,
                   columnNumber: 13
                 }, this)
               ]
@@ -1439,26 +1304,26 @@ function EditIndex() {
             !0,
             {
               fileName: "app/routes/criterion_.$splat.tsx",
-              lineNumber: 158,
+              lineNumber: 160,
               columnNumber: 11
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/criterion_.$splat.tsx",
-          lineNumber: 154,
+          lineNumber: 156,
           columnNumber: 9
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("label", { className: "text-xl font-bold", htmlFor: "caveat", children: "Caveat" }, void 0, !1, {
             fileName: "app/routes/criterion_.$splat.tsx",
-            lineNumber: 172,
+            lineNumber: 174,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(
             "input",
             {
-              className: "border-2 border-gray-400 rounded-md p-2 text-black",
+              className: "rounded-md border-2 border-gray-400 p-2 text-black",
               type: "text",
               name: "caveat",
               id: "caveat",
@@ -1471,19 +1336,19 @@ function EditIndex() {
             !1,
             {
               fileName: "app/routes/criterion_.$splat.tsx",
-              lineNumber: 175,
+              lineNumber: 177,
               columnNumber: 11
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/criterion_.$splat.tsx",
-          lineNumber: 171,
+          lineNumber: 173,
           columnNumber: 9
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(Button, { variant: "warning_filled", size: "large", type: "submit", children: "Submit" }, void 0, !1, {
           fileName: "app/routes/criterion_.$splat.tsx",
-          lineNumber: 186,
+          lineNumber: 188,
           columnNumber: 9
         }, this)
       ]
@@ -1492,13 +1357,13 @@ function EditIndex() {
     !0,
     {
       fileName: "app/routes/criterion_.$splat.tsx",
-      lineNumber: 100,
+      lineNumber: 102,
       columnNumber: 7
     },
     this
   ) }, void 0, !1, {
     fileName: "app/routes/criterion_.$splat.tsx",
-    lineNumber: 99,
+    lineNumber: 101,
     columnNumber: 5
   }, this);
 }
@@ -1698,35 +1563,26 @@ function VariantRoute() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex min-h-screen flex-col items-center justify-center gap-10 py-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("main", { className: "flex flex-1 flex-col items-center gap-2 px-20 text-center", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_react10.Outlet, {}, void 0, !1, {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 19,
+      lineNumber: 17,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("h1", { className: "text-6xl font-bold", children: "Variant" }, void 0, !1, {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 20,
+      lineNumber: 18,
       columnNumber: 9
     }, this),
-    data.variants.map((variant) => /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(
-      CardContainer,
-      {
-        variant
-      },
-      variant.id,
-      !1,
-      {
-        fileName: "app/routes/variants.tsx",
-        lineNumber: 23,
-        columnNumber: 9
-      },
-      this
-    ))
+    data.variants.map((variant) => /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(CardContainer, { variant }, variant.id, !1, {
+      fileName: "app/routes/variants.tsx",
+      lineNumber: 21,
+      columnNumber: 11
+    }, this))
   ] }, void 0, !0, {
     fileName: "app/routes/variants.tsx",
-    lineNumber: 18,
+    lineNumber: 16,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/routes/variants.tsx",
-    lineNumber: 17,
+    lineNumber: 15,
     columnNumber: 5
   }, this);
 }
@@ -1737,140 +1593,123 @@ var CardContainer = ({ variant }) => {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(
     "div",
     {
-      className: "w-[450px] h-[350px] bg-gray-800 rounded-md border-2 p-2 ",
-      children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "w-full h-full items-center relative transition-transform duration-800 preserve-3d transform-gpu", children: flip ? /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(
-        CardBack,
-        {
-          variant,
-          handleFlip
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/routes/variants.tsx",
-          lineNumber: 53,
-          columnNumber: 12
-        },
-        this
-      ) : /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(
-        CardFront,
-        {
-          variant,
-          handleFlip
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/routes/variants.tsx",
-          lineNumber: 55,
-          columnNumber: 34
-        },
-        this
-      ) }, void 0, !1, {
+      className: "h-[350px] w-[450px] rounded-md border-2 bg-gray-800 p-2 ",
+      children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "duration-800 preserve-3d relative h-full w-full transform-gpu items-center transition-transform", children: flip ? /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(CardBack, { variant, handleFlip }, void 0, !1, {
         fileName: "app/routes/variants.tsx",
-        lineNumber: 51,
-        columnNumber: 1
+        lineNumber: 42,
+        columnNumber: 11
+      }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(CardFront, { variant, handleFlip }, void 0, !1, {
+        fileName: "app/routes/variants.tsx",
+        lineNumber: 44,
+        columnNumber: 11
+      }, this) }, void 0, !1, {
+        fileName: "app/routes/variants.tsx",
+        lineNumber: 40,
+        columnNumber: 7
       }, this)
     },
     variant.id,
     !1,
     {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 48,
+      lineNumber: 36,
       columnNumber: 5
     },
     this
   );
 };
-function CardFront({ handleFlip, variant }) {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "absolute flex flex-col w-full h-full [ backface-visibility:hidden]", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex grow h-auto w-full flex-col gap-3 overflow-hidden justify-between rounded-md border p-2", children: [
+function CardFront({
+  handleFlip,
+  variant
+}) {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "[ backface-visibility:hidden] absolute flex h-full w-full flex-col", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex h-auto w-full grow flex-col justify-between gap-3 overflow-hidden rounded-md border p-2", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_react10.Link, { to: `/variants/${variant.id}/annotate`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("h3", { className: "text-xl font-bold text-slate-50", children: variant.symbol }, void 0, !1, {
         fileName: "app/routes/variants.tsx",
-        lineNumber: 75,
-        columnNumber: 5
+        lineNumber: 62,
+        columnNumber: 11
       }, this) }, void 0, !1, {
         fileName: "app/routes/variants.tsx",
-        lineNumber: 74,
-        columnNumber: 5
+        lineNumber: 61,
+        columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex flex-row items-center justify-between gap-3", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex flex-col gap-1 items-start w-1/2", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex w-1/2 flex-col items-start gap-1", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs font-semibold text-left text-slate-50", children: "HGVS:" }, void 0, !1, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-left text-xs font-semibold text-slate-50", children: "HGVS:" }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 80,
-              columnNumber: 13
+              lineNumber: 67,
+              columnNumber: 15
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: variant.hgvs }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 81,
-              columnNumber: 11
+              lineNumber: 70,
+              columnNumber: 15
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 79,
-            columnNumber: 9
+            lineNumber: 66,
+            columnNumber: 13
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs font-semibold text-left text-slate-50", children: "Protein:" }, void 0, !1, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-left text-xs font-semibold text-slate-50", children: "Protein:" }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 85,
-              columnNumber: 13
+              lineNumber: 73,
+              columnNumber: 15
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: variant.protein }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 86,
-              columnNumber: 11
+              lineNumber: 76,
+              columnNumber: 15
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 84,
-            columnNumber: 9
+            lineNumber: 72,
+            columnNumber: 13
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs font-semibold text-left text-slate-50", children: "cDNA:" }, void 0, !1, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-left text-xs font-semibold text-slate-50", children: "cDNA:" }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 91,
-              columnNumber: 13
+              lineNumber: 79,
+              columnNumber: 15
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: variant.cdna }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 92,
-              columnNumber: 11
+              lineNumber: 82,
+              columnNumber: 15
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 90,
-            columnNumber: 1
+            lineNumber: 78,
+            columnNumber: 13
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/variants.tsx",
-          lineNumber: 78,
-          columnNumber: 7
+          lineNumber: 65,
+          columnNumber: 11
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex flex-col gap-2 w-1/2 items-start ", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex w-1/2 flex-col items-start gap-2 ", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs font-semibold text-left text-slate-50", children: "Transcript:" }, void 0, !1, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-left text-xs font-semibold text-slate-50", children: "Transcript:" }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 98,
-              columnNumber: 13
+              lineNumber: 87,
+              columnNumber: 15
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: variant.transcript }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 99,
-              columnNumber: 13
+              lineNumber: 90,
+              columnNumber: 15
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 97,
-            columnNumber: 11
+            lineNumber: 86,
+            columnNumber: 13
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs font-semibold text-left text-slate-50", children: "CPRA:" }, void 0, !1, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-left text-xs font-semibold text-slate-50", children: "CPRA:" }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 102,
-              columnNumber: 13
+              lineNumber: 93,
+              columnNumber: 15
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: [
               "chr",
@@ -1882,103 +1721,106 @@ function CardFront({ handleFlip, variant }) {
               variant.alt
             ] }, void 0, !0, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 103,
-              columnNumber: 11
+              lineNumber: 96,
+              columnNumber: 15
+            }, this)
+          ] }, void 0, !0, {
+            fileName: "app/routes/variants.tsx",
+            lineNumber: 92,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-left text-xs font-semibold text-slate-50", children: "AA:" }, void 0, !1, {
+              fileName: "app/routes/variants.tsx",
+              lineNumber: 102,
+              columnNumber: 15
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: variant.aa }, void 0, !1, {
+              fileName: "app/routes/variants.tsx",
+              lineNumber: 105,
+              columnNumber: 15
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/variants.tsx",
             lineNumber: 101,
-            columnNumber: 11
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs font-semibold text-left text-slate-50", children: "AA:" }, void 0, !1, {
-              fileName: "app/routes/variants.tsx",
-              lineNumber: 111,
-              columnNumber: 13
-            }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: variant.aa }, void 0, !1, {
-              fileName: "app/routes/variants.tsx",
-              lineNumber: 112,
-              columnNumber: 11
-            }, this)
-          ] }, void 0, !0, {
-            fileName: "app/routes/variants.tsx",
-            lineNumber: 110,
-            columnNumber: 9
+            columnNumber: 13
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/variants.tsx",
-          lineNumber: 96,
-          columnNumber: 9
-        }, this)
-      ] }, void 0, !0, {
-        fileName: "app/routes/variants.tsx",
-        lineNumber: 77,
-        columnNumber: 5
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs font-semibold text-slate-50 text-center", children: "Description" }, void 0, !1, {
-          fileName: "app/routes/variants.tsx",
-          lineNumber: 119,
-          columnNumber: 10
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: variant.description }, void 0, !1, {
-          fileName: "app/routes/variants.tsx",
-          lineNumber: 120,
+          lineNumber: 85,
           columnNumber: 11
         }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/variants.tsx",
-        lineNumber: 118,
-        columnNumber: 10
+        lineNumber: 64,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-center text-xs font-semibold text-slate-50", children: "Description" }, void 0, !1, {
+          fileName: "app/routes/variants.tsx",
+          lineNumber: 111,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: variant.description }, void 0, !1, {
+          fileName: "app/routes/variants.tsx",
+          lineNumber: 114,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, !0, {
+        fileName: "app/routes/variants.tsx",
+        lineNumber: 110,
+        columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 73,
-      columnNumber: 3
+      lineNumber: 60,
+      columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex flex-row justify-end gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("button", { onClick: handleFlip, children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_react_icons.InfoCircledIcon, {}, void 0, !1, {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 126,
-      columnNumber: 5
+      lineNumber: 120,
+      columnNumber: 11
     }, this) }, void 0, !1, {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 125,
-      columnNumber: 3
+      lineNumber: 119,
+      columnNumber: 9
     }, this) }, void 0, !1, {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 124,
-      columnNumber: 3
+      lineNumber: 118,
+      columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/variants.tsx",
-    lineNumber: 72,
+    lineNumber: 59,
     columnNumber: 5
   }, this);
 }
-function CardBack({ handleFlip, variant }) {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "absolute flex flex-col w-full h-full [ backface-visibility:hidden]", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex grow h-auto w-full flex-col gap-1 overflow-hidden rounded-md border p-2", children: "back" }, void 0, !1, {
+function CardBack({
+  handleFlip,
+  variant
+}) {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "[ backface-visibility:hidden] absolute flex h-full w-full flex-col", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex h-auto w-full grow flex-col gap-1 overflow-hidden rounded-md border p-2", children: "back" }, void 0, !1, {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 140,
-      columnNumber: 5
+      lineNumber: 136,
+      columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex flex-row justify-end gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("button", { onClick: handleFlip, children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_react_icons.InfoCircledIcon, {}, void 0, !1, {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 145,
-      columnNumber: 5
+      lineNumber: 141,
+      columnNumber: 11
     }, this) }, void 0, !1, {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 144,
-      columnNumber: 3
+      lineNumber: 140,
+      columnNumber: 9
     }, this) }, void 0, !1, {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 143,
-      columnNumber: 3
+      lineNumber: 139,
+      columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/variants.tsx",
-    lineNumber: 139,
+    lineNumber: 135,
     columnNumber: 5
   }, this);
 }
@@ -1987,19 +1829,19 @@ function VariantCardFront({ variant }) {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex  w-full flex-col gap-1 rounded-md border-2 p-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(
     "div",
     {
-      className: "bg-transparent flex h-[350px] w-[350px] flex-col gap-1 overflow-hidden rounded-md p-2"
+      className: "flex h-[350px] w-[350px] flex-col gap-1 overflow-hidden rounded-md bg-transparent p-2"
     },
     variant.id,
     !1,
     {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 180,
+      lineNumber: 176,
       columnNumber: 7
     },
     this
   ) }, void 0, !1, {
     fileName: "app/routes/variants.tsx",
-    lineNumber: 179,
+    lineNumber: 175,
     columnNumber: 5
   }, this);
 }
@@ -2012,22 +1854,22 @@ function VariantCardBack({ variant }) {
         /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex flex-row items-center justify-between gap-2", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("h5", { className: "text-xl font-bold text-gray-900", children: variant.symbol }, void 0, !1, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 197,
+            lineNumber: 191,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: variant.hgvs }, void 0, !1, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 199,
+            lineNumber: 193,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: variant.protein }, void 0, !1, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 200,
+            lineNumber: 194,
             columnNumber: 9
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/variants.tsx",
-          lineNumber: 196,
+          lineNumber: 190,
           columnNumber: 7
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex h-full flex-col gap-2", children: [
@@ -2042,17 +1884,17 @@ function VariantCardBack({ variant }) {
               variant.alt
             ] }, void 0, !0, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 204,
+              lineNumber: 198,
               columnNumber: 11
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: variant.gnomad }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 209,
+              lineNumber: 203,
               columnNumber: 11
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 203,
+            lineNumber: 197,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex w-full flex-col gap-2", children: [
@@ -2065,13 +1907,13 @@ function VariantCardBack({ variant }) {
                 children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("h5", { className: "text-left text-xs font-semibold text-gray-500", children: "inSilico" }, void 0, !1, {
                     fileName: "app/routes/variants.tsx",
-                    lineNumber: 218,
+                    lineNumber: 212,
                     columnNumber: 15
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex flex-row gap-1", children: [
                     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: "Combined:" }, void 0, !1, {
                       fileName: "app/routes/variants.tsx",
-                      lineNumber: 222,
+                      lineNumber: 216,
                       columnNumber: 17
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: sortInSilico({
@@ -2079,38 +1921,38 @@ function VariantCardBack({ variant }) {
                       sift: variant.sift
                     }) }, void 0, !1, {
                       fileName: "app/routes/variants.tsx",
-                      lineNumber: 223,
+                      lineNumber: 217,
                       columnNumber: 17
                     }, this)
                   ] }, void 0, !0, {
                     fileName: "app/routes/variants.tsx",
-                    lineNumber: 221,
+                    lineNumber: 215,
                     columnNumber: 15
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex flex-row gap-2", children: [
                     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: "SIFT:" }, void 0, !1, {
                       fileName: "app/routes/variants.tsx",
-                      lineNumber: 231,
+                      lineNumber: 225,
                       columnNumber: 17
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: variant.sift }, void 0, !1, {
                       fileName: "app/routes/variants.tsx",
-                      lineNumber: 232,
+                      lineNumber: 226,
                       columnNumber: 17
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "text-xs text-gray-500", children: "PolyPhen:" }, void 0, !1, {
                       fileName: "app/routes/variants.tsx",
-                      lineNumber: 233,
+                      lineNumber: 227,
                       columnNumber: 17
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: variant.polyphen }, void 0, !1, {
                       fileName: "app/routes/variants.tsx",
-                      lineNumber: 235,
+                      lineNumber: 229,
                       columnNumber: 17
                     }, this)
                   ] }, void 0, !0, {
                     fileName: "app/routes/variants.tsx",
-                    lineNumber: 230,
+                    lineNumber: 224,
                     columnNumber: 15
                   }, this)
                 ]
@@ -2119,39 +1961,39 @@ function VariantCardBack({ variant }) {
               !0,
               {
                 fileName: "app/routes/variants.tsx",
-                lineNumber: 213,
+                lineNumber: 207,
                 columnNumber: 13
               },
               this
             ) }, void 0, !1, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 212,
+              lineNumber: 206,
               columnNumber: 11
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex w-full flex-row gap-1", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("h5", { className: "text-xs font-semibold text-gray-500", children: "Inheritance:" }, void 0, !1, {
                 fileName: "app/routes/variants.tsx",
-                lineNumber: 242,
+                lineNumber: 236,
                 columnNumber: 13
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("span", { className: "text-xs text-gray-500", children: variant.inheritance === "Autosomal Dominant" ? "A.D" : "A.R" }, void 0, !1, {
                 fileName: "app/routes/variants.tsx",
-                lineNumber: 245,
+                lineNumber: 239,
                 columnNumber: 13
               }, this)
             ] }, void 0, !0, {
               fileName: "app/routes/variants.tsx",
-              lineNumber: 241,
+              lineNumber: 235,
               columnNumber: 11
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 211,
+            lineNumber: 205,
             columnNumber: 9
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/variants.tsx",
-          lineNumber: 202,
+          lineNumber: 196,
           columnNumber: 7
         }, this)
       ]
@@ -2160,7 +2002,7 @@ function VariantCardBack({ variant }) {
     !0,
     {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 192,
+      lineNumber: 186,
       columnNumber: 5
     },
     this
@@ -2175,31 +2017,31 @@ function VariantSummaryCard({ variant }) {
       children: [
         flip ? /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(VariantCardBack, { variant }, void 0, !1, {
           fileName: "app/routes/variants.tsx",
-          lineNumber: 263,
+          lineNumber: 257,
           columnNumber: 9
         }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(VariantCardFront, { variant }, void 0, !1, {
           fileName: "app/routes/variants.tsx",
-          lineNumber: 265,
+          lineNumber: 259,
           columnNumber: 9
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "flex flex-row justify-end gap-2", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_react_icons.DotsVerticalIcon, {}, void 0, !1, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 268,
+            lineNumber: 262,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("button", { onClick: () => setFlip(!flip), children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_react_icons.InfoCircledIcon, {}, void 0, !1, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 270,
+            lineNumber: 264,
             columnNumber: 11
           }, this) }, void 0, !1, {
             fileName: "app/routes/variants.tsx",
-            lineNumber: 269,
+            lineNumber: 263,
             columnNumber: 9
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/variants.tsx",
-          lineNumber: 267,
+          lineNumber: 261,
           columnNumber: 7
         }, this)
       ]
@@ -2208,7 +2050,7 @@ function VariantSummaryCard({ variant }) {
     !0,
     {
       fileName: "app/routes/variants.tsx",
-      lineNumber: 258,
+      lineNumber: 252,
       columnNumber: 5
     },
     this
@@ -2277,11 +2119,11 @@ function Index() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("div", { className: "flex min-h-screen flex-col", children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(Documentation, {}, void 0, !1, {
     fileName: "app/routes/calculator/info.tsx",
     lineNumber: 4,
-    columnNumber: 9
+    columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/routes/calculator/info.tsx",
     lineNumber: 3,
-    columnNumber: 7
+    columnNumber: 5
   }, this);
 }
 function Documentation() {
@@ -2289,42 +2131,42 @@ function Documentation() {
     /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("h1", { className: "text-2xl font-bold", children: "Documentation" }, void 0, !1, {
       fileName: "app/routes/calculator/info.tsx",
       lineNumber: 12,
-      columnNumber: 9
+      columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { className: "text-gray-500", children: "This is a work in progress. Please check back later." }, void 0, !1, {
       fileName: "app/routes/calculator/info.tsx",
       lineNumber: 13,
-      columnNumber: 9
+      columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { className: "text-gray-500", children: "Generating Criterion" }, void 0, !1, {
       fileName: "app/routes/calculator/info.tsx",
       lineNumber: 16,
-      columnNumber: 9
+      columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("h3", { className: "text-xl font-bold", children: "Criterion" }, void 0, !1, {
       fileName: "app/routes/calculator/info.tsx",
       lineNumber: 18,
-      columnNumber: 9
+      columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { className: "text-gray-500", children: "The ACMG/AMP guidelines are broken down into 28 individual criteria. Each Criterion is assigned an evidenceType Group of which there are 8" }, void 0, !1, {
       fileName: "app/routes/calculator/info.tsx",
       lineNumber: 19,
-      columnNumber: 9
+      columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("h3", { className: "text-xl font-bold", children: "Variants" }, void 0, !1, {
       fileName: "app/routes/calculator/info.tsx",
       lineNumber: 23,
-      columnNumber: 9
+      columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { className: "text-gray-500", children: "Variants are the individual mutations that are being evaluated. Each variant is assigned a classification based on the criteria." }, void 0, !1, {
       fileName: "app/routes/calculator/info.tsx",
       lineNumber: 24,
-      columnNumber: 9
+      columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/calculator/info.tsx",
     lineNumber: 11,
-    columnNumber: 7
+    columnNumber: 5
   }, this);
 }
 
@@ -2339,9 +2181,7 @@ function Calculator() {
     console.log(value, "value");
     let newValue = value.substring(0, value.indexOf("^"));
     console.log(newValue, "newValue");
-    let newLabel = value.substring(
-      value.indexOf("^") + 1
-    );
+    let newLabel = value.substring(value.indexOf("^") + 1);
     console.log(newLabel, "newLabel");
     let newCriteriaDetail = [...criteriaDetail];
     newCriteriaDetail.includes(newLabel) || newCriteriaDetail.push(newLabel), setCriteriaDetail(newCriteriaDetail), console.log(newCriteriaDetail, "newCriteriaDetail");
@@ -2376,59 +2216,50 @@ function Calculator() {
         ref: calculatorRef,
         className: "block w-full flex-col items-center gap-1",
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
-            "h3",
-            {
-              className: "text-2xl text-center font-bold",
-              children: "ACMG Classification"
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/routes/calculator/route.tsx",
-              lineNumber: 130,
-              columnNumber: 11
-            },
-            this
-          ),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("h3", { className: "text-center text-2xl font-bold", children: "ACMG Classification" }, void 0, !1, {
+            fileName: "app/routes/calculator/route.tsx",
+            lineNumber: 128,
+            columnNumber: 9
+          }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("p", { className: "text-xl font-bold", children: [
             "Criterias: ",
-            " ",
             criterias
           ] }, void 0, !0, {
             fileName: "app/routes/calculator/route.tsx",
-            lineNumber: 133,
-            columnNumber: 11
+            lineNumber: 129,
+            columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("span", { className: "text-xl font-bold", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("p", { className: "text-xl font-bold", children: [
-              " Total Score: ",
+              " ",
+              "Total Score: ",
               totals !== 0 ? totals : 0
             ] }, void 0, !0, {
               fileName: "app/routes/calculator/route.tsx",
-              lineNumber: 136,
-              columnNumber: 12
+              lineNumber: 131,
+              columnNumber: 11
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("p", { className: "text-xl font-bold", children: [
-              " Criteria: [",
+              " ",
+              "Criteria: [",
               criteriaDetail.map((criteria2, index) => /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("span", { children: [
                 index !== 0 ? ", " : "",
                 criteria2
               ] }, index, !0, {
                 fileName: "app/routes/calculator/route.tsx",
                 lineNumber: 140,
-                columnNumber: 17
+                columnNumber: 15
               }, this)),
               "]"
             ] }, void 0, !0, {
               fileName: "app/routes/calculator/route.tsx",
-              lineNumber: 138,
-              columnNumber: 12
+              lineNumber: 136,
+              columnNumber: 11
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/calculator/route.tsx",
-            lineNumber: 135,
-            columnNumber: 11
+            lineNumber: 130,
+            columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("p", { className: "text-xl font-bold", children: [
             "Classification: ",
@@ -2436,7 +2267,7 @@ function Calculator() {
           ] }, void 0, !0, {
             fileName: "app/routes/calculator/route.tsx",
             lineNumber: 148,
-            columnNumber: 11
+            columnNumber: 9
           }, this)
         ]
       },
@@ -2444,13 +2275,13 @@ function Calculator() {
       !0,
       {
         fileName: "app/routes/calculator/route.tsx",
-        lineNumber: 126,
-        columnNumber: 9
+        lineNumber: 124,
+        columnNumber: 7
       },
       this
     ),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("div", { className: "flex w-full flex-col md:flex-row md:justify-between gap-1", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("div", { className: "w-full md:w-1/2 px-4 border border-blue-500", children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
+    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("div", { className: "flex w-full flex-col gap-1 md:flex-row md:justify-between", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("div", { className: "w-full border border-blue-500 px-4 md:w-1/2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
         import_react13.Form,
         {
           id: "form",
@@ -2520,23 +2351,11 @@ function Calculator() {
               columnNumber: 15
             }, this)),
             /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("div", { className: "flex w-full flex-row items-center gap-1", children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
-                Button,
-                {
-                  variant: "primary_filled",
-                  size: "base",
-                  type: "submit",
-                  children: "Submit"
-                },
-                void 0,
-                !1,
-                {
-                  fileName: "app/routes/calculator/route.tsx",
-                  lineNumber: 195,
-                  columnNumber: 12
-                },
-                this
-              ),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Button, { variant: "primary_filled", size: "base", type: "submit", children: "Submit" }, void 0, !1, {
+                fileName: "app/routes/calculator/route.tsx",
+                lineNumber: 194,
+                columnNumber: 15
+              }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
                 Button,
                 {
@@ -2550,15 +2369,15 @@ function Calculator() {
                 !1,
                 {
                   fileName: "app/routes/calculator/route.tsx",
-                  lineNumber: 202,
-                  columnNumber: 13
+                  lineNumber: 197,
+                  columnNumber: 15
                 },
                 this
               )
             ] }, void 0, !0, {
               fileName: "app/routes/calculator/route.tsx",
-              lineNumber: 194,
-              columnNumber: 12
+              lineNumber: 193,
+              columnNumber: 13
             }, this)
           ]
         },
@@ -2566,33 +2385,33 @@ function Calculator() {
         !0,
         {
           fileName: "app/routes/calculator/route.tsx",
-          lineNumber: 154,
+          lineNumber: 152,
           columnNumber: 11
         },
         this
       ) }, void 0, !1, {
         fileName: "app/routes/calculator/route.tsx",
-        lineNumber: 152,
-        columnNumber: 3
+        lineNumber: 151,
+        columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("div", { className: "w-full md:w-1/2 px-4 border-red-500 border", children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Index, {}, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)("div", { className: "w-full border border-red-500 px-4 md:w-1/2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(Index, {}, void 0, !1, {
         fileName: "app/routes/calculator/route.tsx",
-        lineNumber: 212,
-        columnNumber: 1
+        lineNumber: 209,
+        columnNumber: 11
       }, this) }, void 0, !1, {
         fileName: "app/routes/calculator/route.tsx",
-        lineNumber: 211,
+        lineNumber: 208,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/calculator/route.tsx",
       lineNumber: 150,
-      columnNumber: 9
+      columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/calculator/route.tsx",
-    lineNumber: 125,
-    columnNumber: 7
+    lineNumber: 123,
+    columnNumber: 5
   }, this);
 }
 function getNumbers2(trimmedCriteria) {
@@ -2639,27 +2458,27 @@ function Criterio() {
   return console.log(data, "data"), /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex min-h-screen w-full flex-col p-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_react15.Outlet, {}, void 0, !1, {
       fileName: "app/routes/criterion.tsx",
-      lineNumber: 62,
+      lineNumber: 61,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("h1", { className: "text-2xl font-bold", children: "Documentation" }, void 0, !1, {
       fileName: "app/routes/criterion.tsx",
-      lineNumber: 63,
+      lineNumber: 62,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("p", { className: "text-gray-500", children: "This page is a work in progress. Please check back later for more information." }, void 0, !1, {
       fileName: "app/routes/criterion.tsx",
-      lineNumber: 65,
+      lineNumber: 64,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("p", { className: "text-gray-500", children: "Individual Criterion are grouped by Evidence Type. Click on the Evidence Type to see the Criterion." }, void 0, !1, {
       fileName: "app/routes/criterion.tsx",
-      lineNumber: 69,
+      lineNumber: 68,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("p", { className: "text-gray-500", children: "To Edit a Criterion, click on the Criterion Name." }, void 0, !1, {
       fileName: "app/routes/criterion.tsx",
-      lineNumber: 73,
+      lineNumber: 72,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex flex-col gap-2 p-1", children: data.columnNames.map((column) => /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(
@@ -2668,11 +2487,11 @@ function Criterio() {
         className: "items-cener flex w-full flex-col gap-2",
         children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex flex-row gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(CriteriaFetcher, { searchParam: column }, void 0, !1, {
           fileName: "app/routes/criterion.tsx",
-          lineNumber: 85,
+          lineNumber: 84,
           columnNumber: 19
         }, this) }, void 0, !1, {
           fileName: "app/routes/criterion.tsx",
-          lineNumber: 84,
+          lineNumber: 83,
           columnNumber: 17
         }, this)
       },
@@ -2680,22 +2499,22 @@ function Criterio() {
       !1,
       {
         fileName: "app/routes/criterion.tsx",
-        lineNumber: 80,
+        lineNumber: 79,
         columnNumber: 15
       },
       this
     )) }, void 0, !1, {
       fileName: "app/routes/criterion.tsx",
-      lineNumber: 77,
+      lineNumber: 76,
       columnNumber: 9
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/criterion.tsx",
-    lineNumber: 61,
+    lineNumber: 60,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/routes/criterion.tsx",
-    lineNumber: 60,
+    lineNumber: 59,
     columnNumber: 5
   }, this);
 }
@@ -2715,16 +2534,16 @@ function CriteriaFetcher({ searchParam }) {
             children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("h3", { className: "text-xl font-bold", children: searchParam }, void 0, !1, {
                 fileName: "app/routes/criterion.tsx",
-                lineNumber: 118,
-                columnNumber: 9
+                lineNumber: 117,
+                columnNumber: 11
               }, this),
               open ? /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_react_icons2.ChevronUpIcon, {}, void 0, !1, {
                 fileName: "app/routes/criterion.tsx",
-                lineNumber: 120,
+                lineNumber: 119,
                 columnNumber: 19
               }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_react_icons2.ChevronDownIcon, {}, void 0, !1, {
                 fileName: "app/routes/criterion.tsx",
-                lineNumber: 120,
+                lineNumber: 119,
                 columnNumber: 39
               }, this)
             ]
@@ -2733,32 +2552,32 @@ function CriteriaFetcher({ searchParam }) {
           !0,
           {
             fileName: "app/routes/criterion.tsx",
-            lineNumber: 114,
-            columnNumber: 7
+            lineNumber: 113,
+            columnNumber: 9
           },
           this
         ) }, void 0, !1, {
           fileName: "app/routes/criterion.tsx",
-          lineNumber: 113,
+          lineNumber: 112,
           columnNumber: 7
         }, this),
         open ? /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex flex-col gap-2 p-1", children: byEvidenceType == null ? void 0 : byEvidenceType.map((criterion2) => /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_react15.Link, { to: `/criterion/${criterion2.id}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("h3", { className: "text-xl font-bold", children: criterion2.criterionName }, void 0, !1, {
             fileName: "app/routes/criterion.tsx",
-            lineNumber: 130,
+            lineNumber: 129,
             columnNumber: 19
           }, this) }, void 0, !1, {
             fileName: "app/routes/criterion.tsx",
-            lineNumber: 129,
+            lineNumber: 128,
             columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex flex-row gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(FormatDefinition, { definition: criterion2.definition }, void 0, !1, {
             fileName: "app/routes/criterion.tsx",
-            lineNumber: 135,
+            lineNumber: 134,
             columnNumber: 19
           }, this) }, void 0, !1, {
             fileName: "app/routes/criterion.tsx",
-            lineNumber: 134,
+            lineNumber: 133,
             columnNumber: 17
           }, this),
           criterion2.example ? /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex flex-row gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("p", { className: "text-gray-500", children: [
@@ -2767,11 +2586,11 @@ function CriteriaFetcher({ searchParam }) {
             criterion2.example
           ] }, void 0, !0, {
             fileName: "app/routes/criterion.tsx",
-            lineNumber: 140,
+            lineNumber: 139,
             columnNumber: 21
           }, this) }, void 0, !1, {
             fileName: "app/routes/criterion.tsx",
-            lineNumber: 139,
+            lineNumber: 138,
             columnNumber: 19
           }, this) : null,
           criterion2.caveat ? /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex flex-row gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("p", { className: "text-gray-500", children: [
@@ -2779,11 +2598,11 @@ function CriteriaFetcher({ searchParam }) {
             criterion2.caveat
           ] }, void 0, !0, {
             fileName: "app/routes/criterion.tsx",
-            lineNumber: 149,
+            lineNumber: 148,
             columnNumber: 21
           }, this) }, void 0, !1, {
             fileName: "app/routes/criterion.tsx",
-            lineNumber: 148,
+            lineNumber: 147,
             columnNumber: 19
           }, this) : null,
           criterion2.criterionBaseWeight ? /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex flex-row gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("p", { className: "text-gray-500", children: [
@@ -2791,20 +2610,20 @@ function CriteriaFetcher({ searchParam }) {
             criterion2.criterionBaseWeight
           ] }, void 0, !0, {
             fileName: "app/routes/criterion.tsx",
-            lineNumber: 155,
+            lineNumber: 154,
             columnNumber: 21
           }, this) }, void 0, !1, {
             fileName: "app/routes/criterion.tsx",
-            lineNumber: 154,
+            lineNumber: 153,
             columnNumber: 19
           }, this) : null
         ] }, criterion2.id, !0, {
           fileName: "app/routes/criterion.tsx",
-          lineNumber: 128,
+          lineNumber: 127,
           columnNumber: 15
         }, this)) }, void 0, !1, {
           fileName: "app/routes/criterion.tsx",
-          lineNumber: 125,
+          lineNumber: 124,
           columnNumber: 9
         }, this) : null
       ]
@@ -2813,7 +2632,7 @@ function CriteriaFetcher({ searchParam }) {
     !0,
     {
       fileName: "app/routes/criterion.tsx",
-      lineNumber: 108,
+      lineNumber: 107,
       columnNumber: 5
     },
     this
@@ -2828,11 +2647,11 @@ function FormatDefinition({ definition }) {
     sortMe(definition)
   ] }, void 0, !0, {
     fileName: "app/routes/criterion.tsx",
-    lineNumber: 184,
+    lineNumber: 183,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/routes/criterion.tsx",
-    lineNumber: 183,
+    lineNumber: 182,
     columnNumber: 5
   }, this);
 }
@@ -2895,176 +2714,307 @@ __export(beta_exports, {
 });
 var import_node9 = require("@remix-run/node");
 
-// app/components/dropdown.tsx
-var import_react17 = __toESM(require("react")), import_clsx2 = __toESM(require("clsx")), import_react_icons3 = require("@radix-ui/react-icons"), import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), Dropdown = ({ options: options2, name = "selection", width = "w-48" }) => {
-  let [isOpen, setIsOpen] = (0, import_react17.useState)(!1), [selectedOption, setSelectedOption] = (0, import_react17.useState)(""), handleToggle = () => {
-    setIsOpen(!isOpen);
-  }, handleIconClear = (event) => {
-    event.stopPropagation(), setSelectedOption("");
-  }, handleTextClear = (event) => {
-    setSelectedOption(""), setIsOpen(!1);
-  };
-  import_react17.default.useEffect(() => {
-    let handleKeyboardEvent = (event) => {
-      event.key === "Escape" && setIsOpen(!1);
+// app/components/acmg_calcv1.tsx
+var import_react17 = require("react");
+
+// app/constants/acmg-criteria.ts
+var acmgCriteria = {
+  population: {
+    benign: ["BA1", "BS1", "BS2"],
+    pathogenic: ["PM2", "PM2_Supporting", "PS4"]
+  },
+  computational: {
+    benign: ["BP4", "BP7", "BP1", "BP3"],
+    pathogenic: [
+      "PP3",
+      "PM4",
+      "PM5",
+      "PVS1",
+      "PVS1_Strong",
+      "PVS1_Moderate",
+      "PVS1_Supporting",
+      "PS1"
+    ]
+  },
+  functional: {
+    benign: ["BS3"],
+    pathogenic: ["PS3", "PM1", "PP2"]
+  },
+  segregation: {
+    benign: ["BS4"],
+    pathogenic: ["PP1"]
+  },
+  deNovo: {
+    benign: [],
+    pathogenic: ["PS2", "PM6"]
+  },
+  allelic: {
+    benign: ["BP2"],
+    pathogenic: ["PM3"]
+  },
+  other_database: {
+    benign: ["BP6"],
+    pathogenic: ["PP5"]
+  },
+  other_data: {
+    benign: ["BP5"],
+    pathogenic: ["PP4"]
+  }
+};
+var extractFirstTwoLetters = (arr) => {
+  let specialCases = [
+    "PM2_Supporting",
+    "PVS1_Supporting",
+    "PVS1_Strong",
+    "PVS1_Moderate"
+  ], specialConversion = {
+    PM2_Supporting: "P",
+    PVS1_Supporting: "P",
+    PVS1_Strong: "S",
+    PVS1_Moderate: "M"
+  }, firstTwoLetters = [];
+  return arr.map(
+    (item) => {
+      let firstLetter = item[0];
+      console.log(firstLetter, "firstLetter");
+      let firstTwoChars;
+      return item.indexOf("_") > -1 && specialCases.includes(item) ? firstTwoChars = item[0] + specialConversion[item] : firstTwoChars = item.substring(0, 2), firstTwoLetters.push(firstTwoChars), firstTwoChars;
+    }
+  );
+};
+function convertToNumbers(arr) {
+  let strengthValues2 = {
+    V: 8,
+    A: 8,
+    S: 4,
+    M: 2,
+    P: 1
+  }, totalSum = arr.map((item) => {
+    let firstLetter = item[0], secondLetter = item[1], secondNumber = strengthValues2[secondLetter];
+    return firstLetter === "B" ? -secondNumber : secondNumber;
+  }).reduce((sum, value) => sum + value, 0);
+  function getClass(totalSum2) {
+    for (let item of scoreMatrix2) {
+      let [minScore, maxScore] = item.score;
+      if (totalSum2 >= minScore && totalSum2 <= maxScore)
+        return item.name;
+    }
+    return "Indeterminate";
+  }
+  let classification = getClass(totalSum), obj = {};
+  return obj.totalSum = totalSum, obj.classification = classification, obj;
+}
+var scoreMatrix2 = [
+  {
+    name: "Benign",
+    score: [-100, -7]
+  },
+  {
+    name: "Likely Benign",
+    score: [-1, -6]
+  },
+  {
+    name: "Variant of Uncertain Significance",
+    score: [0, 5]
+  },
+  {
+    name: "Likely Pathogenic",
+    score: [6, 9]
+  },
+  {
+    name: "Pathogenic",
+    score: [10, 100]
+  }
+];
+
+// app/components/acmg_calcv1.tsx
+var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), ACMGCalculator = () => {
+  let [selectedCriteria, setSelectedCriteria] = (0, import_react17.useState)({}), [scores, setScores] = (0, import_react17.useState)({}), [criteriaArray, setCriteriaArray] = (0, import_react17.useState)([]), handleSelect = (group, category, label) => {
+    let newSelectedCriteria = { ...selectedCriteria };
+    newSelectedCriteria[group] = {
+      ...newSelectedCriteria[group],
+      [category]: label
     };
-    return document.addEventListener("keydown", handleKeyboardEvent), () => {
-      document.removeEventListener("keydown", handleKeyboardEvent);
-    };
-  }, []);
-  let handleOptionSelect = (event) => {
-    let selectedOption2 = event.currentTarget.textContent;
-    setSelectedOption(selectedOption2 || ""), setIsOpen(!1);
+    let benignValues = [], pathogenicValues = [], criteriaArray2 = [];
+    for (let group2 in newSelectedCriteria) {
+      let { benign, pathogenic } = newSelectedCriteria[group2];
+      benign && criteriaArray2.push(benign), pathogenic && criteriaArray2.push(pathogenic);
+    }
+    console.log(benignValues, "benignValues"), console.log(pathogenicValues, "pathogenicValues"), console.log(criteriaArray2, "criteriaArray"), setSelectedCriteria(newSelectedCriteria), setCriteriaArray(criteriaArray2);
+    let splitCriteria = extractFirstTwoLetters(criteriaArray2);
+    console.log(splitCriteria, "splitCriteria");
+    let split = convertToNumbers(splitCriteria);
+    console.log(split, "split");
   };
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: (0, import_clsx2.default)(`relative inline-block ${width}`), children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "block", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
-        "button",
-        {
-          type: "button",
-          className: "flex w-full items-center justify-between rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2",
-          onClick: handleToggle,
-          children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex w-full items-center justify-between", children: selectedOption ? /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_jsx_dev_runtime16.Fragment, { children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
-                "span",
-                {
-                  className: "flex items-center",
-                  onClick: () => setSelectedOption(""),
-                  children: selectedOption
-                },
-                void 0,
-                !1,
-                {
-                  fileName: "app/components/dropdown.tsx",
-                  lineNumber: 60,
-                  columnNumber: 15
-                },
-                this
-              ),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("button", { onClick: handleIconClear, children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_react_icons3.Cross2Icon, { className: "h-[15px] w-[15px]" }, void 0, !1, {
-                fileName: "app/components/dropdown.tsx",
-                lineNumber: 67,
-                columnNumber: 15
-              }, this) }, void 0, !1, {
-                fileName: "app/components/dropdown.tsx",
-                lineNumber: 66,
-                columnNumber: 15
-              }, this)
-            ] }, void 0, !0, {
-              fileName: "app/components/dropdown.tsx",
-              lineNumber: 59,
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "p-4", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-2xl font-bold", children: [
+      "ACMG selected criteria",
+      JSON.stringify(selectedCriteria)
+    ] }, void 0, !0, {
+      fileName: "app/components/acmg_calcv1.tsx",
+      lineNumber: 53,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-2xl font-bold", children: [
+      "ACMG scores",
+      JSON.stringify(criteriaArray)
+    ] }, void 0, !0, {
+      fileName: "app/components/acmg_calcv1.tsx",
+      lineNumber: 60,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(CriteriaTracker, { criteria: criteriaArray }, void 0, !1, {
+      fileName: "app/components/acmg_calcv1.tsx",
+      lineNumber: 64,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("form", { method: "POST", children: [
+      Object.keys(acmgCriteria).map((group) => /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "mb-4", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h2", { className: "mb-2 text-center text-base font-semibold capitalize", children: group }, void 0, !1, {
+          fileName: "app/components/acmg_calcv1.tsx",
+          lineNumber: 68,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex flex-col justify-around", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "mb-2", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { children: "Benign:" }, void 0, !1, {
+              fileName: "app/components/acmg_calcv1.tsx",
+              lineNumber: 73,
               columnNumber: 17
-            }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("span", { className: "flex items-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("span", { className: "mr-3", children: "Select an option" }, void 0, !1, {
-              fileName: "app/components/dropdown.tsx",
-              lineNumber: 72,
-              columnNumber: 17
-            }, this) }, void 0, !1, {
-              fileName: "app/components/dropdown.tsx",
-              lineNumber: 71,
-              columnNumber: 15
-            }, this) }, void 0, !1, {
-              fileName: "app/components/dropdown.tsx",
-              lineNumber: 57,
-              columnNumber: 11
             }, this),
-            isOpen ? /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_react_icons3.ChevronUpIcon, {}, void 0, !1, {
-              fileName: "app/components/dropdown.tsx",
-              lineNumber: 77,
-              columnNumber: 21
-            }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_react_icons3.ChevronDownIcon, {}, void 0, !1, {
-              fileName: "app/components/dropdown.tsx",
-              lineNumber: 77,
-              columnNumber: 41
-            }, this)
-          ]
+            /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+              "select",
+              {
+                name: group,
+                className: "w-full rounded border p-2 text-black",
+                onChange: (e) => handleSelect(
+                  group,
+                  "benign",
+                  e.target.value
+                ),
+                children: [
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("option", { value: "", children: "--Please choose an option--" }, void 0, !1, {
+                    fileName: "app/components/acmg_calcv1.tsx",
+                    lineNumber: 85,
+                    columnNumber: 19
+                  }, this),
+                  acmgCriteria[group].benign.map(
+                    (label) => /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("option", { value: label, children: label }, label, !1, {
+                      fileName: "app/components/acmg_calcv1.tsx",
+                      lineNumber: 88,
+                      columnNumber: 23
+                    }, this)
+                  )
+                ]
+              },
+              void 0,
+              !0,
+              {
+                fileName: "app/components/acmg_calcv1.tsx",
+                lineNumber: 74,
+                columnNumber: 17
+              },
+              this
+            )
+          ] }, void 0, !0, {
+            fileName: "app/components/acmg_calcv1.tsx",
+            lineNumber: 72,
+            columnNumber: 15
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { children: "Pathogenic:" }, void 0, !1, {
+              fileName: "app/components/acmg_calcv1.tsx",
+              lineNumber: 96,
+              columnNumber: 17
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+              "select",
+              {
+                className: "w-full rounded border p-2 text-black",
+                onChange: (e) => handleSelect(
+                  group,
+                  "pathogenic",
+                  e.target.value
+                ),
+                children: [
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("option", { value: "", children: "--Please choose an option--" }, void 0, !1, {
+                    fileName: "app/components/acmg_calcv1.tsx",
+                    lineNumber: 107,
+                    columnNumber: 19
+                  }, this),
+                  acmgCriteria[group].pathogenic.map((label) => /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("option", { value: label, children: label }, label, !1, {
+                    fileName: "app/components/acmg_calcv1.tsx",
+                    lineNumber: 111,
+                    columnNumber: 21
+                  }, this))
+                ]
+              },
+              void 0,
+              !0,
+              {
+                fileName: "app/components/acmg_calcv1.tsx",
+                lineNumber: 97,
+                columnNumber: 17
+              },
+              this
+            )
+          ] }, void 0, !0, {
+            fileName: "app/components/acmg_calcv1.tsx",
+            lineNumber: 95,
+            columnNumber: 15
+          }, this)
+        ] }, void 0, !0, {
+          fileName: "app/components/acmg_calcv1.tsx",
+          lineNumber: 71,
+          columnNumber: 13
+        }, this)
+      ] }, group, !0, {
+        fileName: "app/components/acmg_calcv1.tsx",
+        lineNumber: 67,
+        columnNumber: 11
+      }, this)),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+        "input",
+        {
+          type: "hidden",
+          name: "selectedCriteria",
+          value: JSON.stringify(selectedCriteria)
         },
         void 0,
-        !0,
+        !1,
         {
-          fileName: "app/components/dropdown.tsx",
-          lineNumber: 52,
+          fileName: "app/components/acmg_calcv1.tsx",
+          lineNumber: 120,
           columnNumber: 9
         },
         this
       ),
-      isOpen && /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "absolute left-0 right-0  mt-2 rounded-md border border-gray-300 bg-white shadow-lg", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "absolute -top-3 right-[45%] h-6 w-6 rotate-45 border-l border-t border-gray-300 bg-white" }, void 0, !1, {
-          fileName: "app/components/dropdown.tsx",
-          lineNumber: 82,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("ul", { className: "py-1", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
-            "li",
-            {
-              className: "px-4 py-2 text-black hover:bg-gray-100",
-              onClick: handleTextClear,
-              children: "Clear"
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/components/dropdown.tsx",
-              lineNumber: 85,
-              columnNumber: 15
-            },
-            this
-          ),
-          options2.map((option, index) => /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
-            "li",
-            {
-              onClick: handleOptionSelect,
-              className: "px-4 py-2 text-black hover:bg-gray-100",
-              children: option.label
-            },
-            option.id,
-            !1,
-            {
-              fileName: "app/components/dropdown.tsx",
-              lineNumber: 95,
-              columnNumber: 17
-            },
-            this
-          ))
-        ] }, void 0, !0, {
-          fileName: "app/components/dropdown.tsx",
-          lineNumber: 84,
-          columnNumber: 13
-        }, this)
-      ] }, void 0, !0, {
-        fileName: "app/components/dropdown.tsx",
-        lineNumber: 81,
-        columnNumber: 11
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("button", { className: "w-full rounded bg-blue-500 p-2 text-white", children: "Submit" }, void 0, !1, {
+        fileName: "app/components/acmg_calcv1.tsx",
+        lineNumber: 126,
+        columnNumber: 9
       }, this)
     ] }, void 0, !0, {
-      fileName: "app/components/dropdown.tsx",
-      lineNumber: 51,
+      fileName: "app/components/acmg_calcv1.tsx",
+      lineNumber: 65,
       columnNumber: 7
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
-      "input",
-      {
-        type: "hidden",
-        name,
-        value: selectedOption,
-        onChange: (e) => setSelectedOption(e.target.value)
-      },
-      void 0,
-      !1,
-      {
-        fileName: "app/components/dropdown.tsx",
-        lineNumber: 108,
-        columnNumber: 9
-      },
-      this
-    )
+    }, this)
   ] }, void 0, !0, {
-    fileName: "app/components/dropdown.tsx",
-    lineNumber: 50,
+    fileName: "app/components/acmg_calcv1.tsx",
+    lineNumber: 52,
     columnNumber: 5
   }, this);
-}, dropdown_default = Dropdown;
+}, acmg_calcv1_default = ACMGCalculator;
+function CriteriaTracker({
+  criteria: criteria2
+}) {
+  let rowData = criteria2.join(" ");
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex flex-col gap-2", children: rowData }, void 0, !1, {
+    fileName: "app/components/acmg_calcv1.tsx",
+    lineNumber: 145,
+    columnNumber: 5
+  }, this);
+}
 
 // app/routes/beta.tsx
 var import_jsx_dev_runtime17 = require("react/jsx-dev-runtime");
@@ -3072,85 +3022,22 @@ async function action3({ request, params }) {
   return (0, import_node9.json)({});
 }
 function Beta() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-    "div",
-    {
-      className: "flex flex-col w-full gap-2",
-      children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-        "form",
-        {
-          method: "POST",
-          className: "flex flex-col gap-2",
-          children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-              dropdown_default,
-              {
-                options
-              },
-              void 0,
-              !1,
-              {
-                fileName: "app/routes/beta.tsx",
-                lineNumber: 23,
-                columnNumber: 3
-              },
-              this
-            ),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("button", { className: "bg-blue-500 text-white rounded-md p-2", children: "Submit" }, void 0, !1, {
-              fileName: "app/routes/beta.tsx",
-              lineNumber: 26,
-              columnNumber: 3
-            }, this)
-          ]
-        },
-        void 0,
-        !0,
-        {
-          fileName: "app/routes/beta.tsx",
-          lineNumber: 20,
-          columnNumber: 3
-        },
-        this
-      )
-    },
-    void 0,
-    !1,
-    {
-      fileName: "app/routes/beta.tsx",
-      lineNumber: 17,
-      columnNumber: 5
-    },
-    this
-  );
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_jsx_dev_runtime17.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(acmg_calcv1_default, {}, void 0, !1, {
+    fileName: "app/routes/beta.tsx",
+    lineNumber: 12,
+    columnNumber: 7
+  }, this) }, void 0, !1, {
+    fileName: "app/routes/beta.tsx",
+    lineNumber: 11,
+    columnNumber: 5
+  }, this);
 }
-var options = [
-  {
-    id: "1",
-    label: "Option 1",
-    value: "option-1"
-  },
-  {
-    id: "2",
-    label: "Option 2",
-    value: "option-2"
-  },
-  {
-    id: "3",
-    label: "Option 3",
-    value: "option-3"
-  },
-  {
-    id: "4",
-    label: "Option 4",
-    value: "option-4"
-  }
-];
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-QRXJC4UM.js", imports: ["/build/_shared/chunk-LKOPCC2G.js", "/build/_shared/chunk-GUPKMWBY.js", "/build/_shared/chunk-ABY47LC6.js", "/build/_shared/chunk-TZ27RBAM.js", "/build/_shared/chunk-J2OVIFEL.js", "/build/_shared/chunk-HH3BOLTW.js", "/build/_shared/chunk-MQESCB4Y.js", "/build/_shared/chunk-R6ILELA2.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-3VVXOIHA.js", imports: ["/build/_shared/chunk-7OJRNDDL.js", "/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-3FAPIQUI.js", imports: ["/build/_shared/chunk-D67KL4RH.js", "/build/_shared/chunk-A5NX5H24.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-7PKT5LR4.js", imports: ["/build/_shared/chunk-LXPARL2M.js", "/build/_shared/chunk-S4INFENK.js", "/build/_shared/chunk-D67KL4RH.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-UYFSHUNZ.js", imports: ["/build/_shared/chunk-A5NX5H24.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-O4VUVY7V.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-2R4OITB7.js", imports: ["/build/_shared/chunk-S4INFENK.js", "/build/_shared/chunk-D67KL4RH.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-UVZSOROF.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-DADUMF7O.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-UZDNX5RU.js", imports: ["/build/_shared/chunk-EEAORIME.js", "/build/_shared/chunk-A5NX5H24.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-J4OYTHOS.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-ANNJI5NS.js", imports: ["/build/_shared/chunk-LXPARL2M.js", "/build/_shared/chunk-S4INFENK.js", "/build/_shared/chunk-D67KL4RH.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "79d1b2a3", hmr: { runtime: "/build/_shared/chunk-J2OVIFEL.js", timestamp: 1684645454833 }, url: "/build/manifest-79D1B2A3.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-QRXJC4UM.js", imports: ["/build/_shared/chunk-LKOPCC2G.js", "/build/_shared/chunk-GUPKMWBY.js", "/build/_shared/chunk-ABY47LC6.js", "/build/_shared/chunk-TZ27RBAM.js", "/build/_shared/chunk-J2OVIFEL.js", "/build/_shared/chunk-HH3BOLTW.js", "/build/_shared/chunk-MQESCB4Y.js", "/build/_shared/chunk-R6ILELA2.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-ZRGO42PF.js", imports: ["/build/_shared/chunk-7OJRNDDL.js", "/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-UJ7DZ4SG.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-2EGZB6DV.js", imports: ["/build/_shared/chunk-VAV3AWZN.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-LTQ4DJ7Q.js", imports: ["/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-O4VUVY7V.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-BI2M2F2V.js", imports: ["/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-UVZSOROF.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-DADUMF7O.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-5UA2CLEY.js", imports: ["/build/_shared/chunk-V3RP5RFF.js", "/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-BLASU6X5.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-Q7G4BLON.js", imports: ["/build/_shared/chunk-VAV3AWZN.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "d5f83051", hmr: { runtime: "/build/_shared/chunk-J2OVIFEL.js", timestamp: 1684705614163 }, url: "/build/manifest-D5F83051.js" };
 
 // server-entry-module:@remix-run/dev/server-build
-var assetsBuildDirectory = "public/build", future = { unstable_dev: !0, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !1, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_react_stream_exports }, dev = { websocketPort: 3004 }, routes = {
+var assetsBuildDirectory = "public/build", future = { unstable_dev: !0, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !1, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_react_stream_exports }, dev = { websocketPort: 3002 }, routes = {
   root: {
     id: "root",
     parentId: void 0,

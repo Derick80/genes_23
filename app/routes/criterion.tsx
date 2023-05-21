@@ -54,7 +54,6 @@ export type CriterionLoaderData = {
 export default function Criterio() {
   const data = useLoaderData<typeof loader>();
   console.log(data, "data");
-  
 
   return (
     <div className="flex min-h-screen w-full flex-col p-1">
@@ -111,12 +110,12 @@ function CriteriaFetcher({ searchParam }: { searchParam: string }) {
       }`}
     >
       <div className="flex flex-row items-center gap-2">
-      <button
+        <button
           className="flex flex-row items-center gap-2"
           onClick={() => setOpen(!open)}
         >
-        <h3 className="text-xl font-bold">{searchParam}</h3>
-       
+          <h3 className="text-xl font-bold">{searchParam}</h3>
+
           {open ? <ChevronUpIcon /> : <ChevronDownIcon />}
         </button>
       </div>
