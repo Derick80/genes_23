@@ -22,7 +22,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           className="font-semibold"
           >            <Link to="variants">Variants</Link>
           </li>
-        </ul>
+          <li
+          className="font-semibold">
+          <Link to='/calculator'>Calculator</Link>
+          </li>
+        </ul> 
         {userId ? (
           <>
             <UserButton /> <Link to="/sign-out">Sign Out</Link>
