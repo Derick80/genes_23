@@ -1,71 +1,61 @@
+import React from "react";
 import { useState } from "react";
+import { set } from "zod";
 import {
+  GroupData,
   acmgCriteria,
   convertToNumbers,
   extractFirstTwoLetters,
+  getAcmgData,
   strengthValues,
 } from "~/constants/acmg-criteria";
 
 const ACMGCalculator = () => {
-  const [selectedCriteria, setSelectedCriteria] = useState<
-    Partial<
-      Record<
-        keyof typeof acmgCriteria,
-        { benign?: string; pathogenic?: string }
-      >
-    >
-  >({});
+  const [selectedCriteria, setSelectedCriteria] = useState<GroupData>({});
+  
   const [criteriaArray, setCriteriaArray] = useState<string[]>([]);
+  const [classification, setClassification] = useState<string>("No classification");
+
+React.useEffect(() => {
+  setSelectedCriteria({})
+}, [])
+  
+
   const handleSelect = (
     group: keyof typeof acmgCriteria,
     category: "benign" | "pathogenic",
     label: string
   ) => {
-    const newSelectedCriteria = { ...selectedCriteria };
-
-    newSelectedCriteria[group] = {
-      ...newSelectedCriteria[group],
+// update the selectedCriteria object with the new value from the select box
+    selectedCriteria[group] = {
+      ...selectedCriteria[group],
       [category]: label,
     };
-    const benignValues: string[] = [];
-    const pathogenicValues: string[] = [];
-    const criteriaArray: string[] = [];
-    for (const group in newSelectedCriteria) {
-      const { benign, pathogenic } = newSelectedCriteria[
-        group as keyof typeof newSelectedCriteria
-      ] as { benign?: string; pathogenic?: string };
-
-      if (benign) {
-        criteriaArray.push(benign);
-      }
-      if (pathogenic) {
-        criteriaArray.push(pathogenic);
-      }
-    }
-    console.log(benignValues, "benignValues");
-    console.log(pathogenicValues, "pathogenicValues");
-    console.log(criteriaArray, "criteriaArray");
-
-    setSelectedCriteria(newSelectedCriteria);
-    setCriteriaArray(criteriaArray);
-    const splitCriteria = extractFirstTwoLetters(criteriaArray);
-    console.log(splitCriteria, "splitCriteria");
-    const split = convertToNumbers(splitCriteria);
-    console.log(split, "split");
+    setSelectedCriteria(selectedCriteria)
+  // Get the new criteriaArray from the getAcmgData function
+   const newtest = getAcmgData(group,category,label,selectedCriteria)
+    console.log(newtest, "newtest")
+    setCriteriaArray(newtest);
+    // Get the first two letters from the newtest array to get the classification
+    const splitCriteria = extractFirstTwoLetters(newtest);
+    // convert the first two letters to numbers and get the classification
+    const totalClassification = convertToNumbers(splitCriteria);
+    // set the classification state to the classification
+    setClassification(totalClassification.classification)
   };
 
   return (
     <div className="p-4">
-      <p className="text-2xl font-bold">
-        ACMG selected criteria
-        {JSON.stringify(selectedCriteria)}
-      </p>
+      
 
-      <p className="text-2xl font-bold">
-        ACMG scores
-        {JSON.stringify(criteriaArray)}
-      </p>
-      <CriteriaTracker criteria={criteriaArray} />
+     
+      <CriteriaDetail selectedCriteria={selectedCriteria} />
+     <div className="flex flex-col gap-2">
+        <h2 className="text-xl font-bold">Classification</h2>
+        <p className="text-sm">{classification}</p>
+      </div>
+
+      <CriteriaSelected criteriaArray={criteriaArray} />
       <form method="POST">
         {Object.keys(acmgCriteria).map((group) => (
           <div key={group} className="mb-4">
@@ -137,43 +127,53 @@ const ACMGCalculator = () => {
 
 export default ACMGCalculator;
 
-function CriteriaTracker({ criteria }: { criteria: string[] }) {
-  const rowData = criteria.join(" ");
 
-  return <div className="flex flex-col gap-2">{rowData}</div>;
+function CriteriaDetail({selectedCriteria}: {selectedCriteria: GroupData}) {
+  const evidenceType = Object.keys(selectedCriteria).map((evidence) => {
+    return evidence;
+  });
+
+  console.log(evidenceType, "evidenceType");
+  
+  return (
+    <div className="flex flex-col gap-2">
+      {evidenceType.map((evidence) => (
+        <div key={evidence}>
+          <h3 className="text-xl font-bold capitalize">{evidence}</h3>
+          
+          <p className="text-gray-500">
+           {selectedCriteria[evidence].benign}
+
+          </p>
+          <p className="text-gray-500">
+            {selectedCriteria[evidence].pathogenic}
+          </p>
+
+
+    </div>
+      ))}
+    </div>
+
+  );
+
+
+}
+function CriteriaSelected({criteriaArray}: {criteriaArray: string[]}) {
+
+
+  return (
+    <div className="flex flex-col gap-2">
+      {criteriaArray.map((criteria) => (
+        <p
+          key={criteria}
+        >{criteria}</p>
+      ))}
+    </div>
+  );
 }
 
 const myData = ["BA1", "PP4", "PM2_Supporting"];
 
-const processMyData = (myData: string[]): number[][] => {
-  const processedData: number[][] = [];
 
-  for (const item of myData) {
-    let firstLetter: string;
-    let secondLetter: string;
-
-    if (item.startsWith("B")) {
-      firstLetter = "B";
-      const underscoreIndex = item.indexOf("_");
-      if (underscoreIndex > -1 && item.includes("_Supporting")) {
-        secondLetter = item[underscoreIndex + 1];
-      } else {
-        secondLetter = item[1];
-      }
-      processedData.push([-1, strengthValues[secondLetter]]);
-    } else if (item.startsWith("P")) {
-      firstLetter = "P";
-      const underscoreIndex = item.indexOf("_");
-      if (underscoreIndex > -1 && item.includes("_Supporting")) {
-        secondLetter = item[underscoreIndex + 1];
-      } else {
-        secondLetter = item[1];
-      }
-      processedData.push([1, strengthValues[secondLetter]]);
-    }
-  }
-
-  return processedData;
-};
 
 const myArrayToNumber = ["BA", "PP", "PM"];
