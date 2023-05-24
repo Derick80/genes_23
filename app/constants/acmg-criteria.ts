@@ -69,6 +69,16 @@ export type GroupData = {
   };
 };
 
+export type GroupData2 = {
+    [group: string]: {
+        [category: string]: string[]
+    }
+
+
+}
+
+
+
 // define a function that will receive form data and return the acmg criteria
 export function getAcmgData(
   group: keyof typeof acmgCriteria,

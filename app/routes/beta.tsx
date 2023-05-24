@@ -1,6 +1,8 @@
 import type { ActionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
+import ACMGCalculatorV2 from "~/components/acmg-calc-form";
 import ACMGCalculator from "~/components/acmg_calcv1";
+import { acmgCriteria } from "~/constants/acmg-criteria";
 
 export async function action({ request, params }: ActionArgs) {
   return json({});
@@ -9,7 +11,8 @@ export async function action({ request, params }: ActionArgs) {
 export default function Beta() {
   return (
     <>
-      <ACMGCalculator />
+      {/* <ACMGCalculator /> */}
+      <ACMGCalculatorV2  acmgCriteria={acmgCriteria}/>
     </>
   );
 }
