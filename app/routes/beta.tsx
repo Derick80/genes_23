@@ -5,12 +5,10 @@ import type { LoaderArgs } from "@remix-run/node";
 import { prisma } from "~/server/prisma.server";
 import { Form, useLoaderData } from "@remix-run/react";
 import React from "react";
-import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons";
+import { ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons";
 import type { Criterion } from "~/constants/acmg-criteria";
 import Button from "~/components/button";
-import * as RadioGroup from '@radix-ui/react-radio-group';
 import * as Select from '@radix-ui/react-select';
-import Criterio from "./criterion";
 
 export async function loader({ request, params }: LoaderArgs) {
   const criteria = await prisma.criterion.findMany();
