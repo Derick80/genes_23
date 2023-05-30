@@ -81,7 +81,7 @@ export async function action({ request, params }: ActionArgs) {
       id: criterionId,
     },
     data: {
-      criterionName,
+      label: criterionName,
       definition,
       evidenceType,
       example,
@@ -112,7 +112,7 @@ export default function EditIndex() {
           name="criterionName"
           id="criterionName"
           placeholder="criterionName"
-          defaultValue={data.criterion[0].criterionName}
+          defaultValue={data.criterion[0].label}
         />
         <div className="flex flex-col gap-2">
           <label className="text-xl font-bold" htmlFor="definition">

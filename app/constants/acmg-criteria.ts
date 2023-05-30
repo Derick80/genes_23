@@ -1,23 +1,30 @@
 // consts.ts is my reference for this file
+import { Criterion as PrismaCriterion }from "@prisma/client";
+import { SerializeFrom } from "@remix-run/node";
+
+export type Criterion = SerializeFrom<PrismaCriterion>;
+
+
 // define an interfacefor the criterion then define an interface for the acmg criteria
-interface Criterion {
+interface CriterionInterface {
   benign: string[];
   pathogenic: string[];
 }
 
+
 export interface AcmgCriteria {
-  population: Criterion;
-  computational: Criterion;
-  functional: Criterion;
-  segregation: Criterion;
-  deNovo: Criterion;
-  allelic: Criterion;
-  other_database: Criterion;
-  other_data: Criterion;
+  population: CriterionInterface;
+  computational: CriterionInterface;
+  functional: CriterionInterface;
+  segregation: CriterionInterface;
+  deNovo: CriterionInterface;
+  allelic: CriterionInterface;
+  other_database: CriterionInterface;
+  other_data: CriterionInterface;
 }
 
 //   export the base acmg criteria
-export const acmgCriteria: AcmgCriteria = {
+export const acmgCriteria = {
   population: {
     benign: ["BA1", "BS1", "BS2"],
     pathogenic: ["PM2", "PM2_Supporting", "PS4"],
@@ -64,20 +71,15 @@ export const acmgCriteria: AcmgCriteria = {
 
 export type GroupData = {
   [group: string]: {
-    benign?: string[];
-    pathogenic?: string[];
+    [category: string]: string;
   };
 };
 
 export type GroupData2 = {
-    [group: string]: {
-        [category: string]: string[]
-    }
-
-
-}
-
-
+  [group: string]: {
+    [category: string]: string[];
+  };
+};
 
 // define a function that will receive form data and return the acmg criteria
 export function getAcmgData(
@@ -110,7 +112,7 @@ export function getAcmgData(
 }
 // define an object that will help convert outdated acmg strength to updated acmg strength
 
-const specialCases: string[] = [
+export const specialCases: string[] = [
   "PM2_Supporting",
   "PVS1_Supporting",
   "PVS1_Strong",
@@ -118,7 +120,7 @@ const specialCases: string[] = [
 ];
 
 //  define a mapping from the special cases to their corresponding values
-const specialConversion: { [key: string]: string } = {
+export const specialConversion: { [key: string]: string } = {
   PM2_Supporting: "P",
   PVS1_Supporting: "P",
   PVS1_Strong: "S",

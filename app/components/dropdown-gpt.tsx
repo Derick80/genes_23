@@ -1,10 +1,12 @@
+import { ChevronDownIcon } from "@radix-ui/react-icons";
 import React from "react";
 
 interface DropdownProps {
   options: string[];
+  setSelected: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ options }) => {
+const Dropdown: React.FC<DropdownProps> = ({ options, setSelected }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selectedOption, setSelectedOption] = React.useState("");
 
@@ -20,13 +22,14 @@ const Dropdown: React.FC<DropdownProps> = ({ options }) => {
   return (
     <div className="dropdown">
       <button
-        className="dropdown-toggle"
+        className="flex w-full items-center justify-between "
         onClick={toggleDropdown}
         data-toggle="dropdown"
         aria-haspopup="true"
         aria-expanded={isOpen ? "true" : "false"}
       >
-        {selectedOption || "Select an option"}
+        <p className="text-white">{selectedOption || "Select"}</p>
+        <ChevronDownIcon className="text-teal-400" />
       </button>
       {isOpen && (
         <div

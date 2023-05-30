@@ -4,7 +4,7 @@ import type { LoaderArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { Link, Outlet, useLoaderData, useMatches } from "@remix-run/react";
 import React from "react";
-import { textFormat } from "~/functions";
+import ACMGCalculatorV2 from "~/components/acmg-calc-form";
 import { prisma } from "~/server/prisma.server";
 
 export async function loader({ request }: LoaderArgs) {
@@ -22,10 +22,23 @@ export async function loader({ request }: LoaderArgs) {
       evidenceType: "asc",
     },
   });
+  console.log(criterion, "criterion");
+  // reduce to evidenceType object with benign and pathogenic arrays
+
+  const groups = criterion.reduce((acc, cur) => {
+    if (!acc[cur.evidenceType]) {
+      acc[cur.evidenceType] = [];
+    }
+    acc[cur.evidenceType].push(cur.weight);
+
+    return acc;
+  }, {} as CriterionLoaderData["groups"][0]);
+
+  console.log(groups, "groups");
 
   // generate a list of unique column names
   const columnNames = criterion.reduce(
-    (acc: string[], cur: typeof criterion[0]) => {
+    (acc: string[], cur: (typeof criterion)[0]) => {
       if (!acc.includes(cur.evidenceType)) {
         acc.push(cur.evidenceType);
       }
@@ -34,14 +47,15 @@ export async function loader({ request }: LoaderArgs) {
     [] as string[]
   );
 
-  return json({ criterion, columnNames });
+  return json({ criterion, columnNames, groups });
 }
 
 export type CriterionLoaderData = {
   groups: {
     [key: string]: {
       id: string;
-      criterionName: string;
+      label: string;
+      weight: number;
       definition: string;
       evidenceType: string;
       example: string;
@@ -53,7 +67,6 @@ export type CriterionLoaderData = {
 
 export default function Criterio() {
   const data = useLoaderData<typeof loader>();
-  console.log(data, "data");
 
   return (
     <div className="flex min-h-screen w-full flex-col p-1">
@@ -63,7 +76,7 @@ export default function Criterio() {
 
         <p className="text-gray-500">
           This page is a work in progress. Please check back later for more
-          information.
+          information. Definitions are based on the ACMG/AMP 2015 Guidelines.
         </p>
         <p className="text-gray-500">
           Individual Criterion are grouped by Evidence Type. Click on the
@@ -126,9 +139,7 @@ function CriteriaFetcher({ searchParam }: { searchParam: string }) {
             return (
               <div key={criterion.id} className="flex flex-col gap-2">
                 <Link to={`/criterion/${criterion.id}`}>
-                  <h3 className="text-xl font-bold">
-                    {criterion.criterionName}
-                  </h3>
+                  <h3 className="text-xl font-bold">{criterion.label}</h3>
                 </Link>
                 <div className="flex flex-row gap-2">
                   <FormatDefinition definition={criterion.definition} />
@@ -154,6 +165,11 @@ function CriteriaFetcher({ searchParam }: { searchParam: string }) {
                     <p className="text-gray-500">
                       Criterion Base Weight: {criterion.criterionBaseWeight}
                     </p>
+                  </div>
+                ) : null}
+                {criterion.weight ? (
+                  <div className="flex flex-row gap-2">
+                    <p className="text-gray-500">Weight: {criterion.weight}</p>
                   </div>
                 ) : null}
               </div>

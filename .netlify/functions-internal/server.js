@@ -146,7 +146,7 @@ __export(root_exports, {
 var import_node2 = require("@remix-run/node"), import_react3 = require("@remix-run/react");
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-YC55PH3F.css";
+var tailwind_default = "/build/_assets/tailwind-PJD6KRWB.css";
 
 // app/components/layout.tsx
 var import_remix = require("@clerk/remix"), import_react2 = require("@remix-run/react"), import_jsx_dev_runtime2 = require("react/jsx-dev-runtime");
@@ -201,6 +201,15 @@ function Layout({ children }) {
           fileName: "app/components/layout.tsx",
           lineNumber: 23,
           columnNumber: 11
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("li", { className: "font-semibold", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Link, { to: "/beta", children: "Beta" }, void 0, !1, {
+          fileName: "app/components/layout.tsx",
+          lineNumber: 27,
+          columnNumber: 13
+        }, this) }, void 0, !1, {
+          fileName: "app/components/layout.tsx",
+          lineNumber: 26,
+          columnNumber: 11
         }, this)
       ] }, void 0, !0, {
         fileName: "app/components/layout.tsx",
@@ -210,33 +219,33 @@ function Layout({ children }) {
       userId ? /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_jsx_dev_runtime2.Fragment, { children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_remix.UserButton, {}, void 0, !1, {
           fileName: "app/components/layout.tsx",
-          lineNumber: 29,
+          lineNumber: 32,
           columnNumber: 13
         }, this),
         " ",
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Link, { to: "/sign-out", children: "Sign Out" }, void 0, !1, {
           fileName: "app/components/layout.tsx",
-          lineNumber: 29,
+          lineNumber: 32,
           columnNumber: 28
         }, this)
       ] }, void 0, !0, {
         fileName: "app/components/layout.tsx",
-        lineNumber: 28,
+        lineNumber: 31,
         columnNumber: 11
       }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "text-semibold flex gap-1", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Link, { to: "/sign-in", children: "Sign In" }, void 0, !1, {
           fileName: "app/components/layout.tsx",
-          lineNumber: 33,
+          lineNumber: 36,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Link, { to: "/sign-up", children: "Sign Up" }, void 0, !1, {
           fileName: "app/components/layout.tsx",
-          lineNumber: 34,
+          lineNumber: 37,
           columnNumber: 13
         }, this)
       ] }, void 0, !0, {
         fileName: "app/components/layout.tsx",
-        lineNumber: 32,
+        lineNumber: 35,
         columnNumber: 11
       }, this)
     ] }, void 0, !0, {
@@ -246,27 +255,27 @@ function Layout({ children }) {
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("main", { className: "relative mt-20 flex-1", children }, void 0, !1, {
       fileName: "app/components/layout.tsx",
-      lineNumber: 38,
+      lineNumber: 41,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("footer", { className: "fixed left-0 right-0 bottom-0 z-50 flex h-10 items-center  justify-center bg-gray-800 text-gray-100 shadow-md", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("ul", { className: "flex gap-1", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("footer", { className: "fixed bottom-0 left-0 right-0 z-50 flex h-10 items-center  justify-center bg-gray-800 text-gray-100 shadow-md", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("ul", { className: "flex gap-1", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("li", { className: "font-semibold", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Link, { to: "/https://github.com/Derick80", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-sm", children: "Github" }, void 0, !1, {
         fileName: "app/components/layout.tsx",
-        lineNumber: 43,
+        lineNumber: 46,
         columnNumber: 15
       }, this) }, void 0, !1, {
         fileName: "app/components/layout.tsx",
-        lineNumber: 42,
+        lineNumber: 45,
         columnNumber: 13
       }, this) }, void 0, !1, {
         fileName: "app/components/layout.tsx",
-        lineNumber: 41,
+        lineNumber: 44,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("li", { className: "flex gap-1 font-semibold", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-sm ", children: "Copyright" }, void 0, !1, {
           fileName: "app/components/layout.tsx",
-          lineNumber: 47,
+          lineNumber: 50,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-sm", children: [
@@ -274,34 +283,34 @@ function Layout({ children }) {
           (/* @__PURE__ */ new Date()).getFullYear()
         ] }, void 0, !0, {
           fileName: "app/components/layout.tsx",
-          lineNumber: 48,
+          lineNumber: 51,
           columnNumber: 13
         }, this)
       ] }, void 0, !0, {
         fileName: "app/components/layout.tsx",
-        lineNumber: 46,
+        lineNumber: 49,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("li", { className: "font-semibold", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Link, { to: "/https://twitter.com/Derick80", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-sm", children: "Twitter" }, void 0, !1, {
         fileName: "app/components/layout.tsx",
-        lineNumber: 52,
+        lineNumber: 55,
         columnNumber: 15
       }, this) }, void 0, !1, {
         fileName: "app/components/layout.tsx",
-        lineNumber: 51,
+        lineNumber: 54,
         columnNumber: 13
       }, this) }, void 0, !1, {
         fileName: "app/components/layout.tsx",
-        lineNumber: 50,
+        lineNumber: 53,
         columnNumber: 11
       }, this)
     ] }, void 0, !0, {
       fileName: "app/components/layout.tsx",
-      lineNumber: 40,
+      lineNumber: 43,
       columnNumber: 9
     }, this) }, void 0, !1, {
       fileName: "app/components/layout.tsx",
-      lineNumber: 39,
+      lineNumber: 42,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
@@ -448,98 +457,98 @@ function Button({
   );
 }
 
-// app/constants/bayes-table.tsx
+// app/components/bayes-table.tsx
 var import_jsx_dev_runtime5 = require("react/jsx-dev-runtime");
 function BayesTable() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "flex w-1/2 flex-col gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("table", { className: "w-1/2 text-sm", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("thead", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("tr", { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("th", { className: "text-left", children: "Category" }, void 0, !1, {
-        fileName: "app/constants/bayes-table.tsx",
+        fileName: "app/components/bayes-table.tsx",
         lineNumber: 7,
         columnNumber: 13
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("th", { className: "text-left", children: "Total Score" }, void 0, !1, {
-        fileName: "app/constants/bayes-table.tsx",
+        fileName: "app/components/bayes-table.tsx",
         lineNumber: 9,
         columnNumber: 13
       }, this)
     ] }, void 0, !0, {
-      fileName: "app/constants/bayes-table.tsx",
+      fileName: "app/components/bayes-table.tsx",
       lineNumber: 6,
       columnNumber: 11
     }, this) }, void 0, !1, {
-      fileName: "app/constants/bayes-table.tsx",
+      fileName: "app/components/bayes-table.tsx",
       lineNumber: 5,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("tbody", { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("tr", { children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("td", { className: "text-left", children: "Pathogenic" }, void 0, !1, {
-          fileName: "app/constants/bayes-table.tsx",
+          fileName: "app/components/bayes-table.tsx",
           lineNumber: 14,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("td", { className: "text-left", children: " >10" }, void 0, !1, {
-          fileName: "app/constants/bayes-table.tsx",
+          fileName: "app/components/bayes-table.tsx",
           lineNumber: 15,
           columnNumber: 13
         }, this)
       ] }, void 0, !0, {
-        fileName: "app/constants/bayes-table.tsx",
+        fileName: "app/components/bayes-table.tsx",
         lineNumber: 13,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("tr", { children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("td", { className: "text-left", children: " Likely Pathogenic" }, void 0, !1, {
-          fileName: "app/constants/bayes-table.tsx",
+          fileName: "app/components/bayes-table.tsx",
           lineNumber: 18,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("td", { className: "text-left", children: " 6-9" }, void 0, !1, {
-          fileName: "app/constants/bayes-table.tsx",
+          fileName: "app/components/bayes-table.tsx",
           lineNumber: 19,
           columnNumber: 13
         }, this)
       ] }, void 0, !0, {
-        fileName: "app/constants/bayes-table.tsx",
+        fileName: "app/components/bayes-table.tsx",
         lineNumber: 17,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("tr", { children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("td", { className: "text-left", children: "Uncertain Significance" }, void 0, !1, {
-          fileName: "app/constants/bayes-table.tsx",
+          fileName: "app/components/bayes-table.tsx",
           lineNumber: 22,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("td", { className: "text-left", children: "0-5" }, void 0, !1, {
-          fileName: "app/constants/bayes-table.tsx",
+          fileName: "app/components/bayes-table.tsx",
           lineNumber: 23,
           columnNumber: 13
         }, this)
       ] }, void 0, !0, {
-        fileName: "app/constants/bayes-table.tsx",
+        fileName: "app/components/bayes-table.tsx",
         lineNumber: 21,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("tr", { children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("td", { className: "text-left", children: "Likely Benign" }, void 0, !1, {
-          fileName: "app/constants/bayes-table.tsx",
+          fileName: "app/components/bayes-table.tsx",
           lineNumber: 26,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("td", { className: "text-left", children: " -1-6" }, void 0, !1, {
-          fileName: "app/constants/bayes-table.tsx",
+          fileName: "app/components/bayes-table.tsx",
           lineNumber: 27,
           columnNumber: 13
         }, this)
       ] }, void 0, !0, {
-        fileName: "app/constants/bayes-table.tsx",
+        fileName: "app/components/bayes-table.tsx",
         lineNumber: 25,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("tr", { children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("td", { className: "text-left", children: "Benign" }, void 0, !1, {
-          fileName: "app/constants/bayes-table.tsx",
+          fileName: "app/components/bayes-table.tsx",
           lineNumber: 30,
           columnNumber: 13
         }, this),
@@ -548,36 +557,36 @@ function BayesTable() {
           ">=",
           "-7"
         ] }, void 0, !0, {
-          fileName: "app/constants/bayes-table.tsx",
+          fileName: "app/components/bayes-table.tsx",
           lineNumber: 31,
           columnNumber: 13
         }, this)
       ] }, void 0, !0, {
-        fileName: "app/constants/bayes-table.tsx",
+        fileName: "app/components/bayes-table.tsx",
         lineNumber: 29,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("tr", {}, void 0, !1, {
-        fileName: "app/constants/bayes-table.tsx",
+        fileName: "app/components/bayes-table.tsx",
         lineNumber: 37,
         columnNumber: 11
       }, this)
     ] }, void 0, !0, {
-      fileName: "app/constants/bayes-table.tsx",
+      fileName: "app/components/bayes-table.tsx",
       lineNumber: 12,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "text-xs text-gray-500", children: "*Note: This is a beta version of the ACMG classification tool. Please use with caution. Based on Tavtigian 2020" }, void 0, !1, {
-      fileName: "app/constants/bayes-table.tsx",
+      fileName: "app/components/bayes-table.tsx",
       lineNumber: 39,
       columnNumber: 9
     }, this)
   ] }, void 0, !0, {
-    fileName: "app/constants/bayes-table.tsx",
+    fileName: "app/components/bayes-table.tsx",
     lineNumber: 4,
     columnNumber: 7
   }, this) }, void 0, !1, {
-    fileName: "app/constants/bayes-table.tsx",
+    fileName: "app/components/bayes-table.tsx",
     lineNumber: 3,
     columnNumber: 5
   }, this);
@@ -1160,7 +1169,7 @@ async function action2({ request, params }) {
       id: criterionId
     },
     data: {
-      criterionName,
+      label: criterionName,
       definition,
       evidenceType,
       example,
@@ -1191,7 +1200,7 @@ function EditIndex() {
             name: "criterionName",
             id: "criterionName",
             placeholder: "criterionName",
-            defaultValue: data.criterion[0].criterionName
+            defaultValue: data.criterion[0].label
           },
           void 0,
           !1,
@@ -2480,38 +2489,42 @@ async function loader7({ request }) {
     orderBy: {
       evidenceType: "asc"
     }
-  }), columnNames = criterion.reduce(
+  });
+  console.log(criterion, "criterion");
+  let groups = criterion.reduce((acc, cur) => (acc[cur.evidenceType] || (acc[cur.evidenceType] = []), acc[cur.evidenceType].push(cur.weight), acc), {});
+  console.log(groups, "groups");
+  let columnNames = criterion.reduce(
     (acc, cur) => (acc.includes(cur.evidenceType) || acc.push(cur.evidenceType), acc),
     []
   );
-  return (0, import_node8.json)({ criterion, columnNames });
+  return (0, import_node8.json)({ criterion, columnNames, groups });
 }
 function Criterio() {
   let data = (0, import_react15.useLoaderData)();
-  return console.log(data, "data"), /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex min-h-screen w-full flex-col p-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex min-h-screen w-full flex-col p-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_react15.Outlet, {}, void 0, !1, {
       fileName: "app/routes/criterion.tsx",
-      lineNumber: 61,
+      lineNumber: 74,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("h1", { className: "text-2xl font-bold", children: "Documentation" }, void 0, !1, {
       fileName: "app/routes/criterion.tsx",
-      lineNumber: 62,
+      lineNumber: 75,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("p", { className: "text-gray-500", children: "This page is a work in progress. Please check back later for more information." }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("p", { className: "text-gray-500", children: "This page is a work in progress. Please check back later for more information. Definitions are based on the ACMG/AMP 2015 Guidelines." }, void 0, !1, {
       fileName: "app/routes/criterion.tsx",
-      lineNumber: 64,
+      lineNumber: 77,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("p", { className: "text-gray-500", children: "Individual Criterion are grouped by Evidence Type. Click on the Evidence Type to see the Criterion." }, void 0, !1, {
       fileName: "app/routes/criterion.tsx",
-      lineNumber: 68,
+      lineNumber: 81,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("p", { className: "text-gray-500", children: "To Edit a Criterion, click on the Criterion Name." }, void 0, !1, {
       fileName: "app/routes/criterion.tsx",
-      lineNumber: 72,
+      lineNumber: 85,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex flex-col gap-2 p-1", children: data.columnNames.map((column) => /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(
@@ -2520,11 +2533,11 @@ function Criterio() {
         className: "items-cener flex w-full flex-col gap-2",
         children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex flex-row gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(CriteriaFetcher, { searchParam: column }, void 0, !1, {
           fileName: "app/routes/criterion.tsx",
-          lineNumber: 84,
+          lineNumber: 97,
           columnNumber: 19
         }, this) }, void 0, !1, {
           fileName: "app/routes/criterion.tsx",
-          lineNumber: 83,
+          lineNumber: 96,
           columnNumber: 17
         }, this)
       },
@@ -2532,22 +2545,22 @@ function Criterio() {
       !1,
       {
         fileName: "app/routes/criterion.tsx",
-        lineNumber: 79,
+        lineNumber: 92,
         columnNumber: 15
       },
       this
     )) }, void 0, !1, {
       fileName: "app/routes/criterion.tsx",
-      lineNumber: 76,
+      lineNumber: 89,
       columnNumber: 9
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/criterion.tsx",
-    lineNumber: 60,
+    lineNumber: 73,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/routes/criterion.tsx",
-    lineNumber: 59,
+    lineNumber: 72,
     columnNumber: 5
   }, this);
 }
@@ -2567,16 +2580,16 @@ function CriteriaFetcher({ searchParam }) {
             children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("h3", { className: "text-xl font-bold", children: searchParam }, void 0, !1, {
                 fileName: "app/routes/criterion.tsx",
-                lineNumber: 117,
+                lineNumber: 130,
                 columnNumber: 11
               }, this),
               open ? /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_react_icons2.ChevronUpIcon, {}, void 0, !1, {
                 fileName: "app/routes/criterion.tsx",
-                lineNumber: 119,
+                lineNumber: 132,
                 columnNumber: 19
               }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_react_icons2.ChevronDownIcon, {}, void 0, !1, {
                 fileName: "app/routes/criterion.tsx",
-                lineNumber: 119,
+                lineNumber: 132,
                 columnNumber: 39
               }, this)
             ]
@@ -2585,32 +2598,32 @@ function CriteriaFetcher({ searchParam }) {
           !0,
           {
             fileName: "app/routes/criterion.tsx",
-            lineNumber: 113,
+            lineNumber: 126,
             columnNumber: 9
           },
           this
         ) }, void 0, !1, {
           fileName: "app/routes/criterion.tsx",
-          lineNumber: 112,
+          lineNumber: 125,
           columnNumber: 7
         }, this),
         open ? /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex flex-col gap-2 p-1", children: byEvidenceType == null ? void 0 : byEvidenceType.map((criterion2) => /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_react15.Link, { to: `/criterion/${criterion2.id}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("h3", { className: "text-xl font-bold", children: criterion2.criterionName }, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_react15.Link, { to: `/criterion/${criterion2.id}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("h3", { className: "text-xl font-bold", children: criterion2.label }, void 0, !1, {
             fileName: "app/routes/criterion.tsx",
-            lineNumber: 129,
+            lineNumber: 142,
             columnNumber: 19
           }, this) }, void 0, !1, {
             fileName: "app/routes/criterion.tsx",
-            lineNumber: 128,
+            lineNumber: 141,
             columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex flex-row gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(FormatDefinition, { definition: criterion2.definition }, void 0, !1, {
             fileName: "app/routes/criterion.tsx",
-            lineNumber: 134,
+            lineNumber: 145,
             columnNumber: 19
           }, this) }, void 0, !1, {
             fileName: "app/routes/criterion.tsx",
-            lineNumber: 133,
+            lineNumber: 144,
             columnNumber: 17
           }, this),
           criterion2.example ? /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex flex-row gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("p", { className: "text-gray-500", children: [
@@ -2619,11 +2632,11 @@ function CriteriaFetcher({ searchParam }) {
             criterion2.example
           ] }, void 0, !0, {
             fileName: "app/routes/criterion.tsx",
-            lineNumber: 139,
+            lineNumber: 150,
             columnNumber: 21
           }, this) }, void 0, !1, {
             fileName: "app/routes/criterion.tsx",
-            lineNumber: 138,
+            lineNumber: 149,
             columnNumber: 19
           }, this) : null,
           criterion2.caveat ? /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex flex-row gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("p", { className: "text-gray-500", children: [
@@ -2631,11 +2644,11 @@ function CriteriaFetcher({ searchParam }) {
             criterion2.caveat
           ] }, void 0, !0, {
             fileName: "app/routes/criterion.tsx",
-            lineNumber: 148,
+            lineNumber: 159,
             columnNumber: 21
           }, this) }, void 0, !1, {
             fileName: "app/routes/criterion.tsx",
-            lineNumber: 147,
+            lineNumber: 158,
             columnNumber: 19
           }, this) : null,
           criterion2.criterionBaseWeight ? /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex flex-row gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("p", { className: "text-gray-500", children: [
@@ -2643,20 +2656,32 @@ function CriteriaFetcher({ searchParam }) {
             criterion2.criterionBaseWeight
           ] }, void 0, !0, {
             fileName: "app/routes/criterion.tsx",
-            lineNumber: 154,
+            lineNumber: 165,
             columnNumber: 21
           }, this) }, void 0, !1, {
             fileName: "app/routes/criterion.tsx",
-            lineNumber: 153,
+            lineNumber: 164,
+            columnNumber: 19
+          }, this) : null,
+          criterion2.weight ? /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("div", { className: "flex flex-row gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)("p", { className: "text-gray-500", children: [
+            "Weight: ",
+            criterion2.weight
+          ] }, void 0, !0, {
+            fileName: "app/routes/criterion.tsx",
+            lineNumber: 172,
+            columnNumber: 21
+          }, this) }, void 0, !1, {
+            fileName: "app/routes/criterion.tsx",
+            lineNumber: 171,
             columnNumber: 19
           }, this) : null
         ] }, criterion2.id, !0, {
           fileName: "app/routes/criterion.tsx",
-          lineNumber: 127,
+          lineNumber: 140,
           columnNumber: 15
         }, this)) }, void 0, !1, {
           fileName: "app/routes/criterion.tsx",
-          lineNumber: 124,
+          lineNumber: 137,
           columnNumber: 9
         }, this) : null
       ]
@@ -2665,7 +2690,7 @@ function CriteriaFetcher({ searchParam }) {
     !0,
     {
       fileName: "app/routes/criterion.tsx",
-      lineNumber: 107,
+      lineNumber: 120,
       columnNumber: 5
     },
     this
@@ -2680,11 +2705,11 @@ function FormatDefinition({ definition }) {
     sortMe(definition)
   ] }, void 0, !0, {
     fileName: "app/routes/criterion.tsx",
-    lineNumber: 183,
+    lineNumber: 199,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/routes/criterion.tsx",
-    lineNumber: 182,
+    lineNumber: 198,
     columnNumber: 5
   }, this);
 }
@@ -2743,182 +2768,169 @@ function SignUpPage() {
 var beta_exports = {};
 __export(beta_exports, {
   action: () => action3,
-  default: () => Beta
+  default: () => Beta,
+  loader: () => loader8
 });
 var import_node9 = require("@remix-run/node");
-
-// app/components/acmg-calc-form.tsx
-var import_react17 = require("@remix-run/react"), import_react18 = require("react"), import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), ACMGCalculatorV2 = ({ acmgCriteria: acmgCriteria2 }) => {
-  let [selectedCriteria, setSelectedCriteria] = (0, import_react18.useState)({}), rearranged = ((data) => {
-    let combinedData2 = {};
-    for (let group in data) {
-      let { benign, pathogenic } = data[group], combinedArray = [];
-      benign && combinedArray.push(...benign), pathogenic && combinedArray.push(...pathogenic), combinedData2[group] = combinedArray;
-    }
-    return combinedData2;
-  })(acmgCriteria2);
-  console.log(rearranged, "rearranged");
-  let handleSelect = (event) => {
-    let { name, value } = event.target, checked = event.target.checked, isMultiSelect = event.target.type === "checkbox";
-    if (checked && isMultiSelect)
-      setSelectedCriteria({
-        ...selectedCriteria,
-        [name]: {
-          ...selectedCriteria[name],
-          [value]: value
-        }
-      });
-    else if (!checked && isMultiSelect) {
-      let { [value]: removed, ...rest } = selectedCriteria[name];
-      setSelectedCriteria({
-        ...selectedCriteria,
-        [name]: rest
-      });
-    } else
-      setSelectedCriteria({
-        ...selectedCriteria,
-        [name]: {
-          [value]: value
-        }
-      });
-  };
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "p-4", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("pre", { className: "text-xs", children: JSON.stringify(selectedCriteria, null, 2) }, void 0, !1, {
-      fileName: "app/components/acmg-calc-form.tsx",
-      lineNumber: 94,
-      columnNumber: 13
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_react17.Form, { method: "POST", children: [
-      Object.keys(rearranged).map((group) => /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "mb-4", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h2", { className: "mb-2 text-center text-base font-semibold capitalize", children: group }, void 0, !1, {
-          fileName: "app/components/acmg-calc-form.tsx",
-          lineNumber: 101,
-          columnNumber: 17
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex flex-col gap-2", children: rearranged[group].map((label) => /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("label", { className: "flex items-center gap-2", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
-            "input",
-            {
-              type: group === "functional" ? "checkbox" : "radio",
-              name: group,
-              value: label,
-              onChange: (e) => handleSelect(
-                e
-              )
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/components/acmg-calc-form.tsx",
-              lineNumber: 108,
-              columnNumber: 33
-            },
-            this
-          ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("span", { children: label }, void 0, !1, {
-            fileName: "app/components/acmg-calc-form.tsx",
-            lineNumber: 119,
-            columnNumber: 33
-          }, this)
-        ] }, void 0, !0, {
-          fileName: "app/components/acmg-calc-form.tsx",
-          lineNumber: 107,
-          columnNumber: 29
-        }, this) }, label, !1, {
-          fileName: "app/components/acmg-calc-form.tsx",
-          lineNumber: 106,
-          columnNumber: 25
-        }, this)) }, void 0, !1, {
-          fileName: "app/components/acmg-calc-form.tsx",
-          lineNumber: 104,
-          columnNumber: 17
-        }, this)
-      ] }, group, !0, {
-        fileName: "app/components/acmg-calc-form.tsx",
-        lineNumber: 100,
-        columnNumber: 13
-      }, this)),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("button", { type: "submit", children: "Submit" }, void 0, !1, {
-        fileName: "app/components/acmg-calc-form.tsx",
-        lineNumber: 129,
-        columnNumber: 9
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "app/components/acmg-calc-form.tsx",
-      lineNumber: 98,
-      columnNumber: 6
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "app/components/acmg-calc-form.tsx",
-    lineNumber: 92,
-    columnNumber: 5
-  }, this);
-}, acmg_calc_form_default = ACMGCalculatorV2;
-
-// app/constants/acmg-criteria.ts
-var acmgCriteria = {
-  population: {
-    benign: ["BA1", "BS1", "BS2"],
-    pathogenic: ["PM2", "PM2_Supporting", "PS4"]
-  },
-  computational: {
-    benign: ["BP4", "BP7", "BP1", "BP3"],
-    pathogenic: [
-      "PP3",
-      "PM4",
-      "PM5",
-      "PVS1",
-      "PVS1_Strong",
-      "PVS1_Moderate",
-      "PVS1_Supporting",
-      "PS1"
-    ]
-  },
-  functional: {
-    benign: ["BS3"],
-    pathogenic: ["PS3", "PM1", "PP2"]
-  },
-  segregation: {
-    benign: ["BS4"],
-    pathogenic: ["PP1"]
-  },
-  deNovo: {
-    benign: [],
-    pathogenic: ["PS2", "PM6"]
-  },
-  allelic: {
-    benign: ["BP2"],
-    pathogenic: ["PM3"]
-  },
-  other_database: {
-    benign: ["BP6"],
-    pathogenic: ["PP5"]
-  },
-  other_data: {
-    benign: ["BP5"],
-    pathogenic: ["PP4"]
-  }
-};
-
-// app/routes/beta.tsx
-var import_jsx_dev_runtime17 = require("react/jsx-dev-runtime");
+var import_react17 = require("@remix-run/react"), import_react18 = __toESM(require("react")), import_react_icons3 = require("@radix-ui/react-icons");
+var Select = __toESM(require("@radix-ui/react-select")), import_jsx_dev_runtime16 = require("react/jsx-dev-runtime");
+async function loader8({ request, params }) {
+  let criteria2 = await prisma.criterion.findMany();
+  return console.log(criteria2, "criteria"), (0, import_node9.json)({ criteria: criteria2 });
+}
 async function action3({ request, params }) {
   return (0, import_node9.json)({});
 }
 function Beta() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_jsx_dev_runtime17.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(acmg_calc_form_default, { acmgCriteria }, void 0, !1, {
+  let data = (0, import_react17.useLoaderData)(), byEvidenceType = data.criteria.reduce((acc, criterion) => {
+    let { evidenceType } = criterion;
+    return acc[evidenceType] || (acc[evidenceType] = []), acc[evidenceType].push(criterion), acc;
+  }, {});
+  console.log(byEvidenceType, "byEvidenceType");
+  let [open, setOpen] = import_react18.default.useState(!1);
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_jsx_dev_runtime16.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+    import_react17.Form,
+    {
+      method: "post",
+      action: "/beta",
+      className: "flex flex-col gap-2",
+      children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+          DropMenu,
+          {
+            criteria: data.criteria,
+            setOpened: setOpen
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/routes/beta.tsx",
+            lineNumber: 45,
+            columnNumber: 6
+          },
+          this
+        ),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(Button, { variant: "primary_filled", size: "base", type: "submit", children: "Submit" }, void 0, !1, {
+          fileName: "app/routes/beta.tsx",
+          lineNumber: 49,
+          columnNumber: 9
+        }, this)
+      ]
+    },
+    void 0,
+    !0,
+    {
+      fileName: "app/routes/beta.tsx",
+      lineNumber: 40,
+      columnNumber: 7
+    },
+    this
+  ) }, void 0, !1, {
     fileName: "app/routes/beta.tsx",
-    lineNumber: 15,
-    columnNumber: 7
-  }, this) }, void 0, !1, {
-    fileName: "app/routes/beta.tsx",
-    lineNumber: 13,
+    lineNumber: 39,
     columnNumber: 5
   }, this);
 }
+function DropMenu({
+  criteria: criteria2,
+  setOpened
+}) {
+  console.log(criteria2, "criteria in DropMenu");
+  let [open, setOpen] = import_react18.default.useState(!1), [selected, setSelected] = import_react18.default.useState([]), selections = criteria2.reduce((acc, criterion) => {
+    let { evidenceType } = criterion;
+    return acc[evidenceType] || (acc[evidenceType] = []), acc[evidenceType].push(criterion), acc;
+  }, {}), computational = selections["Computational and Predictive Data"], functional = selections["Functional Data"], population = selections["Population Data"], segregation = selections["Segregation Data"], deNovo = selections["De Novo Data"], allelic = selections["Allelic Data"], other = selections["Other Data"], otherDatabase = selections["Other Database"];
+  console.log(otherDatabase, "otherDatabase"), console.log(selections, "selections");
+  let trimmed = criteria2.map((criterion) => ({
+    evidenceType: criterion.evidenceType,
+    label: criterion.label,
+    value: criterion.label
+  }));
+  console.log(trimmed, "trimmed");
+  let noFunctional = criteria2.filter((criterion) => criterion.evidenceType !== "Functional Data").map((criterion) => ({
+    evidenceType: criterion.evidenceType,
+    label: criterion.label,
+    value: criterion.label
+  }));
+  console.log(noFunctional, "noFunctional");
+  let functionalData = criteria2.filter((criterion) => criterion.evidenceType === "Functional Data");
+  console.log(functionalData, "functionalData"), console.log(Array.isArray(functionalData), "functionalData");
+  let columns = criteria2.reduce((acc, criterion) => {
+    let { evidenceType } = criterion;
+    return acc[evidenceType] || (acc[evidenceType] = []), acc[evidenceType].push(criterion), acc;
+  }, {});
+  return console.log(columns, "columns"), /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+    "div",
+    {
+      className: "flex flex-col gap-2",
+      children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-sm text-gray-500", children: "Evidence Addition" }, void 0, !1, {
+          fileName: "app/routes/beta.tsx",
+          lineNumber: 127,
+          columnNumber: 7
+        }, this) }, void 0, !1, {
+          fileName: "app/routes/beta.tsx",
+          lineNumber: 126,
+          columnNumber: 6
+        }, this),
+        columns && Object.keys(columns).map(
+          (evidenceType) => {
+            let criteria3 = columns[evidenceType];
+            return /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex flex-row justify-between items-center", children: [
+                /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("span", { children: evidenceType }, void 0, !1, {
+                  fileName: "app/routes/beta.tsx",
+                  lineNumber: 137,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("span", { className: "text-sm text-gray-500", children: [
+                  criteria3.length,
+                  " criteria"
+                ] }, void 0, !0, {
+                  fileName: "app/routes/beta.tsx",
+                  lineNumber: 138,
+                  columnNumber: 15
+                }, this)
+              ] }, void 0, !0, {
+                fileName: "app/routes/beta.tsx",
+                lineNumber: 136,
+                columnNumber: 13
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex flex-col gap-2", children: criteria3.map((criterion) => /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex flex-row justify-between items-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("span", { children: criterion.label }, void 0, !1, {
+                fileName: "app/routes/beta.tsx",
+                lineNumber: 151,
+                columnNumber: 21
+              }, this) }, criterion.id, !1, {
+                fileName: "app/routes/beta.tsx",
+                lineNumber: 150,
+                columnNumber: 19
+              }, this)) }, void 0, !1, {
+                fileName: "app/routes/beta.tsx",
+                lineNumber: 144,
+                columnNumber: 13
+              }, this)
+            ] }, evidenceType, !0, {
+              fileName: "app/routes/beta.tsx",
+              lineNumber: 135,
+              columnNumber: 11
+            }, this);
+          }
+        )
+      ]
+    },
+    void 0,
+    !0,
+    {
+      fileName: "app/routes/beta.tsx",
+      lineNumber: 123,
+      columnNumber: 5
+    },
+    this
+  );
+}
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-QRXJC4UM.js", imports: ["/build/_shared/chunk-LKOPCC2G.js", "/build/_shared/chunk-GUPKMWBY.js", "/build/_shared/chunk-ABY47LC6.js", "/build/_shared/chunk-TZ27RBAM.js", "/build/_shared/chunk-J2OVIFEL.js", "/build/_shared/chunk-HH3BOLTW.js", "/build/_shared/chunk-MQESCB4Y.js", "/build/_shared/chunk-R6ILELA2.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-TC5TXPRR.js", imports: ["/build/_shared/chunk-7OJRNDDL.js", "/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-NKKGM74E.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-2EGZB6DV.js", imports: ["/build/_shared/chunk-VAV3AWZN.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-LTQ4DJ7Q.js", imports: ["/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-O4VUVY7V.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-BI2M2F2V.js", imports: ["/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-UVZSOROF.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-DADUMF7O.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-5UA2CLEY.js", imports: ["/build/_shared/chunk-V3RP5RFF.js", "/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-BLASU6X5.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-Q7G4BLON.js", imports: ["/build/_shared/chunk-VAV3AWZN.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "121e025a", hmr: { runtime: "/build/_shared/chunk-J2OVIFEL.js", timestamp: 1684969003322 }, url: "/build/manifest-121E025A.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-PAPES2H4.js", imports: ["/build/_shared/chunk-LKOPCC2G.js", "/build/_shared/chunk-ABY47LC6.js", "/build/_shared/chunk-GUPKMWBY.js", "/build/_shared/chunk-TZ27RBAM.js", "/build/_shared/chunk-J2OVIFEL.js", "/build/_shared/chunk-HH3BOLTW.js", "/build/_shared/chunk-MQESCB4Y.js", "/build/_shared/chunk-R6ILELA2.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-ZKGARYC4.js", imports: ["/build/_shared/chunk-RBAX3QVV.js", "/build/_shared/chunk-LUGMVUMH.js", "/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-CKN5F2IB.js", imports: ["/build/_shared/chunk-D2JCSPI6.js", "/build/_shared/chunk-DGY3TVHI.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-2EGZB6DV.js", imports: ["/build/_shared/chunk-VAV3AWZN.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-MV5OLVMU.js", imports: ["/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-O4VUVY7V.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-SMKONJGY.js", imports: ["/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-UXLH66QR.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-JVEPXWHY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-5UA2CLEY.js", imports: ["/build/_shared/chunk-V3RP5RFF.js", "/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-BLASU6X5.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-ZAHEGIEL.js", imports: ["/build/_shared/chunk-VAV3AWZN.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "af3fcf56", hmr: { runtime: "/build/_shared/chunk-J2OVIFEL.js", timestamp: 1685489402588 }, url: "/build/manifest-AF3FCF56.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { unstable_dev: !0, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !1, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_react_stream_exports }, dev = { websocketPort: 3004 }, routes = {

@@ -66,6 +66,7 @@
 .dropdown {
   position: relative;
   display: inline-block;
+  width: 150px;
 }
 
 .dropdown-toggle {
@@ -80,6 +81,7 @@
   top: 100%;
   left: 0;
   right: 0;
+  width: 150px;
   display: none;
   z-index: 1;
   padding: 8px;
@@ -90,6 +92,7 @@
 .dropdown-menu:after {
   content: "";
   position: absolute;
+  width: 150px;
   top: -8px;
   left: 50%;
   transform: translateX(-50%) rotate(45deg);

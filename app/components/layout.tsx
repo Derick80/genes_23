@@ -23,6 +23,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <li className="font-semibold">
             <Link to="/calculator">Calculator</Link>
           </li>
+          <li className="font-semibold">
+            <Link to="/beta">Beta</Link>
+          </li>
         </ul>
         {userId ? (
           <>
@@ -36,7 +39,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         )}
       </header>
       <main className="relative mt-20 flex-1">{children}</main>
-      <footer className="fixed left-0 right-0 bottom-0 z-50 flex h-10 items-center  justify-center bg-gray-800 text-gray-100 shadow-md">
+      <footer className="fixed bottom-0 left-0 right-0 z-50 flex h-10 items-center  justify-center bg-gray-800 text-gray-100 shadow-md">
         <ul className="flex gap-1">
           <li className="font-semibold">
             <Link to="/https://github.com/Derick80">
