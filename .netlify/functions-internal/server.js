@@ -2805,14 +2805,14 @@ function Beta() {
           !1,
           {
             fileName: "app/routes/beta.tsx",
-            lineNumber: 45,
+            lineNumber: 43,
             columnNumber: 6
           },
           this
         ),
         /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(Button, { variant: "primary_filled", size: "base", type: "submit", children: "Submit" }, void 0, !1, {
           fileName: "app/routes/beta.tsx",
-          lineNumber: 49,
+          lineNumber: 47,
           columnNumber: 9
         }, this)
       ]
@@ -2821,13 +2821,13 @@ function Beta() {
     !0,
     {
       fileName: "app/routes/beta.tsx",
-      lineNumber: 40,
+      lineNumber: 38,
       columnNumber: 7
     },
     this
   ) }, void 0, !1, {
     fileName: "app/routes/beta.tsx",
-    lineNumber: 39,
+    lineNumber: 37,
     columnNumber: 5
   }, this);
 }
@@ -2866,11 +2866,11 @@ function DropMenu({
       children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-sm text-gray-500", children: "Evidence Addition" }, void 0, !1, {
           fileName: "app/routes/beta.tsx",
-          lineNumber: 127,
+          lineNumber: 125,
           columnNumber: 7
         }, this) }, void 0, !1, {
           fileName: "app/routes/beta.tsx",
-          lineNumber: 126,
+          lineNumber: 124,
           columnNumber: 6
         }, this),
         columns && Object.keys(columns).map(
@@ -2880,7 +2880,7 @@ function DropMenu({
               /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex flex-row justify-between items-center", children: [
                 /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("span", { children: evidenceType }, void 0, !1, {
                   fileName: "app/routes/beta.tsx",
-                  lineNumber: 137,
+                  lineNumber: 135,
                   columnNumber: 15
                 }, this),
                 /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("span", { className: "text-sm text-gray-500", children: [
@@ -2888,30 +2888,30 @@ function DropMenu({
                   " criteria"
                 ] }, void 0, !0, {
                   fileName: "app/routes/beta.tsx",
-                  lineNumber: 138,
+                  lineNumber: 136,
                   columnNumber: 15
                 }, this)
               ] }, void 0, !0, {
                 fileName: "app/routes/beta.tsx",
-                lineNumber: 136,
+                lineNumber: 134,
                 columnNumber: 13
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex flex-col gap-2", children: criteria3.map((criterion) => /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex flex-row justify-between items-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("span", { children: criterion.label }, void 0, !1, {
                 fileName: "app/routes/beta.tsx",
-                lineNumber: 151,
+                lineNumber: 149,
                 columnNumber: 21
               }, this) }, criterion.id, !1, {
                 fileName: "app/routes/beta.tsx",
-                lineNumber: 150,
+                lineNumber: 148,
                 columnNumber: 19
               }, this)) }, void 0, !1, {
                 fileName: "app/routes/beta.tsx",
-                lineNumber: 144,
+                lineNumber: 142,
                 columnNumber: 13
               }, this)
             ] }, evidenceType, !0, {
               fileName: "app/routes/beta.tsx",
-              lineNumber: 135,
+              lineNumber: 133,
               columnNumber: 11
             }, this);
           }
@@ -2922,7 +2922,7 @@ function DropMenu({
     !0,
     {
       fileName: "app/routes/beta.tsx",
-      lineNumber: 123,
+      lineNumber: 121,
       columnNumber: 5
     },
     this
@@ -2930,7 +2930,7 @@ function DropMenu({
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-PAPES2H4.js", imports: ["/build/_shared/chunk-LKOPCC2G.js", "/build/_shared/chunk-ABY47LC6.js", "/build/_shared/chunk-GUPKMWBY.js", "/build/_shared/chunk-TZ27RBAM.js", "/build/_shared/chunk-J2OVIFEL.js", "/build/_shared/chunk-HH3BOLTW.js", "/build/_shared/chunk-MQESCB4Y.js", "/build/_shared/chunk-R6ILELA2.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-ZKGARYC4.js", imports: ["/build/_shared/chunk-RBAX3QVV.js", "/build/_shared/chunk-LUGMVUMH.js", "/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-CKN5F2IB.js", imports: ["/build/_shared/chunk-D2JCSPI6.js", "/build/_shared/chunk-DGY3TVHI.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-2EGZB6DV.js", imports: ["/build/_shared/chunk-VAV3AWZN.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-MV5OLVMU.js", imports: ["/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-O4VUVY7V.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-SMKONJGY.js", imports: ["/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-UXLH66QR.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-JVEPXWHY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-5UA2CLEY.js", imports: ["/build/_shared/chunk-V3RP5RFF.js", "/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-BLASU6X5.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-ZAHEGIEL.js", imports: ["/build/_shared/chunk-VAV3AWZN.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "af3fcf56", hmr: { runtime: "/build/_shared/chunk-J2OVIFEL.js", timestamp: 1685489644635 }, url: "/build/manifest-AF3FCF56.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-PAPES2H4.js", imports: ["/build/_shared/chunk-LKOPCC2G.js", "/build/_shared/chunk-ABY47LC6.js", "/build/_shared/chunk-GUPKMWBY.js", "/build/_shared/chunk-TZ27RBAM.js", "/build/_shared/chunk-J2OVIFEL.js", "/build/_shared/chunk-HH3BOLTW.js", "/build/_shared/chunk-MQESCB4Y.js", "/build/_shared/chunk-R6ILELA2.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-VBWXXMWN.js", imports: ["/build/_shared/chunk-RBAX3QVV.js", "/build/_shared/chunk-LUGMVUMH.js", "/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-CKN5F2IB.js", imports: ["/build/_shared/chunk-D2JCSPI6.js", "/build/_shared/chunk-DGY3TVHI.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-775SUKC3.js", imports: ["/build/_shared/chunk-RZYARJKT.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-MV5OLVMU.js", imports: ["/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-O4VUVY7V.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-SMKONJGY.js", imports: ["/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-UXLH66QR.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-JVEPXWHY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-5UA2CLEY.js", imports: ["/build/_shared/chunk-V3RP5RFF.js", "/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-BLASU6X5.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-MQWHKYJW.js", imports: ["/build/_shared/chunk-RZYARJKT.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "fe80c86d", hmr: { runtime: "/build/_shared/chunk-J2OVIFEL.js", timestamp: 1685490375052 }, url: "/build/manifest-FE80C86D.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { unstable_dev: !0, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !1, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_react_stream_exports }, dev = { websocketPort: 3004 }, routes = {
