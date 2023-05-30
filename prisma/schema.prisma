@@ -70,7 +70,9 @@ model Criteria {
 
 model Criterion {
   id String @id @unique @default(cuid())
-  criterionName String @unique
+  label String @unique
+  weight Float
+  evidenceTypeShort String
   criterionBaseWeight String
   evidenceType String
   definition String

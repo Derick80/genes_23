@@ -1,7 +1,7 @@
 import { Form } from "@remix-run/react";
 import React from "react";
 import Button from "~/components/button";
-import BayesTable from "~/constants/bayes-table";
+import BayesTable from "~/components/bayes-table";
 import { criteria } from "~/constants/consts";
 import InfoPanel from "./info";
 
@@ -129,6 +129,7 @@ export default function Calculator() {
                   </label>
 
                   <select
+                    multiple={false}
                     data-state={dropdown}
                     id="select"
                     title={population.name}

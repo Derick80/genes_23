@@ -1,10 +1,44 @@
 export const criterions = [
   {
     evidenceType: "Computational and Predictive Data",
-    criterionName: "PVS1",
+    label: "PVS1",
+    weight: 8,
+    evidenceTypeShort: "Computational",
     criterionBaseWeight: "Very Strong",
-    definition:
-      "VS: Same amino acid change as a previously established pathogenic variant regardless of nucleotide change.",
+    definition: "VS: Loss of Function",
+    example: "Val->Leu caused by either G>C or G>T in the same codon.",
+    caveat:
+      "Beware of changes that impact splicing rather than at the amino acid/protein level",
+  },
+  {
+    evidenceType: "Computational and Predictive Data",
+    label: "PVS1_Strong",
+    weight: 4,
+    evidenceTypeShort: "Computational",
+    criterionBaseWeight: "Strong",
+    definition: "S: Loss of Function",
+    example: "Val->Leu caused by either G>C or G>T in the same codon.",
+    caveat:
+      "Beware of changes that impact splicing rather than at the amino acid/protein level",
+  },
+  {
+    evidenceType: "Computational and Predictive Data",
+    label: "PVS1_Moderate",
+    weight: 2,
+    evidenceTypeShort: "Computational",
+    criterionBaseWeight: "Moderate",
+    definition: "M: Loss of Function",
+    example: "Val->Leu caused by either G>C or G>T in the same codon.",
+    caveat:
+      "Beware of changes that impact splicing rather than at the amino acid/protein level",
+  },
+  {
+    evidenceType: "Computational and Predictive Data",
+    label: "PVS1_Supporting",
+    weight: 1,
+    evidenceTypeShort: "Computational",
+    criterionBaseWeight: "Supporting",
+    definition: "S: Loss of Function",
     example: "Val->Leu caused by either G>C or G>T in the same codon.",
     caveat:
       "Beware of changes that impact splicing rather than at the amino acid/protein level",
@@ -12,7 +46,9 @@ export const criterions = [
 
   {
     evidenceType: "Computational and Predictive Data",
-    criterionName: "PS1",
+    label: "PS1",
+    weight: 4,
+    evidenceTypeShort: "Computational",
     criterionBaseWeight: "Strong",
     definition:
       "VS:Use for protein changes as long as splicing is ruled-out for both alterations. S:Use for protein changes as long as splicing is ruled-out for both alterations. M:Use for RNA changes as code PS1_RNA_Moderate if predictions or observations are similar or worse for the variant under consideration. Close matches must be VCEP approved LP/P variants.",
@@ -22,7 +58,9 @@ export const criterions = [
 
   {
     evidenceType: "De Novo Data",
-    criterionName: "PS2",
+    label: "PS2",
+    weight: 4,
+    evidenceTypeShort: "De Novo",
     criterionBaseWeight: "Strong",
     definition:
       "S: De novo (both maternity and paternity confirmed) in a patient with the disease and no family history.",
@@ -33,7 +71,9 @@ export const criterions = [
 
   {
     evidenceType: "Functional Data",
-    criterionName: "PS3",
+    label: "PS3",
+    weight: 4,
+    evidenceTypeShort: "Functional",
     criterionBaseWeight: "Strong",
     definition:
       "S: Well-established in vitro or in vivo functional studies supportive of a damaging effect on the gene or gene product",
@@ -44,7 +84,9 @@ export const criterions = [
 
   {
     evidenceType: "Population Data",
-    criterionName: "PS4",
+    label: "PS4",
+    weight: 4,
+    evidenceTypeShort: "Population",
     criterionBaseWeight: "Strong",
     definition:
       "S: The prevalence of the variant in affected individuals is significantly increased compared to the prevalence in controls.",
@@ -55,7 +97,9 @@ export const criterions = [
 
   {
     evidenceType: "Functional Data",
-    criterionName: "PM1",
+    label: "PM1",
+    weight: 2,
+    evidenceTypeShort: "Functional",
     criterionBaseWeight: "Moderate",
     definition:
       "M:Located in a mutational hot spot and/or critical and well-established functional domain (e.g. active site of an enzyme) without benign variation.",
@@ -66,7 +110,9 @@ export const criterions = [
   },
   {
     evidenceType: "Population Data",
-    criterionName: "PM2",
+    label: "PM2",
+    weight: 2,
+    evidenceTypeShort: "Population",
     criterionBaseWeight: "Moderate",
     definition:
       "P:Absent from controls (or at extremely low frequency if recessive) in Exome Sequencing Project, 1000 Genomes or Exome Aggregation Consortium.",
@@ -76,7 +122,9 @@ export const criterions = [
   },
   {
     evidenceType: "Population Data",
-    criterionName: "PM2_Supporting",
+    label: "PM2_Supporting",
+    weight: 1,
+    evidenceTypeShort: "Population",
     criterionBaseWeight: "Supporting",
     definition:
       "P:Absent from controls (or at extremely low frequency if recessive) in Exome Sequencing Project, 1000 Genomes or Exome Aggregation Consortium.",
@@ -87,7 +135,9 @@ export const criterions = [
 
   {
     evidenceType: "Allelic Data",
-    criterionName: "PM3",
+    label: "PM3",
+    weight: 2,
+    evidenceTypeShort: "Allelic",
     criterionBaseWeight: "Moderate",
     definition:
       "M: For recessive disorders, detected in trans with a pathogenic variant",
@@ -98,7 +148,9 @@ export const criterions = [
 
   {
     evidenceType: "Computational and Predictive Data",
-    criterionName: "PM4",
+    label: "PM4",
+    weight: 2,
+    evidenceTypeShort: "Computational",
     criterionBaseWeight: "Moderate",
     definition:
       "M:Protein length changes due to in-frame deletions/insertions in a non-repeat region or stop-loss variants.",
@@ -108,7 +160,9 @@ export const criterions = [
 
   {
     evidenceType: "Computational and Predictive Data",
-    criterionName: "PM5",
+    label: "PM5",
+    weight: 2,
+    evidenceTypeShort: "Computational",
     criterionBaseWeight: "Moderate",
     definition:
       "M:Novel missense change at an amino acid residue where a different missense change determined to be pathogenic has been seen before.",
@@ -119,7 +173,9 @@ export const criterions = [
 
   {
     evidenceType: "De Novo Data",
-    criterionName: "PM6",
+    label: "PM6",
+    weight: 2,
+    evidenceTypeShort: "De Novo",
     criterionBaseWeight: "Moderate",
     definition:
       "M:Assumed de novo, but without confirmation of paternity and maternity.",
@@ -129,7 +185,9 @@ export const criterions = [
 
   {
     evidenceType: "Segregation Data",
-    criterionName: "PP1",
+    label: "PP1",
+    weight: 1,
+    evidenceTypeShort: "Segregation",
     criterionBaseWeight: "Supporting",
     definition:
       '"P:Co-segregation with disease in multiple affected family members in a gene definitively known to cause the disease.',
@@ -140,7 +198,9 @@ export const criterions = [
 
   {
     evidenceType: "Functional Data",
-    criterionName: "PP2",
+    label: "PP2",
+    weight: 1,
+    evidenceTypeShort: "Functional",
     criterionBaseWeight: "Supporting",
     definition:
       "P:Missense variant in a gene that has a low rate of benign missense variation and where missense variants are a common mechanism of disease.",
@@ -150,7 +210,9 @@ export const criterions = [
 
   {
     evidenceType: "Computational and Predictive Data",
-    criterionName: "PP3",
+    label: "PP3",
+    weight: 1,
+    evidenceTypeShort: "Computational",
     criterionBaseWeight: "Supporting",
     definition:
       "P:Multiple lines of Computational evidence support a deleterious effect on the gene or gene product (conservation, evolutionary, splicing impact, etc.).",
@@ -161,7 +223,9 @@ export const criterions = [
 
   {
     evidenceType: "Other Data",
-    criterionName: "PP4",
+    label: "PP4",
+    weight: 1,
+    evidenceTypeShort: "Other Data",
     criterionBaseWeight: "Supporting",
     definition:
       "P:Patient’s phenotype or family history is highly specific for a disease with a single genetic etiology.",
@@ -171,7 +235,9 @@ export const criterions = [
 
   {
     evidenceType: "Other Database",
-    criterionName: "PP5",
+    label: "PP5",
+    weight: 1,
+    evidenceTypeShort: "Other Database",
     criterionBaseWeight: "Supporting",
     definition:
       "P:Reputable source recently reports variant as pathogenic, but the evidence is not available to the laboratory to perform an independent evaluation.",
@@ -181,7 +247,9 @@ export const criterions = [
 
   {
     evidenceType: "Population Data",
-    criterionName: "BA1",
+    label: "BA1",
+    weight: -8,
+    evidenceTypeShort: "Population",
     criterionBaseWeight: "Stand alone",
     definition: "SA:Filtering Allele Frequency >.5%.",
     example: "",
@@ -190,7 +258,9 @@ export const criterions = [
 
   {
     evidenceType: "Population Data",
-    criterionName: "BS1",
+    label: "BS1",
+    weight: -4,
+    evidenceTypeShort: "Population",
     criterionBaseWeight: "Strong",
     definition: "S:Filtering Allele Frequency >.05%.",
     example: "",
@@ -199,7 +269,9 @@ export const criterions = [
 
   {
     evidenceType: "Population Data",
-    criterionName: "BS2",
+    label: "BS2",
+    weight: -4,
+    evidenceTypeShort: "Population",
     criterionBaseWeight: "Strong",
     definition:
       "S:Observed in a healthy adult individual for a recessive (homozygous), dominant (heterozygous), or X-linked (hemizygous) disorder, with full penetrance expected at an early age.",
@@ -209,7 +281,9 @@ export const criterions = [
 
   {
     evidenceType: "Functional Data",
-    criterionName: "BS3",
+    label: "BS3",
+    weight: -4,
+    evidenceTypeShort: "Functional",
     criterionBaseWeight: "Strong",
     definition:
       "S:Well-established in vitro or in vivo functional studies show no damaging effect on protein function or splicing.",
@@ -219,7 +293,9 @@ export const criterions = [
 
   {
     evidenceType: "Segregation Data",
-    criterionName: "BS4",
+    label: "BS4",
+    weight: -4,
+    evidenceTypeShort: "Segregation",
     criterionBaseWeight: "Strong",
     definition: '"S:Lack of segregation in affected members of a family.',
     example: '"S:Lack of segregation in affected members of a family.',
@@ -229,7 +305,9 @@ export const criterions = [
 
   {
     evidenceType: "Computational and Predictive Data",
-    criterionName: "BP1",
+    label: "BP1",
+    weight: -1,
+    evidenceTypeShort: "Computational",
     criterionBaseWeight: "Supporting",
     definition:
       "P:Missense variant in a gene for which primarily truncating variants are known to cause disease.",
@@ -239,7 +317,9 @@ export const criterions = [
 
   {
     evidenceType: "Allelic Data",
-    criterionName: "BP2",
+    label: "BP2",
+    weight: -1,
+    evidenceTypeShort: "Allelic",
     criterionBaseWeight: "Supporting",
     definition:
       "P:Observed in trans with a pathogenic variant for a fully penetrant dominant gene/disorder or observed in cis with a pathogenic variant in any inheritance pattern.",
@@ -249,7 +329,9 @@ export const criterions = [
 
   {
     evidenceType: "Computational and Predictive Data",
-    criterionName: "BP3",
+    label: "BP3",
+    weight: -1,
+    evidenceTypeShort: "Computational",
     criterionBaseWeight: "Supporting",
     definition:
       "P:In frame-deletions/insertions in a repetitive region without a known function.",
@@ -259,7 +341,9 @@ export const criterions = [
 
   {
     evidenceType: "Computational and Predictive Data",
-    criterionName: "BP4",
+    label: "BP4",
+    weight: -1,
+    evidenceTypeShort: "Computational",
     criterionBaseWeight: "Supporting",
     definition:
       "P:Multiple lines of Computational evidence suggest no impact on gene or gene product (conservation, evolutionary, splicing impact, etc)",
@@ -270,7 +354,9 @@ export const criterions = [
 
   {
     evidenceType: "Allelic Data",
-    criterionName: "BP5",
+    label: "BP5",
+    weight: -1,
+    evidenceTypeShort: "Allelic",
     criterionBaseWeight: "Supporting",
     definition:
       "P:Variant found in a case with an alternate molecular basis for disease.",
@@ -280,7 +366,9 @@ export const criterions = [
 
   {
     evidenceType: "Other Database",
-    criterionName: "BP6",
+    label: "BP6",
+    weight: -1,
+    evidenceTypeShort: "Other Database",
     criterionBaseWeight: "Supporting",
     definition:
       "P:Reputable source recently reports variant as benign, but the evidence is not available to the laboratory to perform an independent evaluation.",
@@ -290,7 +378,9 @@ export const criterions = [
 
   {
     evidenceType: "Computational and Predictive Data",
-    criterionName: "BP7",
+    label: "BP7",
+    weight: -1,
+    evidenceTypeShort: "Computational",
     criterionBaseWeight: "Supporting",
     definition:
       "P:A synonymous variant for which splicing prediction algorithms predict no impact to the splice consensus sequence nor the creation of a new splice site AND the nucleotide is not highly conserved.",
