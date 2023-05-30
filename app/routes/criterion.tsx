@@ -4,7 +4,6 @@ import type { LoaderArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { Link, Outlet, useLoaderData, useMatches } from "@remix-run/react";
 import React from "react";
-import ACMGCalculatorV2 from "~/components/acmg-calc-form";
 import { prisma } from "~/server/prisma.server";
 
 export async function loader({ request }: LoaderArgs) {
