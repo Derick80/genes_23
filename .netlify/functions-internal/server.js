@@ -146,7 +146,7 @@ __export(root_exports, {
 var import_node2 = require("@remix-run/node"), import_react3 = require("@remix-run/react");
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-6YLBV522.css";
+var tailwind_default = "/build/_assets/tailwind-33IU34RL.css";
 
 // app/components/layout.tsx
 var import_remix = require("@clerk/remix"), import_react2 = require("@remix-run/react"), import_jsx_dev_runtime2 = require("react/jsx-dev-runtime");
@@ -2776,32 +2776,34 @@ var import_react17 = require("@remix-run/react"), import_react18 = __toESM(requi
 var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime");
 async function loader8({ request, params }) {
   let criteria2 = await prisma.criterion.findMany();
-  return console.log(criteria2, "criteria"), (0, import_node9.json)({ criteria: criteria2 });
+  return (0, import_node9.json)({ criteria: criteria2 });
 }
 async function action3({ request, params }) {
-  return (0, import_node9.json)({});
+  let formData = await request.formData(), population = formData.get("population_data"), functional = formData.get("functional_data"), deNovo = formData.get("de_novo_data"), allele = formData.get("allele_data"), segregation = formData.get("segregation_data"), other = formData.get("other_data"), computational = formData.get("computational_data");
+  function getCriteria(item) {
+    let [evidenceType, label, weight] = item.split("^");
+    return {
+      label
+    };
+  }
+  let pop = getCriteria(population);
+  return console.log(pop, "pop"), (0, import_node9.json)({
+    message: "success"
+  });
 }
 function Beta() {
-  let data = (0, import_react17.useLoaderData)(), [checkedBox, setCheckedBox] = import_react18.default.useState([]), [selectedOption, setSelectedOption] = import_react18.default.useState(""), [selected, setSelected] = import_react18.default.useState([]), noFunctional = data.criteria.filter(
-    (criterion) => criterion.evidenceType !== "Functional Data"
-  ), evidence = noFunctional.reduce((acc, criterion) => {
-    let { evidenceType } = criterion;
-    return acc[evidenceType] || (acc[evidenceType] = []), acc[evidenceType].push(criterion), acc;
-  }, []);
-  console.log(evidence, "evidence");
-  let functionalData = data.criteria.filter(
+  let data = (0, import_react17.useLoaderData)(), [checkedBox, setCheckedBox] = import_react18.default.useState([]), [selectedOption, setSelectedOption] = import_react18.default.useState(""), [selected, setSelected] = import_react18.default.useState([]), functionalData = data.criteria.filter(
     (criterion) => criterion.evidenceType === "Functional Data"
-  );
-  console.log(noFunctional, "noFunctional");
-  let [open, setOpen] = import_react18.default.useState(!1), totalWeight = checkedBox.reduce(
-    (acc, criterion) => acc + criterion.weight,
-    0
-  );
-  console.log(totalWeight, "totalWeight");
-  let columnNames = data.criteria.reduce((acc, criterion) => {
-    let { evidenceType } = criterion;
-    return acc[evidenceType] || (acc[evidenceType] = []), acc[evidenceType].push(criterion), acc;
-  }, []), population = data.criteria.filter(
+  ), [open, setOpen] = import_react18.default.useState(!1), bothArrays = [...selected, ...checkedBox];
+  console.log(bothArrays, "bothArrays");
+  let total = bothArrays.reduce((acc, curr) => acc + curr.weight, 0), [classification, setClassification] = import_react18.default.useState("");
+  function getClassificatin(total2) {
+    total2 <= -7 ? setClassification("Benign") : total2 >= -6 && total2 <= -1 ? setClassification("Likely Benign") : total2 >= 0 && total2 <= 5 ? setClassification("Uncertain Significance") : total2 >= 6 && total2 <= 9 ? setClassification("Likely Pathogenic") : total2 >= 10 ? setClassification("Pathogenic") : setClassification("No Classification");
+  }
+  import_react18.default.useEffect(() => {
+    getClassificatin(total);
+  }, [total]), console.log(classification, "classification");
+  let population = data.criteria.filter(
     (criterion) => criterion.evidenceType === "Population Data"
   ), deNovo = data.criteria.filter(
     (criterion) => criterion.evidenceType === "De Novo Data"
@@ -2825,262 +2827,337 @@ function Beta() {
         weight: Number(weight)
       }
     ] : (prev) => prev.filter((criterion) => criterion.label !== label));
-  };
-  console.log(checkedBox, "checkedBox");
-  let handleSelectChange = (e) => {
-    let { value } = e.target;
-    console.log(value, "value");
-    let [evidenceType, label, weight] = value.split("^");
-    setSelected(
+  }, handleSelectChange = (e) => {
+    let { value } = e.target, [evidenceType, label, weight] = value.split("^");
+    evidenceType !== "" && (setSelected(
       (prev) => prev.filter((criterion) => criterion.evidenceType !== evidenceType)
     ), setSelected((prev) => [
       ...prev,
       {
         evidenceType,
         label,
-        weight: Number(weight)
+        weight: Number(weight) || 0
       }
-    ]), console.log(selectedOption, "selectedOption");
+    ]));
   };
-  return console.log(selected, "selected"), /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_jsx_dev_runtime16.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_react17.Form, { method: "post", action: "/beta", className: "flex flex-col gap-2", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
-        CriteriaSelect,
-        {
-          handleSelectChange,
-          criterion: population,
-          name: "population_data"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/routes/beta.tsx",
-          lineNumber: 151,
-          columnNumber: 11
-        },
-        this
-      ),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
-        CriteriaSelect,
-        {
-          handleSelectChange,
-          criterion: deNovo,
-          name: "de_novo_data"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/routes/beta.tsx",
-          lineNumber: 157,
-          columnNumber: 11
-        },
-        this
-      ),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
-        CriteriaSelect,
-        {
-          handleSelectChange,
-          criterion: alleleData,
-          name: "allele_data"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/routes/beta.tsx",
-          lineNumber: 162,
-          columnNumber: 11
-        },
-        this
-      ),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
-        CriteriaSelect,
-        {
-          handleSelectChange,
-          criterion: segregationData,
-          name: "segregation_data"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/routes/beta.tsx",
-          lineNumber: 167,
-          columnNumber: 11
-        },
-        this
-      ),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
-        CriteriaSelect,
-        {
-          handleSelectChange,
-          criterion: otherdata,
-          name: "other_data"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/routes/beta.tsx",
-          lineNumber: 172,
-          columnNumber: 11
-        },
-        this
-      ),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
-        CriteriaSelect,
-        {
-          handleSelectChange,
-          criterion: computationalData,
-          name: "computational_data"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/routes/beta.tsx",
-          lineNumber: 177,
-          columnNumber: 11
-        },
-        this
-      ),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
-        CriteriaSelect,
-        {
-          handleSelectChange,
-          criterion: otherdb,
-          name: "other_db"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/routes/beta.tsx",
-          lineNumber: 182,
-          columnNumber: 11
-        },
-        this
-      ),
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_jsx_dev_runtime16.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex flex-row items-center gap-2", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("p", { className: "text-2xl font-bold", children: "ACMG Variant Classification:" }, void 0, !1, {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 163,
+        columnNumber: 9
+      }, this),
+      classification
+    ] }, void 0, !0, {
+      fileName: "app/routes/beta.tsx",
+      lineNumber: 162,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_react17.Form, { method: "post", action: "/beta", className: "flex flex-col gap-2", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex gap-1", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h3", { className: "capitalize", children: "functional data" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+          CSelect,
+          {
+            handleSelectChange,
+            criterion: population,
+            name: "population_data"
+          },
+          void 0,
+          !1,
+          {
             fileName: "app/routes/beta.tsx",
-            lineNumber: 189,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("button", { type: "button", onClick: () => setOpen(!open), children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_react_icons3.ChevronUpIcon, { className: "h-6 w-6" }, void 0, !1, {
+            lineNumber: 169,
+            columnNumber: 11
+          },
+          this
+        ),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+          CSelect,
+          {
+            handleSelectChange,
+            criterion: deNovo,
+            name: "de_novo_data"
+          },
+          void 0,
+          !1,
+          {
             fileName: "app/routes/beta.tsx",
-            lineNumber: 192,
-            columnNumber: 19
-          }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_react_icons3.ChevronDownIcon, { className: "h-6 w-6" }, void 0, !1, {
+            lineNumber: 175,
+            columnNumber: 11
+          },
+          this
+        ),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+          CSelect,
+          {
+            handleSelectChange,
+            criterion: alleleData,
+            name: "allele_data"
+          },
+          void 0,
+          !1,
+          {
             fileName: "app/routes/beta.tsx",
-            lineNumber: 194,
-            columnNumber: 19
-          }, this) }, void 0, !1, {
+            lineNumber: 180,
+            columnNumber: 11
+          },
+          this
+        ),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+          CSelect,
+          {
+            handleSelectChange,
+            criterion: segregationData,
+            name: "segregation_data"
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/routes/beta.tsx",
+            lineNumber: 185,
+            columnNumber: 11
+          },
+          this
+        ),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+          CSelect,
+          {
+            handleSelectChange,
+            criterion: otherdata,
+            name: "other_data"
+          },
+          void 0,
+          !1,
+          {
             fileName: "app/routes/beta.tsx",
             lineNumber: 190,
-            columnNumber: 15
-          }, this)
+            columnNumber: 11
+          },
+          this
+        ),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+          CSelect,
+          {
+            handleSelectChange,
+            criterion: computationalData,
+            name: "computational_data"
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/routes/beta.tsx",
+            lineNumber: 195,
+            columnNumber: 11
+          },
+          this
+        ),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+          CSelect,
+          {
+            handleSelectChange,
+            criterion: otherdb,
+            name: "other_db"
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/routes/beta.tsx",
+            lineNumber: 200,
+            columnNumber: 11
+          },
+          this
+        ),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex gap-1", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("h3", { className: "capitalize", children: "functional data" }, void 0, !1, {
+              fileName: "app/routes/beta.tsx",
+              lineNumber: 207,
+              columnNumber: 15
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("button", { type: "button", onClick: () => setOpen(!open), children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_react_icons3.ChevronUpIcon, { className: "h-6 w-6" }, void 0, !1, {
+              fileName: "app/routes/beta.tsx",
+              lineNumber: 210,
+              columnNumber: 19
+            }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_react_icons3.ChevronDownIcon, { className: "h-6 w-6" }, void 0, !1, {
+              fileName: "app/routes/beta.tsx",
+              lineNumber: 212,
+              columnNumber: 19
+            }, this) }, void 0, !1, {
+              fileName: "app/routes/beta.tsx",
+              lineNumber: 208,
+              columnNumber: 15
+            }, this)
+          ] }, void 0, !0, {
+            fileName: "app/routes/beta.tsx",
+            lineNumber: 206,
+            columnNumber: 13
+          }, this),
+          open && functionalData.map((criterion) => /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("label", { className: "capitalize", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+              "input",
+              {
+                type: "checkbox",
+                name: criterion.evidenceType,
+                value: `${criterion.evidenceType}^${criterion.label}^${criterion.weight}`,
+                onChange: handleCheckboxChange
+              },
+              void 0,
+              !1,
+              {
+                fileName: "app/routes/beta.tsx",
+                lineNumber: 219,
+                columnNumber: 19
+              },
+              this
+            ),
+            criterion.label
+          ] }, criterion.id, !0, {
+            fileName: "app/routes/beta.tsx",
+            lineNumber: 218,
+            columnNumber: 17
+          }, this))
         ] }, void 0, !0, {
           fileName: "app/routes/beta.tsx",
-          lineNumber: 188,
-          columnNumber: 13
-        }, this),
-        open && functionalData.map((criterion) => /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("label", { className: "capitalize", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
-            "input",
-            {
-              type: "checkbox",
-              name: criterion.evidenceType,
-              value: `${criterion.evidenceType}^${criterion.label}^${criterion.weight}`,
-              onChange: handleCheckboxChange
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/routes/beta.tsx",
-              lineNumber: 201,
-              columnNumber: 19
-            },
-            this
-          ),
-          criterion.label
-        ] }, criterion.id, !0, {
-          fileName: "app/routes/beta.tsx",
-          lineNumber: 200,
-          columnNumber: 17
-        }, this))
+          lineNumber: 205,
+          columnNumber: 11
+        }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/beta.tsx",
-        lineNumber: 187,
-        columnNumber: 11
+        lineNumber: 168,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(Button, { variant: "primary_filled", size: "base", type: "submit", children: "Submit" }, void 0, !1, {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 231,
+        columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/beta.tsx",
-      lineNumber: 150,
-      columnNumber: 9
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(Button, { variant: "primary_filled", size: "base", type: "submit", children: "Submit" }, void 0, !1, {
-      fileName: "app/routes/beta.tsx",
-      lineNumber: 213,
-      columnNumber: 9
+      lineNumber: 167,
+      columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/beta.tsx",
-    lineNumber: 149,
-    columnNumber: 7
-  }, this) }, void 0, !1, {
-    fileName: "app/routes/beta.tsx",
-    lineNumber: 148,
+    lineNumber: 161,
     columnNumber: 5
   }, this);
 }
-function CriteriaSelect({
+function CSelect({
   handleSelectChange,
   criterion,
   name
 }) {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("label", { className: " capitalize", htmlFor: "gene", children: name.split("_").join(" ") }, void 0, !1, {
+  let [open, setOpen] = import_react18.default.useState(!1), [value, setValue] = import_react18.default.useState("");
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex flex-col gap-2 rounded-md", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "flex gap-1", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("label", { className: " capitalize", htmlFor: "gene", children: name.split("_").join(" ") }, void 0, !1, {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 280,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("button", { type: "button", onClick: () => setOpen(!open), children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_react_icons3.ChevronUpIcon, { className: "h-6 w-6" }, void 0, !1, {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 285,
+        columnNumber: 13
+      }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_react_icons3.ChevronDownIcon, { className: "h-6 w-6" }, void 0, !1, {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 287,
+        columnNumber: 13
+      }, this) }, void 0, !1, {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 283,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, !0, {
       fileName: "app/routes/beta.tsx",
-      lineNumber: 232,
+      lineNumber: 279,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
-      "select",
-      {
-        name: "population_data",
-        className: "text-black",
-        onChange: handleSelectChange,
-        children: criterion.map((criterion2) => /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
-          "option",
-          {
-            value: `${criterion2.evidenceType}^${criterion2.label}^${criterion2.weight}`,
-            children: criterion2.label
-          },
-          criterion2.id,
-          !1,
-          {
-            fileName: "app/routes/beta.tsx",
-            lineNumber: 241,
-            columnNumber: 11
-          },
-          this
-        ))
-      },
-      void 0,
-      !1,
-      {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "relative ", children: [
+      value,
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("input", { type: "hidden", name, value }, void 0, !1, {
         fileName: "app/routes/beta.tsx",
-        lineNumber: 235,
-        columnNumber: 7
-      },
-      this
-    )
+        lineNumber: 294,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+        "button",
+        {
+          type: "button",
+          onClick: (e) => {
+            handleSelectChange(
+              e
+            ), setOpen(!1);
+          },
+          className: "abg-red-500 h-6 w-6 rounded-full text-white",
+          children: value === "" ? "" : /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_react_icons3.Cross2Icon, {}, void 0, !1, {
+            fileName: "app/routes/beta.tsx",
+            lineNumber: 305,
+            columnNumber: 32
+          }, this)
+        },
+        void 0,
+        !1,
+        {
+          fileName: "app/routes/beta.tsx",
+          lineNumber: 295,
+          columnNumber: 9
+        },
+        this
+      ),
+      open && /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("div", { className: "absolute z-10 w-full bg-white", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("ul", { className: "flex flex-col gap-2", children: criterion.map((criterion2) => /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_jsx_dev_runtime16.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("li", { className: "capitalize text-black", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+        "button",
+        {
+          type: "button",
+          value: `${criterion2.evidenceType}^${criterion2.label}^${criterion2.weight}`,
+          className: value === criterion2.label ? "bg-blue-100" : "",
+          onClick: (e) => {
+            let { value: value2 } = e.currentTarget, [evidenceType, label, weight] = value2.split("^");
+            setValue(value2), handleSelectChange(
+              e
+            ), setOpen(!1);
+          },
+          children: criterion2.label
+        },
+        void 0,
+        !1,
+        {
+          fileName: "app/routes/beta.tsx",
+          lineNumber: 313,
+          columnNumber: 21
+        },
+        this
+      ) }, criterion2.id, !1, {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 312,
+        columnNumber: 19
+      }, this) }, void 0, !1, {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 311,
+        columnNumber: 17
+      }, this)) }, void 0, !1, {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 309,
+        columnNumber: 13
+      }, this) }, void 0, !1, {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 308,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/routes/beta.tsx",
+      lineNumber: 291,
+      columnNumber: 7
+    }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/beta.tsx",
-    lineNumber: 231,
+    lineNumber: 278,
     columnNumber: 5
   }, this);
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-QRXJC4UM.js", imports: ["/build/_shared/chunk-LKOPCC2G.js", "/build/_shared/chunk-GUPKMWBY.js", "/build/_shared/chunk-ABY47LC6.js", "/build/_shared/chunk-TZ27RBAM.js", "/build/_shared/chunk-J2OVIFEL.js", "/build/_shared/chunk-HH3BOLTW.js", "/build/_shared/chunk-MQESCB4Y.js", "/build/_shared/chunk-R6ILELA2.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-HCMV3S7V.js", imports: ["/build/_shared/chunk-WNJU47PY.js", "/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-RNLN46VI.js", imports: ["/build/_shared/chunk-D2JCSPI6.js", "/build/_shared/chunk-DGY3TVHI.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-775SUKC3.js", imports: ["/build/_shared/chunk-RZYARJKT.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-MV5OLVMU.js", imports: ["/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-O4VUVY7V.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-SMKONJGY.js", imports: ["/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-56JN3T7Y.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-CY67EP5T.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-5UA2CLEY.js", imports: ["/build/_shared/chunk-V3RP5RFF.js", "/build/_shared/chunk-DGY3TVHI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-BLASU6X5.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-MQWHKYJW.js", imports: ["/build/_shared/chunk-RZYARJKT.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "a19f769e", hmr: { runtime: "/build/_shared/chunk-J2OVIFEL.js", timestamp: 1685523632763 }, url: "/build/manifest-A19F769E.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-QRXJC4UM.js", imports: ["/build/_shared/chunk-LKOPCC2G.js", "/build/_shared/chunk-GUPKMWBY.js", "/build/_shared/chunk-ABY47LC6.js", "/build/_shared/chunk-TZ27RBAM.js", "/build/_shared/chunk-J2OVIFEL.js", "/build/_shared/chunk-HH3BOLTW.js", "/build/_shared/chunk-MQESCB4Y.js", "/build/_shared/chunk-R6ILELA2.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-ZVSIBQ7T.js", imports: ["/build/_shared/chunk-WNJU47PY.js", "/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-TYDGP2BG.js", imports: ["/build/_shared/chunk-D2JCSPI6.js", "/build/_shared/chunk-A5NX5H24.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-775SUKC3.js", imports: ["/build/_shared/chunk-RZYARJKT.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-BXT4M5MS.js", imports: ["/build/_shared/chunk-A5NX5H24.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-O4VUVY7V.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-SMKONJGY.js", imports: ["/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-56JN3T7Y.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-CY67EP5T.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-2UTZ5ZN4.js", imports: ["/build/_shared/chunk-UET2W72Y.js", "/build/_shared/chunk-A5NX5H24.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-UOHHJ7YZ.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-MQWHKYJW.js", imports: ["/build/_shared/chunk-RZYARJKT.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "3c1848c8", hmr: { runtime: "/build/_shared/chunk-J2OVIFEL.js", timestamp: 1685530575471 }, url: "/build/manifest-3C1848C8.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { unstable_dev: !0, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !1, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_react_stream_exports }, dev = { websocketPort: 3004 }, routes = {

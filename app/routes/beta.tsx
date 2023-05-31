@@ -5,19 +5,41 @@ import type { LoaderArgs } from "@remix-run/node";
 import { prisma } from "~/server/prisma.server";
 import { Form, useLoaderData } from "@remix-run/react";
 import React from "react";
-import { ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons";
+import {
+  ChevronDownIcon,
+  ChevronUpIcon,
+  Cross2Icon,
+} from "@radix-ui/react-icons";
 import type { Criterion } from "~/constants/acmg-criteria";
 import Button from "~/components/button";
-import * as Select from "@radix-ui/react-select";
 
 export async function loader({ request, params }: LoaderArgs) {
   const criteria = await prisma.criterion.findMany();
-  console.log(criteria, "criteria");
 
   return json({ criteria });
 }
 export async function action({ request, params }: ActionArgs) {
-  return json({});
+  const formData = await request.formData();
+  const population = formData.get("population_data") as string;
+  const functional = formData.get("functional_data");
+  const deNovo = formData.get("de_novo_data");
+  const allele = formData.get("allele_data");
+  const segregation = formData.get("segregation_data");
+  const other = formData.get("other_data");
+  const computational = formData.get("computational_data");
+
+  function getCriteria(item: string) {
+    const [evidenceType, label, weight] = item.split("^");
+    return {
+      label,
+    };
+  }
+  const pop = getCriteria(population);
+  console.log(pop, "pop");
+
+  return json({
+    message: "success",
+  });
 }
 
 type CriterionGroup = {
@@ -33,48 +55,42 @@ export default function Beta() {
     { evidenceType: string; label: string; weight: number }[]
   >([]);
 
-  const noFunctional = data.criteria.filter(
-    (criterion) => criterion.evidenceType !== "Functional Data"
-  );
-  type Evidence = [
-    {
-      evidenceType: string;
-      criteria: Criterion[];
-    }
-  ];
-
-  const evidence: Evidence = noFunctional.reduce((acc, criterion) => {
-    const { evidenceType } = criterion;
-
-    if (!acc[evidenceType as keyof typeof acc]) {
-      acc[evidenceType] = [];
-    }
-    acc[evidenceType].push(criterion);
-    return acc;
-  }, [] as any);
-  console.log(evidence, "evidence");
-
   const functionalData = data.criteria.filter(
     (criterion) => criterion.evidenceType === "Functional Data"
   );
 
-  console.log(noFunctional, "noFunctional");
   const [open, setOpen] = React.useState(false);
-  const totalWeight = checkedBox.reduce(
-    (acc, criterion) => acc + criterion.weight,
-    0
-  );
-  console.log(totalWeight, "totalWeight");
 
-  const columnNames = data.criteria.reduce((acc, criterion) => {
-    const { evidenceType } = criterion;
+  const bothArrays = [...selected, ...checkedBox];
+  console.log(bothArrays, "bothArrays");
 
-    if (!acc[evidenceType as keyof typeof acc]) {
-      acc[evidenceType] = [];
+  const total = bothArrays.reduce((acc, curr) => {
+    return acc + curr.weight;
+  }, 0);
+
+  const [classification, setClassification] = React.useState<string>("");
+
+  function getClassificatin(total: number) {
+    if (total <= -7) {
+      setClassification("Benign");
+    } else if (total >= -6 && total <= -1) {
+      setClassification("Likely Benign");
+    } else if (total >= 0 && total <= 5) {
+      setClassification("Uncertain Significance");
+    } else if (total >= 6 && total <= 9) {
+      setClassification("Likely Pathogenic");
+    } else if (total >= 10) {
+      setClassification("Pathogenic");
+    } else {
+      setClassification("No Classification");
     }
-    acc[evidenceType].push(criterion);
-    return acc;
-  }, [] as Criterion[]);
+  }
+
+  React.useEffect(() => {
+    getClassificatin(total);
+  }, [total]);
+
+  console.log(classification, "classification");
 
   const population = data.criteria.filter(
     (criterion) => criterion.evidenceType === "Population Data"
@@ -119,14 +135,15 @@ export default function Beta() {
       );
     }
   };
-  console.log(checkedBox, "checkedBox");
 
   // handle select change event
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = e.target;
-    console.log(value, "value");
 
     const [evidenceType, label, weight] = value.split("^");
+    if (evidenceType === "") {
+      return;
+    }
     setSelected((prev) =>
       prev.filter((criterion) => criterion.evidenceType !== evidenceType)
     );
@@ -135,51 +152,52 @@ export default function Beta() {
       {
         evidenceType,
         label,
-        weight: Number(weight),
+        weight: Number(weight) || 0,
       },
     ]);
-
-    console.log(selectedOption, "selectedOption");
   };
-
-  console.log(selected, "selected");
 
   return (
     <>
+      <div className="flex flex-row items-center gap-2">
+        <p className="text-2xl font-bold">ACMG Variant Classification:</p>
+        {classification}
+      </div>
+
       <Form method="post" action="/beta" className="flex flex-col gap-2">
         <div className="flex flex-col gap-2">
-          <CriteriaSelect
+          <CSelect
             handleSelectChange={handleSelectChange}
             criterion={population}
             name="population_data"
           />
 
-          <CriteriaSelect
+          <CSelect
             handleSelectChange={handleSelectChange}
             criterion={deNovo}
             name="de_novo_data"
           />
-          <CriteriaSelect
+          <CSelect
             handleSelectChange={handleSelectChange}
             criterion={alleleData}
             name="allele_data"
           />
-          <CriteriaSelect
+          <CSelect
             handleSelectChange={handleSelectChange}
             criterion={segregationData}
             name="segregation_data"
           />
-          <CriteriaSelect
+          <CSelect
             handleSelectChange={handleSelectChange}
             criterion={otherdata}
             name="other_data"
           />
-          <CriteriaSelect
+          <CSelect
             handleSelectChange={handleSelectChange}
             criterion={computationalData}
             name="computational_data"
           />
-          <CriteriaSelect
+          <CSelect
             handleSelectChange={handleSelectChange}
             criterion={otherdb}
             name="other_db"
@@ -218,7 +236,34 @@ export default function Beta() {
   );
 }
 
-function CriteriaSelect({
+// function CriteriaSelect({
+//   handleSelectChange,
+//   criterion,
+//   name,
+// }: {
+//   handleSelectChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+//   criterion: Criterion[];
+//   name: string;
+// }) {
+//   return (
+//     <div className="flex flex-col gap-2">
+//       <label className=" capitalize" htmlFor="gene">
+//         {name.split("_").join(" ")}
+//       </label>
+//       <select name={name} className="text-black" onChange={handleSelectChange}>
+//         {criterion.map((criterion) => (
+//           <option
+//             key={criterion.id}
+//             value={`${criterion.evidenceType}^${criterion.label}^${criterion.weight}`}
+//           >
+//             {criterion.label}
+//           </option>
+//         ))}
+//       </select>
+//     </div>
+//   );
+// }
+function CSelect({
   handleSelectChange,
   criterion,
   name,
@@ -227,25 +272,67 @@ function CriteriaSelect({
   criterion: Criterion[];
   name: string;
 }) {
+  const [open, setOpen] = React.useState(false);
+  const [value, setValue] = React.useState("");
   return (
-    <div className="flex flex-col gap-2">
-      <label className=" capitalize" htmlFor="gene">
-        {name.split("_").join(" ")}
-      </label>
-      <select
-        name="population_data"
-        className="text-black"
-        onChange={handleSelectChange}
-      >
-        {criterion.map((criterion) => (
-          <option
-            key={criterion.id}
-            value={`${criterion.evidenceType}^${criterion.label}^${criterion.weight}`}
-          >
-            {criterion.label}
-          </option>
-        ))}
-      </select>
+    <div className="flex flex-col gap-2 rounded-md">
+      <div className="flex gap-1">
+        <label className=" capitalize" htmlFor="gene">
+          {name.split("_").join(" ")}
+        </label>
+        <button type="button" onClick={() => setOpen(!open)}>
+          {open ? (
+            <ChevronUpIcon className="h-6 w-6" />
+          ) : (
+            <ChevronDownIcon className="h-6 w-6" />
+          )}
+        </button>
+      </div>
+      <div className="relative ">
+        {value}
+
+        <input type="hidden" name={name} value={value} />
+        <button
+          type="button"
+          onClick={(e) => {
+            handleSelectChange(
+              e as unknown as React.ChangeEvent<HTMLSelectElement>
+            );
+            setOpen(false);
+          }}
+          className="abg-red-500 h-6 w-6 rounded-full text-white"
+        >
+          {value === "" ? "" : <Cross2Icon />}
+        </button>
+        {open && (
+          <div className="absolute z-10 w-full bg-white">
+            <ul className="flex flex-col gap-2">
+              {criterion.map((criterion) => (
+                <>
+                  <li key={criterion.id} className="capitalize text-black">
+                    <button
+                      type="button"
+                      value={`${criterion.evidenceType}^${criterion.label}^${criterion.weight}`}
+                      className={value === criterion.label ? "bg-blue-100" : ""}
+                      onClick={(e) => {
+                        const { value } = e.currentTarget;
+                        const [evidenceType, label, weight] = value.split("^");
+                        setValue(value);
+                        handleSelectChange(
+                          e as unknown as React.ChangeEvent<HTMLSelectElement>
+                        );
+                        setOpen(false);
+                      }}
+                    >
+                      {criterion.label}
+                    </button>
+                  </li>
+                </>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
