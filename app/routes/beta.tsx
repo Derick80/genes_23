@@ -12,6 +12,7 @@ import {
 } from "@radix-ui/react-icons";
 import type { Criterion } from "~/constants/acmg-criteria";
 import Button from "~/components/button";
+import { set } from "zod";
 
 export async function loader({ request, params }: LoaderArgs) {
   const criteria = await prisma.criterion.findMany();
@@ -20,6 +21,9 @@ export async function loader({ request, params }: LoaderArgs) {
 }
 export async function action({ request, params }: ActionArgs) {
   const formData = await request.formData();
+
+  console.log(Object.fromEntries(formData), "formData");
+
   const population = formData.get("population_data") as string;
   const functional = formData.get("functional_data");
   const deNovo = formData.get("de_novo_data");
@@ -156,6 +160,12 @@ export default function Beta() {
       },
     ]);
   };
+
+  // test stuff
+  const evidenceTypes = Array.from(
+    new Set(data.criteria.map((c) => c.evidenceType))
+  );
+  console.log(evidenceTypes, "evidenceTypes");
 
   return (
     <>

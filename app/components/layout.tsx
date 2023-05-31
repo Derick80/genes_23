@@ -26,6 +26,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <li className="font-semibold">
             <Link to="/beta">Beta</Link>
           </li>
+          <li className="font-semibold">
+            <Link to='wip'>WIP</Link>
+          </li>
         </ul>
         {userId ? (
           <>

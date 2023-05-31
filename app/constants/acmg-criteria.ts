@@ -1,6 +1,6 @@
 // consts.ts is my reference for this file
-import { Criterion as PrismaCriterion } from "@prisma/client";
-import { SerializeFrom } from "@remix-run/node";
+import type { Criterion as PrismaCriterion } from "@prisma/client";
+import type { SerializeFrom } from "@remix-run/node";
 
 export type Criterion = SerializeFrom<PrismaCriterion>;
 
@@ -130,7 +130,6 @@ export const extractFirstTwoLetters = (arr: string[]) => {
   const firstTwoLetters: string[] = [];
   return arr.map((item) => {
     const firstLetter = item[0];
-    console.log(firstLetter, "firstLetter");
 
     let firstTwoChars: string;
 
@@ -156,7 +155,7 @@ export const strengthValues: { [key: string]: number } = {
 //   Define a function to convert the output to numbers that correspond to the strength values
 export function convertToNumbers(arr: string[]) {
   const strengthValues: { [key: string]: number } = {
-    V: 8,
+    V: 5,
     A: 8,
     S: 4,
     M: 2,
