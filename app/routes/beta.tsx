@@ -5,335 +5,343 @@ import type { LoaderArgs } from "@remix-run/node";
 import { prisma } from "~/server/prisma.server";
 import { Form, useLoaderData } from "@remix-run/react";
 import React from "react";
-import { ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons";
+import {
+  ChevronDownIcon,
+  ChevronUpIcon,
+  Cross2Icon,
+} from "@radix-ui/react-icons";
 import type { Criterion } from "~/constants/acmg-criteria";
 import Button from "~/components/button";
-import * as Select from '@radix-ui/react-select';
 
 export async function loader({ request, params }: LoaderArgs) {
   const criteria = await prisma.criterion.findMany();
-  console.log(criteria, "criteria");
 
   return json({ criteria });
 }
 export async function action({ request, params }: ActionArgs) {
-  return json({});
+  const formData = await request.formData();
+
+  console.log(Object.fromEntries(formData), "formData");
+
+  const population = formData.get("population_data") as string;
+  const functional = formData.get("functional_data");
+  const deNovo = formData.get("de_novo_data");
+  const allele = formData.get("allele_data");
+  const segregation = formData.get("segregation_data");
+  const other = formData.get("other_data");
+  const computational = formData.get("computational_data");
+
+  function getCriteria(item: string) {
+    const [evidenceType, label, weight] = item.split("^");
+    return {
+      label,
+    };
+  }
+  const pop = getCriteria(population);
+  console.log(pop, "pop");
+
+  return json({
+    message: "success",
+  });
 }
 
+type CriterionGroup = {
+  evidenceType: string;
+  label: string;
+  weight: number;
+};
 export default function Beta() {
   const data = useLoaderData<typeof loader>();
+  const [checkedBox, setCheckedBox] = React.useState<CriterionGroup[]>([]);
+  const [selectedOption, setSelectedOption] = React.useState<string>("");
+  const [selected, setSelected] = React.useState<
+    { evidenceType: string; label: string; weight: number }[]
+  >([]);
 
-  const byEvidenceType = data.criteria.reduce((acc, criterion) => {
-    const { evidenceType } = criterion;
-    if (!acc[evidenceType]) {
-      acc[evidenceType] = [];
-    }
-    acc[evidenceType].push(criterion);
-    return acc;
-  }, {} as Record<string, typeof data.criteria>);
-  console.log(byEvidenceType, "byEvidenceType");
+  const functionalData = data.criteria.filter(
+    (criterion) => criterion.evidenceType === "Functional Data"
+  );
+
   const [open, setOpen] = React.useState(false);
+
+  const bothArrays = [...selected, ...checkedBox];
+  console.log(bothArrays, "bothArrays");
+
+  const total = bothArrays.reduce((acc, curr) => {
+    return acc + curr.weight;
+  }, 0);
+
+  const [classification, setClassification] = React.useState<string>("");
+
+  function getClassificatin(total: number) {
+    if (total <= -7) {
+      setClassification("Benign");
+    } else if (total >= -6 && total <= -1) {
+      setClassification("Likely Benign");
+    } else if (total >= 0 && total <= 5) {
+      setClassification("Uncertain Significance");
+    } else if (total >= 6 && total <= 9) {
+      setClassification("Likely Pathogenic");
+    } else if (total >= 10) {
+      setClassification("Pathogenic");
+    } else {
+      setClassification("No Classification");
+    }
+  }
+
+  React.useEffect(() => {
+    getClassificatin(total);
+  }, [total]);
+
+  console.log(classification, "classification");
+
+  const population = data.criteria.filter(
+    (criterion) => criterion.evidenceType === "Population Data"
+  );
+  const deNovo = data.criteria.filter(
+    (criterion) => criterion.evidenceType === "De Novo Data"
+  );
+  const alleleData = data.criteria.filter(
+    (criterion) => criterion.evidenceType === "Allelic Data"
+  );
+  const segregationData = data.criteria.filter(
+    (criterion) => criterion.evidenceType === "Segregation Data"
+  );
+  const otherdata = data.criteria.filter(
+    (criterion) => criterion.evidenceType === "Other Data"
+  );
+  const computationalData = data.criteria.filter(
+    (criterion) =>
+      criterion.evidenceType === "Computational and Predictive Data"
+  );
+  const otherdb = data.criteria.filter(
+    (criterion) => criterion.evidenceType === "Other Database"
+  );
+
+  // handle checkbox change event
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, checked } = e.target;
+    const [evidenceType, label, weight] = value.split("^");
+
+    if (checked) {
+      setCheckedBox((prev) => [
+        ...prev,
+        {
+          evidenceType,
+          label,
+          weight: Number(weight),
+        },
+      ]);
+    } else {
+      setCheckedBox((prev) =>
+        prev.filter((criterion) => criterion.label !== label)
+      );
+    }
+  };
+
+  // handle select change event
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const { value } = e.target;
+
+    const [evidenceType, label, weight] = value.split("^");
+    if (evidenceType === "") {
+      return;
+    }
+    setSelected((prev) =>
+      prev.filter((criterion) => criterion.evidenceType !== evidenceType)
+    );
+    setSelected((prev) => [
+      ...prev,
+      {
+        evidenceType,
+        label,
+        weight: Number(weight) || 0,
+      },
+    ]);
+  };
+
+  // test stuff
+  const evidenceTypes = Array.from(
+    new Set(data.criteria.map((c) => c.evidenceType))
+  );
+  console.log(evidenceTypes, "evidenceTypes");
+
   return (
     <>
-      <Form method="post" action="/beta"
-      className="flex flex-col gap-2"
-      >
-      
+      <div className="flex flex-row items-center gap-2">
+        <p className="text-2xl font-bold">ACMG Variant Classification:</p>
+        {classification}
+      </div>
 
-     <DropMenu criteria={data.criteria}
-      setOpened={setOpen}
-     />
+      <Form method="post" action="/beta" className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2">
+          <CSelect
+            handleSelectChange={handleSelectChange}
+            criterion={population}
+            name="population_data"
+          />
 
-        <Button variant="primary_filled" size='base' type="submit">
+          <CSelect
+            handleSelectChange={handleSelectChange}
+            criterion={deNovo}
+            name="de_novo_data"
+          />
+          <CSelect
+            handleSelectChange={handleSelectChange}
+            criterion={alleleData}
+            name="allele_data"
+          />
+          <CSelect
+            handleSelectChange={handleSelectChange}
+            criterion={segregationData}
+            name="segregation_data"
+          />
+          <CSelect
+            handleSelectChange={handleSelectChange}
+            criterion={otherdata}
+            name="other_data"
+          />
+          <CSelect
+            handleSelectChange={handleSelectChange}
+            criterion={computationalData}
+            name="computational_data"
+          />
+          <CSelect
+            handleSelectChange={handleSelectChange}
+            criterion={otherdb}
+            name="other_db"
+          />
+          <div className="flex flex-col gap-2">
+            <div className="flex gap-1">
+              <h3 className="capitalize">functional data</h3>
+              <button type="button" onClick={() => setOpen(!open)}>
+                {open ? (
+                  <ChevronUpIcon className="h-6 w-6" />
+                ) : (
+                  <ChevronDownIcon className="h-6 w-6" />
+                )}
+              </button>
+            </div>
+            {open &&
+              functionalData.map((criterion) => (
+                <label key={criterion.id} className="capitalize">
+                  <input
+                    type="checkbox"
+                    name={criterion.evidenceType}
+                    value={`${criterion.evidenceType}^${criterion.label}^${criterion.weight}`}
+                    onChange={handleCheckboxChange}
+                  />
+                  {criterion.label}
+                </label>
+              ))}
+          </div>
+        </div>
+
+        <Button variant="primary_filled" size="base" type="submit">
           Submit
         </Button>
-
       </Form>
     </>
   );
 }
-function DropMenu({
-  criteria,
-  setOpened,
-}:{
-  criteria: Criterion[],
-  setOpened?: React.Dispatch<React.SetStateAction<boolean>>
-}){
-  console.log(criteria, "criteria in DropMenu");
-  
-const [open,setOpen ] = React.useState(false);
-  const [selected, setSelected] = React.useState<[]>([]);
 
-const selections = criteria.reduce((acc, criterion) => {
-  const { evidenceType } = criterion;
-  if (!acc[evidenceType]) {
-    acc[evidenceType] = [];
-  }
-  acc[evidenceType].push(criterion);
-  return acc;
-}, {} as Record<string, typeof criteria>);
-const computational = selections["Computational and Predictive Data"];
-const functional = selections["Functional Data"];
-const population = selections["Population Data"];
-const segregation = selections["Segregation Data"];
-const deNovo = selections["De Novo Data"];
-const allelic = selections["Allelic Data"];
-const other = selections["Other Data"];
-const otherDatabase = selections["Other Database"];
-console.log(otherDatabase, "otherDatabase");
-
-console.log(selections, "selections");
-const trimmed = criteria.map((criterion) => {
-  return {
-    evidenceType: criterion.evidenceType,
-    label: criterion.label,
-    value: criterion.label,
-  }
-});
-console.log(trimmed, "trimmed");
-
-
-const noFunctional = criteria.filter((criterion) => criterion.evidenceType !== "Functional Data").map((criterion) => {
-  return {
-    evidenceType: criterion.evidenceType,
-    label: criterion.label,
-    value: criterion.label,
-  }
-});
-console.log(noFunctional, "noFunctional");
-
-const functionalData = criteria.filter((criterion) => criterion.evidenceType === "Functional Data");
-console.log(functionalData, "functionalData");
-console.log(Array.isArray(functionalData), "functionalData");
-
-
- const columns = criteria.reduce((acc, criterion) => {
-    const { evidenceType } = criterion;
-    if (!acc[evidenceType]) {
-      acc[evidenceType] = [];
-    }
-    acc[evidenceType].push(criterion);
-    return acc;
-  }, {} as Record<string, typeof criteria>);
-  console.log(columns, "columns");
-
+// function CriteriaSelect({
+//   handleSelectChange,
+//   criterion,
+//   name,
+// }: {
+//   handleSelectChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+//   criterion: Criterion[];
+//   name: string;
+// }) {
+//   return (
+//     <div className="flex flex-col gap-2">
+//       <label className=" capitalize" htmlFor="gene">
+//         {name.split("_").join(" ")}
+//       </label>
+//       <select name={name} className="text-black" onChange={handleSelectChange}>
+//         {criterion.map((criterion) => (
+//           <option
+//             key={criterion.id}
+//             value={`${criterion.evidenceType}^${criterion.label}^${criterion.weight}`}
+//           >
+//             {criterion.label}
+//           </option>
+//         ))}
+//       </select>
+//     </div>
+//   );
+// }
+function CSelect({
+  handleSelectChange,
+  criterion,
+  name,
+}: {
+  handleSelectChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  criterion: Criterion[];
+  name: string;
+}) {
+  const [open, setOpen] = React.useState(false);
+  const [value, setValue] = React.useState("");
   return (
-    <div
-      className="flex flex-col gap-2"
-    >
-     <div className="flex">
-      <p className="text-sm text-gray-500">Evidence Addition</p>
-
-
-     </div>
-     {
-      columns && Object.keys(columns).map((evidenceType) => {
-        const criteria = columns[evidenceType];
-        return (
-          <div key={evidenceType} className="flex flex-col gap-2">
-            <div className="flex flex-row justify-between items-center">
-              <span>{evidenceType}</span>
-              <span className="text-sm text-gray-500">
-                {criteria.length} criteria
-                
-              </span>
-             
-            </div>
-            <div className="flex flex-col gap-2">
-           
-              
-            {
-              criteria.map((criterion) => {
-                return (
-                  <div key={criterion.id} className="flex flex-row justify-between items-center">
-                    <span>{criterion.label}</span>
-                    
-                  </div>
-                )
-              })
-            }
-            
-        
-
-          </div>
-          </div>
-
-        );
-      }
-      )
-
-     }
-    </div>
-  )
-}
-
-
-
-function RadioInput({
-  criteria,
-  setOpened,
-}:
-{
-  setOpened?: Boolean,
-  criteria: Criterion[]
-  }){
-  const [open, setOpen] = React.useState(false);
-const [selected, setSelected] = React.useState([
-  {
-    type: [criteria[0].evidenceType],
-  }
-  
-]);
-
-console.log(selected, "selected");
-
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // extract the name which is the evidenceType and the value which is the label PM2_supporting example
-    const {value,name}  = event.target;
-    // determine if the input is a radio or checkbox
-    const isRadio = event.target.type === "radio";
-    const isCheckbox = event.target.type === "checkbox";
-    // if the input is a radio, then we want to set the selected to the value of the radio
-    // if the input is a checkbox, then we want to add the value of the checkbox to the selected array
-    // if the input is a checkbox and it is already selected, then we want to remove the value from the selected array
-    // if the input is a checkbox and it is not already selected, then we want to add the value to the selected array
-    // if the input is a radio, then we want to set the selected to the value of the radio
-    // if the input is a checkbox, then we want to add the value of the checkbox to the selected array
-    
-    if (isRadio) {
-      setSelected([
-        {
-          type: [value],
-        }
-      ]);
-    }
-    if (isCheckbox) {
-      if (selected[0].type.includes(name)) {
-        setSelected([
-          {
-            type: selected[0].type.filter((type) => type !== name),
-          }
-        ]);
-      } else {
-        setSelected([
-          {
-            type: [...selected[0].type, value],
-          }
-        ]);
-      }
-    }
-
-
-
-    
-  };
-
-
-  return(
-    <>  
-      <div className="flex flex-col items-start">
-      
-        <pre className="text-xs text-gray-500">
-          {JSON.stringify(selected, null, 2)}
-        </pre>
-        <div className="flex flex-cl items-center">
-        <p className="text-sm text-gray-500">Evidence Addition</p>
-       
-        <button className="ml-2" onClick={() => 
-          setOpen(!open)
-        }>
-          {open ? <ChevronUpIcon /> : <ChevronDownIcon />}
+    <div className="flex flex-col gap-2 rounded-md">
+      <div className="flex gap-1">
+        <label className=" capitalize" htmlFor="gene">
+          {name.split("_").join(" ")}
+        </label>
+        <button type="button" onClick={() => setOpen(!open)}>
+          {open ? (
+            <ChevronUpIcon className="h-6 w-6" />
+          ) : (
+            <ChevronDownIcon className="h-6 w-6" />
+          )}
         </button>
-        </div>
-      
-
-       
-       <div className="flex flex-col items-start">
-        {
-          open && criteria.map((criterion) => {
-            return (
-             <div
-              key={criterion.label}
-             className="flex flex-row items-center gap-2">
-               <label key={criterion.label} className="flex items-center gap-2">
-                <input
-                className="w-4 h-4 flex flex-col"
-                  type={criterion.evidenceTypeShort === "Functional" ? "checkbox" : "radio"}
-                  name={criterion.evidenceType}
-                  value={
-                    criterion.label
-                  }
-                  
-                  onChange={handleChange}
-                />
-                <div
-                  className="text-sm text-gray-500 flex flex-col"
-                >{criterion.label}</div>
-              </label>
-              </div>
-            );
-          }
-          )
-        }
-       </div>
-
       </div>
-    
-    </>
-  )
-  }
+      <div className="relative ">
+        {value}
 
-function DropDown({
-  criteria,
-  setOpened,
-}:{
-  criteria: Criterion[],
-  setOpened?: React.Dispatch<React.SetStateAction<boolean>>
-}){
-  console.log(criteria, "criteria in DropDown");
-
-  const [open, setOpen] = React.useState(false);
-  const selections = criteria.reduce((acc, criterion) => {
-    const { evidenceType } = criterion;
-    if (!acc[evidenceType]) {
-      acc[evidenceType] = [];
-    }
-    acc[evidenceType].push(criterion);
-    return acc;
-  }
-  , {} as Record<string, typeof criteria>);
-
-  return(
-    <>
-    <Select.Root open={open} onOpenChange={setOpen}>
-      <Select.Trigger>
-        <span>Select a criterion</span>
-        <Select.Arrow />
-      </Select.Trigger>
-      <Select.Content>
-        {Object.keys(selections).map((evidenceType) => {
-          const criteria = selections[evidenceType];
-          return (
-            <Select.Group
-            key={evidenceType}
-             label={evidenceType}>
-              {criteria.map((criterion) => {
-                return (
-                  <Select.Item 
-                  key={criterion.label}
-                  value={criterion.label}>
-                    {criterion.label}
-                  </Select.Item>
-                );
-              })}
-            </Select.Group>
-          );
-        }
+        <input type="hidden" name={name} value={value} />
+        <button
+          type="button"
+          onClick={(e) => {
+            handleSelectChange(
+              e as unknown as React.ChangeEvent<HTMLSelectElement>
+            );
+            setOpen(false);
+          }}
+          className="abg-red-500 h-6 w-6 rounded-full text-white"
+        >
+          {value === "" ? "" : <Cross2Icon />}
+        </button>
+        {open && (
+          <div className="absolute z-10 w-full bg-white">
+            <ul className="flex flex-col gap-2">
+              {criterion.map((criterion) => (
+                <>
+                  <li key={criterion.id} className="capitalize text-black">
+                    <button
+                      type="button"
+                      value={`${criterion.evidenceType}^${criterion.label}^${criterion.weight}`}
+                      className={value === criterion.label ? "bg-blue-100" : ""}
+                      onClick={(e) => {
+                        const { value } = e.currentTarget;
+                        const [evidenceType, label, weight] = value.split("^");
+                        setValue(value);
+                        handleSelectChange(
+                          e as unknown as React.ChangeEvent<HTMLSelectElement>
+                        );
+                        setOpen(false);
+                      }}
+                    >
+                      {criterion.label}
+                    </button>
+                  </li>
+                </>
+              ))}
+            </ul>
+          </div>
         )}
-      </Select.Content>
-    </Select.Root>
-
-    </>
-  )
+      </div>
+    </div>
+  );
 }
