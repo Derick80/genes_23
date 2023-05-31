@@ -12,7 +12,6 @@ import {
 } from "@radix-ui/react-icons";
 import type { Criterion } from "~/constants/acmg-criteria";
 import Button from "~/components/button";
-import { set } from "zod";
 
 export async function loader({ request, params }: LoaderArgs) {
   const criteria = await prisma.criterion.findMany();
