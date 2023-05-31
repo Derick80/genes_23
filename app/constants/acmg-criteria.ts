@@ -1,16 +1,14 @@
 // consts.ts is my reference for this file
-import { Criterion as PrismaCriterion }from "@prisma/client";
+import { Criterion as PrismaCriterion } from "@prisma/client";
 import { SerializeFrom } from "@remix-run/node";
 
 export type Criterion = SerializeFrom<PrismaCriterion>;
-
 
 // define an interfacefor the criterion then define an interface for the acmg criteria
 interface CriterionInterface {
   benign: string[];
   pathogenic: string[];
 }
-
 
 export interface AcmgCriteria {
   population: CriterionInterface;
