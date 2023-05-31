@@ -29,8 +29,9 @@ export default function Beta() {
   const data = useLoaderData<typeof loader>();
   const [checkedBox, setCheckedBox] = React.useState<CriterionGroup[]>([]);
   const [selectedOption, setSelectedOption] = React.useState<string>("");
-  const [selected, setSelected] = React.useState<{evidenceType: string, label: string, weight: number}[]>([]);
-
+  const [selected, setSelected] = React.useState<
+    { evidenceType: string; label: string; weight: number }[]
+  >([]);
 
   const noFunctional = data.criteria.filter(
     (criterion) => criterion.evidenceType !== "Functional Data"
@@ -40,7 +41,7 @@ export default function Beta() {
       evidenceType: string;
       criteria: Criterion[];
     }
-  ]
+  ];
 
   const evidence: Evidence = noFunctional.reduce((acc, criterion) => {
     const { evidenceType } = criterion;
@@ -91,12 +92,12 @@ export default function Beta() {
     (criterion) => criterion.evidenceType === "Other Data"
   );
   const computationalData = data.criteria.filter(
-    (criterion) => criterion.evidenceType === "Computational and Predictive Data"
+    (criterion) =>
+      criterion.evidenceType === "Computational and Predictive Data"
   );
   const otherdb = data.criteria.filter(
     (criterion) => criterion.evidenceType === "Other Database"
   );
-
 
   // handle checkbox change event
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -118,20 +119,17 @@ export default function Beta() {
       );
     }
   };
-console.log(checkedBox, "checkedBox");
-
+  console.log(checkedBox, "checkedBox");
 
   // handle select change event
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = e.target;
     console.log(value, "value");
-    
+
     const [evidenceType, label, weight] = value.split("^");
-    setSelected((
-      prev
-    ) => prev.filter((criterion) => criterion.evidenceType !== evidenceType
-    
-    ))
+    setSelected((prev) =>
+      prev.filter((criterion) => criterion.evidenceType !== evidenceType)
+    );
     setSelected((prev) => [
       ...prev,
       {
@@ -141,66 +139,76 @@ console.log(checkedBox, "checkedBox");
       },
     ]);
 
-
     console.log(selectedOption, "selectedOption");
-    
   };
 
   console.log(selected, "selected");
-
 
   return (
     <>
       <Form method="post" action="/beta" className="flex flex-col gap-2">
         <div className="flex flex-col gap-2">
-            <CriteriaSelect handleSelectChange={handleSelectChange} criterion={population}
+          <CriteriaSelect
+            handleSelectChange={handleSelectChange}
+            criterion={population}
             name="population_data"
-            />
+          />
 
-            <CriteriaSelect handleSelectChange={handleSelectChange} criterion={deNovo}
+          <CriteriaSelect
+            handleSelectChange={handleSelectChange}
+            criterion={deNovo}
             name="de_novo_data"
-            />
-            <CriteriaSelect handleSelectChange={handleSelectChange} criterion={alleleData}
+          />
+          <CriteriaSelect
+            handleSelectChange={handleSelectChange}
+            criterion={alleleData}
             name="allele_data"
-            />
-            <CriteriaSelect handleSelectChange={handleSelectChange} criterion={segregationData}
+          />
+          <CriteriaSelect
+            handleSelectChange={handleSelectChange}
+            criterion={segregationData}
             name="segregation_data"
-            />
-            <CriteriaSelect handleSelectChange={handleSelectChange} criterion={otherdata}
+          />
+          <CriteriaSelect
+            handleSelectChange={handleSelectChange}
+            criterion={otherdata}
             name="other_data"
-            />
-            <CriteriaSelect handleSelectChange={handleSelectChange} criterion={computationalData}
+          />
+          <CriteriaSelect
+            handleSelectChange={handleSelectChange}
+            criterion={computationalData}
             name="computational_data"
-            />
-            <CriteriaSelect handleSelectChange={handleSelectChange} criterion={otherdb}
+          />
+          <CriteriaSelect
+            handleSelectChange={handleSelectChange}
+            criterion={otherdb}
             name="other_db"
-            />
-            <div className="flex flex-col gap-2">
-              <div className="flex gap-1">
+          />
+          <div className="flex flex-col gap-2">
+            <div className="flex gap-1">
               <h3 className="capitalize">functional data</h3>
-              <button
-        type="button"
-        onClick={() => setOpen(!open)}
-        >
-          { open ? <ChevronUpIcon className="w-6 h-6" /> : <ChevronDownIcon className="w-6 h-6" />}
-        </button>
-              </div>
-      {open &&
-        functionalData.map((criterion) => (
-          <label key={criterion.id} className="capitalize">
-            <input
-              type="checkbox"
-              name={criterion.evidenceType}
-              value={`${criterion.evidenceType}^${criterion.label}^${criterion.weight}`}
-              onChange={handleCheckboxChange}
-            />
-            {criterion.label}
-          </label>
-        ))
-
-      }
-      </div>
+              <button type="button" onClick={() => setOpen(!open)}>
+                {open ? (
+                  <ChevronUpIcon className="h-6 w-6" />
+                ) : (
+                  <ChevronDownIcon className="h-6 w-6" />
+                )}
+              </button>
+            </div>
+            {open &&
+              functionalData.map((criterion) => (
+                <label key={criterion.id} className="capitalize">
+                  <input
+                    type="checkbox"
+                    name={criterion.evidenceType}
+                    value={`${criterion.evidenceType}^${criterion.label}^${criterion.weight}`}
+                    onChange={handleCheckboxChange}
+                  />
+                  {criterion.label}
+                </label>
+              ))}
           </div>
+        </div>
 
         <Button variant="primary_filled" size="base" type="submit">
           Submit
@@ -214,35 +222,30 @@ function CriteriaSelect({
   handleSelectChange,
   criterion,
   name,
-}:{
-  handleSelectChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
-  criterion: Criterion[]
-  name:string
-
-}){
-  return(
+}: {
+  handleSelectChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  criterion: Criterion[];
+  name: string;
+}) {
+  return (
     <div className="flex flex-col gap-2">
-            <label
-              className=" capitalize"
-            htmlFor="gene">{
-              name.split("_").join(" ")
-            }</label>
-              <select 
-              name='population_data'
-              className="text-black"
-              onChange={handleSelectChange}
-              >
-                {criterion.map((criterion) => (  
-                  <option
-                    key={criterion.id}
-                    value={`${criterion.evidenceType}^${criterion.label}^${criterion.weight}`}
-                  >
-                    {criterion.label}
-                  </option>
-                ))}
-              </select>
-
-          </div>
-
-  )
+      <label className=" capitalize" htmlFor="gene">
+        {name.split("_").join(" ")}
+      </label>
+      <select
+        name="population_data"
+        className="text-black"
+        onChange={handleSelectChange}
+      >
+        {criterion.map((criterion) => (
+          <option
+            key={criterion.id}
+            value={`${criterion.evidenceType}^${criterion.label}^${criterion.weight}`}
+          >
+            {criterion.label}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
 }
