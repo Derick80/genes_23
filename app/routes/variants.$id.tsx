@@ -4,10 +4,9 @@ import { json, redirect } from "@remix-run/node";
 import { Link, Outlet, useLoaderData } from "@remix-run/react";
 import { prisma } from "~/server/prisma.server";
 import { VariantSummaryCard } from "./variants";
-import { variants } from "~/constants/variants";
+import { variants } from "~/acmg-functions-utilities/variants";
 export async function loader({ request, params }: LoaderArgs) {
   const id = params.id;
-  console.log(id, "id");
 
   if (!id) return redirect("/variants");
 

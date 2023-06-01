@@ -1,9 +1,9 @@
-import {
+import type {
   LinksFunction,
   LoaderArgs,
   V2_MetaFunction,
-  json,
 } from "@remix-run/node";
+import { json } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -11,9 +11,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  isRouteErrorResponse,
   useLoaderData,
-  useRouteError,
 } from "@remix-run/react";
 import stylesheet from "~/tailwind.css";
 import Layout from "./components/layout";

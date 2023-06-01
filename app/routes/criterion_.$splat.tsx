@@ -6,19 +6,17 @@ import { json, redirect } from "@remix-run/node";
 import { Form, useLoaderData } from "@remix-run/react";
 import { z } from "zod";
 import Button from "~/components/button";
-import { validateAction } from "~/functions";
+import { validateAction } from "~/utilities/utility-functions";
 import { prisma } from "~/server/prisma.server";
 export async function loader({ request, params }: LoaderArgs) {
   const searchParam = params.splat || "";
-  console.log(searchParam, "searchParam");
+
   const formattedsearchParam = searchParam
     .split(" ")
     .join("_")
     .split("_Data")
     .join("_data")
     .toLowerCase();
-
-  console.log(formattedsearchParam, "formattedsearchParam");
 
   const criterion = await prisma.criterion.findMany({
     where: {
@@ -40,8 +38,6 @@ export async function loader({ request, params }: LoaderArgs) {
       evidenceType: "asc",
     },
   });
-
-  console.log(criterion, "criterion");
 
   return json({ criterion, searchParam });
 }

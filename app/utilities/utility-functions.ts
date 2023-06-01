@@ -1,6 +1,8 @@
 import { useMatches } from "@remix-run/react";
 import { useMemo } from "react";
-import { ZodError, ZodSchema } from "zod";
+import type { ZodError, ZodSchema } from "zod";
+
+// This function is used to get the data from the routes
 
 export async function useMatchesData(
   id: string
@@ -13,8 +15,7 @@ export async function useMatchesData(
   return route?.data;
 }
 
-// UP
-
+// This type and the next function are used to validate the input of the action functions in the routes
 type ActionErrors<T> = Partial<Record<keyof T, string>>;
 
 export async function validateAction<ActionInput>({

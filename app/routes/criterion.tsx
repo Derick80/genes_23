@@ -21,19 +21,8 @@ export async function loader({ request }: LoaderArgs) {
       evidenceType: "asc",
     },
   });
-  console.log(criterion, "criterion");
+
   // reduce to evidenceType object with benign and pathogenic arrays
-
-  const groups = criterion.reduce((acc, cur) => {
-    if (!acc[cur.evidenceType]) {
-      acc[cur.evidenceType] = [];
-    }
-    acc[cur.evidenceType].push(cur.weight);
-
-    return acc;
-  }, {} as CriterionLoaderData["groups"][0]);
-
-  console.log(groups, "groups");
 
   // generate a list of unique column names
   const columnNames = criterion.reduce(
@@ -46,23 +35,8 @@ export async function loader({ request }: LoaderArgs) {
     [] as string[]
   );
 
-  return json({ criterion, columnNames, groups });
+  return json({ criterion, columnNames });
 }
-
-export type CriterionLoaderData = {
-  groups: {
-    [key: string]: {
-      id: string;
-      label: string;
-      weight: number;
-      definition: string;
-      evidenceType: string;
-      example: string;
-      criterionBaseWeight: string;
-      caveat: string;
-    }[];
-  }[];
-};
 
 export default function Criterio() {
   const data = useLoaderData<typeof loader>();

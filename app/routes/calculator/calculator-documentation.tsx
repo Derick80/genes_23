@@ -1,14 +1,6 @@
-export default function Index() {
+export default function Documentation() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <Documentation />
-    </div>
-  );
-}
-
-function Documentation() {
-  return (
-    <div className="flex flex-col gap-2">
+    <div className="flex w-full flex-col gap-2 rounded-md border-2 md:w-1/3">
       <h1 className="text-2xl font-bold">Documentation</h1>
       <p className="text-gray-500">
         This is a work in progress. Please check back later.
