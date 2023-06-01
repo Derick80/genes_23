@@ -146,7 +146,7 @@ __export(root_exports, {
 var import_node2 = require("@remix-run/node"), import_react3 = require("@remix-run/react");
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-H4LWUBTW.css";
+var tailwind_default = "/build/_assets/tailwind-UDFZ3XXH.css";
 
 // app/components/layout.tsx
 var import_remix = require("@clerk/remix"), import_react2 = require("@remix-run/react"), import_jsx_dev_runtime2 = require("react/jsx-dev-runtime");
@@ -1098,7 +1098,7 @@ var import_react_icons = require("@radix-ui/react-icons"), import_react6 = __toE
 function CheckBoxes({
   data,
   setIsOpen,
-  handleCheckboxChange
+  handleCheckboxChange: handleCheckboxChange2
 }) {
   let [open, setOpen] = import_react6.default.useState(!1), [selected, setSelected] = import_react6.default.useState([]);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "flex w-72 flex-col gap-2 rounded-md border-2 p-1", children: [
@@ -1146,7 +1146,7 @@ function CheckBoxes({
           className: "flex h-[25px] w-[25px] appearance-none items-center  justify-center rounded-[4px] border-2 bg-white shadow-[0_2px_10px] outline-none",
           name: criterion.value,
           value: criterion.label,
-          onChange: handleCheckboxChange,
+          onChange: handleCheckboxChange2,
           type: "checkbox"
         },
         void 0,
@@ -1195,7 +1195,7 @@ __export(criterion_splat_exports, {
   default: () => EditIndex,
   loader: () => loader3
 });
-var import_remix3 = require("@clerk/remix"), import_node4 = require("@remix-run/node"), import_react9 = require("@remix-run/react"), import_zod = require("zod");
+var import_remix3 = require("@clerk/remix"), Label = __toESM(require("@radix-ui/react-label")), import_node4 = require("@remix-run/node"), import_react9 = require("@remix-run/react"), import_zod = require("zod");
 
 // app/functions.ts
 var import_react7 = require("@remix-run/react"), import_react8 = require("react");
@@ -1295,11 +1295,22 @@ function EditIndex() {
       className: "flex w-full max-w-2xl flex-col gap-2 rounded-md border p-4  ",
       method: "post",
       children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("label", { className: "text-xl font-bold", htmlFor: "criterionName", children: "Criterion Name" }, void 0, !1, {
-          fileName: "app/routes/criterion_.$splat.tsx",
-          lineNumber: 106,
-          columnNumber: 9
-        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(
+          Label.Root,
+          {
+            className: "text-xl font-bold text-white",
+            htmlFor: "criterionName",
+            children: "Criterion Name"
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/routes/criterion_.$splat.tsx",
+            lineNumber: 107,
+            columnNumber: 9
+          },
+          this
+        ),
         /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(
           "input",
           {
@@ -1314,7 +1325,7 @@ function EditIndex() {
           !1,
           {
             fileName: "app/routes/criterion_.$splat.tsx",
-            lineNumber: 109,
+            lineNumber: 113,
             columnNumber: 9
           },
           this
@@ -1322,7 +1333,7 @@ function EditIndex() {
         /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("label", { className: "text-xl font-bold", htmlFor: "definition", children: "Definition" }, void 0, !1, {
             fileName: "app/routes/criterion_.$splat.tsx",
-            lineNumber: 118,
+            lineNumber: 122,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(
@@ -1339,20 +1350,20 @@ function EditIndex() {
             !1,
             {
               fileName: "app/routes/criterion_.$splat.tsx",
-              lineNumber: 121,
+              lineNumber: 125,
               columnNumber: 11
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/criterion_.$splat.tsx",
-          lineNumber: 117,
+          lineNumber: 121,
           columnNumber: 9
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("label", { className: "text-xl font-bold", htmlFor: "evidenceType", children: "Evidence Type" }, void 0, !1, {
             fileName: "app/routes/criterion_.$splat.tsx",
-            lineNumber: 131,
+            lineNumber: 135,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(
@@ -1369,20 +1380,20 @@ function EditIndex() {
             !1,
             {
               fileName: "app/routes/criterion_.$splat.tsx",
-              lineNumber: 134,
+              lineNumber: 138,
               columnNumber: 11
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/criterion_.$splat.tsx",
-          lineNumber: 130,
+          lineNumber: 134,
           columnNumber: 9
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("label", { className: "text-xl font-bold", htmlFor: "example", children: "Example" }, void 0, !1, {
             fileName: "app/routes/criterion_.$splat.tsx",
-            lineNumber: 144,
+            lineNumber: 148,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(
@@ -1399,20 +1410,20 @@ function EditIndex() {
             !1,
             {
               fileName: "app/routes/criterion_.$splat.tsx",
-              lineNumber: 147,
+              lineNumber: 151,
               columnNumber: 11
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/criterion_.$splat.tsx",
-          lineNumber: 143,
+          lineNumber: 147,
           columnNumber: 9
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("label", { className: "text-xl font-bold", htmlFor: "criterionBaseWeight", children: "Criterion Base Weight" }, void 0, !1, {
             fileName: "app/routes/criterion_.$splat.tsx",
-            lineNumber: 157,
+            lineNumber: 161,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(
@@ -1425,27 +1436,27 @@ function EditIndex() {
               children: [
                 /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("option", { value: "P", children: "Supporting" }, void 0, !1, {
                   fileName: "app/routes/criterion_.$splat.tsx",
-                  lineNumber: 166,
+                  lineNumber: 170,
                   columnNumber: 13
                 }, this),
                 /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("option", { value: "M", children: "Moderate" }, void 0, !1, {
                   fileName: "app/routes/criterion_.$splat.tsx",
-                  lineNumber: 167,
+                  lineNumber: 171,
                   columnNumber: 13
                 }, this),
                 /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("option", { value: "S", children: "Strong" }, void 0, !1, {
                   fileName: "app/routes/criterion_.$splat.tsx",
-                  lineNumber: 168,
+                  lineNumber: 172,
                   columnNumber: 13
                 }, this),
                 /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("option", { value: "VS", children: "Very Strong" }, void 0, !1, {
                   fileName: "app/routes/criterion_.$splat.tsx",
-                  lineNumber: 169,
+                  lineNumber: 173,
                   columnNumber: 13
                 }, this),
                 /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("option", { value: "SA", children: "Stand Alone" }, void 0, !1, {
                   fileName: "app/routes/criterion_.$splat.tsx",
-                  lineNumber: 170,
+                  lineNumber: 174,
                   columnNumber: 13
                 }, this)
               ]
@@ -1454,20 +1465,20 @@ function EditIndex() {
             !0,
             {
               fileName: "app/routes/criterion_.$splat.tsx",
-              lineNumber: 160,
+              lineNumber: 164,
               columnNumber: 11
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/criterion_.$splat.tsx",
-          lineNumber: 156,
+          lineNumber: 160,
           columnNumber: 9
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("label", { className: "text-xl font-bold", htmlFor: "caveat", children: "Caveat" }, void 0, !1, {
             fileName: "app/routes/criterion_.$splat.tsx",
-            lineNumber: 174,
+            lineNumber: 178,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(
@@ -1486,19 +1497,19 @@ function EditIndex() {
             !1,
             {
               fileName: "app/routes/criterion_.$splat.tsx",
-              lineNumber: 177,
+              lineNumber: 181,
               columnNumber: 11
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/criterion_.$splat.tsx",
-          lineNumber: 173,
+          lineNumber: 177,
           columnNumber: 9
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(Button, { variant: "warning_filled", size: "large", type: "submit", children: "Submit" }, void 0, !1, {
           fileName: "app/routes/criterion_.$splat.tsx",
-          lineNumber: 188,
+          lineNumber: 192,
           columnNumber: 9
         }, this)
       ]
@@ -1507,13 +1518,13 @@ function EditIndex() {
     !0,
     {
       fileName: "app/routes/criterion_.$splat.tsx",
-      lineNumber: 102,
+      lineNumber: 103,
       columnNumber: 7
     },
     this
   ) }, void 0, !1, {
     fileName: "app/routes/criterion_.$splat.tsx",
-    lineNumber: 101,
+    lineNumber: 102,
     columnNumber: 5
   }, this);
 }
@@ -2872,577 +2883,268 @@ function SignUpPage() {
   }, this);
 }
 
-// app/routes/beta.tsx
-var beta_exports = {};
-__export(beta_exports, {
+// app/routes/omega.tsx
+var omega_exports = {};
+__export(omega_exports, {
   action: () => action3,
-  default: () => Beta,
+  default: () => OmegaRoute,
   loader: () => loader8
 });
 var import_node9 = require("@remix-run/node");
-var import_react18 = require("@remix-run/react"), import_react19 = __toESM(require("react")), import_react_icons4 = require("@radix-ui/react-icons");
-var import_jsx_dev_runtime17 = require("react/jsx-dev-runtime");
-async function loader8({ request, params }) {
-  let criteria2 = await prisma.criterion.findMany();
-  return (0, import_node9.json)({ criteria: criteria2 });
-}
-async function action3({ request, params }) {
-  let formData = await request.formData();
-  console.log(Object.fromEntries(formData), "formData");
-  let population = formData.get("population_data"), functional = formData.get("functional_data"), deNovo = formData.get("de_novo_data"), allele = formData.get("allele_data"), segregation = formData.get("segregation_data"), other = formData.get("other_data"), computational = formData.get("computational_data");
-  function getCriteria(item) {
-    let [evidenceType, label, weight] = item.split("^");
-    return {
-      label
-    };
-  }
-  let pop = getCriteria(population);
-  return console.log(pop, "pop"), (0, import_node9.json)({
-    message: "success"
-  });
-}
-function Beta() {
-  let data = (0, import_react18.useLoaderData)(), [checkedBox, setCheckedBox] = import_react19.default.useState([]), [selectedOption, setSelectedOption] = import_react19.default.useState(""), [selected, setSelected] = import_react19.default.useState([]), functionalData = data.criteria.filter(
-    (criterion) => criterion.evidenceType === "Functional Data"
-  ), [open, setOpen] = import_react19.default.useState(!1), bothArrays = [...selected, ...checkedBox];
-  console.log(bothArrays, "bothArrays");
-  let total = bothArrays.reduce((acc, curr) => acc + curr.weight, 0), [classification, setClassification] = import_react19.default.useState("");
-  function getClassificatin(total2) {
-    total2 <= -7 ? setClassification("Benign") : total2 >= -6 && total2 <= -1 ? setClassification("Likely Benign") : total2 >= 0 && total2 <= 5 ? setClassification("Uncertain Significance") : total2 >= 6 && total2 <= 9 ? setClassification("Likely Pathogenic") : total2 >= 10 ? setClassification("Pathogenic") : setClassification("No Classification");
-  }
-  import_react19.default.useEffect(() => {
-    getClassificatin(total);
-  }, [total]), console.log(classification, "classification");
-  let population = data.criteria.filter(
-    (criterion) => criterion.evidenceType === "Population Data"
-  ), deNovo = data.criteria.filter(
-    (criterion) => criterion.evidenceType === "De Novo Data"
-  ), alleleData = data.criteria.filter(
-    (criterion) => criterion.evidenceType === "Allelic Data"
-  ), segregationData = data.criteria.filter(
-    (criterion) => criterion.evidenceType === "Segregation Data"
-  ), otherdata = data.criteria.filter(
-    (criterion) => criterion.evidenceType === "Other Data"
-  ), computationalData = data.criteria.filter(
-    (criterion) => criterion.evidenceType === "Computational and Predictive Data"
-  ), otherdb = data.criteria.filter(
-    (criterion) => criterion.evidenceType === "Other Database"
-  ), handleCheckboxChange = (e) => {
-    let { name, value, checked } = e.target, [evidenceType, label, weight] = value.split("^");
-    setCheckedBox(checked ? (prev) => [
-      ...prev,
-      {
-        evidenceType,
-        label,
-        weight: Number(weight)
-      }
-    ] : (prev) => prev.filter((criterion) => criterion.label !== label));
-  }, handleSelectChange = (e) => {
-    let { value } = e.target, [evidenceType, label, weight] = value.split("^");
-    evidenceType !== "" && (setSelected(
-      (prev) => prev.filter((criterion) => criterion.evidenceType !== evidenceType)
-    ), setSelected((prev) => [
-      ...prev,
-      {
-        evidenceType,
-        label,
-        weight: Number(weight) || 0
-      }
-    ]));
-  }, evidenceTypes = Array.from(
-    new Set(data.criteria.map((c) => c.evidenceType))
-  );
-  return console.log(evidenceTypes, "evidenceTypes"), /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_jsx_dev_runtime17.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "flex flex-row items-center gap-2", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("p", { className: "text-2xl font-bold", children: "ACMG Variant Classification:" }, void 0, !1, {
-        fileName: "app/routes/beta.tsx",
-        lineNumber: 172,
-        columnNumber: 9
-      }, this),
-      classification
-    ] }, void 0, !0, {
-      fileName: "app/routes/beta.tsx",
-      lineNumber: 171,
-      columnNumber: 7
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_react18.Form, { method: "post", action: "/beta", className: "flex flex-col gap-2", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-          CSelect,
-          {
-            handleSelectChange,
-            criterion: population,
-            name: "population_data"
-          },
-          void 0,
-          !1,
-          {
-            fileName: "app/routes/beta.tsx",
-            lineNumber: 178,
-            columnNumber: 11
-          },
-          this
-        ),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-          CSelect,
-          {
-            handleSelectChange,
-            criterion: deNovo,
-            name: "de_novo_data"
-          },
-          void 0,
-          !1,
-          {
-            fileName: "app/routes/beta.tsx",
-            lineNumber: 184,
-            columnNumber: 11
-          },
-          this
-        ),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-          CSelect,
-          {
-            handleSelectChange,
-            criterion: alleleData,
-            name: "allele_data"
-          },
-          void 0,
-          !1,
-          {
-            fileName: "app/routes/beta.tsx",
-            lineNumber: 189,
-            columnNumber: 11
-          },
-          this
-        ),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-          CSelect,
-          {
-            handleSelectChange,
-            criterion: segregationData,
-            name: "segregation_data"
-          },
-          void 0,
-          !1,
-          {
-            fileName: "app/routes/beta.tsx",
-            lineNumber: 194,
-            columnNumber: 11
-          },
-          this
-        ),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-          CSelect,
-          {
-            handleSelectChange,
-            criterion: otherdata,
-            name: "other_data"
-          },
-          void 0,
-          !1,
-          {
-            fileName: "app/routes/beta.tsx",
-            lineNumber: 199,
-            columnNumber: 11
-          },
-          this
-        ),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-          CSelect,
-          {
-            handleSelectChange,
-            criterion: computationalData,
-            name: "computational_data"
-          },
-          void 0,
-          !1,
-          {
-            fileName: "app/routes/beta.tsx",
-            lineNumber: 204,
-            columnNumber: 11
-          },
-          this
-        ),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-          CSelect,
-          {
-            handleSelectChange,
-            criterion: otherdb,
-            name: "other_db"
-          },
-          void 0,
-          !1,
-          {
-            fileName: "app/routes/beta.tsx",
-            lineNumber: 209,
-            columnNumber: 11
-          },
-          this
-        ),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "flex gap-1", children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("h3", { className: "capitalize", children: "functional data" }, void 0, !1, {
-              fileName: "app/routes/beta.tsx",
-              lineNumber: 216,
-              columnNumber: 15
-            }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("button", { type: "button", onClick: () => setOpen(!open), children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_react_icons4.ChevronUpIcon, { className: "h-6 w-6" }, void 0, !1, {
-              fileName: "app/routes/beta.tsx",
-              lineNumber: 219,
-              columnNumber: 19
-            }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_react_icons4.ChevronDownIcon, { className: "h-6 w-6" }, void 0, !1, {
-              fileName: "app/routes/beta.tsx",
-              lineNumber: 221,
-              columnNumber: 19
-            }, this) }, void 0, !1, {
-              fileName: "app/routes/beta.tsx",
-              lineNumber: 217,
-              columnNumber: 15
-            }, this)
-          ] }, void 0, !0, {
-            fileName: "app/routes/beta.tsx",
-            lineNumber: 215,
-            columnNumber: 13
-          }, this),
-          open && functionalData.map((criterion) => /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("label", { className: "capitalize", children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-              "input",
-              {
-                type: "checkbox",
-                name: criterion.evidenceType,
-                value: `${criterion.evidenceType}^${criterion.label}^${criterion.weight}`,
-                onChange: handleCheckboxChange
-              },
-              void 0,
-              !1,
-              {
-                fileName: "app/routes/beta.tsx",
-                lineNumber: 228,
-                columnNumber: 19
-              },
-              this
-            ),
-            criterion.label
-          ] }, criterion.id, !0, {
-            fileName: "app/routes/beta.tsx",
-            lineNumber: 227,
-            columnNumber: 17
-          }, this))
-        ] }, void 0, !0, {
-          fileName: "app/routes/beta.tsx",
-          lineNumber: 214,
-          columnNumber: 11
-        }, this)
-      ] }, void 0, !0, {
-        fileName: "app/routes/beta.tsx",
-        lineNumber: 177,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(Button, { variant: "primary_filled", size: "base", type: "submit", children: "Submit" }, void 0, !1, {
-        fileName: "app/routes/beta.tsx",
-        lineNumber: 240,
-        columnNumber: 9
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "app/routes/beta.tsx",
-      lineNumber: 176,
-      columnNumber: 7
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "app/routes/beta.tsx",
-    lineNumber: 170,
-    columnNumber: 5
-  }, this);
-}
-function CSelect({
-  handleSelectChange,
-  criterion,
-  name
+
+// app/components/criteria-components/omega-route-ui.tsx
+var import_react20 = require("@remix-run/react"), import_react21 = __toESM(require("react"));
+
+// app/components/criteria-components/my-custom-select.tsx
+var import_react_label = require("@radix-ui/react-label"), Select = __toESM(require("@radix-ui/react-select")), import_react_icons4 = require("@radix-ui/react-icons"), import_jsx_dev_runtime17 = require("react/jsx-dev-runtime");
+function CustomCriteriaSelect({
+  data,
+  options,
+  handleListCriteriaUsed
 }) {
-  let [open, setOpen] = import_react19.default.useState(!1), [value, setValue] = import_react19.default.useState("");
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "flex flex-col gap-2 rounded-md", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "flex gap-1", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("label", { className: " capitalize", htmlFor: "gene", children: name.split("_").join(" ") }, void 0, !1, {
-        fileName: "app/routes/beta.tsx",
-        lineNumber: 289,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("button", { type: "button", onClick: () => setOpen(!open), children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_react_icons4.ChevronUpIcon, { className: "h-6 w-6" }, void 0, !1, {
-        fileName: "app/routes/beta.tsx",
-        lineNumber: 294,
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "flex flex-col", children: Object.entries(data).map((key, index) => {
+    let dataagain = options.filter((item) => item.evidenceType === key[0]);
+    return /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_jsx_dev_runtime17.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_react_label.Label, { className: "text-white", children: key[0] }, void 0, !1, {
+        fileName: "app/components/criteria-components/my-custom-select.tsx",
+        lineNumber: 38,
         columnNumber: 13
-      }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_react_icons4.ChevronDownIcon, { className: "h-6 w-6" }, void 0, !1, {
-        fileName: "app/routes/beta.tsx",
-        lineNumber: 296,
-        columnNumber: 13
-      }, this) }, void 0, !1, {
-        fileName: "app/routes/beta.tsx",
-        lineNumber: 292,
-        columnNumber: 9
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "app/routes/beta.tsx",
-      lineNumber: 288,
-      columnNumber: 7
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "relative ", children: [
-      value,
-      /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("input", { type: "hidden", name, value }, void 0, !1, {
-        fileName: "app/routes/beta.tsx",
-        lineNumber: 303,
-        columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-        "button",
+        "div",
         {
-          type: "button",
-          onClick: (e) => {
-            handleSelectChange(
-              e
-            ), setOpen(!1);
-          },
-          className: "abg-red-500 h-6 w-6 rounded-full text-white",
-          children: value === "" ? "" : /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_react_icons4.Cross2Icon, {}, void 0, !1, {
-            fileName: "app/routes/beta.tsx",
-            lineNumber: 314,
-            columnNumber: 32
-          }, this)
+          className: "flex w-full items-center justify-between rounded-md border p-2 text-white",
+          children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
+            Select.Root,
+            {
+              name: key[0],
+              onValueChange: (value) => [
+                handleListCriteriaUsed(value, key[0], dataagain.filter((item) => item.label === value && item.evidenceType === key[0]).map((item) => item.weight)[0])
+              ],
+              children: [
+                /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(Select.Trigger, { className: "flex w-full items-center justify-between rounded-md  p-2 text-white", children: [
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(Select.Value, { placeholder: "Select", className: "text-black" }, void 0, !1, {
+                    fileName: "app/components/criteria-components/my-custom-select.tsx",
+                    lineNumber: 67,
+                    columnNumber: 19
+                  }, this),
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_react_icons4.ChevronDownIcon, {}, void 0, !1, {
+                    fileName: "app/components/criteria-components/my-custom-select.tsx",
+                    lineNumber: 70,
+                    columnNumber: 19
+                  }, this)
+                ] }, void 0, !0, {
+                  fileName: "app/components/criteria-components/my-custom-select.tsx",
+                  lineNumber: 66,
+                  columnNumber: 17
+                }, this),
+                /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(Select.Content, { className: "overflow-hidden rounded-md bg-white shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)]", children: [
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(Select.ScrollUpButton, { className: "text-violet11 flex h-[25px] cursor-default items-center justify-center bg-white", children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_react_icons4.ChevronUpIcon, {}, void 0, !1, {
+                    fileName: "app/components/criteria-components/my-custom-select.tsx",
+                    lineNumber: 74,
+                    columnNumber: 21
+                  }, this) }, void 0, !1, {
+                    fileName: "app/components/criteria-components/my-custom-select.tsx",
+                    lineNumber: 73,
+                    columnNumber: 19
+                  }, this),
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(Select.Viewport, { className: "p-[5px]", children: options.filter((item) => item.evidenceType === key[0]).map((item) => /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
+                    Select.Item,
+                    {
+                      value: item.label,
+                      children: [
+                        /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("p", { className: "text-xs text-black", children: item.label }, void 0, !1, {
+                          fileName: "app/components/criteria-components/my-custom-select.tsx",
+                          lineNumber: 87,
+                          columnNumber: 29
+                        }, this),
+                        /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("p", { className: "text-xs text-black", children: item.definition }, void 0, !1, {
+                          fileName: "app/components/criteria-components/my-custom-select.tsx",
+                          lineNumber: 88,
+                          columnNumber: 29
+                        }, this),
+                        /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(Select.ItemText, { children: item.label }, void 0, !1, {
+                          fileName: "app/components/criteria-components/my-custom-select.tsx",
+                          lineNumber: 91,
+                          columnNumber: 29
+                        }, this)
+                      ]
+                    },
+                    item.id,
+                    !0,
+                    {
+                      fileName: "app/components/criteria-components/my-custom-select.tsx",
+                      lineNumber: 81,
+                      columnNumber: 27
+                    },
+                    this
+                  )) }, void 0, !1, {
+                    fileName: "app/components/criteria-components/my-custom-select.tsx",
+                    lineNumber: 76,
+                    columnNumber: 19
+                  }, this)
+                ] }, void 0, !0, {
+                  fileName: "app/components/criteria-components/my-custom-select.tsx",
+                  lineNumber: 72,
+                  columnNumber: 17
+                }, this)
+              ]
+            },
+            void 0,
+            !0,
+            {
+              fileName: "app/components/criteria-components/my-custom-select.tsx",
+              lineNumber: 44,
+              columnNumber: 15
+            },
+            this
+          )
         },
-        void 0,
+        index,
         !1,
         {
-          fileName: "app/routes/beta.tsx",
-          lineNumber: 304,
-          columnNumber: 9
+          fileName: "app/components/criteria-components/my-custom-select.tsx",
+          lineNumber: 40,
+          columnNumber: 13
         },
         this
-      ),
-      open && /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "absolute z-10 w-full bg-white", children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("ul", { className: "flex flex-col gap-2", children: criterion.map((criterion2) => /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_jsx_dev_runtime17.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("li", { className: "capitalize text-black", children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-        "button",
-        {
-          type: "button",
-          value: `${criterion2.evidenceType}^${criterion2.label}^${criterion2.weight}`,
-          className: value === criterion2.label ? "bg-blue-100" : "",
-          onClick: (e) => {
-            let { value: value2 } = e.currentTarget, [evidenceType, label, weight] = value2.split("^");
-            setValue(value2), handleSelectChange(
-              e
-            ), setOpen(!1);
-          },
-          children: criterion2.label
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/routes/beta.tsx",
-          lineNumber: 322,
-          columnNumber: 21
-        },
-        this
-      ) }, criterion2.id, !1, {
-        fileName: "app/routes/beta.tsx",
-        lineNumber: 321,
-        columnNumber: 19
-      }, this) }, void 0, !1, {
-        fileName: "app/routes/beta.tsx",
-        lineNumber: 320,
-        columnNumber: 17
-      }, this)) }, void 0, !1, {
-        fileName: "app/routes/beta.tsx",
-        lineNumber: 318,
-        columnNumber: 13
-      }, this) }, void 0, !1, {
-        fileName: "app/routes/beta.tsx",
-        lineNumber: 317,
-        columnNumber: 11
-      }, this)
+      )
     ] }, void 0, !0, {
-      fileName: "app/routes/beta.tsx",
-      lineNumber: 300,
-      columnNumber: 7
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "app/routes/beta.tsx",
-    lineNumber: 287,
+      fileName: "app/components/criteria-components/my-custom-select.tsx",
+      lineNumber: 37,
+      columnNumber: 11
+    }, this);
+  }) }, void 0, !1, {
+    fileName: "app/components/criteria-components/my-custom-select.tsx",
+    lineNumber: 31,
     columnNumber: 5
   }, this);
 }
 
-// app/routes/wip.tsx
-var wip_exports = {};
-__export(wip_exports, {
-  action: () => action4,
-  default: () => Wip,
-  loader: () => loader9
-});
-var import_node10 = require("@remix-run/node"), import_react21 = require("@remix-run/react");
-
-// app/components/accord-drop.tsx
-var import_react_icons5 = require("@radix-ui/react-icons"), import_react20 = __toESM(require("react")), import_jsx_dev_runtime18 = require("react/jsx-dev-runtime"), Dropdown = ({ options, onChange, title }) => {
-  let [isOpen, setIsOpen] = (0, import_react20.useState)(!1), [selectedOption, setSelectedOption] = (0, import_react20.useState)(null), handleSelect = (option) => {
-    setSelectedOption(option), onChange(option), setIsOpen(!1);
-  };
-  return import_react20.default.useEffect(() => {
-    let handleKeyboardEvent = (event) => {
-      event.key === "Escape" && setIsOpen(!1);
-    };
-    return document.addEventListener("keydown", handleKeyboardEvent), () => {
-      document.removeEventListener("keydown", handleKeyboardEvent);
-    };
-  }, []), /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "relative flex w-72 flex-col gap-2 rounded-md border-2 p-1", children: [
-    title,
-    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "flex gap-2 justify-between", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-        "div",
-        {
-          className: "flex w-1/2 flex-row   gap-2 items-center",
-          children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("p", { className: "text-xs", children: (selectedOption == null ? void 0 : selectedOption.label) || "Select an option" }, void 0, !1, {
-              fileName: "app/components/accord-drop.tsx",
-              lineNumber: 45,
-              columnNumber: 7
-            }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-              "button",
-              {
-                type: "button",
-                className: "",
-                onClick: () => setSelectedOption(null),
-                children: selectedOption && /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(import_react_icons5.Cross2Icon, {}, void 0, !1, {
-                  fileName: "app/components/accord-drop.tsx",
-                  lineNumber: 50,
-                  columnNumber: 29
-                }, this)
-              },
-              void 0,
-              !1,
-              {
-                fileName: "app/components/accord-drop.tsx",
-                lineNumber: 46,
-                columnNumber: 6
-              },
-              this
-            )
-          ]
-        },
-        void 0,
-        !0,
-        {
-          fileName: "app/components/accord-drop.tsx",
-          lineNumber: 42,
-          columnNumber: 5
-        },
-        this
-      ),
+// app/components/criteria-components/my-custom-radix-checkbox.tsx
+var import_react_icons5 = require("@radix-ui/react-icons"), import_react18 = __toESM(require("react")), Checkbox = __toESM(require("@radix-ui/react-checkbox")), import_react_icons6 = require("@radix-ui/react-icons"), import_react_label2 = require("@radix-ui/react-label"), import_jsx_dev_runtime18 = require("react/jsx-dev-runtime");
+function CustomCriteriaCheckBox({
+  data,
+  handleCheckBoxListCriteriaUsed
+}) {
+  let [open, setOpen] = import_react18.default.useState(!1);
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "flex w-72 flex-col gap-2 rounded-md border-2 p-1", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "flex justify-between gap-2", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { children: data[0].evidenceType }, void 0, !1, {
+        fileName: "app/components/criteria-components/my-custom-radix-checkbox.tsx",
+        lineNumber: 26,
+        columnNumber: 9
+      }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
         "button",
         {
           type: "button",
-          className: "flex flex-row items-center  gap-2 ",
-          onClick: () => setIsOpen(!isOpen),
-          children: isOpen ? /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(import_react_icons5.ChevronUpIcon, {}, void 0, !1, {
-            fileName: "app/components/accord-drop.tsx",
-            lineNumber: 62,
+          onClick: () => {
+            setOpen(!open);
+          },
+          children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(import_react_icons5.ChevronUpIcon, {}, void 0, !1, {
+            fileName: "app/components/criteria-components/my-custom-radix-checkbox.tsx",
+            lineNumber: 35,
             columnNumber: 19
           }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(import_react_icons5.ChevronDownIcon, {}, void 0, !1, {
-            fileName: "app/components/accord-drop.tsx",
-            lineNumber: 62,
+            fileName: "app/components/criteria-components/my-custom-radix-checkbox.tsx",
+            lineNumber: 35,
             columnNumber: 39
           }, this)
         },
         void 0,
         !1,
         {
-          fileName: "app/components/accord-drop.tsx",
-          lineNumber: 55,
-          columnNumber: 7
+          fileName: "app/components/criteria-components/my-custom-radix-checkbox.tsx",
+          lineNumber: 29,
+          columnNumber: 8
         },
         this
       )
     ] }, void 0, !0, {
-      fileName: "app/components/accord-drop.tsx",
-      lineNumber: 41,
-      columnNumber: 4
+      fileName: "app/components/criteria-components/my-custom-radix-checkbox.tsx",
+      lineNumber: 25,
+      columnNumber: 8
     }, this),
-    isOpen && /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-      "ul",
-      {
-        className: `absolute left-[50%] top-10 z-10 w-full -translate-x-1/2 transform rounded-md border-2 
-                    bg-white p-1
-                    text-black`,
-        children: options.map((option) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(import_jsx_dev_runtime18.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-          "li",
-          {
-            className: "flex w-full cursor-pointer  flex-col overflow-auto hover:bg-gray-200",
-            onClick: () => handleSelect(option),
-            children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "items-centser flex flex-col justify-between gap-1 border-b-2", children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("p", { className: "text-base", children: option.label }, void 0, !1, {
-                fileName: "app/components/accord-drop.tsx",
-                lineNumber: 81,
-                columnNumber: 17
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("p", { className: "text-[8px]", children: [
-                "Definition:",
-                option.definition
-              ] }, void 0, !0, {
-                fileName: "app/components/accord-drop.tsx",
-                lineNumber: 82,
-                columnNumber: 17
-              }, this)
-            ] }, void 0, !0, {
-              fileName: "app/components/accord-drop.tsx",
-              lineNumber: 80,
-              columnNumber: 15
-            }, this)
+    open && data.map(
+      (item) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+        Checkbox.Root,
+        {
+          className: "shadow-black hover:bg-blue-50 flex  items-center justify-center rounded-[4px] bg-slate-300 text-black shadow-[0_2px_10px] outlisne-none focus:shadow-[0_0_0_2px_black]",
+          id: item.label,
+          name: item.evidenceType,
+          onCheckedChange: (e) => {
+            handleCheckBoxListCriteriaUsed(item.label, item.evidenceType, item.weight);
           },
-          option.value,
-          !1,
-          {
-            fileName: "app/components/accord-drop.tsx",
-            lineNumber: 75,
-            columnNumber: 13
-          },
-          this
-        ) }, void 0, !1, {
-          fileName: "app/components/accord-drop.tsx",
-          lineNumber: 72,
-          columnNumber: 13
-        }, this))
-      },
-      void 0,
-      !1,
-      {
-        fileName: "app/components/accord-drop.tsx",
-        lineNumber: 66,
-        columnNumber: 9
-      },
-      this
-    ),
-    options.map((option) => /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-      "input",
-      {
-        type: "hidden",
-        name: option.value,
-        value: selectedOption == null ? void 0 : selectedOption.label
-      },
-      option.value,
-      !1,
-      {
-        fileName: "app/components/accord-drop.tsx",
-        lineNumber: 92,
-        columnNumber: 11
-      },
-      this
-    ))
+          value: item.label,
+          children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+              Checkbox.Indicator,
+              {
+                className: "text-teal-400",
+                id: item.label,
+                children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(import_react_icons6.CheckIcon, {}, void 0, !1, {
+                  fileName: "app/components/criteria-components/my-custom-radix-checkbox.tsx",
+                  lineNumber: 59,
+                  columnNumber: 21
+                }, this)
+              },
+              void 0,
+              !1,
+              {
+                fileName: "app/components/criteria-components/my-custom-radix-checkbox.tsx",
+                lineNumber: 55,
+                columnNumber: 21
+              },
+              this
+            ),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+              import_react_label2.Label,
+              {
+                className: "pl-[15px] text-[15px] leading-none text-black",
+                children: [
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("p", { className: "p-1", children: item.label }, void 0, !1, {
+                    fileName: "app/components/criteria-components/my-custom-radix-checkbox.tsx",
+                    lineNumber: 65,
+                    columnNumber: 21
+                  }, this),
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("p", { className: "text-xs", children: item.definition }, void 0, !1, {
+                    fileName: "app/components/criteria-components/my-custom-radix-checkbox.tsx",
+                    lineNumber: 66,
+                    columnNumber: 21
+                  }, this)
+                ]
+              },
+              void 0,
+              !0,
+              {
+                fileName: "app/components/criteria-components/my-custom-radix-checkbox.tsx",
+                lineNumber: 61,
+                columnNumber: 17
+              },
+              this
+            )
+          ]
+        },
+        item.label,
+        !0,
+        {
+          fileName: "app/components/criteria-components/my-custom-radix-checkbox.tsx",
+          lineNumber: 43,
+          columnNumber: 17
+        },
+        this
+      )
+    )
   ] }, void 0, !0, {
-    fileName: "app/components/accord-drop.tsx",
-    lineNumber: 39,
-    columnNumber: 5
+    fileName: "app/components/criteria-components/my-custom-radix-checkbox.tsx",
+    lineNumber: 24,
+    columnNumber: 7
   }, this);
-}, accord_drop_default = Dropdown;
+}
 
-// app/routes/wip.tsx
-var import_react22 = __toESM(require("react"));
+// app/components/criteria-components/classification-component.tsx
+var import_react19 = __toESM(require("react"));
 
 // app/constants/acmg-criteria.ts
 var specialCases = [
@@ -3476,25 +3178,747 @@ function convertToNumbers(arr) {
   return totalSum <= -7 ? obj.classification = "Benign" : totalSum >= -6 && totalSum <= -1 ? obj.classification = "Likely Benign" : totalSum >= 0 && totalSum <= 5 ? obj.classification = "Variant of Uncertain Significance" : totalSum >= 6 && totalSum <= 9 ? obj.classification = "Likely Pathogenic" : totalSum >= 10 && (obj.classification = "Pathogenic"), obj.totalSum = totalSum, obj;
 }
 
-// app/routes/wip.tsx
-var import_react_icons6 = require("@radix-ui/react-icons"), import_jsx_dev_runtime19 = require("react/jsx-dev-runtime");
+// app/components/criteria-components/classification-component.tsx
+var import_jsx_dev_runtime19 = require("react/jsx-dev-runtime");
+function ClassificationComponent({ data, setClassificationScore, setVariantClassification }) {
+  let [subtotals, setSubtotals] = import_react19.default.useState(0), subtotal = data.reduce((acc, item) => acc + item.weight, 0);
+  console.log(subtotal, "subtotal");
+  let criteriaBreakdown = extractFirstTwoLetters(data.map((item) => item.label));
+  console.log(criteriaBreakdown, "criteriaBreakdown");
+  let transformed = convertToNumbers(criteriaBreakdown);
+  return import_react19.default.useEffect(() => {
+    setClassificationScore(subtotal), setSubtotals(subtotal), setVariantClassification(transformed.classification);
+  }, [subtotal, setClassificationScore]), /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
+    "div",
+    {
+      className: ""
+    },
+    void 0,
+    !1,
+    {
+      fileName: "app/components/criteria-components/classification-component.tsx",
+      lineNumber: 35,
+      columnNumber: 5
+    },
+    this
+  );
+}
+
+// app/components/criteria-components/omega-route-ui.tsx
+var import_jsx_dev_runtime20 = require("react/jsx-dev-runtime");
+function OmegaUi() {
+  let { functionalData, criteria: criteria2, allDataByEvidenceType } = (0, import_react20.useLoaderData)(), [listCriteriaUsed, setListCriteriaUsed] = import_react21.default.useState([]);
+  console.log(listCriteriaUsed, "listCriteriaUsed");
+  let [classificationScore, setClassificationScore] = import_react21.default.useState(0), [variantClassification, setVariantClassification] = import_react21.default.useState("");
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { className: "flex flex-col items-center justify-center", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("p", { className: "text-2xl", children: [
+      "Variant Classification: ",
+      variantClassification
+    ] }, void 0, !0, {
+      fileName: "app/components/criteria-components/omega-route-ui.tsx",
+      lineNumber: 69,
+      columnNumber: 5
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("p", { className: "text-2xl", children: [
+      "Classification Score: ",
+      classificationScore
+    ] }, void 0, !0, {
+      fileName: "app/components/criteria-components/omega-route-ui.tsx",
+      lineNumber: 70,
+      columnNumber: 5
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(
+      ClassificationComponent,
+      {
+        data: listCriteriaUsed,
+        setClassificationScore,
+        setVariantClassification
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/components/criteria-components/omega-route-ui.tsx",
+        lineNumber: 71,
+        columnNumber: 7
+      },
+      this
+    ),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(import_react20.Form, { method: "post", className: "", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(
+        CustomCriteriaSelect,
+        {
+          setListCriteriaUsed,
+          handleListCriteriaUsed: (value, evidenceType, weight) => {
+            let index = listCriteriaUsed.findIndex((item) => item.evidenceType === evidenceType);
+            setListCriteriaUsed(index === -1 ? (prev) => [...prev, { evidenceType, label: value, weight }] : (prev) => prev.map((item) => item.evidenceType === evidenceType ? { evidenceType, label: value, weight } : item));
+          },
+          data: allDataByEvidenceType,
+          options: criteria2
+        },
+        void 0,
+        !1,
+        {
+          fileName: "app/components/criteria-components/omega-route-ui.tsx",
+          lineNumber: 75,
+          columnNumber: 7
+        },
+        this
+      ),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(
+        CustomCriteriaCheckBox,
+        {
+          handleCheckBoxListCriteriaUsed: (value, evidenceType, weight) => {
+            let isPresent = listCriteriaUsed.some(
+              (item) => item.label === value
+            );
+            setListCriteriaUsed(isPresent ? (prev) => prev.filter((item) => item.label !== value) : (prev) => [...prev, { evidenceType, label: value, weight }]);
+          },
+          data: functionalData
+        },
+        void 0,
+        !1,
+        {
+          fileName: "app/components/criteria-components/omega-route-ui.tsx",
+          lineNumber: 82,
+          columnNumber: 7
+        },
+        this
+      ),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("button", { type: "submit", children: "Submit" }, void 0, !1, {
+        fileName: "app/components/criteria-components/omega-route-ui.tsx",
+        lineNumber: 86,
+        columnNumber: 7
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/components/criteria-components/omega-route-ui.tsx",
+      lineNumber: 74,
+      columnNumber: 5
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/criteria-components/omega-route-ui.tsx",
+    lineNumber: 68,
+    columnNumber: 5
+  }, this);
+}
+
+// app/routes/omega.tsx
+var import_jsx_dev_runtime21 = require("react/jsx-dev-runtime");
+async function loader8({ request, params }) {
+  let criteria2 = await prisma.criterion.findMany(), functionalData = criteria2.filter((item) => item.evidenceType === "Functional Data"), allDataByEvidenceType = criteria2.filter((item) => item.evidenceType !== "Functional Data").reduce((acc, item) => {
+    let { evidenceType, label, id, definition, weight } = item;
+    return acc[evidenceType] || (acc[evidenceType] = []), acc[evidenceType].push({ label, id, evidenceType, definition, weight }), acc;
+  }, {});
+  return console.log(allDataByEvidenceType, "allDataByEvidenceType"), (0, import_node9.json)({ functionalData, allDataByEvidenceType, criteria: criteria2 });
+}
+async function action3({ request, params }) {
+  return (0, import_node9.json)({
+    message: "success"
+  });
+}
+function OmegaRoute() {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { className: "mb-10 mt-10 flex h-full w-full flex-col items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(OmegaUi, {}, void 0, !1, {
+    fileName: "app/routes/omega.tsx",
+    lineNumber: 44,
+    columnNumber: 7
+  }, this) }, void 0, !1, {
+    fileName: "app/routes/omega.tsx",
+    lineNumber: 43,
+    columnNumber: 5
+  }, this);
+}
+
+// app/routes/beta.tsx
+var beta_exports = {};
+__export(beta_exports, {
+  action: () => action4,
+  default: () => Beta,
+  loader: () => loader9
+});
+var import_node10 = require("@remix-run/node");
+var import_react22 = require("@remix-run/react"), import_react23 = __toESM(require("react")), import_react_icons7 = require("@radix-ui/react-icons");
+var import_jsx_dev_runtime22 = require("react/jsx-dev-runtime");
 async function loader9({ request, params }) {
   let criteria2 = await prisma.criterion.findMany();
   return (0, import_node10.json)({ criteria: criteria2 });
 }
-async function action4({ request, params }) {
+async function action4({ request }) {
   let formData = await request.formData();
-  console.log(
-    Object.fromEntries(formData),
-    "formData"
+  console.log(Object.fromEntries(formData), "formData");
+  let population = formData.get("population_data");
+  function getCriteria(item) {
+    let [evidenceType, label, weight] = item.split("^");
+    return {
+      label
+    };
+  }
+  let pop = getCriteria(population);
+  return console.log(pop, "pop"), (0, import_node10.json)({
+    message: "success"
+  });
+}
+function Beta() {
+  let data = (0, import_react22.useLoaderData)(), [checkedBox, setCheckedBox] = import_react23.default.useState([]), [selectedOption, setSelectedOption] = import_react23.default.useState(""), [selected, setSelected] = import_react23.default.useState([]), functionalData = data.criteria.filter(
+    (criterion) => criterion.evidenceType === "Functional Data"
+  ), [open, setOpen] = import_react23.default.useState(!1), bothArrays = [...selected, ...checkedBox];
+  console.log(bothArrays, "bothArrays");
+  let total = bothArrays.reduce((acc, curr) => acc + curr.weight, 0), [classification, setClassification] = import_react23.default.useState("");
+  function getClassificatin(total2) {
+    total2 <= -7 ? setClassification("Benign") : total2 >= -6 && total2 <= -1 ? setClassification("Likely Benign") : total2 >= 0 && total2 <= 5 ? setClassification("Uncertain Significance") : total2 >= 6 && total2 <= 9 ? setClassification("Likely Pathogenic") : total2 >= 10 ? setClassification("Pathogenic") : setClassification("No Classification");
+  }
+  import_react23.default.useEffect(() => {
+    getClassificatin(total);
+  }, [total]), console.log(classification, "classification");
+  let population = data.criteria.filter(
+    (criterion) => criterion.evidenceType === "Population Data"
+  ), deNovo = data.criteria.filter(
+    (criterion) => criterion.evidenceType === "De Novo Data"
+  ), alleleData = data.criteria.filter(
+    (criterion) => criterion.evidenceType === "Allelic Data"
+  ), segregationData = data.criteria.filter(
+    (criterion) => criterion.evidenceType === "Segregation Data"
+  ), otherdata = data.criteria.filter(
+    (criterion) => criterion.evidenceType === "Other Data"
+  ), computationalData = data.criteria.filter(
+    (criterion) => criterion.evidenceType === "Computational and Predictive Data"
+  ), otherdb = data.criteria.filter(
+    (criterion) => criterion.evidenceType === "Other Database"
+  ), handleCheckboxChange2 = (e) => {
+    let { value, checked } = e.target, [evidenceType, label, weight] = value.split("^");
+    setCheckedBox(checked ? (prev) => [
+      ...prev,
+      {
+        evidenceType,
+        label,
+        weight: Number(weight)
+      }
+    ] : (prev) => prev.filter((criterion) => criterion.label !== label));
+  }, handleSelectChange = (e) => {
+    let { value } = e.target, [evidenceType, label, weight] = value.split("^");
+    evidenceType !== "" && (setSelected(
+      (prev) => prev.filter((criterion) => criterion.evidenceType !== evidenceType)
+    ), setSelected((prev) => [
+      ...prev,
+      {
+        evidenceType,
+        label,
+        weight: Number(weight) || 0
+      }
+    ]));
+  }, evidenceTypes = Array.from(
+    new Set(data.criteria.map((c) => c.evidenceType))
   );
+  return console.log(evidenceTypes, "evidenceTypes"), /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(import_jsx_dev_runtime22.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "flex flex-row items-center gap-2", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("p", { className: "text-2xl font-bold", children: "ACMG Variant Classification:" }, void 0, !1, {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 166,
+        columnNumber: 9
+      }, this),
+      classification
+    ] }, void 0, !0, {
+      fileName: "app/routes/beta.tsx",
+      lineNumber: 165,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(import_react22.Form, { method: "post", action: "/beta", className: "flex flex-col gap-2", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+          CSelect,
+          {
+            handleSelectChange,
+            criterion: population,
+            name: "population_data"
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/routes/beta.tsx",
+            lineNumber: 172,
+            columnNumber: 11
+          },
+          this
+        ),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+          CSelect,
+          {
+            handleSelectChange,
+            criterion: deNovo,
+            name: "de_novo_data"
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/routes/beta.tsx",
+            lineNumber: 178,
+            columnNumber: 11
+          },
+          this
+        ),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+          CSelect,
+          {
+            handleSelectChange,
+            criterion: alleleData,
+            name: "allele_data"
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/routes/beta.tsx",
+            lineNumber: 183,
+            columnNumber: 11
+          },
+          this
+        ),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+          CSelect,
+          {
+            handleSelectChange,
+            criterion: segregationData,
+            name: "segregation_data"
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/routes/beta.tsx",
+            lineNumber: 188,
+            columnNumber: 11
+          },
+          this
+        ),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+          CSelect,
+          {
+            handleSelectChange,
+            criterion: otherdata,
+            name: "other_data"
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/routes/beta.tsx",
+            lineNumber: 193,
+            columnNumber: 11
+          },
+          this
+        ),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+          CSelect,
+          {
+            handleSelectChange,
+            criterion: computationalData,
+            name: "computational_data"
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/routes/beta.tsx",
+            lineNumber: 198,
+            columnNumber: 11
+          },
+          this
+        ),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+          CSelect,
+          {
+            handleSelectChange,
+            criterion: otherdb,
+            name: "other_db"
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/routes/beta.tsx",
+            lineNumber: 203,
+            columnNumber: 11
+          },
+          this
+        ),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "flex gap-1", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("h3", { className: "capitalize", children: "functional data" }, void 0, !1, {
+              fileName: "app/routes/beta.tsx",
+              lineNumber: 210,
+              columnNumber: 15
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("button", { type: "button", onClick: () => setOpen(!open), children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(import_react_icons7.ChevronUpIcon, { className: "h-6 w-6" }, void 0, !1, {
+              fileName: "app/routes/beta.tsx",
+              lineNumber: 213,
+              columnNumber: 19
+            }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(import_react_icons7.ChevronDownIcon, { className: "h-6 w-6" }, void 0, !1, {
+              fileName: "app/routes/beta.tsx",
+              lineNumber: 215,
+              columnNumber: 19
+            }, this) }, void 0, !1, {
+              fileName: "app/routes/beta.tsx",
+              lineNumber: 211,
+              columnNumber: 15
+            }, this)
+          ] }, void 0, !0, {
+            fileName: "app/routes/beta.tsx",
+            lineNumber: 209,
+            columnNumber: 13
+          }, this),
+          open && functionalData.map((criterion) => /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("label", { className: "capitalize", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+              "input",
+              {
+                type: "checkbox",
+                name: criterion.evidenceType,
+                value: `${criterion.evidenceType}^${criterion.label}^${criterion.weight}`,
+                onChange: handleCheckboxChange2
+              },
+              void 0,
+              !1,
+              {
+                fileName: "app/routes/beta.tsx",
+                lineNumber: 222,
+                columnNumber: 19
+              },
+              this
+            ),
+            criterion.label
+          ] }, criterion.id, !0, {
+            fileName: "app/routes/beta.tsx",
+            lineNumber: 221,
+            columnNumber: 17
+          }, this))
+        ] }, void 0, !0, {
+          fileName: "app/routes/beta.tsx",
+          lineNumber: 208,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, !0, {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 171,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(Button, { variant: "primary_filled", size: "base", type: "submit", children: "Submit" }, void 0, !1, {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 234,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/routes/beta.tsx",
+      lineNumber: 170,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/beta.tsx",
+    lineNumber: 164,
+    columnNumber: 5
+  }, this);
+}
+function CSelect({
+  handleSelectChange,
+  criterion,
+  name
+}) {
+  let [open, setOpen] = import_react23.default.useState(!1), [value, setValue] = import_react23.default.useState("");
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "flex flex-col gap-2 rounded-md", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "flex gap-1", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("label", { className: " capitalize", htmlFor: "gene", children: name.split("_").join(" ") }, void 0, !1, {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 283,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("button", { type: "button", onClick: () => setOpen(!open), children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(import_react_icons7.ChevronUpIcon, { className: "h-6 w-6" }, void 0, !1, {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 288,
+        columnNumber: 13
+      }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(import_react_icons7.ChevronDownIcon, { className: "h-6 w-6" }, void 0, !1, {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 290,
+        columnNumber: 13
+      }, this) }, void 0, !1, {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 286,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/routes/beta.tsx",
+      lineNumber: 282,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "relative ", children: [
+      value,
+      /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("input", { type: "hidden", name, value }, void 0, !1, {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 297,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+        "button",
+        {
+          type: "button",
+          onClick: (e) => {
+            handleSelectChange(
+              e
+            ), setOpen(!1);
+          },
+          className: "abg-red-500 h-6 w-6 rounded-full text-white",
+          children: value === "" ? "" : /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(import_react_icons7.Cross2Icon, {}, void 0, !1, {
+            fileName: "app/routes/beta.tsx",
+            lineNumber: 308,
+            columnNumber: 32
+          }, this)
+        },
+        void 0,
+        !1,
+        {
+          fileName: "app/routes/beta.tsx",
+          lineNumber: 298,
+          columnNumber: 9
+        },
+        this
+      ),
+      open && /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "absolute z-10 w-full bg-white", children: /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("ul", { className: "flex flex-col gap-2", children: criterion.map((criterion2) => /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("li", { className: "capitalize text-black", children: /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+        "button",
+        {
+          type: "button",
+          value: `${criterion2.evidenceType}^${criterion2.label}^${criterion2.weight}`,
+          className: value === criterion2.label ? "bg-blue-100" : "",
+          onClick: (e) => {
+            let { value: value2 } = e.currentTarget, [evidenceType, label, weight] = value2.split("^");
+            setValue(value2), handleSelectChange(
+              e
+            ), setOpen(!1);
+          },
+          children: criterion2.label
+        },
+        void 0,
+        !1,
+        {
+          fileName: "app/routes/beta.tsx",
+          lineNumber: 315,
+          columnNumber: 19
+        },
+        this
+      ) }, criterion2.id, !1, {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 314,
+        columnNumber: 17
+      }, this)) }, void 0, !1, {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 312,
+        columnNumber: 13
+      }, this) }, void 0, !1, {
+        fileName: "app/routes/beta.tsx",
+        lineNumber: 311,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/routes/beta.tsx",
+      lineNumber: 294,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/beta.tsx",
+    lineNumber: 281,
+    columnNumber: 5
+  }, this);
+}
+
+// app/routes/wip.tsx
+var wip_exports = {};
+__export(wip_exports, {
+  action: () => action5,
+  default: () => Wip,
+  loader: () => loader10
+});
+var import_node11 = require("@remix-run/node"), import_react25 = require("@remix-run/react");
+
+// app/components/accord-drop.tsx
+var import_react_icons8 = require("@radix-ui/react-icons"), import_react24 = __toESM(require("react")), import_jsx_dev_runtime23 = require("react/jsx-dev-runtime"), Dropdown = ({ options, onChange, title }) => {
+  let [isOpen, setIsOpen] = (0, import_react24.useState)(!1), [selectedOption, setSelectedOption] = (0, import_react24.useState)(), [selected, setSelected] = (0, import_react24.useState)([]), buttonRef = import_react24.default.useRef(null), handleSelect = (option) => {
+    setSelectedOption(option), onChange(option), setIsOpen(!1);
+  }, handleSelectRemove = (option) => {
+    let nextSelectedOption = [...selected], selection = nextSelectedOption.find(
+      (item) => item.value === option.value
+    );
+    if (selection) {
+      let index = nextSelectedOption.indexOf(selection);
+      nextSelectedOption.splice(index, 1);
+    }
+    setSelected(nextSelectedOption), onChange(option);
+  };
+  import_react24.default.useEffect(() => {
+    let handleKeyboardEvent = (event) => {
+      event.key === "Escape" && setIsOpen(!1);
+    };
+    return document.addEventListener("keydown", handleKeyboardEvent), () => {
+      document.removeEventListener("keydown", handleKeyboardEvent);
+    };
+  }, []);
+  function clearOptions() {
+    setSelected([]), setSelectedOption(void 0);
+  }
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { className: "relative flex w-72 flex-col gap-2 rounded-md border-2 p-1", children: [
+    title,
+    /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { className: "flex justify-between gap-2", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { className: "flex w-1/2 flex-row   items-center gap-2", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("p", { className: "text-xs", children: (selectedOption == null ? void 0 : selectedOption.label) || "Select an option" }, void 0, !1, {
+          fileName: "app/components/accord-drop.tsx",
+          lineNumber: 76,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(
+          "button",
+          {
+            type: "button",
+            ref: buttonRef,
+            className: "",
+            onClick: (e) => {
+              e.stopPropagation(), clearOptions();
+            },
+            children: (selectedOption == null ? void 0 : selectedOption.value) && /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(import_react_icons8.Cross2Icon, {}, void 0, !1, {
+              fileName: "app/components/accord-drop.tsx",
+              lineNumber: 88,
+              columnNumber: 39
+            }, this)
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/components/accord-drop.tsx",
+            lineNumber: 79,
+            columnNumber: 11
+          },
+          this
+        )
+      ] }, void 0, !0, {
+        fileName: "app/components/accord-drop.tsx",
+        lineNumber: 75,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(
+        "button",
+        {
+          type: "button",
+          className: "flex flex-row items-center  gap-2 ",
+          onClick: () => setIsOpen(!isOpen),
+          children: isOpen ? /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(import_react_icons8.ChevronUpIcon, {}, void 0, !1, {
+            fileName: "app/components/accord-drop.tsx",
+            lineNumber: 96,
+            columnNumber: 21
+          }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(import_react_icons8.ChevronDownIcon, {}, void 0, !1, {
+            fileName: "app/components/accord-drop.tsx",
+            lineNumber: 96,
+            columnNumber: 41
+          }, this)
+        },
+        void 0,
+        !1,
+        {
+          fileName: "app/components/accord-drop.tsx",
+          lineNumber: 91,
+          columnNumber: 9
+        },
+        this
+      )
+    ] }, void 0, !0, {
+      fileName: "app/components/accord-drop.tsx",
+      lineNumber: 74,
+      columnNumber: 7
+    }, this),
+    isOpen && /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(
+      "ul",
+      {
+        className: `absolute left-[50%] top-10 z-10 w-full -translate-x-1/2 transform rounded-md border-2 
+                    bg-white p-1
+                    text-black`,
+        children: options.map((option) => /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(import_jsx_dev_runtime23.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(
+          "li",
+          {
+            className: "flex w-full cursor-pointer  flex-col overflow-auto hover:bg-gray-200",
+            onClick: () => [
+              onChange(option),
+              setSelectedOption(option),
+              setIsOpen(!1)
+            ],
+            children: /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { className: "items-centser flex flex-col justify-between gap-1 border-b-2", children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("p", { className: "text-base", children: option.label }, void 0, !1, {
+                fileName: "app/components/accord-drop.tsx",
+                lineNumber: 117,
+                columnNumber: 19
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("p", { className: "text-[8px]", children: [
+                "Definition:",
+                option.definition
+              ] }, void 0, !0, {
+                fileName: "app/components/accord-drop.tsx",
+                lineNumber: 118,
+                columnNumber: 19
+              }, this)
+            ] }, void 0, !0, {
+              fileName: "app/components/accord-drop.tsx",
+              lineNumber: 116,
+              columnNumber: 17
+            }, this)
+          },
+          option.value,
+          !1,
+          {
+            fileName: "app/components/accord-drop.tsx",
+            lineNumber: 107,
+            columnNumber: 15
+          },
+          this
+        ) }, void 0, !1, {
+          fileName: "app/components/accord-drop.tsx",
+          lineNumber: 106,
+          columnNumber: 13
+        }, this))
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/components/accord-drop.tsx",
+        lineNumber: 100,
+        columnNumber: 9
+      },
+      this
+    ),
+    options.map((option) => /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(
+      "input",
+      {
+        type: "hidden",
+        name: option.value,
+        value: selectedOption == null ? void 0 : selectedOption.label
+      },
+      option.value,
+      !1,
+      {
+        fileName: "app/components/accord-drop.tsx",
+        lineNumber: 126,
+        columnNumber: 9
+      },
+      this
+    ))
+  ] }, void 0, !0, {
+    fileName: "app/components/accord-drop.tsx",
+    lineNumber: 72,
+    columnNumber: 5
+  }, this);
+}, accord_drop_default = Dropdown;
+
+// app/routes/wip.tsx
+var import_react26 = __toESM(require("react"));
+var import_react_icons9 = require("@radix-ui/react-icons"), import_jsx_dev_runtime24 = require("react/jsx-dev-runtime");
+async function loader10({ request, params }) {
+  let criteria2 = await prisma.criterion.findMany();
+  return (0, import_node11.json)({ criteria: criteria2 });
+}
+async function action5({ request, params }) {
+  let formData = await request.formData();
+  console.log(Object.fromEntries(formData), "formData");
   let pop = formData.get("Population Data"), func = formData.getAll("Functional Data"), comp = formData.get("Computational and Predictive Data"), seg = formData.get("Segregation Data"), deNovo = formData.get("De Novo Data"), allelic = formData.get("Allelic Data"), other = formData.get("Other Data"), patho = formData.get("Other Database");
-  return (0, import_node10.json)({
+  return (0, import_node11.json)({
     message: "success"
   });
 }
 function Wip() {
-  let data = (0, import_react21.useLoaderData)(), [open, setOpen] = import_react22.default.useState(!1), [criteriaUsed, setCriteriaUsed] = import_react22.default.useState([]);
+  let data = (0, import_react25.useLoaderData)(), [open, setOpen] = import_react26.default.useState(!1), [criteriaUsed, setCriteriaUsed] = import_react26.default.useState([]);
   console.log(criteriaUsed, "criteriaUsed");
   let checkboxselected = criteriaUsed.filter((item) => item.type === "Functional Data"), fixedSelectedCriteria = criteriaUsed.map((item) => item.label), reducedSelectedCriteria = extractFirstTwoLetters(fixedSelectedCriteria), transformed = convertToNumbers(reducedSelectedCriteria), functional_data = data.criteria.filter((item) => item.evidenceType === "Functional Data"), woFunctional = data.criteria.filter((item) => item.evidenceType !== "Functional Data"), accordianData = woFunctional.reduce((acc, cur) => (acc.findIndex((item) => item === cur.evidenceType) === -1 && acc.push(cur.evidenceType), acc), []).reduce((acc, cur) => (acc[cur] = woFunctional.filter((item) => item.evidenceType === cur), acc), {}), handleSelect = (option) => {
     let index = criteriaUsed.findIndex((item) => item.type === option.value);
@@ -3510,7 +3934,7 @@ function Wip() {
       { type: option.value, label: option.label }
     ]);
   };
-  function handleCheckboxChange(e) {
+  function handleCheckboxChange2(e) {
     let { name, value, checked } = e.target;
     if (checked && checkboxselected.length < 4) {
       setCriteriaUsed((prev) => [...prev, { type: name, label: value }]);
@@ -3521,7 +3945,7 @@ function Wip() {
       return index !== -1 && copy.splice(index, 1), [...copy];
     });
   }
-  let dropdowns = Object.entries(accordianData).map((key) => /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
+  let dropdowns = Object.entries(accordianData).map((key) => /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(
     accord_drop_default,
     {
       title: key[0],
@@ -3536,99 +3960,98 @@ function Wip() {
     !1,
     {
       fileName: "app/routes/wip.tsx",
-      lineNumber: 146,
+      lineNumber: 136,
       columnNumber: 7
     },
     this
   ));
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "flex min-h-screen flex-col items-center py-2 pb-10 pt-10", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("h1", { className: "text-2xl font-bold", children: "ACMG Criteria Work in Progress" }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "flex min-h-screen flex-col items-center py-2 pb-10 pt-10", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("h1", { className: "text-2xl font-bold", children: "ACMG Criteria Work in Progress" }, void 0, !1, {
       fileName: "app/routes/wip.tsx",
-      lineNumber: 167,
+      lineNumber: 157,
       columnNumber: 7
     }, this),
-    criteriaUsed.map((item) => /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "flex gap-2", children: item.label }, item.type, !1, {
+    criteriaUsed.map((item) => /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "flex gap-2", children: item.label }, item.type, !1, {
       fileName: "app/routes/wip.tsx",
-      lineNumber: 170,
+      lineNumber: 160,
       columnNumber: 11
     }, this)),
     transformed.classification,
-    /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(import_react21.Form, { method: "post", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(import_react25.Form, { method: "post", children: [
       dropdowns,
-      /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "flex flex-col gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
+      /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "flex flex-col gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(
         CheckBoxes2,
         {
           checkboxselected,
           data: functional_data,
           setIsOpen: setOpen,
-          handleCheckboxChange
+          handleCheckboxChange: handleCheckboxChange2
         },
         void 0,
         !1,
         {
           fileName: "app/routes/wip.tsx",
-          lineNumber: 181,
-          columnNumber: 3
+          lineNumber: 171,
+          columnNumber: 11
         },
         this
       ) }, void 0, !1, {
         fileName: "app/routes/wip.tsx",
-        lineNumber: 180,
-        columnNumber: 1
+        lineNumber: 170,
+        columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("button", { type: "submit", children: "Submit" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("button", { type: "submit", children: "Submit" }, void 0, !1, {
         fileName: "app/routes/wip.tsx",
-        lineNumber: 188,
-        columnNumber: 3
+        lineNumber: 178,
+        columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/wip.tsx",
-      lineNumber: 177,
-      columnNumber: 6
+      lineNumber: 167,
+      columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/wip.tsx",
-    lineNumber: 166,
+    lineNumber: 156,
     columnNumber: 5
   }, this);
 }
 function CheckBoxes2({
   data,
   setIsOpen,
-  handleCheckboxChange,
   checkboxselected
 }) {
-  let [open, setOpen] = import_react22.default.useState(!1), [selected, setSelected] = import_react22.default.useState([]);
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "flex w-72 flex-col gap-2 rounded-md border-2 p-1", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "flex justify-between gap-2", children: [
-      data.length > 0 && /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "flex gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("p", { className: "p-1", children: data[0].evidenceType }, void 0, !1, {
+  let [open, setOpen] = import_react26.default.useState(!1), [selected, setSelected] = import_react26.default.useState([]);
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "flex w-72 flex-col gap-2 rounded-md border-2 p-1", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "flex justify-between gap-2", children: [
+      data.length > 0 && /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "flex gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("p", { className: "p-1", children: data[0].evidenceType }, void 0, !1, {
         fileName: "app/routes/wip.tsx",
-        lineNumber: 224,
-        columnNumber: 15
+        lineNumber: 213,
+        columnNumber: 13
       }, this) }, void 0, !1, {
         fileName: "app/routes/wip.tsx",
-        lineNumber: 223,
-        columnNumber: 13
+        lineNumber: 212,
+        columnNumber: 11
       }, this),
-      selected.map((item) => /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { children: item.label }, item.value, !1, {
+      selected.map((item) => /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { children: item.label }, item.value, !1, {
         fileName: "app/routes/wip.tsx",
-        lineNumber: 232,
+        lineNumber: 217,
         columnNumber: 18
       }, this)),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
+      /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(
         "button",
         {
           type: "button",
           onClick: () => {
             setOpen(!open);
           },
-          children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(import_react_icons6.ChevronUpIcon, {}, void 0, !1, {
+          children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(import_react_icons9.ChevronUpIcon, {}, void 0, !1, {
             fileName: "app/routes/wip.tsx",
-            lineNumber: 241,
+            lineNumber: 226,
             columnNumber: 19
-          }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(import_react_icons6.ChevronDownIcon, {}, void 0, !1, {
+          }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(import_react_icons9.ChevronDownIcon, {}, void 0, !1, {
             fileName: "app/routes/wip.tsx",
-            lineNumber: 241,
+            lineNumber: 226,
             columnNumber: 39
           }, this)
         },
@@ -3636,36 +4059,36 @@ function CheckBoxes2({
         !1,
         {
           fileName: "app/routes/wip.tsx",
-          lineNumber: 235,
+          lineNumber: 220,
           columnNumber: 9
         },
         this
       )
     ] }, void 0, !0, {
       fileName: "app/routes/wip.tsx",
-      lineNumber: 220,
+      lineNumber: 210,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "flex gap-2", children: checkboxselected.map((item) => /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "flex gap-2 text-white", children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("p", { className: "p-1", children: item.label }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "flex gap-2", children: checkboxselected.map((item) => /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "flex gap-2 text-white", children: /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("p", { className: "p-1", children: item.label }, void 0, !1, {
       fileName: "app/routes/wip.tsx",
-      lineNumber: 249,
+      lineNumber: 234,
       columnNumber: 15
     }, this) }, item.label, !1, {
       fileName: "app/routes/wip.tsx",
-      lineNumber: 248,
+      lineNumber: 233,
       columnNumber: 13
     }, this)) }, void 0, !1, {
       fileName: "app/routes/wip.tsx",
-      lineNumber: 245,
+      lineNumber: 230,
       columnNumber: 7
     }, this),
-    open && /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "flex flex-col gap-2", children: data.map((criterion) => /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(import_jsx_dev_runtime19.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
+    open && /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { className: "flex flex-col gap-2", children: data.map((criterion) => /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(import_jsx_dev_runtime24.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(
         "label",
         {
           className: "flex items-center gap-2",
           children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
+            /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(
               "input",
               {
                 type: "checkbox",
@@ -3677,7 +4100,7 @@ function CheckBoxes2({
               !1,
               {
                 fileName: "app/routes/wip.tsx",
-                lineNumber: 264,
+                lineNumber: 248,
                 columnNumber: 19
               },
               this
@@ -3689,34 +4112,34 @@ function CheckBoxes2({
         !0,
         {
           fileName: "app/routes/wip.tsx",
-          lineNumber: 260,
+          lineNumber: 244,
           columnNumber: 17
         },
         this
       ),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("p", { className: "text-sm", children: criterion.definition }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("p", { className: "text-sm", children: criterion.definition }, void 0, !1, {
         fileName: "app/routes/wip.tsx",
-        lineNumber: 272,
+        lineNumber: 256,
         columnNumber: 17
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/wip.tsx",
-      lineNumber: 259,
+      lineNumber: 243,
       columnNumber: 15
     }, this)) }, void 0, !1, {
       fileName: "app/routes/wip.tsx",
-      lineNumber: 256,
+      lineNumber: 240,
       columnNumber: 9
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/wip.tsx",
-    lineNumber: 219,
+    lineNumber: 209,
     columnNumber: 5
   }, this);
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-VF4IYYO7.js", imports: ["/build/_shared/chunk-LKOPCC2G.js", "/build/_shared/chunk-GUPKMWBY.js", "/build/_shared/chunk-ABY47LC6.js", "/build/_shared/chunk-TZ27RBAM.js", "/build/_shared/chunk-J2OVIFEL.js", "/build/_shared/chunk-MQESCB4Y.js", "/build/_shared/chunk-HH3BOLTW.js", "/build/_shared/chunk-R6ILELA2.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-2IXAHHVH.js", imports: ["/build/_shared/chunk-WNJU47PY.js", "/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-UVN7MEVI.js", imports: ["/build/_shared/chunk-A5NX5H24.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-WBXJODFZ.js", imports: ["/build/_shared/chunk-RZYARJKT.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criteria-dropdown": { id: "routes/criteria-dropdown", parentId: "root", path: "criteria-dropdown", index: void 0, caseSensitive: void 0, module: "/build/routes/criteria-dropdown-ZMDEFM5P.js", imports: ["/build/_shared/chunk-A5NX5H24.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-ZIVBXQDI.js", imports: ["/build/_shared/chunk-A5NX5H24.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-DVN556NV.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-3REZYNGQ.js", imports: ["/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-2DZMBREB.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-7YUFWEHQ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-VDY4MTM7.js", imports: ["/build/_shared/chunk-IXKHEUAX.js", "/build/_shared/chunk-A5NX5H24.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-VVBXGDTD.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-QB7NAKOT.js", imports: ["/build/_shared/chunk-RZYARJKT.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/wip": { id: "routes/wip", parentId: "root", path: "wip", index: void 0, caseSensitive: void 0, module: "/build/routes/wip-2CR6Y6SS.js", imports: ["/build/_shared/chunk-A5NX5H24.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "52d20e48", hmr: { runtime: "/build/_shared/chunk-J2OVIFEL.js", timestamp: 1685565906775 }, url: "/build/manifest-52D20E48.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-PAPES2H4.js", imports: ["/build/_shared/chunk-LKOPCC2G.js", "/build/_shared/chunk-ABY47LC6.js", "/build/_shared/chunk-GUPKMWBY.js", "/build/_shared/chunk-TZ27RBAM.js", "/build/_shared/chunk-J2OVIFEL.js", "/build/_shared/chunk-HH3BOLTW.js", "/build/_shared/chunk-MQESCB4Y.js", "/build/_shared/chunk-R6ILELA2.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-EGMBXCFT.js", imports: ["/build/_shared/chunk-RBAX3QVV.js", "/build/_shared/chunk-LUGMVUMH.js", "/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-MBNDOIKA.js", imports: ["/build/_shared/chunk-IKJRBB7P.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-AILYECW3.js", imports: ["/build/_shared/chunk-RZYARJKT.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criteria-dropdown": { id: "routes/criteria-dropdown", parentId: "root", path: "criteria-dropdown", index: void 0, caseSensitive: void 0, module: "/build/routes/criteria-dropdown-IRMDCPFA.js", imports: ["/build/_shared/chunk-IKJRBB7P.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-ZKYQSW2P.js", imports: ["/build/_shared/chunk-IKJRBB7P.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-DVN556NV.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-5KQCDF7I.js", imports: ["/build/_shared/chunk-35PU5JZQ.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/omega": { id: "routes/omega", parentId: "root", path: "omega", index: void 0, caseSensitive: void 0, module: "/build/routes/omega-JLTWCNAB.js", imports: ["/build/_shared/chunk-O7TSXCWA.js", "/build/_shared/chunk-35PU5JZQ.js", "/build/_shared/chunk-IKJRBB7P.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-JH24IA4J.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-2CKJ4CNO.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-JSCQEVTB.js", imports: ["/build/_shared/chunk-4TPL5C7D.js", "/build/_shared/chunk-IKJRBB7P.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-H4HZGXCS.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-T3SNEWV6.js", imports: ["/build/_shared/chunk-RZYARJKT.js", "/build/_shared/chunk-D2JCSPI6.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/wip": { id: "routes/wip", parentId: "root", path: "wip", index: void 0, caseSensitive: void 0, module: "/build/routes/wip-6RIVR2JG.js", imports: ["/build/_shared/chunk-O7TSXCWA.js", "/build/_shared/chunk-IKJRBB7P.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "e00d1aa7", hmr: { runtime: "/build/_shared/chunk-J2OVIFEL.js", timestamp: 1685641842531 }, url: "/build/manifest-E00D1AA7.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { unstable_dev: !0, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !1, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_react_stream_exports }, dev = { websocketPort: 3004 }, routes = {
@@ -3807,6 +4230,14 @@ var assetsBuildDirectory = "public/build", future = { unstable_dev: !0, unstable
     index: void 0,
     caseSensitive: void 0,
     module: sign_up_exports
+  },
+  "routes/omega": {
+    id: "routes/omega",
+    parentId: "root",
+    path: "omega",
+    index: void 0,
+    caseSensitive: void 0,
+    module: omega_exports
   },
   "routes/beta": {
     id: "routes/beta",
