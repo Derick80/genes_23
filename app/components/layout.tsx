@@ -47,9 +47,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <li className="flex flex-col  items-center gap-1 font-semibold">
             <GitHubLogoIcon />
 
-            <Link to="/https://github.com/Derick80">
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://github.com/Derick80"
+            >
               <p className="text-sm">Github</p>
-            </Link>
+            </a>
           </li>
           <li className="flex flex-col  items-center gap-1 font-semibold">
             <div className="flex gap-1">
@@ -59,9 +63,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </li>
           <li className="flex flex-col  items-center gap-1 font-semibold">
             <TwitterLogoIcon />
-            <Link to="/https://twitter.com/Derick80">
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://twitter.com/GeneticsStar"
+            >
               <p className="text-sm">Twitter</p>
-            </Link>
+            </a>
           </li>
         </ul>
       </footer>
