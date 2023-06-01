@@ -1,6 +1,6 @@
 import type { LoaderArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { variants } from "~/constants/variants";
+import { variants } from "~/acmg-functions-utilities/variants";
 import { Link, NavLink, Outlet, useLoaderData } from "@remix-run/react";
 import { DotsVerticalIcon, InfoCircledIcon } from "@radix-ui/react-icons";
 import React, { useCallback } from "react";
