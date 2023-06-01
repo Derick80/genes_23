@@ -18,18 +18,12 @@ export async function loader({ request, params }: LoaderArgs) {
 
   return json({ criteria });
 }
-export async function action({ request, params }: ActionArgs) {
+export async function action({ request }: ActionArgs) {
   const formData = await request.formData();
 
   console.log(Object.fromEntries(formData), "formData");
 
   const population = formData.get("population_data") as string;
-  const functional = formData.get("functional_data");
-  const deNovo = formData.get("de_novo_data");
-  const allele = formData.get("allele_data");
-  const segregation = formData.get("segregation_data");
-  const other = formData.get("other_data");
-  const computational = formData.get("computational_data");
 
   function getCriteria(item: string) {
     const [evidenceType, label, weight] = item.split("^");
@@ -120,7 +114,7 @@ export default function Beta() {
 
   // handle checkbox change event
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, checked } = e.target;
+    const { value, checked } = e.target;
     const [evidenceType, label, weight] = value.split("^");
 
     if (checked) {
@@ -317,26 +311,24 @@ function CSelect({
           <div className="absolute z-10 w-full bg-white">
             <ul className="flex flex-col gap-2">
               {criterion.map((criterion) => (
-                <>
-                  <li key={criterion.id} className="capitalize text-black">
-                    <button
-                      type="button"
-                      value={`${criterion.evidenceType}^${criterion.label}^${criterion.weight}`}
-                      className={value === criterion.label ? "bg-blue-100" : ""}
-                      onClick={(e) => {
-                        const { value } = e.currentTarget;
-                        const [evidenceType, label, weight] = value.split("^");
-                        setValue(value);
-                        handleSelectChange(
-                          e as unknown as React.ChangeEvent<HTMLSelectElement>
-                        );
-                        setOpen(false);
-                      }}
-                    >
-                      {criterion.label}
-                    </button>
-                  </li>
-                </>
+                <li key={criterion.id} className="capitalize text-black">
+                  <button
+                    type="button"
+                    value={`${criterion.evidenceType}^${criterion.label}^${criterion.weight}`}
+                    className={value === criterion.label ? "bg-blue-100" : ""}
+                    onClick={(e) => {
+                      const { value } = e.currentTarget;
+                      const [evidenceType, label, weight] = value.split("^");
+                      setValue(value);
+                      handleSelectChange(
+                        e as unknown as React.ChangeEvent<HTMLSelectElement>
+                      );
+                      setOpen(false);
+                    }}
+                  >
+                    {criterion.label}
+                  </button>
+                </li>
               ))}
             </ul>
           </div>

@@ -4,45 +4,34 @@ import { Form, useLoaderData } from "@remix-run/react";
 import Dropdown from "~/components/accord-drop";
 import { prisma } from "~/server/prisma.server";
 import React from "react";
-import type {
-  Criterion} from "~/constants/acmg-criteria";
+import type { Criterion } from "~/constants/acmg-criteria";
 import {
   convertToNumbers,
   extractFirstTwoLetters,
 } from "~/constants/acmg-criteria";
-import {
-  ChevronDownIcon,
-  ChevronUpIcon,
-} from "@radix-ui/react-icons";
+import { ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons";
 export async function loader({ request, params }: LoaderArgs) {
   const criteria = await prisma.criterion.findMany();
 
   return json({ criteria });
 }
 
-
-export async function action({request, params}: ActionArgs) {
+export async function action({ request, params }: ActionArgs) {
   const formData = await request.formData();
-  console.log(Object.fromEntries(formData), "formData"
+  console.log(Object.fromEntries(formData), "formData");
 
-  );
+  const pop = formData.get("Population Data");
+  const func = formData.getAll("Functional Data");
+  const comp = formData.get("Computational and Predictive Data");
+  const seg = formData.get("Segregation Data");
+  const deNovo = formData.get("De Novo Data");
+  const allelic = formData.get("Allelic Data");
+  const other = formData.get("Other Data");
+  const patho = formData.get("Other Database");
 
-  const pop =formData.get('Population Data')
-  const func =formData.getAll('Functional Data')
-  const comp =formData.get('Computational and Predictive Data')
-  const seg =formData.get('Segregation Data')
-  const deNovo =formData.get('De Novo Data')
-  const allelic =formData.get('Allelic Data')
-  const other =formData.get('Other Data')
-  const patho =formData.get('Other Database')
-
-  
-
-
-
-return json({
-  message: "success",
-})
+  return json({
+    message: "success",
+  });
 }
 export default function Wip() {
   const data = useLoaderData<typeof loader>();
@@ -55,6 +44,7 @@ export default function Wip() {
   >([]);
 
   console.log(criteriaUsed, "criteriaUsed");
+  
   const checkboxselected = criteriaUsed.filter((item) => {
     return item.type === "Functional Data";
   });
@@ -72,7 +62,7 @@ export default function Wip() {
   });
 
   // extract non functional data from the criteria array to be used in the dropdown
-  
+
   const woFunctional = data.criteria.filter((item) => {
     return item.evidenceType !== "Functional Data";
   });
@@ -123,7 +113,7 @@ export default function Wip() {
 
   // handle checkbox change and add the selected criteria to the criteriaUsed array
 
-  function handleCheckboxChange(e: React.ChangeEvent<HTMLInputElement>){
+  function handleCheckboxChange(e: React.ChangeEvent<HTMLInputElement>) {
     const { name, value, checked } = e.target;
     if (checked && checkboxselected.length < 4) {
       setCriteriaUsed((prev) => [...prev, { type: name, label: value }]);
@@ -139,7 +129,7 @@ export default function Wip() {
       }
       return [...copy];
     });
-  };
+  }
 
   const dropdowns = Object.entries(accordianData).map((key) => {
     return (
@@ -174,19 +164,19 @@ export default function Wip() {
       })}
       {transformed.classification}
 
-     <Form method="post">
-     {dropdowns}
+      <Form method="post">
+        {dropdowns}
 
-<div className="flex flex-col gap-2">
-  <CheckBoxes
-    checkboxselected={checkboxselected}
-    data={functional_data}
-    setIsOpen={setOpen}
-    handleCheckboxChange={handleCheckboxChange}
-  />
-  </div>
-  <button type="submit">Submit</button>
-     </Form>
+        <div className="flex flex-col gap-2">
+          <CheckBoxes
+            checkboxselected={checkboxselected}
+            data={functional_data}
+            setIsOpen={setOpen}
+            handleCheckboxChange={handleCheckboxChange}
+          />
+        </div>
+        <button type="submit">Submit</button>
+      </Form>
     </div>
   );
 }
@@ -194,7 +184,6 @@ export default function Wip() {
 function CheckBoxes({
   data,
   setIsOpen,
-  handleCheckboxChange,
   checkboxselected,
 }: {
   checkboxselected: {
@@ -203,7 +192,7 @@ function CheckBoxes({
   }[];
 
   data: Criterion[];
-  handleCheckboxChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const [open, setOpen] = React.useState(false);
@@ -214,26 +203,22 @@ function CheckBoxes({
       label: string;
     }[]
   >([]);
+  
 
   return (
     <div className="flex w-72 flex-col gap-2 rounded-md border-2 p-1">
       <div className="flex justify-between gap-2">
-        {
-          data.length > 0 && (
-            <div className="flex gap-2">
-              <p className="p-1">{data[0].evidenceType}</p>
-            
-            </div>
-          )
-
-
-        }
+        {data.length > 0 && (
+          <div className="flex gap-2">
+            <p className="p-1">{data[0].evidenceType}</p>
+          </div>
+        )}
         {selected.map((item) => {
           return <div key={item.value}>{item.label}</div>;
         })}
 
         <button
-        type='button'
+          type="button"
           onClick={() => {
             setOpen(!open);
           }}
@@ -246,8 +231,7 @@ function CheckBoxes({
         {checkboxselected.map((item) => {
           return (
             <div key={item.label} className="flex gap-2 text-white">
-              <p className="p-1">
-              {item.label}</p>
+              <p className="p-1">{item.label}</p>
             </div>
           );
         })}

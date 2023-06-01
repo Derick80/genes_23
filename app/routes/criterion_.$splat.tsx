@@ -1,5 +1,6 @@
 import { useAuth } from "@clerk/remix";
 import type { ActionArgs, LoaderArgs } from "@remix-run/node";
+import * as Label from "@radix-ui/react-label";
 
 import { json, redirect } from "@remix-run/node";
 import { Form, useLoaderData } from "@remix-run/react";
@@ -103,9 +104,12 @@ export default function EditIndex() {
         className="flex w-full max-w-2xl flex-col gap-2 rounded-md border p-4  "
         method="post"
       >
-        <label className="text-xl font-bold" htmlFor="criterionName">
+        <Label.Root
+          className="text-xl font-bold text-white"
+          htmlFor="criterionName"
+        >
           Criterion Name
-        </label>
+        </Label.Root>
         <input
           className="rounded-md border-2 border-gray-400 p-2 text-black"
           type="text"
