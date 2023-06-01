@@ -1,3 +1,5 @@
+import { Link } from "@remix-run/react";
+
 export default function DevelopmentWelcome() {
   return (
     <div className="prose prose-invert mx-auto flex h-full w-full flex-col items-center gap-2  rounded-md border-2 p-2 xl:prose-xl">
@@ -5,7 +7,9 @@ export default function DevelopmentWelcome() {
       working towards a comprehensive ACMG/AMP variant classification tool.
       <h2>Current Features</h2>
       <ul>
-        <li>Variant Classification</li>
+        <li>
+          <Link to="/calculator">ACMG Classification Counter Calculator</Link>
+        </li>
         <li>Variant Classification Score</li>
       </ul>
       <h2>Future Features</h2>
