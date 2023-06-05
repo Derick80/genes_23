@@ -1749,124 +1749,133 @@ function CustomCriteriaSelect({
     let dataagain = options.filter(
       (item) => item.evidenceType === key[0]
     );
-    return /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_jsx_dev_runtime11.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_react_label2.Label, { className: "text-white", children: key[0] }, key[0], !1, {
-        fileName: "app/components/criteria-components/my-custom-select.tsx",
-        lineNumber: 44,
-        columnNumber: 13
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(
-        "div",
-        {
-          className: "flex w-full items-center justify-between rounded-md border p-2 text-white",
-          children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(
-            Select.Root,
+    return /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(
+      "div",
+      {
+        children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_react_label2.Label, { className: "text-white", children: key[0] }, key[0], !1, {
+            fileName: "app/components/criteria-components/my-custom-select.tsx",
+            lineNumber: 46,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(
+            "div",
             {
-              name: key[0],
-              onValueChange: (value) => [
-                handleListCriteriaUsed(
-                  value,
-                  key[0],
-                  dataagain.filter(
-                    (item) => item.label === value && item.evidenceType === key[0]
-                  ).map(
-                    (item) => item.weight
-                  )[0]
-                )
-              ],
-              children: [
-                /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(Select.Trigger, { className: "flex w-full items-center justify-between rounded-md  p-2 text-white", children: [
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(
-                    Select.Value,
-                    {
-                      placeholder: "Select",
-                      className: "text-black"
-                    },
-                    void 0,
-                    !1,
-                    {
+              className: "flex w-full items-center justify-between rounded-md border p-2 text-white",
+              children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(
+                Select.Root,
+                {
+                  name: key[0],
+                  onValueChange: (value) => [
+                    handleListCriteriaUsed(
+                      value,
+                      key[0],
+                      dataagain.filter(
+                        (item) => item.label === value && item.evidenceType === key[0]
+                      ).map(
+                        (item) => item.weight
+                      )[0]
+                    )
+                  ],
+                  children: [
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(Select.Trigger, { className: "flex w-full items-center justify-between rounded-md  p-2 text-white", children: [
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(
+                        Select.Value,
+                        {
+                          placeholder: "Select",
+                          className: "text-black"
+                        },
+                        void 0,
+                        !1,
+                        {
+                          fileName: "app/components/criteria-components/my-custom-select.tsx",
+                          lineNumber: 84,
+                          columnNumber: 19
+                        },
+                        this
+                      ),
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_react_icons5.ChevronDownIcon, {}, void 0, !1, {
+                        fileName: "app/components/criteria-components/my-custom-select.tsx",
+                        lineNumber: 88,
+                        columnNumber: 19
+                      }, this)
+                    ] }, void 0, !0, {
                       fileName: "app/components/criteria-components/my-custom-select.tsx",
-                      lineNumber: 82,
-                      columnNumber: 19
-                    },
-                    this
-                  ),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_react_icons5.ChevronDownIcon, {}, void 0, !1, {
-                    fileName: "app/components/criteria-components/my-custom-select.tsx",
-                    lineNumber: 86,
-                    columnNumber: 19
-                  }, this)
-                ] }, void 0, !0, {
-                  fileName: "app/components/criteria-components/my-custom-select.tsx",
-                  lineNumber: 81,
-                  columnNumber: 17
-                }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(Select.Content, { className: "overflow-hidden rounded-md bg-white shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)]", children: [
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(Select.ScrollUpButton, { className: "text-violet11 flex h-[25px] cursor-default items-center justify-center bg-white", children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_react_icons5.ChevronUpIcon, {}, void 0, !1, {
-                    fileName: "app/components/criteria-components/my-custom-select.tsx",
-                    lineNumber: 90,
-                    columnNumber: 21
-                  }, this) }, void 0, !1, {
-                    fileName: "app/components/criteria-components/my-custom-select.tsx",
-                    lineNumber: 89,
-                    columnNumber: 19
-                  }, this),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(Select.Viewport, { className: "p-[5px]", children: options.filter((item) => item.evidenceType === key[0]).map((item) => /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(Select.Item, { value: item.label, children: [
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { className: "text-xs text-black", children: item.label }, void 0, !1, {
-                      fileName: "app/components/criteria-components/my-custom-select.tsx",
-                      lineNumber: 98,
-                      columnNumber: 29
+                      lineNumber: 83,
+                      columnNumber: 17
                     }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { className: "text-xs text-black", children: item.definition }, void 0, !1, {
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(Select.Content, { className: "overflow-hidden rounded-md bg-white shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)]", children: [
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(Select.ScrollUpButton, { className: "text-violet11 flex h-[25px] cursor-default items-center justify-center bg-white", children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_react_icons5.ChevronUpIcon, {}, void 0, !1, {
+                        fileName: "app/components/criteria-components/my-custom-select.tsx",
+                        lineNumber: 92,
+                        columnNumber: 21
+                      }, this) }, void 0, !1, {
+                        fileName: "app/components/criteria-components/my-custom-select.tsx",
+                        lineNumber: 91,
+                        columnNumber: 19
+                      }, this),
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(Select.Viewport, { className: "p-[5px]", children: options.filter((item) => item.evidenceType === key[0]).map((item) => /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(Select.Item, { value: item.label, children: [
+                        /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { className: "text-xs text-black", children: item.label }, void 0, !1, {
+                          fileName: "app/components/criteria-components/my-custom-select.tsx",
+                          lineNumber: 100,
+                          columnNumber: 29
+                        }, this),
+                        /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { className: "text-xs text-black", children: item.definition }, void 0, !1, {
+                          fileName: "app/components/criteria-components/my-custom-select.tsx",
+                          lineNumber: 101,
+                          columnNumber: 29
+                        }, this),
+                        /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(Select.ItemText, { children: item.label }, void 0, !1, {
+                          fileName: "app/components/criteria-components/my-custom-select.tsx",
+                          lineNumber: 104,
+                          columnNumber: 29
+                        }, this)
+                      ] }, item.id, !0, {
+                        fileName: "app/components/criteria-components/my-custom-select.tsx",
+                        lineNumber: 99,
+                        columnNumber: 27
+                      }, this)) }, void 0, !1, {
+                        fileName: "app/components/criteria-components/my-custom-select.tsx",
+                        lineNumber: 94,
+                        columnNumber: 19
+                      }, this)
+                    ] }, void 0, !0, {
                       fileName: "app/components/criteria-components/my-custom-select.tsx",
-                      lineNumber: 99,
-                      columnNumber: 29
-                    }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(Select.ItemText, { children: item.label }, void 0, !1, {
-                      fileName: "app/components/criteria-components/my-custom-select.tsx",
-                      lineNumber: 102,
-                      columnNumber: 29
+                      lineNumber: 90,
+                      columnNumber: 17
                     }, this)
-                  ] }, item.id, !0, {
-                    fileName: "app/components/criteria-components/my-custom-select.tsx",
-                    lineNumber: 97,
-                    columnNumber: 27
-                  }, this)) }, void 0, !1, {
-                    fileName: "app/components/criteria-components/my-custom-select.tsx",
-                    lineNumber: 92,
-                    columnNumber: 19
-                  }, this)
-                ] }, void 0, !0, {
+                  ]
+                },
+                void 0,
+                !0,
+                {
                   fileName: "app/components/criteria-components/my-custom-select.tsx",
-                  lineNumber: 88,
-                  columnNumber: 17
-                }, this)
-              ]
+                  lineNumber: 54,
+                  columnNumber: 15
+                },
+                this
+              )
             },
-            void 0,
-            !0,
+            key[0],
+            !1,
             {
               fileName: "app/components/criteria-components/my-custom-select.tsx",
-              lineNumber: 52,
-              columnNumber: 15
+              lineNumber: 50,
+              columnNumber: 13
             },
             this
           )
-        },
-        index,
-        !1,
-        {
-          fileName: "app/components/criteria-components/my-custom-select.tsx",
-          lineNumber: 48,
-          columnNumber: 13
-        },
-        this
-      )
-    ] }, void 0, !0, {
-      fileName: "app/components/criteria-components/my-custom-select.tsx",
-      lineNumber: 43,
-      columnNumber: 11
-    }, this);
+        ]
+      },
+      key[0],
+      !0,
+      {
+        fileName: "app/components/criteria-components/my-custom-select.tsx",
+        lineNumber: 43,
+        columnNumber: 11
+      },
+      this
+    );
   }) }, void 0, !1, {
     fileName: "app/components/criteria-components/my-custom-select.tsx",
     lineNumber: 36,
@@ -2582,10 +2591,10 @@ function BetaRoute() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-I6ORIC2S.js", imports: ["/build/_shared/chunk-LKOPCC2G.js", "/build/_shared/chunk-ABY47LC6.js", "/build/_shared/chunk-GUPKMWBY.js", "/build/_shared/chunk-FJMEZ7QQ.js", "/build/_shared/chunk-MQESCB4Y.js", "/build/_shared/chunk-J2OVIFEL.js", "/build/_shared/chunk-HH3BOLTW.js", "/build/_shared/chunk-R6ILELA2.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-NFULYJEU.js", imports: ["/build/_shared/chunk-SE7RPHZE.js", "/build/_shared/chunk-LUGMVUMH.js", "/build/_shared/chunk-5QOQ2ZG4.js", "/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-YVUJFX65.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-TO4YLANN.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-N2DIUM3S.js", imports: ["/build/_shared/chunk-35PU5JZQ.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-PH6HGHSR.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-3CHEBHDQ.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-YASRHQS2.js", imports: ["/build/_shared/chunk-35PU5JZQ.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-MPMMX2RI.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-U4QEHQPV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-IZ4KQDFF.js", imports: ["/build/_shared/chunk-K24XMWYI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-5LTFXS7M.js", imports: ["/build/_shared/chunk-5QOQ2ZG4.js", "/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-CRMRXETN.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "bd1cc522", hmr: { runtime: "/build/_shared/chunk-J2OVIFEL.js", timestamp: 1685651669202 }, url: "/build/manifest-BD1CC522.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-I6ORIC2S.js", imports: ["/build/_shared/chunk-LKOPCC2G.js", "/build/_shared/chunk-ABY47LC6.js", "/build/_shared/chunk-GUPKMWBY.js", "/build/_shared/chunk-FJMEZ7QQ.js", "/build/_shared/chunk-MQESCB4Y.js", "/build/_shared/chunk-J2OVIFEL.js", "/build/_shared/chunk-HH3BOLTW.js", "/build/_shared/chunk-R6ILELA2.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-NFULYJEU.js", imports: ["/build/_shared/chunk-SE7RPHZE.js", "/build/_shared/chunk-LUGMVUMH.js", "/build/_shared/chunk-5QOQ2ZG4.js", "/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-YVUJFX65.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-TO4YLANN.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-6HUUIIS2.js", imports: ["/build/_shared/chunk-35PU5JZQ.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-PH6HGHSR.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-3CHEBHDQ.js", imports: ["/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-YASRHQS2.js", imports: ["/build/_shared/chunk-35PU5JZQ.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-MPMMX2RI.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-U4QEHQPV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-IZ4KQDFF.js", imports: ["/build/_shared/chunk-K24XMWYI.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-5LTFXS7M.js", imports: ["/build/_shared/chunk-5QOQ2ZG4.js", "/build/_shared/chunk-GJCQINV5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-CRMRXETN.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "0aceab5c", hmr: { runtime: "/build/_shared/chunk-J2OVIFEL.js", timestamp: 1685940331858 }, url: "/build/manifest-0ACEAB5C.js" };
 
 // server-entry-module:@remix-run/dev/server-build
-var assetsBuildDirectory = "public/build", future = { unstable_dev: !0, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !1, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_react_stream_exports }, dev = { websocketPort: 3004 }, routes = {
+var assetsBuildDirectory = "public/build", future = { unstable_dev: !0, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !1, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_react_stream_exports }, dev = { websocketPort: 3002 }, routes = {
   root: {
     id: "root",
     parentId: void 0,
