@@ -40,13 +40,15 @@ export default function CustomCriteriaSelect({
         );
 
         return (
-          <>
+          <div 
+            key={key[0]}
+          >
             <Label key={key[0]} className="text-white">
               {key[0]}
             </Label>
 
             <div
-              key={index}
+              key={key[0]}
               className="flex w-full items-center justify-between rounded-md border p-2 text-white"
             >
               <Select.Root
@@ -107,7 +109,7 @@ export default function CustomCriteriaSelect({
                 </Select.Content>
               </Select.Root>
             </div>
-          </>
+          </div>
         );
       })}
     </>
