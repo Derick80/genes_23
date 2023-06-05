@@ -2,7 +2,7 @@ export const criterions = [
   {
     evidenceType: "Computational and Predictive Data",
     label: "PVS1",
-    weight: 8,
+    weight: 5,
     evidenceTypeShort: "Computational",
     criterionBaseWeight: "Very Strong",
     definition: "VS: Loss of Function",
@@ -248,7 +248,7 @@ export const criterions = [
   {
     evidenceType: "Population Data",
     label: "BA1",
-    weight: -8,
+    weight: -5,
     evidenceTypeShort: "Population",
     criterionBaseWeight: "Stand alone",
     definition: "SA:Filtering Allele Frequency >.5%.",

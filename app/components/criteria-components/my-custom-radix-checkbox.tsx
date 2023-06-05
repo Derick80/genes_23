@@ -18,7 +18,7 @@ export default function CustomCriteriaCheckBox({
   const [open, setOpen] = React.useState(false);
 
   return (
-    <div className="flex w-72 flex-col gap-2 rounded-md border-2 p-1">
+    <div className="flex w-full flex-col gap-2 rounded-md border-2 p-1">
       <div className="flex justify-between gap-2">
         <div>{data[0].evidenceType}</div>
         <button

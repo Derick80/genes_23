@@ -28,11 +28,12 @@ export default function ClassificationComponent({
 
   const transformed = convertToNumbers(criteriaBreakdown);
 
+
   React.useEffect(() => {
     setClassificationScore(subtotal);
     setSubtotals(subtotal);
     setVariantClassification(transformed.classification);
-  }, [subtotal, setClassificationScore]);
+  }, [subtotal, setClassificationScore, setVariantClassification, transformed]);
 
   return (
     <div className="order-first flex w-full flex-col gap-2 rounded-md border-2 p-1 md:order-none md:w-1/3">
@@ -40,7 +41,8 @@ export default function ClassificationComponent({
         <div className="text-white">Classification Score</div>
         <div className="text-white">{subtotals}</div>
       </div>
-      <div className="flex items-center justify-between">
+   
+      <div className="flex flex-col items-center justify-between">
         <div className="text-white">Variant Classification</div>
         <div className="text-white">{transformed.classification}</div>
       </div>

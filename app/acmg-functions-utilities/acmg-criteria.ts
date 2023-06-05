@@ -42,8 +42,8 @@ export const extractFirstTwoLetters = (arr: string[]) => {
 };
 // Define a mapping from strength letters to their corresponding values
 export const strengthValues: { [key: string]: number } = {
-  V: 8,
-  A: 8,
+  V: 5,
+  A: 5,
   S: 4,
   M: 2,
   P: 1,
@@ -53,7 +53,7 @@ export const strengthValues: { [key: string]: number } = {
 export function convertToNumbers(arr: string[]) {
   const strengthValues: { [key: string]: number } = {
     V: 5,
-    A: 8,
+    A: 5,
     S: 4,
     M: 2,
     P: 1,
@@ -83,11 +83,14 @@ export function convertToNumbers(arr: string[]) {
     obj.classification = "Likely Benign";
   } else if (totalSum >= 0 && totalSum <= 5) {
     obj.classification = "Variant of Uncertain Significance";
-  } else if (totalSum >= 6 && totalSum <= 9) {
+  } else if (totalSum >= 6 && totalSum <= 10) {
     obj.classification = "Likely Pathogenic";
-  } else if (totalSum >= 10) {
+  } else if (totalSum > 10) {
     obj.classification = "Pathogenic";
+  } else {
+    obj.classification = "Error";
   }
+
 
   obj.totalSum = totalSum;
   return obj;
