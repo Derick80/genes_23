@@ -13,3 +13,5 @@ prisma/acmg-clinvar-data.ts
 prisma/gnomad_plof_symbols.json
 prisma/seed-acmg-clinvar.ts
 prisma/gnomad_lof_metrics.json
+# Local Netlify folder
+.netlify

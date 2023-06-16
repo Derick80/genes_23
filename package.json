@@ -30,7 +30,6 @@
     "prisma": "^4.15.0",
 
     "clsx": "^1.2.1",
-    "fast-xml-parser": "^4.2.4",
     "framer-motion": "^10.12.12",
     "isbot": "^3.6.5",
     "prettier-plugin-tailwindcss": "^0.3.0",
@@ -42,7 +41,6 @@
     "zodix": "^0.4.0"
   },
   "devDependencies": {
-    "@flydotio/dockerfile": "^0.2.5",
     "@remix-run/dev": "^1.17.1",
     "@remix-run/eslint-config": "^1.17.1",
     "@tailwindcss/typography": "^0.5.9",
