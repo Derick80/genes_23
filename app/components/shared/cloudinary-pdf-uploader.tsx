@@ -39,7 +39,7 @@ export default function PdfUploader({ setUrl }: PdfUploaderProps) {
           <input
             type="text"
             name="pdfUrl"
-            onChange={void setUrl(pdfFetcher.data?.pdfUrl)}
+            onChange={setUrl(pdfFetcher.data?.pdfUrl)}
           />
           <PdfViewer pdfUrl={pdfFetcher?.data?.pdfUrl} />
         </div>
