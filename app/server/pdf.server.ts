@@ -1,13 +1,13 @@
-import type { Prisma } from "@prisma/client";
-import { prisma } from "./prisma.server";
+import type { Prisma } from '@prisma/client'
+import { prisma } from './prisma.server'
 //  extract PMCiD from last part of url
 export async function getPMSearchTerm(url: string) {
-  console.log(url, "url from getPMSearchTerm");
+    console.log(url, 'url from getPMSearchTerm')
 
-  const urlParts = url.split("/");
-  const lastPart = urlParts[urlParts.length - 1];
-  const pmcId = lastPart.split(".")[0];
-  return pmcId;
+    const urlParts = url.split('/')
+    const lastPart = urlParts[urlParts.length - 1]
+    const pmcId = lastPart.split('.')[0]
+    return pmcId
 }
 // First fetch article data from pubmed using the pmid and then fetch the abstract using the pmcId
 // export async function getPmidData(pmid: string) {
@@ -84,43 +84,43 @@ export async function getPMSearchTerm(url: string) {
 // }
 
 export async function createPdfEntry(data: Prisma.PdfLibraryCreateInput) {
-  const alreadyExists = await prisma.pdfLibrary.findUnique({
-    where: {
-      internalPdfUrl: data.internalPdfUrl,
-    },
-  });
-  if (alreadyExists) {
-    return;
-  }
-  const pdfEntry = await prisma.pdfLibrary.create({
-    data,
-  });
-  return pdfEntry;
+    const alreadyExists = await prisma.pdfLibrary.findUnique({
+        where: {
+            internalPdfUrl: data.internalPdfUrl,
+        },
+    })
+    if (alreadyExists) {
+        return
+    }
+    const pdfEntry = await prisma.pdfLibrary.create({
+        data,
+    })
+    return pdfEntry
 }
 
 export async function getPdfLibrary({
-  whereFilter,
+    whereFilter,
 }: {
-  whereFilter: Prisma.PdfLibraryWhereInput;
+    whereFilter: Prisma.PdfLibraryWhereInput
 }) {
-  const pdfLibrary = await prisma.pdfLibrary.findMany({
-    where: {
-      ...whereFilter,
-    },
-    orderBy: {
-      pubYear: "desc",
-    },
-  });
-  return pdfLibrary;
+    const pdfLibrary = await prisma.pdfLibrary.findMany({
+        where: {
+            ...whereFilter,
+        },
+        orderBy: {
+            pubYear: 'desc',
+        },
+    })
+    return pdfLibrary
 }
 
 export async function getPdfLibraryItem(id: string) {
-  const pdfLibraryItem = await prisma.pdfLibrary.findUnique({
-    where: {
-      id,
-    },
-  });
-  return pdfLibraryItem;
+    const pdfLibraryItem = await prisma.pdfLibrary.findUnique({
+        where: {
+            id,
+        },
+    })
+    return pdfLibraryItem
 }
 
 // Semantic Scholor API
@@ -129,72 +129,72 @@ export async function getPdfLibraryItem(id: string) {
 //
 // https://api.semanticscholar.org/graph/v1/paper/PMID:30191630?fields=abstract,authors,externalIds,fieldsOfStudy,influentialCitationCount,paperId,references,title,url,venue,year
 export async function getSemanticScholorArticleDetails(pmid: string) {
-  const typeofId = pmid.startsWith("PMC") ? "pmcid" : "pmid";
+    const typeofId = pmid.startsWith('PMC') ? 'pmcid' : 'pmid'
 
-  const fields =
-    "abstract,authors,externalIds,fieldsOfStudy,influentialCitationCount,paperId,title,url,venue,year";
+    const fields =
+        'abstract,authors,externalIds,fieldsOfStudy,influentialCitationCount,paperId,title,url,venue,year'
 
-  const builtUrl = `https://api.semanticscholar.org/graph/v1/paper/${typeofId}:${pmid}?fields=${fields}`;
-  console.log(builtUrl, "builtUrl from getSemanticScholorArticleDetails");
+    const builtUrl = `https://api.semanticscholar.org/graph/v1/paper/${typeofId}:${pmid}?fields=${fields}`
+    console.log(builtUrl, 'builtUrl from getSemanticScholorArticleDetails')
 
-  const response = await fetch(builtUrl);
-  const data = (await response.json()) as Root;
+    const response = await fetch(builtUrl)
+    const data = (await response.json()) as Root
 
-  const dataToReturn = {
-    semanticScholarId: data.paperId,
-    semanticScholarUrl: data.url,
-    title: data.title,
-    abstract: data.abstract || "",
-    authors: data.authors.map((author: Author) => author.name),
-    journal: data.venue,
-    pubYear: data.year,
-    pmid: data.externalIds.PubMed,
-    pmcId: data.externalIds.PubMedCentral || "",
-    doi: data.externalIds.DOI,
-  };
-  console.log(
-    dataToReturn,
-    "dataToReturn from getSemanticScholorArticleDetails"
-  );
+    const dataToReturn = {
+        semanticScholarId: data.paperId,
+        semanticScholarUrl: data.url,
+        title: data.title,
+        abstract: data.abstract || '',
+        authors: data.authors.map((author: Author) => author.name),
+        journal: data.venue,
+        pubYear: data.year,
+        pmid: data.externalIds.PubMed,
+        pmcId: data.externalIds.PubMedCentral || '',
+        doi: data.externalIds.DOI,
+    }
+    console.log(
+        dataToReturn,
+        'dataToReturn from getSemanticScholorArticleDetails'
+    )
 
-  return dataToReturn as DataToReturn;
+    return dataToReturn as DataToReturn
 }
 
 // Semantic Scholor API Types
 export interface Root {
-  paperId: string;
-  externalIds: ExternalIds;
-  url: string;
-  title: string;
-  abstract: any;
-  venue: string;
-  year: number;
-  influentialCitationCount: number;
-  fieldsOfStudy: string[];
-  authors: Author[];
+    paperId: string
+    externalIds: ExternalIds
+    url: string
+    title: string
+    abstract: any
+    venue: string
+    year: number
+    influentialCitationCount: number
+    fieldsOfStudy: string[]
+    authors: Author[]
 }
 
 export interface ExternalIds {
-  PubMedCentral: string;
-  MAG: string;
-  DOI: string;
-  CorpusId: number;
-  PubMed: string;
+    PubMedCentral: string
+    MAG: string
+    DOI: string
+    CorpusId: number
+    PubMed: string
 }
 
 export interface Author {
-  authorId: string;
-  name: string;
+    authorId: string
+    name: string
 }
 export interface DataToReturn {
-  semanticScholarId: string;
-  semanticScholarUrl: string;
-  title: string;
-  abstract: string;
-  authors: string[];
-  journal: string;
-  pubYear: number;
-  pmid: string;
-  pmcId: string;
-  doi: string;
+    semanticScholarId: string
+    semanticScholarUrl: string
+    title: string
+    abstract: string
+    authors: string[]
+    journal: string
+    pubYear: number
+    pmid: string
+    pmcId: string
+    doi: string
 }
