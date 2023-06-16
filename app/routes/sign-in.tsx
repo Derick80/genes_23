@@ -1,10 +1,10 @@
-import { SignIn } from "@clerk/remix";
+import { SignIn } from '@clerk/remix'
 
 export default function SignInPage() {
-  return (
-    <div>
-      <h1>Sign In route</h1>
-      <SignIn routing={"path"} path={"/sign-in"} />
-    </div>
-  );
+    return (
+        <div>
+            <h1>Sign In route</h1>
+            <SignIn routing={'path'} path={'/sign-in'} />
+        </div>
+    )
 }
