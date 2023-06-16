@@ -25,6 +25,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <li className="font-semibold">
             <Link to="/calculator">Calculator</Link>
           </li>
+          <li className="font-semibold">
+            <Link to="/kdb">KDB</Link>
+          </li>
 
           <li className="font-semibold">
             <Link to="/beta">Beta</Link>
@@ -41,9 +44,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
         )}
       </header>
-      <main className="relative mt-20 flex-1">{children}</main>
+      <main className="relative mt-20 flex-1 overflow-auto">{children}</main>
       <footer className="fixed bottom-0 left-0 right-0 z-50 flex h-10 items-center  justify-center bg-gray-800 text-gray-100 shadow-md">
-        <ul className="flex items-center gap-1 gap-2">
+        <ul className="flex items-center gap-1">
           <li className="flex flex-col  items-center gap-1 font-semibold">
             <GitHubLogoIcon />
 

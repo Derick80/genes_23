@@ -33,25 +33,21 @@ export default function CustomCriteriaSelect({
   handleListCriteriaUsed,
 }: Props) {
   return (
-    <div 
-      className="flex flex-col w-full"
-    >
+    <div className="flex w-full flex-col">
       {Object.entries(data).map((key, index) => {
         const dataagain = options.filter(
           (item) => item.evidenceType === key[0]
         );
 
         return (
-          <div 
-            key={key[0]}
-          >
+          <div key={key[0]}>
             <Label key={key[0]} className="text-white">
               {key[0]}
             </Label>
 
             <div
               key={key[0]}
-              className="flex w-fsull items-center justify-between rounded-md border p-2 text-white"
+              className="w-fsull flex items-center justify-between rounded-md border p-2 text-white"
             >
               <Select.Root
                 name={key[0]}

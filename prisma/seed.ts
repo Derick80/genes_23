@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { criterions } from "./criterion-seed";
+import { seedAcmgGenes } from "./acmg-gene-seed";
 const prisma = new PrismaClient();
 async function seed() {
   const email = "iderick@gmail.com";
@@ -21,11 +22,13 @@ async function seed() {
 
   await prisma.criterion.createMany({
     data: criterions,
+    skipDuplicates: true,
   });
 
   console.log(`Database has been seeded. 🌱`);
 }
 seed()
+seedAcmgGenes()
   .catch((e) => {
     console.error(e);
     process.exit(1);

@@ -23,3 +23,7 @@ coverage
 /app/styles/app.css
 /app/entry.server.tsx
 /app/entry.client.tsx
+/app/references/pubmeddata.ts
+prisma/acmg_clinvartojson.json
+prisma/gnomad_lof_metrics.json
+prisma/gnoma-lof.ts

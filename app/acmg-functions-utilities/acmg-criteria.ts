@@ -91,7 +91,6 @@ export function convertToNumbers(arr: string[]) {
     obj.classification = "Error";
   }
 
-
   obj.totalSum = totalSum;
   return obj;
 }
