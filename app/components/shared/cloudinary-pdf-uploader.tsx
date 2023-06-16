@@ -1,5 +1,4 @@
 import { useFetcher } from "@remix-run/react";
-import PdfViewer from "../kdb-components/pdf-viewer";
 
 type PdfUploaderProps = {
   setUrl: React.Dispatch<React.SetStateAction<string>>;
@@ -41,7 +40,6 @@ export default function PdfUploader({ setUrl }: PdfUploaderProps) {
             name="pdfUrl"
             onChange={setUrl(pdfFetcher.data?.pdfUrl)}
           />
-          <PdfViewer pdfUrl={pdfFetcher?.data?.pdfUrl} />
         </div>
       )}
     </>

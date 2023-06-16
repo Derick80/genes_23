@@ -2646,141 +2646,13 @@ __export(kdb_new_exports, {
   action: () => action5,
   default: () => Wip
 });
-var import_node14 = require("@remix-run/node"), import_react19 = require("@remix-run/react"), import_react20 = __toESM(require("react"));
+var import_node14 = require("@remix-run/node"), import_react18 = require("@remix-run/react"), import_react19 = __toESM(require("react"));
 
 // app/components/shared/cloudinary-pdf-uploader.tsx
-var import_react18 = require("@remix-run/react");
-
-// app/components/kdb-components/pdf-viewer.tsx
-var import_react17 = require("react"), import_core = require("@react-pdf-viewer/core"), import_default_layout = require("@react-pdf-viewer/default-layout");
-var import_jsx_dev_runtime17 = require("react/jsx-dev-runtime");
-function PdfViewer({ pdfUrl }) {
-  let [numPages, setNumPages] = (0, import_react17.useState)(1), [pageNumber, setPageNumber] = (0, import_react17.useState)(1), defaultLayoutPluginInstance = (0, import_default_layout.defaultLayoutPlugin)(), onDocumentLoadSuccess = ({ numPages: numPages2 }) => {
-    setNumPages(numPages2);
-  };
-  function nextPage() {
-    pageNumber < numPages && setPageNumber(pageNumber + 1);
-  }
-  function previousPage() {
-    pageNumber > 1 && setPageNumber(pageNumber - 1);
-  }
-  function resetPage() {
-    setPageNumber(1);
-  }
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_core.Worker, { workerUrl: "https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.js", children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "flex h-full flex-col gap-2 px-2", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "margin-[20px] flex flex-row items-center justify-center gap-2", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-        "button",
-        {
-          className: "rounded-sm border-2 border-black px-2 py-1",
-          onClick: previousPage,
-          disabled: pageNumber === 1,
-          children: "Prev"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/components/kdb-components/pdf-viewer.tsx",
-          lineNumber: 37,
-          columnNumber: 9
-        },
-        this
-      ),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-        "button",
-        {
-          className: "rounded-sm border-2 border-black px-2 py-1",
-          onClick: resetPage,
-          children: "Reset"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/components/kdb-components/pdf-viewer.tsx",
-          lineNumber: 44,
-          columnNumber: 9
-        },
-        this
-      ),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-        "button",
-        {
-          className: "rounded-sm border-2 border-black px-2 py-1",
-          onClick: nextPage,
-          disabled: pageNumber === numPages,
-          children: "Next"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/components/kdb-components/pdf-viewer.tsx",
-          lineNumber: 50,
-          columnNumber: 9
-        },
-        this
-      )
-    ] }, void 0, !0, {
-      fileName: "app/components/kdb-components/pdf-viewer.tsx",
-      lineNumber: 36,
-      columnNumber: 7
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-      "div",
-      {
-        className: "flex w-full h-[420px] justify-center border-2 border-yellow-500 overflow-auto",
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-          import_core.Viewer,
-          {
-            fileUrl: pdfUrl,
-            plugins: [
-              defaultLayoutPluginInstance
-            ],
-            defaultScale: import_core.SpecialZoomLevel.PageFit
-          },
-          void 0,
-          !1,
-          {
-            fileName: "app/components/kdb-components/pdf-viewer.tsx",
-            lineNumber: 63,
-            columnNumber: 7
-          },
-          this
-        )
-      },
-      void 0,
-      !1,
-      {
-        fileName: "app/components/kdb-components/pdf-viewer.tsx",
-        lineNumber: 58,
-        columnNumber: 7
-      },
-      this
-    ),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("p", { className: "text-center", children: [
-      pageNumber,
-      " / ",
-      numPages
-    ] }, void 0, !0, {
-      fileName: "app/components/kdb-components/pdf-viewer.tsx",
-      lineNumber: 72,
-      columnNumber: 7
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "app/components/kdb-components/pdf-viewer.tsx",
-    lineNumber: 35,
-    columnNumber: 5
-  }, this) }, void 0, !1, {
-    fileName: "app/components/kdb-components/pdf-viewer.tsx",
-    lineNumber: 33,
-    columnNumber: 5
-  }, this);
-}
-
-// app/components/shared/cloudinary-pdf-uploader.tsx
-var import_jsx_dev_runtime18 = require("react/jsx-dev-runtime");
+var import_react17 = require("@remix-run/react"), import_jsx_dev_runtime17 = require("react/jsx-dev-runtime");
 function PdfUploader({ setUrl }) {
-  var _a, _b, _c;
-  let pdfFetcher = (0, import_react18.useFetcher)(), handlePdfUpload = async () => {
+  var _a, _b;
+  let pdfFetcher = (0, import_react17.useFetcher)(), handlePdfUpload = async () => {
     var _a2;
     pdfFetcher.submit({
       pdfUrl: "pdfUrl",
@@ -2788,8 +2660,8 @@ function PdfUploader({ setUrl }) {
       action: "/actions/pdf"
     }), (_a2 = pdfFetcher.data) != null && _a2.pdfUrl && setUrl(pdfFetcher.data.pdfUrl);
   };
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(import_jsx_dev_runtime18.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_jsx_dev_runtime17.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
       pdfFetcher.Form,
       {
         method: "post",
@@ -2798,7 +2670,7 @@ function PdfUploader({ setUrl }) {
         onChange: handlePdfUpload,
         className: "flex flex-col items-center justify-center",
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+          /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
             "input",
             {
               className: "border-input ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
@@ -2810,14 +2682,14 @@ function PdfUploader({ setUrl }) {
             !1,
             {
               fileName: "app/components/shared/cloudinary-pdf-uploader.tsx",
-              lineNumber: 29,
+              lineNumber: 28,
               columnNumber: 9
             },
             this
           ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("button", { type: "submit", children: "Upload" }, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("button", { type: "submit", children: "Upload" }, void 0, !1, {
             fileName: "app/components/shared/cloudinary-pdf-uploader.tsx",
-            lineNumber: 35,
+            lineNumber: 34,
             columnNumber: 9
           }, this)
         ]
@@ -2826,47 +2698,40 @@ function PdfUploader({ setUrl }) {
       !0,
       {
         fileName: "app/components/shared/cloudinary-pdf-uploader.tsx",
-        lineNumber: 22,
+        lineNumber: 21,
         columnNumber: 7
       },
       this
     ),
-    ((_a = pdfFetcher.data) == null ? void 0 : _a.pdfUrl) && /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
-        "input",
-        {
-          type: "text",
-          name: "pdfUrl",
-          onChange: setUrl((_b = pdfFetcher.data) == null ? void 0 : _b.pdfUrl)
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/components/shared/cloudinary-pdf-uploader.tsx",
-          lineNumber: 39,
-          columnNumber: 11
-        },
-        this
-      ),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(PdfViewer, { pdfUrl: (_c = pdfFetcher == null ? void 0 : pdfFetcher.data) == null ? void 0 : _c.pdfUrl }, void 0, !1, {
+    ((_a = pdfFetcher.data) == null ? void 0 : _a.pdfUrl) && /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
+      "input",
+      {
+        type: "text",
+        name: "pdfUrl",
+        onChange: setUrl((_b = pdfFetcher.data) == null ? void 0 : _b.pdfUrl)
+      },
+      void 0,
+      !1,
+      {
         fileName: "app/components/shared/cloudinary-pdf-uploader.tsx",
-        lineNumber: 44,
+        lineNumber: 38,
         columnNumber: 11
-      }, this)
-    ] }, void 0, !0, {
+      },
+      this
+    ) }, void 0, !1, {
       fileName: "app/components/shared/cloudinary-pdf-uploader.tsx",
-      lineNumber: 38,
+      lineNumber: 37,
       columnNumber: 9
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/shared/cloudinary-pdf-uploader.tsx",
-    lineNumber: 21,
+    lineNumber: 20,
     columnNumber: 5
   }, this);
 }
 
 // app/routes/kdb_.new.tsx
-var import_jsx_dev_runtime19 = require("react/jsx-dev-runtime");
+var import_jsx_dev_runtime18 = require("react/jsx-dev-runtime");
 async function action5({ request, params }) {
   let formData = await request.formData();
   console.log(Object.fromEntries(formData.entries()), "formData");
@@ -2900,20 +2765,20 @@ async function action5({ request, params }) {
 }
 function Wip() {
   var _a;
-  let actionData = (0, import_react19.useActionData)(), [url, setUrl] = import_react20.default.useState("");
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "mb-20 flex flex-col items-center justify-center", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(PdfUploader, { setUrl }, void 0, !1, {
+  let actionData = (0, import_react18.useActionData)(), [url, setUrl] = import_react19.default.useState("");
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "mb-20 flex flex-col items-center justify-center", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(PdfUploader, { setUrl }, void 0, !1, {
       fileName: "app/routes/kdb_.new.tsx",
       lineNumber: 67,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
-      import_react19.Form,
+    /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
+      import_react18.Form,
       {
         className: "flex w-full flex-col items-center justify-center",
         method: "POST",
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(
+          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)(
             "input",
             {
               className: "w-full text-black",
@@ -2931,12 +2796,12 @@ function Wip() {
             },
             this
           ),
-          ((_a = actionData == null ? void 0 : actionData.pdfEntry) == null ? void 0 : _a.error) && /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { className: "text-red-500", children: actionData.pdfEntry.error }, void 0, !1, {
+          ((_a = actionData == null ? void 0 : actionData.pdfEntry) == null ? void 0 : _a.error) && /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("div", { className: "text-red-500", children: actionData.pdfEntry.error }, void 0, !1, {
             fileName: "app/routes/kdb_.new.tsx",
             lineNumber: 82,
             columnNumber: 13
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("button", { type: "submit", children: "Submit" }, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime18.jsxDEV)("button", { type: "submit", children: "Submit" }, void 0, !1, {
             fileName: "app/routes/kdb_.new.tsx",
             lineNumber: 84,
             columnNumber: 11
@@ -2968,15 +2833,15 @@ var sign_in_exports = {};
 __export(sign_in_exports, {
   default: () => SignInPage
 });
-var import_remix4 = require("@clerk/remix"), import_jsx_dev_runtime20 = require("react/jsx-dev-runtime");
+var import_remix4 = require("@clerk/remix"), import_jsx_dev_runtime19 = require("react/jsx-dev-runtime");
 function SignInPage() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("h1", { children: "Sign In route" }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("div", { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)("h1", { children: "Sign In route" }, void 0, !1, {
       fileName: "app/routes/sign-in.tsx",
       lineNumber: 6,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(import_remix4.SignIn, { routing: "path", path: "/sign-in" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime19.jsxDEV)(import_remix4.SignIn, { routing: "path", path: "/sign-in" }, void 0, !1, {
       fileName: "app/routes/sign-in.tsx",
       lineNumber: 7,
       columnNumber: 7
@@ -2993,15 +2858,15 @@ var sign_up_exports = {};
 __export(sign_up_exports, {
   default: () => SignUpPage
 });
-var import_remix5 = require("@clerk/remix"), import_jsx_dev_runtime21 = require("react/jsx-dev-runtime");
+var import_remix5 = require("@clerk/remix"), import_jsx_dev_runtime20 = require("react/jsx-dev-runtime");
 function SignUpPage() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h1", { children: "Sign Up route" }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("div", { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)("h1", { children: "Sign Up route" }, void 0, !1, {
       fileName: "app/routes/sign-up.tsx",
       lineNumber: 6,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(import_remix5.SignUp, { routing: "path", path: "/sign-up" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(import_remix5.SignUp, { routing: "path", path: "/sign-up" }, void 0, !1, {
       fileName: "app/routes/sign-up.tsx",
       lineNumber: 7,
       columnNumber: 7
@@ -3020,17 +2885,17 @@ __export(index_exports, {
 });
 
 // app/components/dev-components/welcome.tsx
-var import_react21 = require("@remix-run/react"), import_jsx_dev_runtime22 = require("react/jsx-dev-runtime");
+var import_react20 = require("@remix-run/react"), import_jsx_dev_runtime21 = require("react/jsx-dev-runtime");
 function DevelopmentWelcome() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "prose prose-invert mx-auto flex h-full w-full flex-col items-center gap-2  rounded-md border-2 p-2 xl:prose-xl", children: [
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { className: "prose prose-invert mx-auto flex h-full w-full flex-col items-center gap-2  rounded-md border-2 p-2 xl:prose-xl", children: [
     "Welcome to my in development site. This site is a work in progress. I am working towards a comprehensive ACMG/AMP variant classification tool.",
-    /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("h2", { children: "Current Features" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h2", { children: "Current Features" }, void 0, !1, {
       fileName: "app/components/dev-components/welcome.tsx",
       lineNumber: 8,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("ul", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(import_react21.Link, { to: "/calculator", children: "ACMG Classification Counter Calculator" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("ul", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(import_react20.Link, { to: "/calculator", children: "ACMG Classification Counter Calculator" }, void 0, !1, {
         fileName: "app/components/dev-components/welcome.tsx",
         lineNumber: 11,
         columnNumber: 11
@@ -3039,7 +2904,7 @@ function DevelopmentWelcome() {
         lineNumber: 10,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("li", { children: "Variant Classification Score" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { children: "Variant Classification Score" }, void 0, !1, {
         fileName: "app/components/dev-components/welcome.tsx",
         lineNumber: 13,
         columnNumber: 9
@@ -3049,23 +2914,23 @@ function DevelopmentWelcome() {
       lineNumber: 9,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("h2", { children: "Future Features" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("h2", { children: "Future Features" }, void 0, !1, {
       fileName: "app/components/dev-components/welcome.tsx",
       lineNumber: 15,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("ul", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("li", { children: "Citations" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("ul", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { children: "Citations" }, void 0, !1, {
         fileName: "app/components/dev-components/welcome.tsx",
         lineNumber: 17,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("li", { children: "Documentation " }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { children: "Documentation " }, void 0, !1, {
         fileName: "app/components/dev-components/welcome.tsx",
         lineNumber: 18,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("li", { children: "PDF upload and retreival page" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("li", { children: "PDF upload and retreival page" }, void 0, !1, {
         fileName: "app/components/dev-components/welcome.tsx",
         lineNumber: 19,
         columnNumber: 9
@@ -3083,9 +2948,9 @@ function DevelopmentWelcome() {
 }
 
 // app/routes/_index.tsx
-var import_jsx_dev_runtime23 = require("react/jsx-dev-runtime");
+var import_jsx_dev_runtime22 = require("react/jsx-dev-runtime");
 function Index() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { className: "", children: /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(DevelopmentWelcome, {}, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "", children: /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(DevelopmentWelcome, {}, void 0, !1, {
     fileName: "app/routes/_index.tsx",
     lineNumber: 6,
     columnNumber: 7
@@ -3105,16 +2970,16 @@ __export(genes_exports, {
 var import_node15 = require("@remix-run/node");
 
 // app/components/gene-search.tsx
-var import_react22 = require("@remix-run/react"), import_jsx_dev_runtime24 = require("react/jsx-dev-runtime");
+var import_react21 = require("@remix-run/react"), import_jsx_dev_runtime23 = require("react/jsx-dev-runtime");
 function GeneSearch() {
-  let navigate = (0, import_react22.useNavigate)(), [searchParams] = (0, import_react22.useSearchParams)();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("form", { className: "text-black", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("input", { type: "text", placeholder: "Search for a gene", name: "filter" }, void 0, !1, {
+  let navigate = (0, import_react21.useNavigate)(), [searchParams] = (0, import_react21.useSearchParams)();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("form", { className: "text-black", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("input", { type: "text", placeholder: "Search for a gene", name: "filter" }, void 0, !1, {
       fileName: "app/components/gene-search.tsx",
       lineNumber: 8,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("button", { type: "submit", children: "Search" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("button", { type: "submit", children: "Search" }, void 0, !1, {
       fileName: "app/components/gene-search.tsx",
       lineNumber: 9,
       columnNumber: 7
@@ -3127,7 +2992,7 @@ function GeneSearch() {
 }
 
 // app/routes/genes.tsx
-var import_react23 = require("@remix-run/react"), import_jsx_dev_runtime25 = require("react/jsx-dev-runtime");
+var import_react22 = require("@remix-run/react"), import_jsx_dev_runtime24 = require("react/jsx-dev-runtime");
 async function loader9({ request, params }) {
   let filter = new URL(request.url).searchParams.get("filter");
   console.log(filter, "filter");
@@ -3135,14 +3000,14 @@ async function loader9({ request, params }) {
   return (0, import_node15.json)({ gene });
 }
 function GenesRoute() {
-  let data = (0, import_react23.useLoaderData)();
-  return console.log(data), /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("div", { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("h1", { children: "Genes" }, void 0, !1, {
+  let data = (0, import_react22.useLoaderData)();
+  return console.log(data), /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("div", { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)("h1", { children: "Genes" }, void 0, !1, {
       fileName: "app/routes/genes.tsx",
       lineNumber: 22,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)(GeneSearch, {}, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime24.jsxDEV)(GeneSearch, {}, void 0, !1, {
       fileName: "app/routes/genes.tsx",
       lineNumber: 23,
       columnNumber: 7
@@ -3159,9 +3024,9 @@ var beta_exports = {};
 __export(beta_exports, {
   default: () => BetaRoute
 });
-var import_jsx_dev_runtime26 = require("react/jsx-dev-runtime");
+var import_jsx_dev_runtime25 = require("react/jsx-dev-runtime");
 function BetaRoute() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { className: "" }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime25.jsxDEV)("div", { className: "" }, void 0, !1, {
     fileName: "app/routes/beta.tsx",
     lineNumber: 2,
     columnNumber: 10
@@ -3175,26 +3040,26 @@ __export(kdb_exports, {
   loader: () => loader10,
   shouldRevalidate: () => shouldRevalidate
 });
-var import_node16 = require("@remix-run/node"), import_react29 = require("@remix-run/react");
+var import_node16 = require("@remix-run/node"), import_react28 = require("@remix-run/react");
 
 // app/components/kdb-components/pdf-search.tsx
-var import_react24 = require("@remix-run/react"), import_react25 = __toESM(require("react")), import_jsx_dev_runtime27 = require("react/jsx-dev-runtime");
+var import_react23 = require("@remix-run/react"), import_react24 = __toESM(require("react")), import_jsx_dev_runtime26 = require("react/jsx-dev-runtime");
 function PdfSearch() {
-  let [searchParams] = (0, import_react24.useSearchParams)(), formRef = import_react25.default.useRef(null), navigate = (0, import_react24.useNavigate)();
+  let [searchParams] = (0, import_react23.useSearchParams)(), formRef = import_react24.default.useRef(null), navigate = (0, import_react23.useNavigate)();
   function handleClear(e) {
     var _a;
     e.preventDefault(), searchParams.delete("filter"), (_a = formRef.current) == null || _a.reset(), navigate("/kdb/", {
       replace: !0
     });
   }
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "flex flex-col  items-center gap-2 border-2 border-purple-500 p-1 md:p-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(
-    import_react24.Form,
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)("div", { className: "flex flex-col  items-center gap-2 border-2 border-purple-500 p-1 md:p-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
+    import_react23.Form,
     {
       ref: formRef,
       className: "flex w-full flex-col items-center gap-2",
       method: "GET",
       children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(
+        /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
           "input",
           {
             className: "border-input ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-white placeholder:text-[8px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
@@ -3211,7 +3076,7 @@ function PdfSearch() {
           },
           this
         ),
-        searchParams.get("filter") ? /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(
+        searchParams.get("filter") ? /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
           "button",
           {
             className: "w-1/2 rounded-xl bg-red-300 px-3 py-2 font-semibold text-blue-600 transition duration-300 ease-in-out hover:-translate-y-1 hover:bg-yellow-400",
@@ -3227,7 +3092,7 @@ function PdfSearch() {
             columnNumber: 11
           },
           this
-        ) : /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(
+        ) : /* @__PURE__ */ (0, import_jsx_dev_runtime26.jsxDEV)(
           "button",
           {
             className: "rounded-xl bg-blue-300 px-3 py-2 font-semibold text-blue-600 transition duration-300 ease-in-out hover:-translate-y-1 hover:bg-yellow-400",
@@ -3261,20 +3126,20 @@ function PdfSearch() {
 }
 
 // app/components/kdb-components/kdb-welcome.tsx
-var import_jsx_dev_runtime28 = require("react/jsx-dev-runtime");
+var import_jsx_dev_runtime27 = require("react/jsx-dev-runtime");
 function KdbWelcome() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime28.jsxDEV)("div", { className: "flex w-full flex-col items-center gap-2 border-2 border-purple-500 p-2", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime28.jsxDEV)("p", { className: "text-2xl", children: "Welcome to the KDB" }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("div", { className: "flex w-full flex-col items-center gap-2 border-2 border-purple-500 p-2", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("p", { className: "text-2xl", children: "Welcome to the KDB" }, void 0, !1, {
       fileName: "app/components/kdb-components/kdb-welcome.tsx",
       lineNumber: 6,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime28.jsxDEV)("p", { className: "text-2xl", children: "Please select an option from the menu below" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)("p", { className: "text-2xl", children: "Please select an option from the menu below" }, void 0, !1, {
       fileName: "app/components/kdb-components/kdb-welcome.tsx",
       lineNumber: 7,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime28.jsxDEV)(PdfSearch, {}, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime27.jsxDEV)(PdfSearch, {}, void 0, !1, {
       fileName: "app/components/kdb-components/kdb-welcome.tsx",
       lineNumber: 8,
       columnNumber: 7
@@ -3287,25 +3152,25 @@ function KdbWelcome() {
 }
 
 // app/components/kdb-components/pdf-library-list.tsx
-var import_react_icons7 = require("@radix-ui/react-icons"), import_react27 = require("@remix-run/react"), import_framer_motion = require("framer-motion"), import_react28 = __toESM(require("react"));
+var import_react_icons7 = require("@radix-ui/react-icons"), import_react26 = require("@remix-run/react"), import_framer_motion = require("framer-motion"), import_react27 = __toESM(require("react"));
 
 // app/components/kdb-components/pdf-edit-abstract.tsx
-var import_react26 = require("@remix-run/react"), import_jsx_dev_runtime29 = require("react/jsx-dev-runtime");
+var import_react25 = require("@remix-run/react"), import_jsx_dev_runtime28 = require("react/jsx-dev-runtime");
 function EditAbstract({ pdfId }) {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(
-    import_react26.Form,
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime28.jsxDEV)(
+    import_react25.Form,
     {
       className: "z-10 flex flex-col",
       method: "post",
       action: `/kdb/${pdfId}/edit-abstract`,
       children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "flex flex-col", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("label", { htmlFor: "abstract", children: "Abstract" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime28.jsxDEV)("div", { className: "flex flex-col", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime28.jsxDEV)("label", { htmlFor: "abstract", children: "Abstract" }, void 0, !1, {
             fileName: "app/components/kdb-components/pdf-edit-abstract.tsx",
             lineNumber: 11,
             columnNumber: 9
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("textarea", { name: "abstract", id: "abstract", cols: 30, rows: 10 }, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime28.jsxDEV)("textarea", { name: "abstract", id: "abstract", cols: 30, rows: 10 }, void 0, !1, {
             fileName: "app/components/kdb-components/pdf-edit-abstract.tsx",
             lineNumber: 12,
             columnNumber: 9
@@ -3315,7 +3180,7 @@ function EditAbstract({ pdfId }) {
           lineNumber: 10,
           columnNumber: 7
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("button", { type: "submit", children: "Submit" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime28.jsxDEV)("button", { type: "submit", children: "Submit" }, void 0, !1, {
           fileName: "app/components/kdb-components/pdf-edit-abstract.tsx",
           lineNumber: 14,
           columnNumber: 7
@@ -3334,169 +3199,162 @@ function EditAbstract({ pdfId }) {
 }
 
 // app/components/kdb-components/pdf-library-list.tsx
-var import_jsx_dev_runtime30 = require("react/jsx-dev-runtime");
+var import_jsx_dev_runtime29 = require("react/jsx-dev-runtime");
 function PdfList() {
-  let [edit, setEdit] = import_react28.default.useState(!1), data = (0, import_react27.useLoaderData)();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "flex w-full flex-col gap-2 border-2 border-pink-500", children: data.pdfLibrary.map((kdbEntry) => /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(
+  let [edit, setEdit] = import_react27.default.useState(!1), data = (0, import_react26.useLoaderData)();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "flex w-full flex-col gap-2 border-2 border-pink-500", children: data.pdfLibrary.map((kdbEntry) => /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(
     "div",
     {
       className: "flex w-full flex-col items-stretch gap-4 rounded-md border-2 p-1",
       children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "flex flex-col items-center justify-between gap-2  text-xs md:flex-row md:items-baseline", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("p", { className: "text-base font-bold", children: kdbEntry.title }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "flex flex-col items-center justify-between gap-2  text-xs md:flex-row md:items-baseline", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("p", { className: "text-base font-bold", children: kdbEntry.title }, void 0, !1, {
             fileName: "app/components/kdb-components/pdf-library-list.tsx",
-            lineNumber: 21,
+            lineNumber: 20,
             columnNumber: 13
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("p", { className: "text-xs font-bold", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("p", { className: "text-xs font-bold", children: [
             "(",
             kdbEntry.pubYear,
             ")"
           ] }, void 0, !0, {
             fileName: "app/components/kdb-components/pdf-library-list.tsx",
-            lineNumber: 22,
+            lineNumber: 21,
             columnNumber: 13
           }, this)
         ] }, void 0, !0, {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
-          lineNumber: 20,
+          lineNumber: 19,
           columnNumber: 11
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(AccordianTriggerBar, { kdbEntry, children: /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "flex h-full flex-col items-start gap-2 border-2 border-indigo-500 px-4 py-2 md:flex-row", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("ul", { className: "flex border-2 border-lime-500 px-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("li", { className: "flex list-none flex-col gap-2 text-teal-400", children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("p", { className: "text-xs font-bold underline", children: "Abstract:" }, void 0, !1, {
-              fileName: "app/components/kdb-components/pdf-library-list.tsx",
-              lineNumber: 28,
-              columnNumber: 19
-            }, this),
-            kdbEntry.abstract ? /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("p", { className: "text-xs", children: kdbEntry.abstract }, void 0, !1, {
-              fileName: "app/components/kdb-components/pdf-library-list.tsx",
-              lineNumber: 30,
-              columnNumber: 21
-            }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(import_jsx_dev_runtime30.Fragment, { children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("p", { className: "text-xs", children: "no abstract" }, void 0, !1, {
-                fileName: "app/components/kdb-components/pdf-library-list.tsx",
-                lineNumber: 33,
-                columnNumber: 23
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("button", { onClick: () => setEdit(!0), children: "add abstract" }, void 0, !1, {
-                fileName: "app/components/kdb-components/pdf-library-list.tsx",
-                lineNumber: 34,
-                columnNumber: 23
-              }, this),
-              edit ? /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(EditAbstract, { pdfId: kdbEntry.id }, void 0, !1, {
-                fileName: "app/components/kdb-components/pdf-library-list.tsx",
-                lineNumber: 37,
-                columnNumber: 31
-              }, this) : null
-            ] }, void 0, !0, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(AccordianTriggerBar, { kdbEntry, children: /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "flex h-full flex-col items-start gap-2 border-2 border-indigo-500 px-4 py-2 md:flex-row", children: /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("ul", { className: "flex border-2 border-lime-500 px-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("li", { className: "flex list-none flex-col gap-2 text-teal-400", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("p", { className: "text-xs font-bold underline", children: "Abstract:" }, void 0, !1, {
+            fileName: "app/components/kdb-components/pdf-library-list.tsx",
+            lineNumber: 27,
+            columnNumber: 19
+          }, this),
+          kdbEntry.abstract ? /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("p", { className: "text-xs", children: kdbEntry.abstract }, void 0, !1, {
+            fileName: "app/components/kdb-components/pdf-library-list.tsx",
+            lineNumber: 29,
+            columnNumber: 21
+          }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(import_jsx_dev_runtime29.Fragment, { children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("p", { className: "text-xs", children: "no abstract" }, void 0, !1, {
               fileName: "app/components/kdb-components/pdf-library-list.tsx",
               lineNumber: 32,
-              columnNumber: 21
+              columnNumber: 23
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "flex flex-col justify-between", children: [
-                /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("p", { className: "text-xs font-bold underline", children: "Authors:" }, void 0, !1, {
-                  fileName: "app/components/kdb-components/pdf-library-list.tsx",
-                  lineNumber: 42,
-                  columnNumber: 23
-                }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("p", { className: "text-xs", children: kdbEntry.authors.join(", ") }, void 0, !1, {
-                  fileName: "app/components/kdb-components/pdf-library-list.tsx",
-                  lineNumber: 43,
-                  columnNumber: 23
-                }, this)
-              ] }, void 0, !0, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("button", { onClick: () => setEdit(!0), children: "add abstract" }, void 0, !1, {
+              fileName: "app/components/kdb-components/pdf-library-list.tsx",
+              lineNumber: 33,
+              columnNumber: 23
+            }, this),
+            edit ? /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(EditAbstract, { pdfId: kdbEntry.id }, void 0, !1, {
+              fileName: "app/components/kdb-components/pdf-library-list.tsx",
+              lineNumber: 36,
+              columnNumber: 31
+            }, this) : null
+          ] }, void 0, !0, {
+            fileName: "app/components/kdb-components/pdf-library-list.tsx",
+            lineNumber: 31,
+            columnNumber: 21
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "flex flex-col gap-2", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "flex flex-col justify-between", children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("p", { className: "text-xs font-bold underline", children: "Authors:" }, void 0, !1, {
                 fileName: "app/components/kdb-components/pdf-library-list.tsx",
                 lineNumber: 41,
-                columnNumber: 21
+                columnNumber: 23
               }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "flex flex-row items-center justify-between", children: [
-                /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "flex flex-col", children: [
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("p", { className: "text-xs font-bold underline", children: "PMID:" }, void 0, !1, {
-                    fileName: "app/components/kdb-components/pdf-library-list.tsx",
-                    lineNumber: 47,
-                    columnNumber: 25
-                  }, this),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("p", { className: "text-xs", children: kdbEntry.pmid }, void 0, !1, {
-                    fileName: "app/components/kdb-components/pdf-library-list.tsx",
-                    lineNumber: 48,
-                    columnNumber: 25
-                  }, this)
-                ] }, void 0, !0, {
-                  fileName: "app/components/kdb-components/pdf-library-list.tsx",
-                  lineNumber: 46,
-                  columnNumber: 23
-                }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "flex flex-col", children: [
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("p", { className: "text-xs font-bold underline", children: "PMCID:" }, void 0, !1, {
-                    fileName: "app/components/kdb-components/pdf-library-list.tsx",
-                    lineNumber: 51,
-                    columnNumber: 25
-                  }, this),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("p", { className: "text-xs", children: kdbEntry.pmcid }, void 0, !1, {
-                    fileName: "app/components/kdb-components/pdf-library-list.tsx",
-                    lineNumber: 52,
-                    columnNumber: 25
-                  }, this)
-                ] }, void 0, !0, {
-                  fileName: "app/components/kdb-components/pdf-library-list.tsx",
-                  lineNumber: 50,
-                  columnNumber: 23
-                }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(
-                  import_react27.Link,
-                  {
-                    target: "_blank",
-                    rel: "noopener noreferrer",
-                    to: kdbEntry.internalPdfUrl,
-                    className: "text-xs",
-                    children: /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("p", { className: "text-xs font-bold underline", children: "Download PDF" }, void 0, !1, {
-                      fileName: "app/components/kdb-components/pdf-library-list.tsx",
-                      lineNumber: 60,
-                      columnNumber: 25
-                    }, this)
-                  },
-                  void 0,
-                  !1,
-                  {
-                    fileName: "app/components/kdb-components/pdf-library-list.tsx",
-                    lineNumber: 54,
-                    columnNumber: 23
-                  },
-                  this
-                )
-              ] }, void 0, !0, {
+              /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("p", { className: "text-xs", children: kdbEntry.authors.join(", ") }, void 0, !1, {
                 fileName: "app/components/kdb-components/pdf-library-list.tsx",
-                lineNumber: 45,
-                columnNumber: 21
+                lineNumber: 42,
+                columnNumber: 23
               }, this)
             ] }, void 0, !0, {
               fileName: "app/components/kdb-components/pdf-library-list.tsx",
               lineNumber: 40,
-              columnNumber: 19
+              columnNumber: 21
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "flex flex-row items-center justify-between", children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "flex flex-col", children: [
+                /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("p", { className: "text-xs font-bold underline", children: "PMID:" }, void 0, !1, {
+                  fileName: "app/components/kdb-components/pdf-library-list.tsx",
+                  lineNumber: 46,
+                  columnNumber: 25
+                }, this),
+                /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("p", { className: "text-xs", children: kdbEntry.pmid }, void 0, !1, {
+                  fileName: "app/components/kdb-components/pdf-library-list.tsx",
+                  lineNumber: 47,
+                  columnNumber: 25
+                }, this)
+              ] }, void 0, !0, {
+                fileName: "app/components/kdb-components/pdf-library-list.tsx",
+                lineNumber: 45,
+                columnNumber: 23
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "flex flex-col", children: [
+                /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("p", { className: "text-xs font-bold underline", children: "PMCID:" }, void 0, !1, {
+                  fileName: "app/components/kdb-components/pdf-library-list.tsx",
+                  lineNumber: 50,
+                  columnNumber: 25
+                }, this),
+                /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("p", { className: "text-xs", children: kdbEntry.pmcid }, void 0, !1, {
+                  fileName: "app/components/kdb-components/pdf-library-list.tsx",
+                  lineNumber: 51,
+                  columnNumber: 25
+                }, this)
+              ] }, void 0, !0, {
+                fileName: "app/components/kdb-components/pdf-library-list.tsx",
+                lineNumber: 49,
+                columnNumber: 23
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(
+                import_react26.Link,
+                {
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  to: kdbEntry.internalPdfUrl,
+                  className: "text-xs",
+                  children: /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("p", { className: "text-xs font-bold underline", children: "Download PDF" }, void 0, !1, {
+                    fileName: "app/components/kdb-components/pdf-library-list.tsx",
+                    lineNumber: 59,
+                    columnNumber: 25
+                  }, this)
+                },
+                void 0,
+                !1,
+                {
+                  fileName: "app/components/kdb-components/pdf-library-list.tsx",
+                  lineNumber: 53,
+                  columnNumber: 23
+                },
+                this
+              )
+            ] }, void 0, !0, {
+              fileName: "app/components/kdb-components/pdf-library-list.tsx",
+              lineNumber: 44,
+              columnNumber: 21
             }, this)
           ] }, void 0, !0, {
             fileName: "app/components/kdb-components/pdf-library-list.tsx",
-            lineNumber: 27,
-            columnNumber: 17
-          }, this) }, void 0, !1, {
-            fileName: "app/components/kdb-components/pdf-library-list.tsx",
-            lineNumber: 26,
-            columnNumber: 15
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(PdfViewer, { pdfUrl: kdbEntry.internalPdfUrl }, void 0, !1, {
-            fileName: "app/components/kdb-components/pdf-library-list.tsx",
-            lineNumber: 68,
-            columnNumber: 15
+            lineNumber: 39,
+            columnNumber: 19
           }, this)
         ] }, void 0, !0, {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
+          lineNumber: 26,
+          columnNumber: 17
+        }, this) }, void 0, !1, {
+          fileName: "app/components/kdb-components/pdf-library-list.tsx",
           lineNumber: 25,
-          columnNumber: 13
+          columnNumber: 15
         }, this) }, void 0, !1, {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
           lineNumber: 24,
+          columnNumber: 13
+        }, this) }, void 0, !1, {
+          fileName: "app/components/kdb-components/pdf-library-list.tsx",
+          lineNumber: 23,
           columnNumber: 11
         }, this)
       ]
@@ -3505,109 +3363,109 @@ function PdfList() {
     !0,
     {
       fileName: "app/components/kdb-components/pdf-library-list.tsx",
-      lineNumber: 16,
+      lineNumber: 15,
       columnNumber: 9
     },
     this
   )) }, void 0, !1, {
     fileName: "app/components/kdb-components/pdf-library-list.tsx",
-    lineNumber: 14,
+    lineNumber: 13,
     columnNumber: 5
   }, this);
 }
 function AccordianTriggerBar(props) {
-  let { children, kdbEntry } = props, [open, setOpen] = import_react28.default.useState(!1), toggleOpen = (0, import_react28.useCallback)(() => {
+  let { children, kdbEntry } = props, [open, setOpen] = import_react27.default.useState(!1), toggleOpen = (0, import_react27.useCallback)(() => {
     setOpen((open2) => !open2);
   }, []);
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "flex flex-col gap-2 rounded-md md:gap-4", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "flex flex-row items-center justify-between gap-2 text-xs", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "flex flex-col items-start gap-1 ", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("p", { className: "text-xs font-bold underline", children: "Journal" }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "flex flex-col gap-2 rounded-md md:gap-4", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "flex flex-row items-center justify-between gap-2 text-xs", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "flex flex-col items-start gap-1 ", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("p", { className: "text-xs font-bold underline", children: "Journal" }, void 0, !1, {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
-          lineNumber: 94,
+          lineNumber: 92,
           columnNumber: 11
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("p", { className: "text-xs font-bold", children: kdbEntry.journal }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("p", { className: "text-xs font-bold", children: kdbEntry.journal }, void 0, !1, {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
-          lineNumber: 95,
+          lineNumber: 93,
           columnNumber: 11
         }, this)
       ] }, void 0, !0, {
         fileName: "app/components/kdb-components/pdf-library-list.tsx",
-        lineNumber: 93,
+        lineNumber: 91,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "grow" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "grow" }, void 0, !1, {
+        fileName: "app/components/kdb-components/pdf-library-list.tsx",
+        lineNumber: 95,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(AccordianNavBar, { kdbEntry }, void 0, !1, {
         fileName: "app/components/kdb-components/pdf-library-list.tsx",
         lineNumber: 97,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(AccordianNavBar, { kdbEntry }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "grow" }, void 0, !1, {
         fileName: "app/components/kdb-components/pdf-library-list.tsx",
-        lineNumber: 99,
+        lineNumber: 98,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "grow" }, void 0, !1, {
-        fileName: "app/components/kdb-components/pdf-library-list.tsx",
-        lineNumber: 100,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "flex flex-col items-end gap-1", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("p", { className: "text-xs font-bold underline", children: "Publication Year" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "flex flex-col items-end gap-1", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("p", { className: "text-xs font-bold underline", children: "Publication Year" }, void 0, !1, {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
-          lineNumber: 103,
+          lineNumber: 101,
           columnNumber: 11
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("p", { className: "text-xs font-bold", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("p", { className: "text-xs font-bold", children: [
           "(",
           kdbEntry.pubYear,
           ")"
         ] }, void 0, !0, {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
-          lineNumber: 104,
+          lineNumber: 102,
           columnNumber: 11
         }, this)
       ] }, void 0, !0, {
         fileName: "app/components/kdb-components/pdf-library-list.tsx",
-        lineNumber: 102,
+        lineNumber: 100,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "flex flex-col items-center justify-center pl-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(
+      /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "flex flex-col items-center justify-center pl-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(
         "button",
         {
           type: "button",
           onClick: toggleOpen,
           "aria-label": "Search database",
           className: "rounded-md p-2 text-teal-400 transition-all duration-300 hover:backdrop-blur-sm",
-          children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "flex flex-col items-end gap-1", children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("p", { className: "text-xs font-bold", children: "Hide Details" }, void 0, !1, {
+          children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "flex flex-col items-end gap-1", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("p", { className: "text-xs font-bold", children: "Hide Details" }, void 0, !1, {
               fileName: "app/components/kdb-components/pdf-library-list.tsx",
-              lineNumber: 115,
+              lineNumber: 113,
               columnNumber: 17
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(import_react_icons7.ChevronUpIcon, {}, void 0, !1, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(import_react_icons7.ChevronUpIcon, {}, void 0, !1, {
               fileName: "app/components/kdb-components/pdf-library-list.tsx",
-              lineNumber: 116,
+              lineNumber: 114,
               columnNumber: 17
             }, this)
           ] }, void 0, !0, {
             fileName: "app/components/kdb-components/pdf-library-list.tsx",
-            lineNumber: 114,
+            lineNumber: 112,
             columnNumber: 15
-          }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "flex flex-col items-end gap-1", children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("p", { className: "text-xs font-bold", children: "View Details" }, void 0, !1, {
+          }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "flex flex-col items-end gap-1", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("p", { className: "text-xs font-bold", children: "View Details" }, void 0, !1, {
               fileName: "app/components/kdb-components/pdf-library-list.tsx",
-              lineNumber: 120,
+              lineNumber: 118,
               columnNumber: 17
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(import_react_icons7.ChevronDownIcon, {}, void 0, !1, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(import_react_icons7.ChevronDownIcon, {}, void 0, !1, {
               fileName: "app/components/kdb-components/pdf-library-list.tsx",
-              lineNumber: 121,
+              lineNumber: 119,
               columnNumber: 17
             }, this)
           ] }, void 0, !0, {
             fileName: "app/components/kdb-components/pdf-library-list.tsx",
-            lineNumber: 119,
+            lineNumber: 117,
             columnNumber: 15
           }, this)
         },
@@ -3615,30 +3473,30 @@ function AccordianTriggerBar(props) {
         !1,
         {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
-          lineNumber: 107,
+          lineNumber: 105,
           columnNumber: 11
         },
         this
       ) }, void 0, !1, {
         fileName: "app/components/kdb-components/pdf-library-list.tsx",
-        lineNumber: 106,
+        lineNumber: 104,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/components/kdb-components/pdf-library-list.tsx",
-      lineNumber: 92,
+      lineNumber: 90,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(import_framer_motion.AnimatePresence, { children: open && /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(
+    /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(import_framer_motion.AnimatePresence, { children: open && /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(
       import_framer_motion.motion.div,
       {
         initial: { opacity: 0, height: 0 },
         animate: { opacity: 1, height: "auto" },
         exit: { opacity: 0, height: 0 },
         transition: { type: "tween" },
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "flex  flex-col items-stretch", children }, void 0, !1, {
+        children: /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "flex  flex-col items-stretch", children }, void 0, !1, {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
-          lineNumber: 136,
+          lineNumber: 134,
           columnNumber: 13
         }, this)
       },
@@ -3646,31 +3504,31 @@ function AccordianTriggerBar(props) {
       !1,
       {
         fileName: "app/components/kdb-components/pdf-library-list.tsx",
-        lineNumber: 129,
+        lineNumber: 127,
         columnNumber: 11
       },
       this
     ) }, void 0, !1, {
       fileName: "app/components/kdb-components/pdf-library-list.tsx",
-      lineNumber: 127,
+      lineNumber: 125,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/kdb-components/pdf-library-list.tsx",
-    lineNumber: 91,
+    lineNumber: 89,
     columnNumber: 5
   }, this);
 }
 function AccordianNavBar({ kdbEntry }) {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "flex flex-col items-center gap-1", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("p", { className: "text-xs font-bold underline", children: "Links" }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "flex flex-col items-center gap-1", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("p", { className: "text-xs font-bold underline", children: "Links" }, void 0, !1, {
       fileName: "app/components/kdb-components/pdf-library-list.tsx",
-      lineNumber: 147,
+      lineNumber: 145,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "flex flex-row items-center justify-between gap-2 text-xs", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(
-        import_react27.Link,
+    /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)("div", { className: "flex flex-row items-center justify-between gap-2 text-xs", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(
+        import_react26.Link,
         {
           to: `https://pubmed.ncbi.nlm.nih.gov/${kdbEntry.pmid}/`,
           className: "text-xs font-bold hover:cursor-pointer",
@@ -3682,13 +3540,13 @@ function AccordianNavBar({ kdbEntry }) {
         !1,
         {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
-          lineNumber: 150,
+          lineNumber: 148,
           columnNumber: 9
         },
         this
       ),
-      kdbEntry.pmcid ? /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(
-        import_react27.Link,
+      kdbEntry.pmcid ? /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(
+        import_react26.Link,
         {
           to: `https://www.ncbi.nlm.nih.gov/pmc/${kdbEntry.pmcid}/`,
           className: "text-xs font-bold hover:cursor-pointer",
@@ -3700,13 +3558,13 @@ function AccordianNavBar({ kdbEntry }) {
         !1,
         {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
-          lineNumber: 159,
+          lineNumber: 157,
           columnNumber: 11
         },
         this
       ) : null,
-      /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(
-        import_react27.Link,
+      /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(
+        import_react26.Link,
         {
           to: `https://doi.org/${kdbEntry.doi}`,
           className: "text-xs font-bold hover:cursor-pointer",
@@ -3718,13 +3576,13 @@ function AccordianNavBar({ kdbEntry }) {
         !1,
         {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
-          lineNumber: 168,
+          lineNumber: 166,
           columnNumber: 9
         },
         this
       ),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(
-        import_react27.Link,
+      /* @__PURE__ */ (0, import_jsx_dev_runtime29.jsxDEV)(
+        import_react26.Link,
         {
           to: kdbEntry.semanticScholarUrl,
           className: "text-xs font-bold hover:cursor-pointer",
@@ -3736,25 +3594,25 @@ function AccordianNavBar({ kdbEntry }) {
         !1,
         {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
-          lineNumber: 176,
+          lineNumber: 174,
           columnNumber: 9
         },
         this
       )
     ] }, void 0, !0, {
       fileName: "app/components/kdb-components/pdf-library-list.tsx",
-      lineNumber: 149,
+      lineNumber: 147,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/kdb-components/pdf-library-list.tsx",
-    lineNumber: 146,
+    lineNumber: 144,
     columnNumber: 5
   }, this);
 }
 
 // app/routes/kdb.tsx
-var import_jsx_dev_runtime31 = require("react/jsx-dev-runtime");
+var import_jsx_dev_runtime30 = require("react/jsx-dev-runtime");
 function shouldRevalidate() {
   return !0;
 }
@@ -3805,8 +3663,8 @@ async function loader10({ request, params }) {
   return (0, import_node16.json)({ pdfLibrary });
 }
 function KdbIndex() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime31.jsxDEV)("div", { className: "mt-15 mb-10 flex h-screen  w-full flex-col items-center justify-center md:flex-row", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime31.jsxDEV)("div", { className: "mt-5 flex h-[24px] w-full flex-col items-center justify-center border-2 border-green-500 md:h-screen md:w-1/5", children: /* @__PURE__ */ (0, import_jsx_dev_runtime31.jsxDEV)(import_react29.NavLink, { to: "/kdb/new", children: "add new pdf" }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "mt-15 mb-10 flex h-screen  w-full flex-col items-center justify-center md:flex-row", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "mt-5 flex h-[24px] w-full flex-col items-center justify-center border-2 border-green-500 md:h-screen md:w-1/5", children: /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(import_react28.NavLink, { to: "/kdb/new", children: "add new pdf" }, void 0, !1, {
       fileName: "app/routes/kdb.tsx",
       lineNumber: 73,
       columnNumber: 9
@@ -3815,13 +3673,13 @@ function KdbIndex() {
       lineNumber: 72,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime31.jsxDEV)("div", { className: "flex h-full w-full flex-col items-center gap-2 overflow-scroll border-2  border-red-500 md:h-screen md:w-4/5", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime31.jsxDEV)(KdbWelcome, {}, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)("div", { className: "flex h-full w-full flex-col items-center gap-2 overflow-scroll border-2  border-red-500 md:h-screen md:w-4/5", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(KdbWelcome, {}, void 0, !1, {
         fileName: "app/routes/kdb.tsx",
         lineNumber: 77,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime31.jsxDEV)(PdfList, {}, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime30.jsxDEV)(PdfList, {}, void 0, !1, {
         fileName: "app/routes/kdb.tsx",
         lineNumber: 78,
         columnNumber: 9
@@ -3842,7 +3700,7 @@ function KdbIndex() {
 var wip_exports = {};
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-FBCYLF7R.js", imports: ["/build/_shared/chunk-OAPPX4FA.js", "/build/_shared/chunk-7PHB3BFD.js", "/build/_shared/chunk-WEAPBHQG.js", "/build/_shared/chunk-DX52VIOO.js", "/build/_shared/chunk-CJ4MY3PQ.js", "/build/_shared/chunk-7NDLCGQO.js", "/build/_shared/chunk-JR22VO6P.js", "/build/_shared/chunk-PZDJHGND.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-HFI65HLK.js", imports: ["/build/_shared/chunk-NM2LW7XR.js", "/build/_shared/chunk-AOZUJPOG.js", "/build/_shared/chunk-W2GPJMPS.js", "/build/_shared/chunk-2QJY4JOV.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-DW7AKARM.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/actions.pdf": { id: "routes/actions.pdf", parentId: "root", path: "actions/pdf", index: void 0, caseSensitive: void 0, module: "/build/routes/actions.pdf-TYHB7UYC.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-SFQT2WUG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-A7V7XDGM.js", imports: ["/build/_shared/chunk-DMXF4JPK.js", "/build/_shared/chunk-Q7HWUQY2.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-NIGJBPRW.js", imports: ["/build/_shared/chunk-Q7HWUQY2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-5XSRWSIQ.js", imports: ["/build/_shared/chunk-2QJY4JOV.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-YC6ROTJG.js", imports: ["/build/_shared/chunk-JNOKBHGH.js", "/build/_shared/chunk-DMXF4JPK.js", "/build/_shared/chunk-Q7HWUQY2.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/genes": { id: "routes/genes", parentId: "root", path: "genes", index: void 0, caseSensitive: void 0, module: "/build/routes/genes-TW2HJ6VV.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/genes.server": { id: "routes/genes.server", parentId: "routes/genes", path: "server", index: void 0, caseSensitive: void 0, module: "/build/routes/genes.server-ZZLOBN2E.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb": { id: "routes/kdb", parentId: "root", path: "kdb", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb-TCDBXFTN.js", imports: ["/build/_shared/chunk-FAXQTAW5.js", "/build/_shared/chunk-Q7HWUQY2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb.$pdfId.edit-abstract": { id: "routes/kdb.$pdfId.edit-abstract", parentId: "routes/kdb", path: ":pdfId/edit-abstract", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb.$pdfId.edit-abstract-TWL2YCI5.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.$pdfId": { id: "routes/kdb_.$pdfId", parentId: "root", path: "kdb/:pdfId", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.$pdfId-YWPZZRFN.js", imports: ["/build/_shared/chunk-BAGSKRUP.js", "/build/_shared/chunk-JNOKBHGH.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.new": { id: "routes/kdb_.new", parentId: "root", path: "kdb/new", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.new-QKE3JTRT.js", imports: ["/build/_shared/chunk-FAXQTAW5.js", "/build/_shared/chunk-BAGSKRUP.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-7TMZ2OS7.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-ZZ77JVE3.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-4IKI3ZML.js", imports: ["/build/_shared/chunk-RPEN4MYX.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-YO5RWVW7.js", imports: ["/build/_shared/chunk-W2GPJMPS.js", "/build/_shared/chunk-2QJY4JOV.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-RRE364TZ.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/wip": { id: "routes/wip", parentId: "root", path: "wip", index: void 0, caseSensitive: void 0, module: "/build/routes/wip-7RWPNJ72.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "d5e4f71f", hmr: { runtime: "/build/_shared/chunk-7NDLCGQO.js", timestamp: 1686908420853 }, url: "/build/manifest-D5E4F71F.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-ZST4TBUP.js", imports: ["/build/_shared/chunk-ZWGWGGVF.js", "/build/_shared/chunk-XU7DNSPJ.js", "/build/_shared/chunk-GIAAE3CH.js", "/build/_shared/chunk-B3XGAVOJ.js", "/build/_shared/chunk-BOXFZXVX.js", "/build/_shared/chunk-FYE7RXT4.js", "/build/_shared/chunk-UWV35TSL.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-HXKEEHZ3.js", imports: ["/build/_shared/chunk-YHIUPQAQ.js", "/build/_shared/chunk-W4JOHJUN.js", "/build/_shared/chunk-ZTEULLCC.js", "/build/_shared/chunk-NMZL6IDN.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-3337B4DZ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/actions.pdf": { id: "routes/actions.pdf", parentId: "root", path: "actions/pdf", index: void 0, caseSensitive: void 0, module: "/build/routes/actions.pdf-K73GFXMQ.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-BLVKSIZC.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-X4J4WQ66.js", imports: ["/build/_shared/chunk-VLOORRQ2.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-4ELLFVPN.js", imports: ["/build/_shared/chunk-4T5KGPBP.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-GMZYN2OI.js", imports: ["/build/_shared/chunk-NMZL6IDN.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-6MKSVMMH.js", imports: ["/build/_shared/chunk-JNOKBHGH.js", "/build/_shared/chunk-VLOORRQ2.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/genes": { id: "routes/genes", parentId: "root", path: "genes", index: void 0, caseSensitive: void 0, module: "/build/routes/genes-S74C53LR.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/genes.server": { id: "routes/genes.server", parentId: "routes/genes", path: "server", index: void 0, caseSensitive: void 0, module: "/build/routes/genes.server-HPSUZRDK.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb": { id: "routes/kdb", parentId: "root", path: "kdb", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb-H3FXLPIP.js", imports: ["/build/_shared/chunk-4T5KGPBP.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb.$pdfId.edit-abstract": { id: "routes/kdb.$pdfId.edit-abstract", parentId: "routes/kdb", path: ":pdfId/edit-abstract", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb.$pdfId.edit-abstract-VIGQUX6B.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.$pdfId": { id: "routes/kdb_.$pdfId", parentId: "root", path: "kdb/:pdfId", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.$pdfId-HE6VHWNV.js", imports: ["/build/_shared/chunk-P745DJB6.js", "/build/_shared/chunk-JNOKBHGH.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.new": { id: "routes/kdb_.new", parentId: "root", path: "kdb/new", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.new-TJNCNQG4.js", imports: ["/build/_shared/chunk-P745DJB6.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-E6NJ4WKB.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-SEBFCP57.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-P4UMW4JP.js", imports: ["/build/_shared/chunk-NOWEFZI5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-MHIVRS33.js", imports: ["/build/_shared/chunk-ZTEULLCC.js", "/build/_shared/chunk-NMZL6IDN.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-ZP5XECGE.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/wip": { id: "routes/wip", parentId: "root", path: "wip", index: void 0, caseSensitive: void 0, module: "/build/routes/wip-4BDBACDH.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "98e26e56", hmr: { runtime: "/build/_shared/chunk-FYE7RXT4.js", timestamp: 1686908561837 }, url: "/build/manifest-98E26E56.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { unstable_dev: !0, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !1, v2_headers: !1, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_react_stream_exports }, dev = { port: 3001 }, routes = {

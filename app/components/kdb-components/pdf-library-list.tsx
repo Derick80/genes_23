@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import React, { useCallback } from "react";
 import type { loader } from "~/routes/kdb";
 import type { PdfLibrary } from "~/types/kdb-types";
-import PdfViewer from "./pdf-viewer";
 import EditAbstract from "./pdf-edit-abstract";
 
 export default function PdfList() {
@@ -65,7 +64,6 @@ export default function PdfList() {
                   </div>
                 </li>
               </ul>
-              <PdfViewer pdfUrl={kdbEntry.internalPdfUrl} />
             </div>
           </AccordianTriggerBar>
         </div>
