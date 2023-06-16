@@ -35,7 +35,6 @@
     "prettier-plugin-tailwindcss": "^0.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-pdf": "^7.1.2",
     "upgrade": "^1.1.0",
     "zod": "^3.21.4",
     "zodix": "^0.4.0"
