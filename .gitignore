@@ -10,6 +10,6 @@ node_modules
 prisma/acmg_clinvartojson.json
 prisma/acmg_gene_list.json
 prisma/acmg-clinvar-data.ts
-prisma/gnomad_lof_metrics.json
 prisma/gnomad_plof_symbols.json
 prisma/seed-acmg-clinvar.ts
+prisma/gnomad_lof_metrics.json
