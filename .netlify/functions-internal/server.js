@@ -1,4 +1,3 @@
-"use strict";
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -22,23 +21,18 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   mod
 )), __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: !0 }), mod);
 
-// server.ts
-var server_exports = {};
-__export(server_exports, {
-  handler: () => handler
-});
-module.exports = __toCommonJS(server_exports);
-
-// server-entry-module:@remix-run/dev/server-build
-var server_build_exports = {};
-__export(server_build_exports, {
+// <stdin>
+var stdin_exports = {};
+__export(stdin_exports, {
   assets: () => assets_manifest_default,
   assetsBuildDirectory: () => assetsBuildDirectory,
+  dev: () => dev,
   entry: () => entry,
   future: () => future,
   publicPath: () => publicPath,
   routes: () => routes
 });
+module.exports = __toCommonJS(stdin_exports);
 
 // node_modules/@remix-run/dev/dist/config/defaults/node/entry.server.react-stream.tsx
 var entry_server_react_stream_exports = {};
@@ -2658,10 +2652,10 @@ var import_node14 = require("@remix-run/node"), import_react19 = require("@remix
 var import_react18 = require("@remix-run/react");
 
 // app/components/kdb-components/pdf-viewer.tsx
-var import_react17 = require("react"), import_react_pdf = require("react-pdf"), import_jsx_dev_runtime17 = require("react/jsx-dev-runtime");
-import_react_pdf.pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${import_react_pdf.pdfjs.version}/pdf.worker.js`;
+var import_react17 = require("react"), import_core = require("@react-pdf-viewer/core"), import_default_layout = require("@react-pdf-viewer/default-layout");
+var import_jsx_dev_runtime17 = require("react/jsx-dev-runtime");
 function PdfViewer({ pdfUrl }) {
-  let [numPages, setNumPages] = (0, import_react17.useState)(1), [pageNumber, setPageNumber] = (0, import_react17.useState)(1), onDocumentLoadSuccess = ({ numPages: numPages2 }) => {
+  let [numPages, setNumPages] = (0, import_react17.useState)(1), [pageNumber, setPageNumber] = (0, import_react17.useState)(1), defaultLayoutPluginInstance = (0, import_default_layout.defaultLayoutPlugin)(), onDocumentLoadSuccess = ({ numPages: numPages2 }) => {
     setNumPages(numPages2);
   };
   function nextPage() {
@@ -2673,7 +2667,7 @@ function PdfViewer({ pdfUrl }) {
   function resetPage() {
     setPageNumber(1);
   }
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "flex h-full flex-col gap-2 px-2", children: [
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_core.Worker, { workerUrl: "https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.js", children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "flex h-full flex-col gap-2 px-2", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)("div", { className: "margin-[20px] flex flex-row items-center justify-center gap-2", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
         "button",
@@ -2687,7 +2681,7 @@ function PdfViewer({ pdfUrl }) {
         !1,
         {
           fileName: "app/components/kdb-components/pdf-viewer.tsx",
-          lineNumber: 31,
+          lineNumber: 37,
           columnNumber: 9
         },
         this
@@ -2703,7 +2697,7 @@ function PdfViewer({ pdfUrl }) {
         !1,
         {
           fileName: "app/components/kdb-components/pdf-viewer.tsx",
-          lineNumber: 38,
+          lineNumber: 44,
           columnNumber: 9
         },
         this
@@ -2720,37 +2714,35 @@ function PdfViewer({ pdfUrl }) {
         !1,
         {
           fileName: "app/components/kdb-components/pdf-viewer.tsx",
-          lineNumber: 44,
+          lineNumber: 50,
           columnNumber: 9
         },
         this
       )
     ] }, void 0, !0, {
       fileName: "app/components/kdb-components/pdf-viewer.tsx",
-      lineNumber: 30,
+      lineNumber: 36,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-      import_react_pdf.Document,
+      "div",
       {
-        onLoadSuccess: onDocumentLoadSuccess,
-        file: pdfUrl,
-        onContextMenu: (e) => e.preventDefault(),
-        className: "flex w-[300px] h-[420px] justify-center border-2 border-yellow-500",
+        className: "flex w-full h-[420px] justify-center border-2 border-yellow-500 overflow-auto",
         children: /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
-          import_react_pdf.Page,
+          import_core.Viewer,
           {
-            scale: 0.5,
-            renderAnnotationLayer: !1,
-            renderTextLayer: !1,
-            pageNumber
+            fileUrl: pdfUrl,
+            plugins: [
+              defaultLayoutPluginInstance
+            ],
+            defaultScale: import_core.SpecialZoomLevel.PageFit
           },
           void 0,
           !1,
           {
             fileName: "app/components/kdb-components/pdf-viewer.tsx",
-            lineNumber: 58,
-            columnNumber: 9
+            lineNumber: 63,
+            columnNumber: 7
           },
           this
         )
@@ -2759,7 +2751,7 @@ function PdfViewer({ pdfUrl }) {
       !1,
       {
         fileName: "app/components/kdb-components/pdf-viewer.tsx",
-        lineNumber: 52,
+        lineNumber: 58,
         columnNumber: 7
       },
       this
@@ -2770,12 +2762,16 @@ function PdfViewer({ pdfUrl }) {
       numPages
     ] }, void 0, !0, {
       fileName: "app/components/kdb-components/pdf-viewer.tsx",
-      lineNumber: 65,
+      lineNumber: 72,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/kdb-components/pdf-viewer.tsx",
-    lineNumber: 29,
+    lineNumber: 35,
+    columnNumber: 5
+  }, this) }, void 0, !1, {
+    fileName: "app/components/kdb-components/pdf-viewer.tsx",
+    lineNumber: 33,
     columnNumber: 5
   }, this);
 }
@@ -3846,10 +3842,10 @@ function KdbIndex() {
 var wip_exports = {};
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-FBCYLF7R.js", imports: ["/build/_shared/chunk-OAPPX4FA.js", "/build/_shared/chunk-7PHB3BFD.js", "/build/_shared/chunk-WEAPBHQG.js", "/build/_shared/chunk-DX52VIOO.js", "/build/_shared/chunk-CJ4MY3PQ.js", "/build/_shared/chunk-7NDLCGQO.js", "/build/_shared/chunk-JR22VO6P.js", "/build/_shared/chunk-PZDJHGND.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-HFI65HLK.js", imports: ["/build/_shared/chunk-NM2LW7XR.js", "/build/_shared/chunk-AOZUJPOG.js", "/build/_shared/chunk-W2GPJMPS.js", "/build/_shared/chunk-2QJY4JOV.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-DW7AKARM.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/actions.pdf": { id: "routes/actions.pdf", parentId: "root", path: "actions/pdf", index: void 0, caseSensitive: void 0, module: "/build/routes/actions.pdf-TYHB7UYC.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-SFQT2WUG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-A7V7XDGM.js", imports: ["/build/_shared/chunk-DMXF4JPK.js", "/build/_shared/chunk-Q7HWUQY2.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-NIGJBPRW.js", imports: ["/build/_shared/chunk-Q7HWUQY2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-5XSRWSIQ.js", imports: ["/build/_shared/chunk-2QJY4JOV.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-MYWQ2JZ6.js", imports: ["/build/_shared/chunk-JNOKBHGH.js", "/build/_shared/chunk-DMXF4JPK.js", "/build/_shared/chunk-Q7HWUQY2.js", "/build/_shared/chunk-UYUZGEB4.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/genes": { id: "routes/genes", parentId: "root", path: "genes", index: void 0, caseSensitive: void 0, module: "/build/routes/genes-TW2HJ6VV.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/genes.server": { id: "routes/genes.server", parentId: "routes/genes", path: "server", index: void 0, caseSensitive: void 0, module: "/build/routes/genes.server-ZZLOBN2E.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb": { id: "routes/kdb", parentId: "root", path: "kdb", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb-VK7JO63L.js", imports: ["/build/_shared/chunk-IQZMAX2I.js", "/build/_shared/chunk-Q7HWUQY2.js", "/build/_shared/chunk-UYUZGEB4.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb.$pdfId.edit-abstract": { id: "routes/kdb.$pdfId.edit-abstract", parentId: "routes/kdb", path: ":pdfId/edit-abstract", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb.$pdfId.edit-abstract-TWL2YCI5.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.$pdfId": { id: "routes/kdb_.$pdfId", parentId: "root", path: "kdb/:pdfId", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.$pdfId-YWPZZRFN.js", imports: ["/build/_shared/chunk-BAGSKRUP.js", "/build/_shared/chunk-JNOKBHGH.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.new": { id: "routes/kdb_.new", parentId: "root", path: "kdb/new", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.new-BSIUVVOL.js", imports: ["/build/_shared/chunk-IQZMAX2I.js", "/build/_shared/chunk-BAGSKRUP.js", "/build/_shared/chunk-UYUZGEB4.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-7TMZ2OS7.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-ZZ77JVE3.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-4IKI3ZML.js", imports: ["/build/_shared/chunk-RPEN4MYX.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-YO5RWVW7.js", imports: ["/build/_shared/chunk-W2GPJMPS.js", "/build/_shared/chunk-2QJY4JOV.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-RRE364TZ.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/wip": { id: "routes/wip", parentId: "root", path: "wip", index: void 0, caseSensitive: void 0, module: "/build/routes/wip-7RWPNJ72.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "eaf50f15", hmr: { runtime: "/build/_shared/chunk-7NDLCGQO.js", timestamp: 1686905656425 }, url: "/build/manifest-EAF50F15.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-FBCYLF7R.js", imports: ["/build/_shared/chunk-OAPPX4FA.js", "/build/_shared/chunk-7PHB3BFD.js", "/build/_shared/chunk-WEAPBHQG.js", "/build/_shared/chunk-DX52VIOO.js", "/build/_shared/chunk-CJ4MY3PQ.js", "/build/_shared/chunk-7NDLCGQO.js", "/build/_shared/chunk-JR22VO6P.js", "/build/_shared/chunk-PZDJHGND.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-HFI65HLK.js", imports: ["/build/_shared/chunk-NM2LW7XR.js", "/build/_shared/chunk-AOZUJPOG.js", "/build/_shared/chunk-W2GPJMPS.js", "/build/_shared/chunk-2QJY4JOV.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-DW7AKARM.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/actions.pdf": { id: "routes/actions.pdf", parentId: "root", path: "actions/pdf", index: void 0, caseSensitive: void 0, module: "/build/routes/actions.pdf-TYHB7UYC.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-SFQT2WUG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-A7V7XDGM.js", imports: ["/build/_shared/chunk-DMXF4JPK.js", "/build/_shared/chunk-Q7HWUQY2.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-NIGJBPRW.js", imports: ["/build/_shared/chunk-Q7HWUQY2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-5XSRWSIQ.js", imports: ["/build/_shared/chunk-2QJY4JOV.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-YC6ROTJG.js", imports: ["/build/_shared/chunk-JNOKBHGH.js", "/build/_shared/chunk-DMXF4JPK.js", "/build/_shared/chunk-Q7HWUQY2.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/genes": { id: "routes/genes", parentId: "root", path: "genes", index: void 0, caseSensitive: void 0, module: "/build/routes/genes-TW2HJ6VV.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/genes.server": { id: "routes/genes.server", parentId: "routes/genes", path: "server", index: void 0, caseSensitive: void 0, module: "/build/routes/genes.server-ZZLOBN2E.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb": { id: "routes/kdb", parentId: "root", path: "kdb", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb-UPAIC2PG.js", imports: ["/build/_shared/chunk-FAXQTAW5.js", "/build/_shared/chunk-Q7HWUQY2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb.$pdfId.edit-abstract": { id: "routes/kdb.$pdfId.edit-abstract", parentId: "routes/kdb", path: ":pdfId/edit-abstract", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb.$pdfId.edit-abstract-TWL2YCI5.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.$pdfId": { id: "routes/kdb_.$pdfId", parentId: "root", path: "kdb/:pdfId", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.$pdfId-YWPZZRFN.js", imports: ["/build/_shared/chunk-BAGSKRUP.js", "/build/_shared/chunk-JNOKBHGH.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.new": { id: "routes/kdb_.new", parentId: "root", path: "kdb/new", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.new-AUICVWUG.js", imports: ["/build/_shared/chunk-FAXQTAW5.js", "/build/_shared/chunk-BAGSKRUP.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-7TMZ2OS7.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-ZZ77JVE3.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-4IKI3ZML.js", imports: ["/build/_shared/chunk-RPEN4MYX.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-YO5RWVW7.js", imports: ["/build/_shared/chunk-W2GPJMPS.js", "/build/_shared/chunk-2QJY4JOV.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-RRE364TZ.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/wip": { id: "routes/wip", parentId: "root", path: "wip", index: void 0, caseSensitive: void 0, module: "/build/routes/wip-7RWPNJ72.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "fbf028c5", hmr: { runtime: "/build/_shared/chunk-7NDLCGQO.js", timestamp: 1686907615296 }, url: "/build/manifest-FBF028C5.js" };
 
 // server-entry-module:@remix-run/dev/server-build
-var assetsBuildDirectory = "public/build", future = { unstable_dev: !0, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !1, v2_headers: !1, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_react_stream_exports }, routes = {
+var assetsBuildDirectory = "public/build", future = { unstable_dev: !0, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !1, v2_headers: !1, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_react_stream_exports }, dev = { port: 3001 }, routes = {
   root: {
     id: "root",
     parentId: void 0,
@@ -4011,16 +4007,14 @@ var assetsBuildDirectory = "public/build", future = { unstable_dev: !0, unstable
     module: wip_exports
   }
 };
-
-// server.ts
-var import_netlify = require("@remix-run/netlify"), import_node17 = require("@remix-run/node");
-(0, import_node17.installGlobals)();
-var handler = (0, import_netlify.createRequestHandler)({
-  build: server_build_exports,
-  mode: "development"
-});
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
-  handler
+  assets,
+  assetsBuildDirectory,
+  dev,
+  entry,
+  future,
+  publicPath,
+  routes
 });
 //# sourceMappingURL=server.js.map

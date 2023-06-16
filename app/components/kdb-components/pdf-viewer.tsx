@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+import { SpecialZoomLevel, Viewer, Worker } from '@react-pdf-viewer/core';
+import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
+
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 export default function PdfViewer({ pdfUrl }: { pdfUrl: string }) {
   const [numPages, setNumPages] = useState<number>(1);
   const [pageNumber, setPageNumber] = useState(1);
+  const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
     setNumPages(numPages);
@@ -26,6 +30,8 @@ export default function PdfViewer({ pdfUrl }: { pdfUrl: string }) {
   }
 
   return (
+    <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.js">
+
     <div className="flex h-full flex-col gap-2 px-2">
       <div className="margin-[20px] flex flex-row items-center justify-center gap-2">
         <button
@@ -49,22 +55,24 @@ export default function PdfViewer({ pdfUrl }: { pdfUrl: string }) {
           Next
         </button>
       </div>
-      <Document
-        onLoadSuccess={onDocumentLoadSuccess}
-        file={pdfUrl}
-        onContextMenu={(e) => e.preventDefault()}
-        className="flex w-[300px] h-[420px] justify-center border-2 border-yellow-500"
+      <div 
+   
+      className="flex w-full h-[420px] justify-center border-2 border-yellow-500 overflow-auto"
       >
-        <Page
-          scale={0.5}
-          renderAnnotationLayer={false}
-          renderTextLayer={false}
-          pageNumber={pageNumber}
-        />
-      </Document>
+
+      <Viewer
+        fileUrl={pdfUrl}
+        // className="flex w-[300px] h-[420px] justify-center border-2 border-yellow-500"
+        plugins={[
+            defaultLayoutPluginInstance,
+        ]}
+        defaultScale={SpecialZoomLevel.PageFit}
+    />
+        </div>
       <p className="text-center">
         {pageNumber} / {numPages}
       </p>
     </div>
+    </Worker>
   );
 }
