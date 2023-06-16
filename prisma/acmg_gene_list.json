@@ -1,0 +1,838 @@
+[
+  {
+    "symbol": "ACTA2",
+    "gene_mim": 102620,
+    "disease_phenotype": "Familial thoracic aortic aneurysm",
+    "disorder_mim": "611788",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "ACTC1",
+    "gene_mim": 102540,
+    "disease_phenotype": "Hypertrophic cardiomyopathy",
+    "disorder_mim": "612098",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "ACVRL1",
+    "gene_mim": 601284,
+    "disease_phenotype": "Hereditary hemorrhagic telangiectasia",
+    "disorder_mim": "600376",
+    "phenotype_categor": "Miscellaneous",
+    "inheritance": "AD",
+    "sf_list_version": 3,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "APC",
+    "gene_mim": 611731,
+    "disease_phenotype": "Familial adenomatous polyposis",
+    "disorder_mim": "175100",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "APOB",
+    "gene_mim": 107730,
+    "disease_phenotype": "Familial hypercholesterolemia",
+    "disorder_mim": "144010",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "ATP7B",
+    "gene_mim": 606882,
+    "disease_phenotype": "Wilson disease",
+    "disorder_mim": "277900",
+    "phenotype_categor": "Miscellaneous",
+    "inheritance": "AR",
+    "sf_list_version": 2,
+    "variants_to_report": "P and LP (2 variants)"
+  },
+  {
+    "symbol": "BMPR1A",
+    "gene_mim": 601299,
+    "disease_phenotype": "Juvenile polyposis syndrome",
+    "disorder_mim": "174900",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "BRCA1",
+    "gene_mim": 113705,
+    "disease_phenotype": "Hereditary breast and ovarian cancer",
+    "disorder_mim": "604370",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "BRCA2",
+    "gene_mim": 600185,
+    "disease_phenotype": "Hereditary breast and ovarian cancer",
+    "disorder_mim": "612555",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "BTD",
+    "gene_mim": 609019,
+    "disease_phenotype": "Biotinidase deficiency",
+    "disorder_mim": "253260",
+    "phenotype_categor": "Metabolic",
+    "inheritance": "AR",
+    "sf_list_version": 3,
+    "variants_to_report": "P and LP (2 variants)"
+  },
+  {
+    "symbol": "CACNA1S",
+    "gene_mim": 114208,
+    "disease_phenotype": "Malignant hyperthermia",
+    "disorder_mim": "601887",
+    "phenotype_categor": "Miscellaneous",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "CASQ2",
+    "gene_mim": 114251,
+    "disease_phenotype": "Catecholaminergic polymorphic ventricular tachycardia",
+    "disorder_mim": "611938",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AR",
+    "sf_list_version": 3,
+    "variants_to_report": "P and LP (2 variants)"
+  },
+  {
+    "symbol": "COL3A1",
+    "gene_mim": 120180,
+    "disease_phenotype": "Ehlers-Danlos syndrome, vascular type",
+    "disorder_mim": "130050",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "DSC2",
+    "gene_mim": 125645,
+    "disease_phenotype": "Arrhythmogenic right ventricular cardiomyopathy",
+    "disorder_mim": "610476",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "DSG2",
+    "gene_mim": 125671,
+    "disease_phenotype": "Arrhythmogenic right ventricular cardiomyopathy",
+    "disorder_mim": "610193",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "DSP",
+    "gene_mim": 125647,
+    "disease_phenotype": "Arrhythmogenic right ventricular cardiomyopathy",
+    "disorder_mim": "607450",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "DSP",
+    "gene_mim": 125647,
+    "disease_phenotype": "Dilated cardiomyopathy",
+    "disorder_mim": "615821",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "ENG",
+    "gene_mim": 131195,
+    "disease_phenotype": "Hereditary hemorrhagic telangiectasia",
+    "disorder_mim": "187300",
+    "phenotype_categor": "Miscellaneous",
+    "inheritance": "AD",
+    "sf_list_version": 3,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "FBN1",
+    "gene_mim": 134797,
+    "disease_phenotype": "Marfan syndrome",
+    "disorder_mim": "154700",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "FLNC",
+    "gene_mim": 102565,
+    "disease_phenotype": "Dilated cardiomyopathy",
+    "disorder_mim": "617047",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 3,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "GAA",
+    "gene_mim": 606800,
+    "disease_phenotype": "Pompe disease",
+    "disorder_mim": "232300",
+    "phenotype_categor": "Metabolic",
+    "inheritance": "AR",
+    "sf_list_version": 3,
+    "variants_to_report": "P and LP (2 variants)"
+  },
+  {
+    "symbol": "GLA",
+    "gene_mim": 300644,
+    "disease_phenotype": "Fabry disease",
+    "disorder_mim": "301500",
+    "phenotype_categor": "Cardiovascular\nMetabolic",
+    "inheritance": "XL",
+    "sf_list_version": 1,
+    "variants_to_report": "All hemi, het, homozygous P and LP"
+  },
+  {
+    "symbol": "HFE",
+    "gene_mim": 613609,
+    "disease_phenotype": "Hereditary hemochromatosis (c.845G>A; p.C282Y homozygotes only)",
+    "disorder_mim": "235200",
+    "phenotype_categor": "Miscellaneous",
+    "inheritance": "AR",
+    "sf_list_version": 3,
+    "variants_to_report": "p.C282Y homozygotes only"
+  },
+  {
+    "symbol": "HNF1A",
+    "gene_mim": 142410,
+    "disease_phenotype": "Maturity-Onset of Diabetes of the Young",
+    "disorder_mim": "600496",
+    "phenotype_categor": "Miscellaneous",
+    "inheritance": "AD",
+    "sf_list_version": 3,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "KCNH2",
+    "gene_mim": 152427,
+    "disease_phenotype": "Long-QT syndrome type 2",
+    "disorder_mim": "613688",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "KCNQ1",
+    "gene_mim": 607542,
+    "disease_phenotype": "Long-QT syndrome type 1",
+    "disorder_mim": "192500",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "LDLR",
+    "gene_mim": 606945,
+    "disease_phenotype": "Familial hypercholesterolemia",
+    "disorder_mim": "143890",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "LMNA",
+    "gene_mim": 150330,
+    "disease_phenotype": "Dilated cardiomyopathy",
+    "disorder_mim": "115200",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "MAX",
+    "gene_mim": 154950,
+    "disease_phenotype": "Hereditary paraganglioma-pheochromocytoma syndrome",
+    "disorder_mim": "171300",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 3,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "MEN1",
+    "gene_mim": 613733,
+    "disease_phenotype": "Multiple endocrine neoplasia type 1",
+    "disorder_mim": "131100",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "MLH1",
+    "gene_mim": 120436,
+    "disease_phenotype": "Lynch syndrome",
+    "disorder_mim": "609310",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "MSH2",
+    "gene_mim": 609309,
+    "disease_phenotype": "Lynch syndrome",
+    "disorder_mim": "120435",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "MSH6",
+    "gene_mim": 600678,
+    "disease_phenotype": "Lynch syndrome",
+    "disorder_mim": "614350",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "MUTYH",
+    "gene_mim": 604933,
+    "disease_phenotype": "MUTYH-associated polyposis",
+    "disorder_mim": "608456",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AR",
+    "sf_list_version": 1,
+    "variants_to_report": "P and LP (2 variants)"
+  },
+  {
+    "symbol": "MYBPC3",
+    "gene_mim": 600958,
+    "disease_phenotype": "Hypertrophic cardiomyopathy",
+    "disorder_mim": "115197",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "MYH11",
+    "gene_mim": 160745,
+    "disease_phenotype": "Familial thoracic aortic aneurysm",
+    "disorder_mim": "132900",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "MYH7",
+    "gene_mim": 160760,
+    "disease_phenotype": "Hypertrophic cardiomyopathy",
+    "disorder_mim": "192600",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "MYH7",
+    "gene_mim": 160760,
+    "disease_phenotype": "Dilated cardiomyopathy",
+    "disorder_mim": "613426",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "MYL2",
+    "gene_mim": 160781,
+    "disease_phenotype": "Hypertrophic cardiomyopathy",
+    "disorder_mim": "608758",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "MYL3",
+    "gene_mim": 160790,
+    "disease_phenotype": "Hypertrophic cardiomyopathy",
+    "disorder_mim": "608751",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "NF2",
+    "gene_mim": 607379,
+    "disease_phenotype": "Neurofibromatosis type 2",
+    "disorder_mim": "101000",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "OTC",
+    "gene_mim": 300461,
+    "disease_phenotype": "Ornithine transcarbamylase deficiency",
+    "disorder_mim": "311250",
+    "phenotype_categor": "Metabolic",
+    "inheritance": "XL",
+    "sf_list_version": 2,
+    "variants_to_report": "All hemi, het, homozygous P and LP"
+  },
+  {
+    "symbol": "PALB2",
+    "gene_mim": 610355,
+    "disease_phenotype": "Hereditary breast cancer",
+    "disorder_mim": "114480",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 3,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "PCSK9",
+    "gene_mim": 607786,
+    "disease_phenotype": "Familial hypercholesterolemia",
+    "disorder_mim": "603776",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "PKP2",
+    "gene_mim": 602861,
+    "disease_phenotype": "Arrhythmogenic right ventricular cardiomyopathy",
+    "disorder_mim": "609040",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "PMS2",
+    "gene_mim": 600259,
+    "disease_phenotype": "Lynch syndrome",
+    "disorder_mim": "614337",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "PRKAG2",
+    "gene_mim": 602743,
+    "disease_phenotype": "Hypertrophic cardiomyopathy",
+    "disorder_mim": "600858",
+    "phenotype_categor": "Cardiovascular\nMetabolic",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "PTEN",
+    "gene_mim": 601728,
+    "disease_phenotype": "PTEN hamartoma tumor syndrome",
+    "disorder_mim": "158350",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "RB1",
+    "gene_mim": 614041,
+    "disease_phenotype": "Retinoblastoma",
+    "disorder_mim": "180200",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "RET",
+    "gene_mim": 164761,
+    "disease_phenotype": "Familial medullary thyroid cancer",
+    "disorder_mim": "155240",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "RET",
+    "gene_mim": 164761,
+    "disease_phenotype": "Multiple endocrine neoplasia type 2A",
+    "disorder_mim": "171400",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "RET",
+    "gene_mim": 164761,
+    "disease_phenotype": "Multiple endocrine neoplasia type 2B",
+    "disorder_mim": "162300",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "RPE65",
+    "gene_mim": 180069,
+    "disease_phenotype": "RPE65-related retinopathy",
+    "disorder_mim": "204100,\n613794",
+    "phenotype_categor": "Miscellaneous",
+    "inheritance": "AR",
+    "sf_list_version": 3,
+    "variants_to_report": "P and LP (2 variants)"
+  },
+  {
+    "symbol": "RYR1",
+    "gene_mim": 180901,
+    "disease_phenotype": "Malignant hyperthermia",
+    "disorder_mim": "145600",
+    "phenotype_categor": "Miscellaneous",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "RYR2",
+    "gene_mim": 180902,
+    "disease_phenotype": "Catecholaminergic polymorphic ventricular tachycardia",
+    "disorder_mim": "604772",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "SCN5A",
+    "gene_mim": 600163,
+    "disease_phenotype": "Long QT syndrome type 3",
+    "disorder_mim": "603830",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "SCN5A",
+    "gene_mim": 600163,
+    "disease_phenotype": "Brugada syndrome",
+    "disorder_mim": "601144",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "SCN5A",
+    "gene_mim": 600163,
+    "disease_phenotype": "Dilated cardiomyopathy",
+    "disorder_mim": "601154",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "SDHAF2",
+    "gene_mim": 613019,
+    "disease_phenotype": "Hereditary paraganglioma-pheochromocytoma syndrome",
+    "disorder_mim": "601650",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "SDHB",
+    "gene_mim": 185470,
+    "disease_phenotype": "Hereditary paraganglioma-pheochromocytoma syndrome",
+    "disorder_mim": "115310,\n171300",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "SDHC",
+    "gene_mim": 602413,
+    "disease_phenotype": "Hereditary paraganglioma-pheochromocytoma syndrome",
+    "disorder_mim": "605373",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "SDHD",
+    "gene_mim": 602690,
+    "disease_phenotype": "Hereditary paraganglioma-pheochromocytoma syndrome",
+    "disorder_mim": "168000,\n171300",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "SMAD3",
+    "gene_mim": 603109,
+    "disease_phenotype": "Loeys-Dietz syndrome",
+    "disorder_mim": "613795",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "SMAD4",
+    "gene_mim": 600993,
+    "disease_phenotype": "Juvenile polyposis syndrome",
+    "disorder_mim": "174900",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "SMAD4",
+    "gene_mim": 600993,
+    "disease_phenotype": "Hereditary hemorrhagic telangiectasia",
+    "disorder_mim": "175050",
+    "phenotype_categor": "Miscellaneous",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "STK11",
+    "gene_mim": 602216,
+    "disease_phenotype": "Peutz-Jeghers syndrome",
+    "disorder_mim": "175200",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "TGFBR1",
+    "gene_mim": 190181,
+    "disease_phenotype": "Loeys-Dietz syndrome",
+    "disorder_mim": "609192",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "TGFBR2",
+    "gene_mim": 190182,
+    "disease_phenotype": "Loeys-Dietz syndrome",
+    "disorder_mim": "610168",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "TMEM127",
+    "gene_mim": 613403,
+    "disease_phenotype": "Hereditary paraganglioma-pheochromocytoma syndrome",
+    "disorder_mim": "171300",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 3,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "TMEM43",
+    "gene_mim": 612048,
+    "disease_phenotype": "Arrhythmogenic right ventricular cardiomyopathy",
+    "disorder_mim": "604400",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "TNNI3",
+    "gene_mim": 191044,
+    "disease_phenotype": "Hypertrophic cardiomyopathy",
+    "disorder_mim": "613690",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "TNNT2",
+    "gene_mim": 191045,
+    "disease_phenotype": "Dilated cardiomyopathy",
+    "disorder_mim": "601494",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "TNNT2",
+    "gene_mim": 191045,
+    "disease_phenotype": "Hypertrophic cardiomyopathy",
+    "disorder_mim": "115195",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "TP53",
+    "gene_mim": 191170,
+    "disease_phenotype": "Li-Fraumeni syndrome",
+    "disorder_mim": "151623",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "TPM1",
+    "gene_mim": 191010,
+    "disease_phenotype": "Hypertrophic cardiomyopathy",
+    "disorder_mim": "115196",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "TRDN",
+    "gene_mim": 603283,
+    "disease_phenotype": "Catecholaminergic polymorphic ventricular tachycardia",
+    "disorder_mim": "615441",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AR",
+    "sf_list_version": 3,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "TRDN",
+    "gene_mim": 603283,
+    "disease_phenotype": "Long QT syndrome",
+    "disorder_mim": "n/a",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AR",
+    "sf_list_version": 3,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "TSC1",
+    "gene_mim": 605284,
+    "disease_phenotype": "Tuberous sclerosis complex",
+    "disorder_mim": "191100",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "TSC2",
+    "gene_mim": 191092,
+    "disease_phenotype": "Tuberous sclerosis complex",
+    "disorder_mim": "613254",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "TTN",
+    "gene_mim": 188840,
+    "disease_phenotype": "Dilated cardiomyopathy (truncating variants only)",
+    "disorder_mim": "604145",
+    "phenotype_categor": "Cardiovascular",
+    "inheritance": "AD",
+    "sf_list_version": 3,
+    "variants_to_report": "P and LP (truncating variants only)"
+  },
+  {
+    "symbol": "VHL",
+    "gene_mim": 608537,
+    "disease_phenotype": "Von Hippel-Lindau syndrome",
+    "disorder_mim": "193300",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "WT1",
+    "gene_mim": 607102,
+    "disease_phenotype": "WT1-related Wilms tumor",
+    "disorder_mim": "194070",
+    "phenotype_categor": "Cancer",
+    "inheritance": "AD",
+    "sf_list_version": 1,
+    "variants_to_report": "All P and LP"
+  },
+  {
+    "symbol": "",
+    "disease_phenotype": "",
+    "disorder_mim": "",
+    "phenotype_categor": "",
+    "inheritance": "",
+    "variants_to_report": ""
+  },
+  {
+    "symbol": "Disclaimer: This statement is designed primarily as an educational resource for medical geneticists and other clinicians to help them provide quality medical services. Adherence to this statement is completely voluntary and does not necessarily assure a successful medical outcome. This statement should not be considered inclusive of all proper procedures and tests or exclusive of other procedures and tests that are reasonably directed to obtaining the same results. In determining the propriety of any specific procedure or test, the clinician should apply his or her own professional judgment to the specific clinical circumstances presented by the individual patient or specimen.  Clinicians are encouraged to document the reasons for the use of a particular procedure or test, whether or not it is in conformance with this statement. Clinicians also are advised to take notice of the date this statement was adopted, and to consider other medical and scientific information that becomes available after that date. It also would be prudent to consider whether intellectual property interests may restrict the performance of certain tests and other procedures.",
+    "disease_phenotype": "",
+    "disorder_mim": "",
+    "phenotype_categor": "",
+    "inheritance": "",
+    "variants_to_report": ""
+  }
+]
