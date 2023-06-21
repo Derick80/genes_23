@@ -11,21 +11,18 @@ import {
     ImageIcon,
     ListBulletIcon,
 } from '@radix-ui/react-icons'
-import { Editor, EditorContent, useEditor } from '@tiptap/react'
-import Superscript from '@tiptap/extension-superscript'
-import Underline from '@tiptap/extension-underline'
-import Link from '@tiptap/extension-link'
-import Subscript from '@tiptap/extension-subscript'
+import type { Editor} from '@tiptap/react';
+import { EditorContent, useEditor } from '@tiptap/react'
+
 import StarterKit from '@tiptap/starter-kit'
-import Image from '@tiptap/extension-image'
 import Highlight from '@tiptap/extension-highlight'
-import React from 'react'
-import Heading from '@tiptap/extension-heading'
-import BulletList from '@tiptap/extension-bullet-list'
+import Image from '@tiptap/extension-image'
+import Underline from '@tiptap/extension-underline'
+import Superscript from '@tiptap/extension-superscript'
+import Subscript from '@tiptap/extension-subscript'
 import Code from '@tiptap/extension-code'
-import TextStyle from '@tiptap/extension-text-style'
-import OrderedList from '@tiptap/extension-ordered-list'
-import Typography from '@tiptap/extension-typography'
+import Link from '@tiptap/extension-link'
+import React from 'react'
 
 const MenuBar = ({ editor }: { editor: Editor }) => {
     const addImage = React.useCallback(() => {
@@ -127,6 +124,10 @@ const MenuBar = ({ editor }: { editor: Editor }) => {
             >
                 <Pencil1Icon />
             </button>
+            <button type="button"
+                onClick={() => editor.chain().focus().toggleCodeBlock().run()}>
+                <CodeIcon />
+            </button>
 
             <button
                 type="button"
@@ -168,6 +169,48 @@ const MenuBar = ({ editor }: { editor: Editor }) => {
                 <div className="flex flex-row items-center justify-center">
                     <HeadingIcon />
                     <p className="text-[15px]">3</p>
+                </div>
+            </button>
+            <button
+                type="button"
+                onClick={() =>
+                    editor.chain().focus().toggleHeading({ level: 4 }).run()
+                }
+                className={
+                    editor.isActive('heading', { level: 4 }) ? 'is-active' : ''
+                }
+            >
+                <div className="flex flex-row items-center justify-center">
+                    <HeadingIcon />
+                    <p className="text-[15px]">4</p>
+                </div>
+            </button>
+            <button
+                type="button"
+                onClick={() =>
+                    editor.chain().focus().toggleHeading({ level: 5 }).run()
+                }
+                className={
+                    editor.isActive('heading', { level: 5 }) ? 'is-active' : ''
+                }
+            >
+                <div className="flex flex-row items-center justify-center">
+                    <HeadingIcon />
+                    <p className="text-[15px]">5</p>
+                </div>
+            </button>
+            <button
+                type="button"
+                onClick={() =>
+                    editor.chain().focus().toggleHeading({ level: 6 }).run()
+                }
+                className={
+                    editor.isActive('heading', { level: 6 }) ? 'is-active' : ''
+                }
+            >
+                <div className="flex flex-row items-center justify-center">
+                    <HeadingIcon />
+                    <p className="text-[15px]">6</p>
                 </div>
             </button>
             <button
@@ -220,20 +263,49 @@ const TipTap = ({ content }: { content: string }) => {
         extensions: [
             StarterKit.configure({
                 heading: {
-                    levels: [1, 2, 3],
+                    HTMLAttributes: {
+                        class: 'my-custom-heading',
+                    },
+                    levels: [1, 2, 3,4  ,5, 6],
+                },
+                
+                
+            }),
+            Highlight.configure({
+                HTMLAttributes: {
+                    class: 'bg-yellow-200',
                 },
             }),
-            Heading,
-            Superscript,
-            Subscript,
-            Highlight,
-            Link,
-            Code,
-            TextStyle,
-            BulletList,
-            OrderedList,
-            Image,
-            Typography,
+            Link.configure({
+                openOnClick: false,
+                HTMLAttributes: {
+                    class: 'text-blue-500 underline',
+                },
+            }),
+            Underline.configure({
+                HTMLAttributes: {
+                    class: 'text-black dark:text-slate-50',
+                },
+            }),
+            
+            Image.configure({
+                HTMLAttributes: {
+                    class: 'w-full',
+                },
+            }),
+            
+            Subscript.configure({
+                HTMLAttributes: {
+                    class: 'text-black dark:text-slate-50',
+                },
+            }),
+            Superscript.configure({
+                HTMLAttributes: {
+                    class: 'text-black dark:text-slate-50',
+                },
+            }),
+            
+            
         ],
         content: content,
         editorProps: {

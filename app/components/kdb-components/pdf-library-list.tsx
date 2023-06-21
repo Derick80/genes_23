@@ -143,7 +143,7 @@ export default function PdfList({ pdfLibrary }: PdfListProps) {
                                                 to={`/kdb/${note.pdfLibraryId}/annotate`}
                                             >
                                                 <p className="text-xs font-bold underline">
-                                                    annotate:
+                                                    Edit:
                                                 </p>
                                             </Link>
 
