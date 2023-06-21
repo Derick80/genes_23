@@ -148,7 +148,7 @@ __export(root_exports, {
 var import_node2 = require("@remix-run/node"), import_react3 = require("@remix-run/react");
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-XYXCWBVH.css";
+var tailwind_default = "/build/_assets/tailwind-MLCB2XKP.css";
 
 // app/components/layout.tsx
 var import_remix = require("@clerk/remix"), import_react_icons = require("@radix-ui/react-icons"), import_react2 = require("@remix-run/react"), import_jsx_dev_runtime2 = require("react/jsx-dev-runtime");
@@ -1108,7 +1108,7 @@ function AccordianNavBar({ kdbEntry }) {
 }
 
 // app/components/tiptap.tsx
-var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = require("@tiptap/react"), import_starter_kit = __toESM(require("@tiptap/starter-kit")), import_extension_highlight = __toESM(require("@tiptap/extension-highlight")), import_extension_image = __toESM(require("@tiptap/extension-image")), import_extension_underline = __toESM(require("@tiptap/extension-underline")), import_extension_superscript = __toESM(require("@tiptap/extension-superscript")), import_extension_subscript = __toESM(require("@tiptap/extension-subscript")), import_extension_link = __toESM(require("@tiptap/extension-link")), import_react8 = __toESM(require("react")), import_jsx_dev_runtime6 = require("react/jsx-dev-runtime"), MenuBar = ({ editor }) => {
+var import_lucide_react = require("lucide-react"), import_react7 = require("@tiptap/react"), import_starter_kit = __toESM(require("@tiptap/starter-kit")), import_extension_highlight = __toESM(require("@tiptap/extension-highlight")), import_extension_image = __toESM(require("@tiptap/extension-image")), import_extension_underline = __toESM(require("@tiptap/extension-underline")), import_extension_superscript = __toESM(require("@tiptap/extension-superscript")), import_extension_subscript = __toESM(require("@tiptap/extension-subscript")), import_extension_link = __toESM(require("@tiptap/extension-link")), import_react8 = __toESM(require("react")), import_jsx_dev_runtime6 = require("react/jsx-dev-runtime"), MenuBar = ({ editor }) => {
   let addImage = import_react8.default.useCallback(() => {
     let url = window.prompt("URL");
     url && editor.chain().focus().setImage({ src: url }).run();
@@ -1123,195 +1123,161 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
     }
   }, [editor]);
   return editor ? /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex h-12 w-full flex-row items-center justify-between border-b border-gray-200 bg-gray-100 text-black", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
-      "button",
-      {
-        type: "button",
-        className: editor.isActive("bold") ? "is-active" : "",
-        onClick: () => editor.chain().focus().toggleBold().run(),
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react_icons3.FontBoldIcon, {}, void 0, !1, {
-          fileName: "app/components/tiptap.tsx",
-          lineNumber: 71,
-          columnNumber: 17
-        }, this)
-      },
-      void 0,
-      !1,
-      {
-        fileName: "app/components/tiptap.tsx",
-        lineNumber: 66,
-        columnNumber: 13
-      },
-      this
-    ),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
-      "button",
-      {
-        type: "button",
-        onClick: () => editor.chain().focus().toggleItalic().run(),
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react_icons3.FontItalicIcon, {}, void 0, !1, {
-          fileName: "app/components/tiptap.tsx",
-          lineNumber: 77,
-          columnNumber: 17
-        }, this)
-      },
-      void 0,
-      !1,
-      {
-        fileName: "app/components/tiptap.tsx",
-        lineNumber: 73,
-        columnNumber: 13
-      },
-      this
-    ),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
-      "button",
-      {
-        type: "button",
-        onClick: () => editor.chain().focus().toggleStrike().run(),
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react_icons3.StrikethroughIcon, {}, void 0, !1, {
-          fileName: "app/components/tiptap.tsx",
-          lineNumber: 83,
-          columnNumber: 17
-        }, this)
-      },
-      void 0,
-      !1,
-      {
-        fileName: "app/components/tiptap.tsx",
-        lineNumber: 79,
-        columnNumber: 13
-      },
-      this
-    ),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
-      "button",
-      {
-        type: "button",
-        onClick: () => editor.chain().focus().toggleUnderline().run(),
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react_icons3.UnderlineIcon, {}, void 0, !1, {
-          fileName: "app/components/tiptap.tsx",
-          lineNumber: 90,
-          columnNumber: 17
-        }, this)
-      },
-      void 0,
-      !1,
-      {
-        fileName: "app/components/tiptap.tsx",
-        lineNumber: 86,
-        columnNumber: 13
-      },
-      this
-    ),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
-      "button",
-      {
-        type: "button",
-        onClick: () => editor.chain().focus().toggleSuperscript().run(),
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
-          "svg",
-          {
-            className: "text-black",
-            xmlns: "http://www.w3.org/2000/svg",
-            viewBox: "0 0 24 24",
-            width: "16",
-            height: "16",
-            children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("path", { d: "M11 7V20H9V7H3V5H15V7H11ZM19.5507 6.5803C19.7042 6.43453 19.8 6.22845 19.8 6C19.8 5.55817 19.4418 5.2 19 5.2C18.5582 5.2 18.2 5.55817 18.2 6C18.2 6.07624 18.2107 6.14999 18.2306 6.21983L17.0765 6.54958C17.0267 6.37497 17 6.1906 17 6C17 4.89543 17.8954 4 19 4C20.1046 4 21 4.89543 21 6C21 6.57273 20.7593 7.08923 20.3735 7.45384L18.7441 9H21V10H17V9L19.5507 6.5803V6.5803Z" }, void 0, !1, {
-              fileName: "app/components/tiptap.tsx",
-              lineNumber: 103,
-              columnNumber: 21
-            }, this)
-          },
-          void 0,
-          !1,
-          {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex flex-row gap-2 items-center justify-center text-sm", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
+        "button",
+        {
+          type: "button",
+          className: editor.isActive("bold") ? "is-active" : "",
+          onClick: () => editor.chain().focus().toggleBold().run(),
+          children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_lucide_react.Bold, {}, void 0, !1, {
             fileName: "app/components/tiptap.tsx",
-            lineNumber: 96,
+            lineNumber: 64,
             columnNumber: 17
-          },
-          this
-        )
-      },
-      void 0,
-      !1,
-      {
-        fileName: "app/components/tiptap.tsx",
-        lineNumber: 92,
-        columnNumber: 13
-      },
-      this
-    ),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
-      "button",
-      {
-        type: "button",
-        onClick: () => editor.chain().focus().toggleSubscript().run(),
-        children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
-            "svg",
-            {
-              className: "text-black",
-              color: "currentColor",
-              xmlns: "http://www.w3.org/2000/svg",
-              viewBox: "0 0 24 24",
-              width: "16",
-              height: "16",
-              children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("path", { d: "M11 6V19H9V6H3V4H17V6H11ZM19.5507 16.5803C19.7042 16.4345 19.8 16.2284 19.8 16C19.8 15.5582 19.4418 15.2 19 15.2C18.5582 15.2 18.2 15.5582 18.2 16C18.2 16.0762 18.2107 16.15 18.2306 16.2198L17.0765 16.5496C17.0267 16.375 17 16.1906 17 16C17 14.8954 17.8954 14 19 14C20.1046 14 21 14.8954 21 16C21 16.5727 20.7593 17.0892 20.3735 17.4538L18.7441 19H21V20H17V19L19.5507 16.5803V16.5803Z" }, void 0, !1, {
-                fileName: "app/components/tiptap.tsx",
-                lineNumber: 118,
-                columnNumber: 21
-              }, this)
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/components/tiptap.tsx",
-              lineNumber: 110,
-              columnNumber: 17
-            },
-            this
-          ),
-          " "
-        ]
-      },
-      void 0,
-      !0,
-      {
-        fileName: "app/components/tiptap.tsx",
-        lineNumber: 106,
-        columnNumber: 13
-      },
-      this
-    ),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
-      "button",
-      {
-        type: "button",
-        onClick: () => editor.chain().focus().toggleHighlight().run(),
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react_icons3.Pencil1Icon, {}, void 0, !1, {
+          }, this)
+        },
+        void 0,
+        !1,
+        {
           fileName: "app/components/tiptap.tsx",
-          lineNumber: 125,
-          columnNumber: 17
-        }, this)
-      },
-      void 0,
-      !1,
-      {
-        fileName: "app/components/tiptap.tsx",
-        lineNumber: 121,
-        columnNumber: 13
-      },
-      this
-    ),
+          lineNumber: 59,
+          columnNumber: 5
+        },
+        this
+      ),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
+        "button",
+        {
+          type: "button",
+          onClick: () => editor.chain().focus().toggleItalic().run(),
+          children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_lucide_react.ItalicIcon, {}, void 0, !1, {
+            fileName: "app/components/tiptap.tsx",
+            lineNumber: 70,
+            columnNumber: 17
+          }, this)
+        },
+        void 0,
+        !1,
+        {
+          fileName: "app/components/tiptap.tsx",
+          lineNumber: 66,
+          columnNumber: 13
+        },
+        this
+      ),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
+        "button",
+        {
+          type: "button",
+          onClick: () => editor.chain().focus().toggleStrike().run(),
+          children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_lucide_react.StrikethroughIcon, {}, void 0, !1, {
+            fileName: "app/components/tiptap.tsx",
+            lineNumber: 76,
+            columnNumber: 17
+          }, this)
+        },
+        void 0,
+        !1,
+        {
+          fileName: "app/components/tiptap.tsx",
+          lineNumber: 72,
+          columnNumber: 13
+        },
+        this
+      ),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
+        "button",
+        {
+          type: "button",
+          onClick: () => editor.chain().focus().toggleUnderline().run(),
+          children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_lucide_react.UnderlineIcon, {}, void 0, !1, {
+            fileName: "app/components/tiptap.tsx",
+            lineNumber: 83,
+            columnNumber: 17
+          }, this)
+        },
+        void 0,
+        !1,
+        {
+          fileName: "app/components/tiptap.tsx",
+          lineNumber: 79,
+          columnNumber: 13
+        },
+        this
+      ),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
+        "button",
+        {
+          type: "button",
+          onClick: () => editor.chain().focus().toggleSuperscript().run(),
+          children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_lucide_react.Superscript, {}, void 0, !1, {
+            fileName: "app/components/tiptap.tsx",
+            lineNumber: 89,
+            columnNumber: 17
+          }, this)
+        },
+        void 0,
+        !1,
+        {
+          fileName: "app/components/tiptap.tsx",
+          lineNumber: 85,
+          columnNumber: 13
+        },
+        this
+      ),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
+        "button",
+        {
+          type: "button",
+          onClick: () => editor.chain().focus().toggleSubscript().run(),
+          children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_lucide_react.Subscript, {}, void 0, !1, {
+            fileName: "app/components/tiptap.tsx",
+            lineNumber: 95,
+            columnNumber: 17
+          }, this)
+        },
+        void 0,
+        !1,
+        {
+          fileName: "app/components/tiptap.tsx",
+          lineNumber: 91,
+          columnNumber: 13
+        },
+        this
+      ),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
+        "button",
+        {
+          type: "button",
+          onClick: () => editor.chain().focus().toggleHighlight().run(),
+          children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_lucide_react.HighlighterIcon, {}, void 0, !1, {
+            fileName: "app/components/tiptap.tsx",
+            lineNumber: 101,
+            columnNumber: 17
+          }, this)
+        },
+        void 0,
+        !1,
+        {
+          fileName: "app/components/tiptap.tsx",
+          lineNumber: 97,
+          columnNumber: 13
+        },
+        this
+      )
+    ] }, void 0, !0, {
+      fileName: "app/components/tiptap.tsx",
+      lineNumber: 58,
+      columnNumber: 5
+    }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
       "button",
       {
         type: "button",
         onClick: () => editor.chain().focus().toggleCodeBlock().run(),
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react_icons3.CodeIcon, {}, void 0, !1, {
+        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_lucide_react.CodeIcon, {}, void 0, !1, {
           fileName: "app/components/tiptap.tsx",
-          lineNumber: 129,
+          lineNumber: 106,
           columnNumber: 17
         }, this)
       },
@@ -1319,7 +1285,7 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
       !1,
       {
         fileName: "app/components/tiptap.tsx",
-        lineNumber: 127,
+        lineNumber: 104,
         columnNumber: 13
       },
       this
@@ -1330,20 +1296,9 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
         type: "button",
         onClick: () => editor.chain().focus().toggleHeading({ level: 1 }).run(),
         className: editor.isActive("heading", { level: 1 }) ? "is-active" : "",
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex flex-row items-center justify-center", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react_icons3.HeadingIcon, {}, void 0, !1, {
-            fileName: "app/components/tiptap.tsx",
-            lineNumber: 142,
-            columnNumber: 21
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("p", { className: "text-[15px]", children: "1" }, void 0, !1, {
-            fileName: "app/components/tiptap.tsx",
-            lineNumber: 143,
-            columnNumber: 21
-          }, this)
-        ] }, void 0, !0, {
+        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_lucide_react.Heading1, {}, void 0, !1, {
           fileName: "app/components/tiptap.tsx",
-          lineNumber: 141,
+          lineNumber: 119,
           columnNumber: 17
         }, this)
       },
@@ -1351,7 +1306,7 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
       !1,
       {
         fileName: "app/components/tiptap.tsx",
-        lineNumber: 132,
+        lineNumber: 109,
         columnNumber: 13
       },
       this
@@ -1362,20 +1317,13 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
         type: "button",
         onClick: () => editor.chain().focus().toggleHeading({ level: 2 }).run(),
         className: editor.isActive("heading", { level: 2 }) ? "is-active" : "",
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex flex-row items-center justify-center", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react_icons3.HeadingIcon, {}, void 0, !1, {
-            fileName: "app/components/tiptap.tsx",
-            lineNumber: 156,
-            columnNumber: 21
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("p", { className: "text-[15px]", children: "2" }, void 0, !1, {
-            fileName: "app/components/tiptap.tsx",
-            lineNumber: 157,
-            columnNumber: 21
-          }, this)
-        ] }, void 0, !0, {
+        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex flex-row items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_lucide_react.Heading2, {}, void 0, !1, {
           fileName: "app/components/tiptap.tsx",
-          lineNumber: 155,
+          lineNumber: 132,
+          columnNumber: 21
+        }, this) }, void 0, !1, {
+          fileName: "app/components/tiptap.tsx",
+          lineNumber: 131,
           columnNumber: 17
         }, this)
       },
@@ -1383,7 +1331,7 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
       !1,
       {
         fileName: "app/components/tiptap.tsx",
-        lineNumber: 146,
+        lineNumber: 122,
         columnNumber: 13
       },
       this
@@ -1394,20 +1342,13 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
         type: "button",
         onClick: () => editor.chain().focus().toggleHeading({ level: 3 }).run(),
         className: editor.isActive("heading", { level: 3 }) ? "is-active" : "",
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex flex-row items-center justify-center", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react_icons3.HeadingIcon, {}, void 0, !1, {
-            fileName: "app/components/tiptap.tsx",
-            lineNumber: 170,
-            columnNumber: 21
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("p", { className: "text-[15px]", children: "3" }, void 0, !1, {
-            fileName: "app/components/tiptap.tsx",
-            lineNumber: 171,
-            columnNumber: 21
-          }, this)
-        ] }, void 0, !0, {
+        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex flex-row items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_lucide_react.Heading3, {}, void 0, !1, {
           fileName: "app/components/tiptap.tsx",
-          lineNumber: 169,
+          lineNumber: 145,
+          columnNumber: 21
+        }, this) }, void 0, !1, {
+          fileName: "app/components/tiptap.tsx",
+          lineNumber: 144,
           columnNumber: 17
         }, this)
       },
@@ -1415,7 +1356,7 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
       !1,
       {
         fileName: "app/components/tiptap.tsx",
-        lineNumber: 160,
+        lineNumber: 135,
         columnNumber: 13
       },
       this
@@ -1426,28 +1367,17 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
         type: "button",
         onClick: () => editor.chain().focus().toggleHeading({ level: 4 }).run(),
         className: editor.isActive("heading", { level: 4 }) ? "is-active" : "",
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex flex-row items-center justify-center", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react_icons3.HeadingIcon, {}, void 0, !1, {
-            fileName: "app/components/tiptap.tsx",
-            lineNumber: 184,
-            columnNumber: 21
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("p", { className: "text-[15px]", children: "4" }, void 0, !1, {
-            fileName: "app/components/tiptap.tsx",
-            lineNumber: 185,
-            columnNumber: 21
-          }, this)
-        ] }, void 0, !0, {
+        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_lucide_react.Heading4, {}, void 0, !1, {
           fileName: "app/components/tiptap.tsx",
-          lineNumber: 183,
-          columnNumber: 17
+          lineNumber: 157,
+          columnNumber: 21
         }, this)
       },
       void 0,
       !1,
       {
         fileName: "app/components/tiptap.tsx",
-        lineNumber: 174,
+        lineNumber: 148,
         columnNumber: 13
       },
       this
@@ -1458,28 +1388,17 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
         type: "button",
         onClick: () => editor.chain().focus().toggleHeading({ level: 5 }).run(),
         className: editor.isActive("heading", { level: 5 }) ? "is-active" : "",
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex flex-row items-center justify-center", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react_icons3.HeadingIcon, {}, void 0, !1, {
-            fileName: "app/components/tiptap.tsx",
-            lineNumber: 198,
-            columnNumber: 21
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("p", { className: "text-[15px]", children: "5" }, void 0, !1, {
-            fileName: "app/components/tiptap.tsx",
-            lineNumber: 199,
-            columnNumber: 21
-          }, this)
-        ] }, void 0, !0, {
+        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_lucide_react.Heading5, {}, void 0, !1, {
           fileName: "app/components/tiptap.tsx",
-          lineNumber: 197,
-          columnNumber: 17
+          lineNumber: 169,
+          columnNumber: 21
         }, this)
       },
       void 0,
       !1,
       {
         fileName: "app/components/tiptap.tsx",
-        lineNumber: 188,
+        lineNumber: 159,
         columnNumber: 13
       },
       this
@@ -1490,28 +1409,17 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
         type: "button",
         onClick: () => editor.chain().focus().toggleHeading({ level: 6 }).run(),
         className: editor.isActive("heading", { level: 6 }) ? "is-active" : "",
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex flex-row items-center justify-center", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react_icons3.HeadingIcon, {}, void 0, !1, {
-            fileName: "app/components/tiptap.tsx",
-            lineNumber: 212,
-            columnNumber: 21
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("p", { className: "text-[15px]", children: "6" }, void 0, !1, {
-            fileName: "app/components/tiptap.tsx",
-            lineNumber: 213,
-            columnNumber: 21
-          }, this)
-        ] }, void 0, !0, {
+        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_lucide_react.Heading6, {}, void 0, !1, {
           fileName: "app/components/tiptap.tsx",
-          lineNumber: 211,
-          columnNumber: 17
+          lineNumber: 181,
+          columnNumber: 21
         }, this)
       },
       void 0,
       !1,
       {
         fileName: "app/components/tiptap.tsx",
-        lineNumber: 202,
+        lineNumber: 171,
         columnNumber: 13
       },
       this
@@ -1522,9 +1430,9 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
         type: "button",
         onClick: setLink,
         className: editor.isActive("link") ? "is-active" : "",
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react_icons3.Link1Icon, {}, void 0, !1, {
+        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_lucide_react.Link, {}, void 0, !1, {
           fileName: "app/components/tiptap.tsx",
-          lineNumber: 221,
+          lineNumber: 188,
           columnNumber: 17
         }, this)
       },
@@ -1532,7 +1440,7 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
       !1,
       {
         fileName: "app/components/tiptap.tsx",
-        lineNumber: 216,
+        lineNumber: 183,
         columnNumber: 13
       },
       this
@@ -1543,9 +1451,9 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
         type: "button",
         onClick: () => editor.chain().focus().unsetLink().run(),
         disabled: !editor.isActive("link"),
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react_icons3.LinkBreak1Icon, {}, void 0, !1, {
+        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_lucide_react.UnlinkIcon, {}, void 0, !1, {
           fileName: "app/components/tiptap.tsx",
-          lineNumber: 228,
+          lineNumber: 195,
           columnNumber: 17
         }, this)
       },
@@ -1553,7 +1461,7 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
       !1,
       {
         fileName: "app/components/tiptap.tsx",
-        lineNumber: 223,
+        lineNumber: 190,
         columnNumber: 13
       },
       this
@@ -1564,9 +1472,9 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
         type: "button",
         onClick: () => editor.chain().focus().toggleCode().run(),
         className: editor.isActive("code") ? "is-active" : "",
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react_icons3.CodeIcon, {}, void 0, !1, {
+        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_lucide_react.CodeIcon, {}, void 0, !1, {
           fileName: "app/components/tiptap.tsx",
-          lineNumber: 235,
+          lineNumber: 202,
           columnNumber: 17
         }, this)
       },
@@ -1574,7 +1482,7 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
       !1,
       {
         fileName: "app/components/tiptap.tsx",
-        lineNumber: 230,
+        lineNumber: 197,
         columnNumber: 13
       },
       this
@@ -1585,9 +1493,9 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
         className: editor.isActive("image") ? "is-active" : "",
         type: "button",
         onClick: addImage,
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react_icons3.ImageIcon, {}, void 0, !1, {
+        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_lucide_react.Image, {}, void 0, !1, {
           fileName: "app/components/tiptap.tsx",
-          lineNumber: 242,
+          lineNumber: 209,
           columnNumber: 17
         }, this)
       },
@@ -1595,7 +1503,7 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
       !1,
       {
         fileName: "app/components/tiptap.tsx",
-        lineNumber: 237,
+        lineNumber: 204,
         columnNumber: 13
       },
       this
@@ -1606,9 +1514,9 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
         type: "button",
         className: editor.isActive("bulletList") ? "is-active" : "",
         onClick: () => editor.chain().focus().toggleBulletList().run(),
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react_icons3.ListBulletIcon, {}, void 0, !1, {
+        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_lucide_react.List, {}, void 0, !1, {
           fileName: "app/components/tiptap.tsx",
-          lineNumber: 249,
+          lineNumber: 216,
           columnNumber: 17
         }, this)
       },
@@ -1616,7 +1524,7 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
       !1,
       {
         fileName: "app/components/tiptap.tsx",
-        lineNumber: 244,
+        lineNumber: 211,
         columnNumber: 13
       },
       this
@@ -1626,9 +1534,9 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
       {
         type: "button",
         onClick: () => editor.chain().focus().toggleOrderedList().run(),
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react_icons3.ListBulletIcon, {}, void 0, !1, {
+        children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_lucide_react.ListIcon, {}, void 0, !1, {
           fileName: "app/components/tiptap.tsx",
-          lineNumber: 256,
+          lineNumber: 223,
           columnNumber: 17
         }, this)
       },
@@ -1636,14 +1544,14 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
       !1,
       {
         fileName: "app/components/tiptap.tsx",
-        lineNumber: 252,
+        lineNumber: 219,
         columnNumber: 13
       },
       this
     )
   ] }, void 0, !0, {
     fileName: "app/components/tiptap.tsx",
-    lineNumber: 65,
+    lineNumber: 57,
     columnNumber: 9
   }, this) : null;
 }, TipTap = ({ content }) => {
@@ -1692,29 +1600,29 @@ var import_react_icons3 = require("@radix-ui/react-icons"), import_react7 = requ
     content,
     editorProps: {
       attributes: {
-        class: "flex-1 p-4 mx-auto border border-t-0 text-black dark:text-slate-50 w-full h-auto text-sm m-5 focus:outline-non rounded-b-md mt-0 "
+        class: "flex-1 p-4 mx-auto border border-t-0 text-white  w-full h-auto text-sm m-5 focus:outline-non rounded-b-md mt-0 "
       }
     }
   });
   return editor ? /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex flex-col gap-2 border-2 border-red-500", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(MenuBar, { editor }, void 0, !1, {
       fileName: "app/components/tiptap.tsx",
-      lineNumber: 322,
+      lineNumber: 289,
       columnNumber: 13
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react7.EditorContent, { editor }, void 0, !1, {
       fileName: "app/components/tiptap.tsx",
-      lineNumber: 323,
+      lineNumber: 290,
       columnNumber: 13
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("input", { type: "hidden", name: "notes", value: (editor == null ? void 0 : editor.getHTML()) || "" }, void 0, !1, {
       fileName: "app/components/tiptap.tsx",
-      lineNumber: 324,
+      lineNumber: 291,
       columnNumber: 13
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/tiptap.tsx",
-    lineNumber: 321,
+    lineNumber: 288,
     columnNumber: 9
   }, this) : null;
 }, tiptap_default = TipTap;
@@ -2411,7 +2319,7 @@ var variants = [
 ];
 
 // app/routes/variants.tsx
-var import_react13 = require("@remix-run/react"), import_react_icons4 = require("@radix-ui/react-icons"), import_react14 = __toESM(require("react")), import_jsx_dev_runtime11 = require("react/jsx-dev-runtime");
+var import_react13 = require("@remix-run/react"), import_react_icons3 = require("@radix-ui/react-icons"), import_react14 = __toESM(require("react")), import_jsx_dev_runtime11 = require("react/jsx-dev-runtime");
 async function loader5({ request, params }) {
   return (0, import_node7.json)({ variants });
 }
@@ -2633,7 +2541,7 @@ function CardFront({
       lineNumber: 60,
       columnNumber: 13
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("div", { className: "flex flex-row justify-end gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("button", { onClick: handleFlip, children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_react_icons4.InfoCircledIcon, {}, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("div", { className: "flex flex-row justify-end gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("button", { onClick: handleFlip, children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_react_icons3.InfoCircledIcon, {}, void 0, !1, {
       fileName: "app/routes/variants.tsx",
       lineNumber: 134,
       columnNumber: 21
@@ -2662,7 +2570,7 @@ function CardBack({
       lineNumber: 150,
       columnNumber: 13
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("div", { className: "flex flex-row justify-end gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("button", { onClick: handleFlip, children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_react_icons4.InfoCircledIcon, {}, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("div", { className: "flex flex-row justify-end gap-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("button", { onClick: handleFlip, children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_react_icons3.InfoCircledIcon, {}, void 0, !1, {
       fileName: "app/routes/variants.tsx",
       lineNumber: 155,
       columnNumber: 21
@@ -2882,12 +2790,12 @@ function VariantSummaryCard({ variant }) {
           columnNumber: 17
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("div", { className: "flex flex-row justify-end gap-2", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_react_icons4.DotsVerticalIcon, {}, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_react_icons3.DotsVerticalIcon, {}, void 0, !1, {
             fileName: "app/routes/variants.tsx",
             lineNumber: 288,
             columnNumber: 17
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("button", { onClick: () => setFlip(!flip), children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_react_icons4.InfoCircledIcon, {}, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("button", { onClick: () => setFlip(!flip), children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_react_icons3.InfoCircledIcon, {}, void 0, !1, {
             fileName: "app/routes/variants.tsx",
             lineNumber: 290,
             columnNumber: 21
@@ -3239,7 +3147,7 @@ function ClassificationComponent({
 }
 
 // app/components/criteria-components/my-custom-radix-checkbox.tsx
-var import_react_icons5 = require("@radix-ui/react-icons"), import_react18 = __toESM(require("react")), Checkbox = __toESM(require("@radix-ui/react-checkbox")), import_react_icons6 = require("@radix-ui/react-icons"), import_react_label2 = require("@radix-ui/react-label"), import_jsx_dev_runtime15 = require("react/jsx-dev-runtime");
+var import_react_icons4 = require("@radix-ui/react-icons"), import_react18 = __toESM(require("react")), Checkbox = __toESM(require("@radix-ui/react-checkbox")), import_react_icons5 = require("@radix-ui/react-icons"), import_react_label2 = require("@radix-ui/react-label"), import_jsx_dev_runtime15 = require("react/jsx-dev-runtime");
 function CustomCriteriaCheckBox({
   data,
   handleCheckBoxListCriteriaUsed
@@ -3259,11 +3167,11 @@ function CustomCriteriaCheckBox({
           onClick: () => {
             setOpen(!open);
           },
-          children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(import_react_icons5.ChevronUpIcon, {}, void 0, !1, {
+          children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(import_react_icons4.ChevronUpIcon, {}, void 0, !1, {
             fileName: "app/components/criteria-components/my-custom-radix-checkbox.tsx",
             lineNumber: 30,
             columnNumber: 29
-          }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(import_react_icons5.ChevronDownIcon, {}, void 0, !1, {
+          }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(import_react_icons4.ChevronDownIcon, {}, void 0, !1, {
             fileName: "app/components/criteria-components/my-custom-radix-checkbox.tsx",
             lineNumber: 30,
             columnNumber: 49
@@ -3303,7 +3211,7 @@ function CustomCriteriaCheckBox({
             {
               className: "text-teal-400",
               id: item.label,
-              children: /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(import_react_icons6.CheckIcon, {}, void 0, !1, {
+              children: /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(import_react_icons5.CheckIcon, {}, void 0, !1, {
                 fileName: "app/components/criteria-components/my-custom-radix-checkbox.tsx",
                 lineNumber: 54,
                 columnNumber: 33
@@ -3353,7 +3261,7 @@ function CustomCriteriaCheckBox({
 }
 
 // app/components/criteria-components/my-custom-select.tsx
-var import_react_label3 = require("@radix-ui/react-label"), Select = __toESM(require("@radix-ui/react-select")), import_react_icons7 = require("@radix-ui/react-icons"), import_jsx_dev_runtime16 = require("react/jsx-dev-runtime");
+var import_react_label3 = require("@radix-ui/react-label"), Select = __toESM(require("@radix-ui/react-select")), import_react_icons6 = require("@radix-ui/react-icons"), import_jsx_dev_runtime16 = require("react/jsx-dev-runtime");
 function CustomCriteriaSelect({
   data,
   options,
@@ -3405,7 +3313,7 @@ function CustomCriteriaSelect({
                     },
                     this
                   ),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_react_icons7.ChevronDownIcon, {}, void 0, !1, {
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_react_icons6.ChevronDownIcon, {}, void 0, !1, {
                     fileName: "app/components/criteria-components/my-custom-select.tsx",
                     lineNumber: 87,
                     columnNumber: 37
@@ -3416,7 +3324,7 @@ function CustomCriteriaSelect({
                   columnNumber: 33
                 }, this),
                 /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(Select.Content, { className: "overflow-hidden rounded-md bg-white shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)]", children: [
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(Select.ScrollUpButton, { className: "text-violet11 flex h-[25px] cursor-default items-center justify-center bg-white", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_react_icons7.ChevronUpIcon, {}, void 0, !1, {
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(Select.ScrollUpButton, { className: "text-violet11 flex h-[25px] cursor-default items-center justify-center bg-white", children: /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_react_icons6.ChevronUpIcon, {}, void 0, !1, {
                     fileName: "app/components/criteria-components/my-custom-select.tsx",
                     lineNumber: 91,
                     columnNumber: 41
@@ -3836,7 +3744,7 @@ __export(criterion_exports, {
   default: () => Criterio,
   loader: () => loader9
 });
-var import_react_icons8 = require("@radix-ui/react-icons"), import_node14 = require("@remix-run/node"), import_react21 = require("@remix-run/react"), import_react22 = __toESM(require("react"));
+var import_react_icons7 = require("@radix-ui/react-icons"), import_node14 = require("@remix-run/node"), import_react21 = require("@remix-run/react"), import_react22 = __toESM(require("react"));
 var import_jsx_dev_runtime20 = require("react/jsx-dev-runtime");
 async function loader9({ request }) {
   let searchParam = new URLSearchParams(request.url.split("?")[1]).get("searchParam") || "";
@@ -3940,11 +3848,11 @@ function CriteriaFetcher({ searchParam }) {
                 lineNumber: 104,
                 columnNumber: 21
               }, this),
-              open ? /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(import_react_icons8.ChevronUpIcon, {}, void 0, !1, {
+              open ? /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(import_react_icons7.ChevronUpIcon, {}, void 0, !1, {
                 fileName: "app/routes/criterion.tsx",
                 lineNumber: 106,
                 columnNumber: 29
-              }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(import_react_icons8.ChevronDownIcon, {}, void 0, !1, {
+              }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime20.jsxDEV)(import_react_icons7.ChevronDownIcon, {}, void 0, !1, {
                 fileName: "app/routes/criterion.tsx",
                 lineNumber: 106,
                 columnNumber: 49
@@ -4092,19 +4000,52 @@ function FormatDefinition({ definition }) {
   }, this);
 }
 
-// app/routes/kdb_.new.tsx
+// app/routes/clinvar.tsx
+var clinvar_exports = {};
+__export(clinvar_exports, {
+  default: () => ClinVarIndexRoute,
+  loader: () => loader10
+});
+var import_node15 = require("@remix-run/node"), import_react23 = require("@remix-run/react");
+var import_jsx_dev_runtime21 = require("react/jsx-dev-runtime");
+async function loader10({ request, params }) {
+  let clinvarData = await prisma.clinvar.findMany({
+    take: 50
+  });
+  if (console.log(clinvarData.slice(0, 10)), !clinvarData)
+    throw new Error("No clinvar data found");
+  return (0, import_node15.json)({ clinvarData });
+}
+function ClinVarIndexRoute() {
+  let data = (0, import_react23.useLoaderData)();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { className: "", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("details", { className: "mb-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("pre", { className: "text-sm", children: JSON.stringify(data.clinvarData.slice(0, 10), null, 2) }, void 0, !1, {
+    fileName: "app/routes/clinvar.tsx",
+    lineNumber: 22,
+    columnNumber: 17
+  }, this) }, void 0, !1, {
+    fileName: "app/routes/clinvar.tsx",
+    lineNumber: 21,
+    columnNumber: 13
+  }, this) }, void 0, !1, {
+    fileName: "app/routes/clinvar.tsx",
+    lineNumber: 20,
+    columnNumber: 9
+  }, this);
+}
+
+// app/routes/kdb.new.tsx
 var kdb_new_exports = {};
 __export(kdb_new_exports, {
   action: () => action6,
   default: () => Wip
 });
-var import_node15 = require("@remix-run/node"), import_react25 = require("@remix-run/react"), import_react26 = __toESM(require("react"));
+var import_node16 = require("@remix-run/node"), import_react26 = require("@remix-run/react"), import_react27 = __toESM(require("react"));
 
 // app/components/shared/cloudinary-pdf-uploader.tsx
-var import_react23 = require("@remix-run/react"), import_react24 = __toESM(require("react")), import_jsx_dev_runtime21 = require("react/jsx-dev-runtime");
+var import_react24 = require("@remix-run/react"), import_react25 = __toESM(require("react")), import_jsx_dev_runtime22 = require("react/jsx-dev-runtime");
 function PdfUploader({ setUrl }) {
   var _a, _b;
-  let [selectedFile, setSelectedFile] = import_react24.default.useState(!1), pdfFetcher = (0, import_react23.useFetcher)(), handleDisabledState = () => {
+  let [selectedFile, setSelectedFile] = import_react25.default.useState(!1), pdfFetcher = (0, import_react24.useFetcher)(), handleDisabledState = () => {
     var _a2;
     return selectedFile || (setSelectedFile(!0), setUrl((_a2 = pdfFetcher.data) == null ? void 0 : _a2.pdfUrl)), !1;
   }, handlePdfUpload = async () => {
@@ -4115,8 +4056,8 @@ function PdfUploader({ setUrl }) {
       action: "/actions/pdf"
     }), (_a2 = pdfFetcher.data) != null && _a2.pdfUrl && setUrl(pdfFetcher.data.pdfUrl), setSelectedFile(!0);
   };
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(import_jsx_dev_runtime21.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(import_jsx_dev_runtime22.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
       pdfFetcher.Form,
       {
         method: "post",
@@ -4125,7 +4066,7 @@ function PdfUploader({ setUrl }) {
         onChange: handlePdfUpload,
         className: "flex flex-col items-center justify-center",
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+          /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
             "input",
             {
               className: "border-input ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
@@ -4142,7 +4083,7 @@ function PdfUploader({ setUrl }) {
             },
             this
           ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("button", { disabled: !selectedFile, type: "submit", children: "Upload" }, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("button", { disabled: !selectedFile, type: "submit", children: "Upload" }, void 0, !1, {
             fileName: "app/components/shared/cloudinary-pdf-uploader.tsx",
             lineNumber: 46,
             columnNumber: 17
@@ -4158,7 +4099,7 @@ function PdfUploader({ setUrl }) {
       },
       this
     ),
-    ((_a = pdfFetcher.data) == null ? void 0 : _a.pdfUrl) && /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime21.jsxDEV)(
+    ((_a = pdfFetcher.data) == null ? void 0 : _a.pdfUrl) && /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
       "input",
       {
         type: "text",
@@ -4185,8 +4126,8 @@ function PdfUploader({ setUrl }) {
   }, this);
 }
 
-// app/routes/kdb_.new.tsx
-var import_jsx_dev_runtime22 = require("react/jsx-dev-runtime");
+// app/routes/kdb.new.tsx
+var import_jsx_dev_runtime23 = require("react/jsx-dev-runtime");
 async function action6({ request, params }) {
   let pdfUrl = (await request.formData()).get("pdfUrl"), searchPmid = await getPMSearchTerm(pdfUrl), data = await getSemanticScholorArticleDetails(searchPmid);
   console.log("data, from semantic scholor", data);
@@ -4214,24 +4155,24 @@ async function action6({ request, params }) {
     doi,
     internalPdfUrl: pdfUrl
   }, pdfEntry = await createPdfEntry(dbData);
-  return pdfEntry ? (0, import_node15.redirect)(`/kdb/${pdfEntry.id}`) : (0, import_node15.json)({ error: "There was an error uploading the pdf" });
+  return pdfEntry ? (0, import_node16.redirect)(`/kdb/${pdfEntry.id}`) : (0, import_node16.json)({ error: "There was an error uploading the pdf" });
 }
 function Wip() {
   var _a;
-  let actionData = (0, import_react25.useActionData)(), [url, setUrl] = import_react26.default.useState("");
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "mb-20 flex flex-col items-center justify-center", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(PdfUploader, { setUrl }, void 0, !1, {
-      fileName: "app/routes/kdb_.new.tsx",
+  let actionData = (0, import_react26.useActionData)(), [url, setUrl] = import_react27.default.useState("");
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { className: "mb-20 flex flex-col items-center justify-center", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(PdfUploader, { setUrl }, void 0, !1, {
+      fileName: "app/routes/kdb.new.tsx",
       lineNumber: 67,
       columnNumber: 13
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
-      import_react25.Form,
+    /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(
+      import_react26.Form,
       {
         className: "flex w-full flex-col items-center justify-center",
         method: "POST",
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)(
+          /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)(
             "input",
             {
               className: "w-full text-black",
@@ -4243,19 +4184,19 @@ function Wip() {
             void 0,
             !1,
             {
-              fileName: "app/routes/kdb_.new.tsx",
+              fileName: "app/routes/kdb.new.tsx",
               lineNumber: 74,
               columnNumber: 21
             },
             this
           ),
-          ((_a = actionData == null ? void 0 : actionData.pdfEntry) == null ? void 0 : _a.error) && /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("div", { className: "text-red-500", children: actionData.pdfEntry.error }, void 0, !1, {
-            fileName: "app/routes/kdb_.new.tsx",
+          ((_a = actionData == null ? void 0 : actionData.pdfEntry) == null ? void 0 : _a.error) && /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { className: "text-red-500", children: actionData.pdfEntry.error }, void 0, !1, {
+            fileName: "app/routes/kdb.new.tsx",
             lineNumber: 82,
             columnNumber: 25
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime22.jsxDEV)("button", { type: "submit", children: "Submit" }, void 0, !1, {
-            fileName: "app/routes/kdb_.new.tsx",
+          /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("button", { type: "submit", children: "Submit" }, void 0, !1, {
+            fileName: "app/routes/kdb.new.tsx",
             lineNumber: 86,
             columnNumber: 21
           }, this)
@@ -4264,52 +4205,19 @@ function Wip() {
       void 0,
       !0,
       {
-        fileName: "app/routes/kdb_.new.tsx",
+        fileName: "app/routes/kdb.new.tsx",
         lineNumber: 70,
         columnNumber: 17
       },
       this
     ) }, void 0, !1, {
-      fileName: "app/routes/kdb_.new.tsx",
+      fileName: "app/routes/kdb.new.tsx",
       lineNumber: 69,
       columnNumber: 13
     }, this)
   ] }, void 0, !0, {
-    fileName: "app/routes/kdb_.new.tsx",
+    fileName: "app/routes/kdb.new.tsx",
     lineNumber: 66,
-    columnNumber: 9
-  }, this);
-}
-
-// app/routes/clinvar.tsx
-var clinvar_exports = {};
-__export(clinvar_exports, {
-  default: () => ClinVarIndexRoute,
-  loader: () => loader10
-});
-var import_node16 = require("@remix-run/node"), import_react27 = require("@remix-run/react");
-var import_jsx_dev_runtime23 = require("react/jsx-dev-runtime");
-async function loader10({ request, params }) {
-  let clinvarData = await prisma.clinvar.findMany({
-    take: 50
-  });
-  if (console.log(clinvarData.slice(0, 10)), !clinvarData)
-    throw new Error("No clinvar data found");
-  return (0, import_node16.json)({ clinvarData });
-}
-function ClinVarIndexRoute() {
-  let data = (0, import_react27.useLoaderData)();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("div", { className: "", children: /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("details", { className: "mb-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime23.jsxDEV)("pre", { className: "text-sm", children: JSON.stringify(data.clinvarData.slice(0, 10), null, 2) }, void 0, !1, {
-    fileName: "app/routes/clinvar.tsx",
-    lineNumber: 22,
-    columnNumber: 17
-  }, this) }, void 0, !1, {
-    fileName: "app/routes/clinvar.tsx",
-    lineNumber: 21,
-    columnNumber: 13
-  }, this) }, void 0, !1, {
-    fileName: "app/routes/clinvar.tsx",
-    lineNumber: 20,
     columnNumber: 9
   }, this);
 }
@@ -4526,7 +4434,7 @@ __export(kdb_exports, {
   loader: () => loader12,
   shouldRevalidate: () => shouldRevalidate
 });
-var import_node19 = require("@remix-run/node"), import_react33 = require("@remix-run/react");
+var import_react_icons8 = require("@radix-ui/react-icons"), import_node19 = require("@remix-run/node"), import_react33 = require("@remix-run/react");
 
 // app/components/kdb-components/kdb-welcome.tsx
 var import_jsx_dev_runtime31 = require("react/jsx-dev-runtime");
@@ -4717,44 +4625,67 @@ async function loader12({ request, params }) {
 }
 function KdbIndex() {
   let data = (0, import_react33.useLoaderData)();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("div", { className: "mt-15 mb-10 flex flex-col  justify-center overflow-auto md:flex-row ", children: [
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("div", { className: "mt-15 mb-10 flex flex-col gap-2 justify-center overflow-auto md:flex-row ", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("div", { className: "itesms-center flex w-full flex-col md:h-full md:w-1/5", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(PdfSearch, { searchSourceName: "kdb" }, void 0, !1, {
         fileName: "app/routes/kdb.tsx",
-        lineNumber: 84,
+        lineNumber: 85,
         columnNumber: 17
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(import_react33.NavLink, { to: "/kdb/new", children: "add new pdf" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(
+        import_react33.NavLink,
+        {
+          className: "flex flex-col items-center",
+          to: "/kdb/new",
+          children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(import_react_icons8.FileIcon, {}, void 0, !1, {
+              fileName: "app/routes/kdb.tsx",
+              lineNumber: 89,
+              columnNumber: 21
+            }, this),
+            "Add New PDF"
+          ]
+        },
+        void 0,
+        !0,
+        {
+          fileName: "app/routes/kdb.tsx",
+          lineNumber: 86,
+          columnNumber: 17
+        },
+        this
+      ),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(import_react33.Outlet, {}, void 0, !1, {
         fileName: "app/routes/kdb.tsx",
-        lineNumber: 85,
+        lineNumber: 92,
         columnNumber: 17
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/kdb.tsx",
-      lineNumber: 83,
+      lineNumber: 84,
       columnNumber: 13
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("div", { className: "flex w-full flex-col items-center   gap-2  md:h-full md:w-4/5", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(KdbWelcome, {}, void 0, !1, {
         fileName: "app/routes/kdb.tsx",
-        lineNumber: 89,
+        lineNumber: 96,
         columnNumber: 17
       }, this),
       data.pdfLibrary.map(
         (pdf) => /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(PdfList, { pdfLibrary: pdf }, pdf.id, !1, {
           fileName: "app/routes/kdb.tsx",
-          lineNumber: 92,
+          lineNumber: 99,
           columnNumber: 28
         }, this)
       )
     ] }, void 0, !0, {
       fileName: "app/routes/kdb.tsx",
-      lineNumber: 88,
+      lineNumber: 95,
       columnNumber: 13
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/kdb.tsx",
-    lineNumber: 82,
+    lineNumber: 83,
     columnNumber: 9
   }, this);
 }
@@ -4784,7 +4715,7 @@ function Wip2() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-M4P5JIFM.js", imports: ["/build/_shared/chunk-ZWGWGGVF.js", "/build/_shared/chunk-XU7DNSPJ.js", "/build/_shared/chunk-GIAAE3CH.js", "/build/_shared/chunk-OENXDVSZ.js", "/build/_shared/chunk-FYE7RXT4.js", "/build/_shared/chunk-UWV35TSL.js", "/build/_shared/chunk-BOXFZXVX.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-VN2ADQBN.js", imports: ["/build/_shared/chunk-TNP56VJC.js", "/build/_shared/chunk-JHVWG4IG.js", "/build/_shared/chunk-W4JOHJUN.js", "/build/_shared/chunk-2KKE22B5.js", "/build/_shared/chunk-NMZL6IDN.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-DCILL3CY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/actions.pdf": { id: "routes/actions.pdf", parentId: "root", path: "actions/pdf", index: void 0, caseSensitive: void 0, module: "/build/routes/actions.pdf-K73GFXMQ.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-YI6HWIZ4.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-NH7H44TS.js", imports: ["/build/_shared/chunk-VLOORRQ2.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/clinvar": { id: "routes/clinvar", parentId: "root", path: "clinvar", index: void 0, caseSensitive: void 0, module: "/build/routes/clinvar-O5UVHCSM.js", imports: ["/build/_shared/chunk-4T5KGPBP.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-DMCH22JE.js", imports: ["/build/_shared/chunk-4T5KGPBP.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-D6KH52FF.js", imports: ["/build/_shared/chunk-NMZL6IDN.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-7ZKICJR6.js", imports: ["/build/_shared/chunk-JNOKBHGH.js", "/build/_shared/chunk-VLOORRQ2.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/genes": { id: "routes/genes", parentId: "root", path: "genes", index: void 0, caseSensitive: void 0, module: "/build/routes/genes-K2VSHV7R.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/genes.server": { id: "routes/genes.server", parentId: "routes/genes", path: "server", index: void 0, caseSensitive: void 0, module: "/build/routes/genes.server-HPSUZRDK.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb": { id: "routes/kdb", parentId: "root", path: "kdb", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb-7I2O4NLG.js", imports: ["/build/_shared/chunk-557UUAJO.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb.$pdfId.edit-abstract": { id: "routes/kdb.$pdfId.edit-abstract", parentId: "routes/kdb", path: ":pdfId/edit-abstract", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb.$pdfId.edit-abstract-VIGQUX6B.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.$pdfId": { id: "routes/kdb_.$pdfId", parentId: "root", path: "kdb/:pdfId", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.$pdfId-LLNRUSAD.js", imports: ["/build/_shared/chunk-P745DJB6.js", "/build/_shared/chunk-SX3R7FK7.js", "/build/_shared/chunk-JNOKBHGH.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.$pdfId_.annotate": { id: "routes/kdb_.$pdfId_.annotate", parentId: "root", path: "kdb/:pdfId/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.$pdfId_.annotate-7O4MHJYW.js", imports: ["/build/_shared/chunk-557UUAJO.js", "/build/_shared/chunk-SX3R7FK7.js", "/build/_shared/chunk-JNOKBHGH.js", "/build/_shared/chunk-VLOORRQ2.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.new": { id: "routes/kdb_.new", parentId: "root", path: "kdb/new", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.new-53MXJL4C.js", imports: ["/build/_shared/chunk-P745DJB6.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-QWZVHSWK.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-CTGCT3TJ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-XD5MILNS.js", imports: ["/build/_shared/chunk-K7T7BSZM.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-CHJADSQ2.js", imports: ["/build/_shared/chunk-TNP56VJC.js", "/build/_shared/chunk-2KKE22B5.js", "/build/_shared/chunk-NMZL6IDN.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-ZP5XECGE.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/wip": { id: "routes/wip", parentId: "root", path: "wip", index: void 0, caseSensitive: void 0, module: "/build/routes/wip-ZLPJBVUW.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "6a0e541b", hmr: { runtime: "/build/_shared/chunk-FYE7RXT4.js", timestamp: 1687329786005 }, url: "/build/manifest-6A0E541B.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-M4P5JIFM.js", imports: ["/build/_shared/chunk-ZWGWGGVF.js", "/build/_shared/chunk-XU7DNSPJ.js", "/build/_shared/chunk-GIAAE3CH.js", "/build/_shared/chunk-OENXDVSZ.js", "/build/_shared/chunk-FYE7RXT4.js", "/build/_shared/chunk-UWV35TSL.js", "/build/_shared/chunk-BOXFZXVX.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-BFDA2GTP.js", imports: ["/build/_shared/chunk-MJ4FGD4S.js", "/build/_shared/chunk-JHVWG4IG.js", "/build/_shared/chunk-W4JOHJUN.js", "/build/_shared/chunk-2KKE22B5.js", "/build/_shared/chunk-NMZL6IDN.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-TN2HW26Q.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/actions.pdf": { id: "routes/actions.pdf", parentId: "root", path: "actions/pdf", index: void 0, caseSensitive: void 0, module: "/build/routes/actions.pdf-K73GFXMQ.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-VZXRZ72V.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-USJ4EZNF.js", imports: ["/build/_shared/chunk-VLOORRQ2.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/clinvar": { id: "routes/clinvar", parentId: "root", path: "clinvar", index: void 0, caseSensitive: void 0, module: "/build/routes/clinvar-63RWHZZG.js", imports: ["/build/_shared/chunk-4T5KGPBP.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-2QLZWWHY.js", imports: ["/build/_shared/chunk-4T5KGPBP.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-QLNSHDNJ.js", imports: ["/build/_shared/chunk-NMZL6IDN.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-YUWZK5G6.js", imports: ["/build/_shared/chunk-JNOKBHGH.js", "/build/_shared/chunk-VLOORRQ2.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/genes": { id: "routes/genes", parentId: "root", path: "genes", index: void 0, caseSensitive: void 0, module: "/build/routes/genes-TVPLBFJS.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/genes.server": { id: "routes/genes.server", parentId: "routes/genes", path: "server", index: void 0, caseSensitive: void 0, module: "/build/routes/genes.server-HPSUZRDK.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb": { id: "routes/kdb", parentId: "root", path: "kdb", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb-T7O7TIN6.js", imports: ["/build/_shared/chunk-P7ZFVXED.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb.$pdfId.edit-abstract": { id: "routes/kdb.$pdfId.edit-abstract", parentId: "routes/kdb", path: ":pdfId/edit-abstract", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb.$pdfId.edit-abstract-VIGQUX6B.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb.new": { id: "routes/kdb.new", parentId: "routes/kdb", path: "new", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb.new-ZNHPJJXS.js", imports: ["/build/_shared/chunk-P745DJB6.js", "/build/_shared/chunk-2KKE22B5.js", "/build/_shared/chunk-NMZL6IDN.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.$pdfId": { id: "routes/kdb_.$pdfId", parentId: "root", path: "kdb/:pdfId", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.$pdfId-A72EWSLL.js", imports: ["/build/_shared/chunk-P745DJB6.js", "/build/_shared/chunk-SX3R7FK7.js", "/build/_shared/chunk-JNOKBHGH.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.$pdfId_.annotate": { id: "routes/kdb_.$pdfId_.annotate", parentId: "root", path: "kdb/:pdfId/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.$pdfId_.annotate-IDFGOUHH.js", imports: ["/build/_shared/chunk-P7ZFVXED.js", "/build/_shared/chunk-SX3R7FK7.js", "/build/_shared/chunk-JNOKBHGH.js", "/build/_shared/chunk-VLOORRQ2.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-PNWVADAO.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-R2Y3ZCDA.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-WODKAAEK.js", imports: ["/build/_shared/chunk-SY2Q3ZHW.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-ECKJR7O6.js", imports: ["/build/_shared/chunk-MJ4FGD4S.js", "/build/_shared/chunk-2KKE22B5.js", "/build/_shared/chunk-NMZL6IDN.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-ZP5XECGE.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/wip": { id: "routes/wip", parentId: "root", path: "wip", index: void 0, caseSensitive: void 0, module: "/build/routes/wip-32UL2M6K.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "6f59e744", hmr: { runtime: "/build/_shared/chunk-FYE7RXT4.js", timestamp: 1687368119858 }, url: "/build/manifest-6F59E744.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { unstable_dev: !0, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !1, v2_headers: !1, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_react_stream_exports }, dev = { port: 3001 }, routes = {
@@ -4884,14 +4815,6 @@ var assetsBuildDirectory = "public/build", future = { unstable_dev: !0, unstable
     caseSensitive: void 0,
     module: criterion_exports
   },
-  "routes/kdb_.new": {
-    id: "routes/kdb_.new",
-    parentId: "root",
-    path: "kdb/new",
-    index: void 0,
-    caseSensitive: void 0,
-    module: kdb_new_exports
-  },
   "routes/variants": {
     id: "routes/variants",
     parentId: "root",
@@ -4907,6 +4830,14 @@ var assetsBuildDirectory = "public/build", future = { unstable_dev: !0, unstable
     index: void 0,
     caseSensitive: void 0,
     module: clinvar_exports
+  },
+  "routes/kdb.new": {
+    id: "routes/kdb.new",
+    parentId: "routes/kdb",
+    path: "new",
+    index: void 0,
+    caseSensitive: void 0,
+    module: kdb_new_exports
   },
   "routes/sign-in": {
     id: "routes/sign-in",
