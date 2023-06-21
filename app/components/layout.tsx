@@ -5,7 +5,7 @@ import { Link } from '@remix-run/react'
 export default function Layout({ children }: { children: React.ReactNode }) {
     const { userId } = useAuth()
     return (
-        <div className="flex min-h-screen flex-col bg-gray-900 p-1 text-gray-100">
+        <div className="flex min-h-screen flex-col bg-[#212529] p-1 text-gray-100 md:p-2">
             <header className="fixed left-0 right-0 top-0 z-10 flex flex-wrap items-center justify-around gap-2  bg-gray-800 p-1 text-gray-100 shadow-md ">
                 <p className="text-center text-xl font-bold md:text-2xl">
                     ACMG Variant Classifications
@@ -44,9 +44,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     </div>
                 )}
             </header>
-            <main className="relative mt-20 flex-1 overflow-auto">
-                {children}
-            </main>
+            <main className="relative mt-20 flex-1">{children}</main>
             <footer className="fixed bottom-0 left-0 right-0 z-50 flex h-10 items-center  justify-center bg-gray-800 text-gray-100 shadow-md">
                 <ul className="flex items-center gap-1">
                     <li className="flex flex-col  items-center gap-1 font-semibold">

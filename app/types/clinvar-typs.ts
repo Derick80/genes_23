@@ -1,0 +1,36 @@
+export type Root = Array<{
+    alleleId: number
+    type: string
+    name: string
+    geneid: number
+    genesymbol: string
+    hgnc_id: string
+    clinicalsignificance: string
+    clinsigsimple: number
+    lastevaluated: string
+    rsid: number
+    dbvar: string
+    rcvaccession: string
+    phenotypeids: string
+    phenotypelist: string
+    origin: string
+    originsimple: string
+    assembly: string
+    chromosomeaccession: string
+    chromosome: string
+    start: number
+    stop: number
+    referenceallele: string
+    alternateallele: string
+    cytogenetic: string
+    reviewstatus: string
+    numbersubmitters: number
+    guidelines: string
+    testedingtr: string
+    otherids: string
+    submittercategories: number
+    variationid: number
+    positionvcf: number
+    referenceallelevcf: string
+    alternateallelevcf: string
+}>

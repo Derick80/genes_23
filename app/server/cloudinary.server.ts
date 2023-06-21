@@ -26,6 +26,7 @@ export async function uploadPdfToCloudinary(
                 unique_filename: false,
                 public_id: filename,
             },
+
             (error, result) => {
                 if (error) {
                     reject(error)

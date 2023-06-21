@@ -7,7 +7,6 @@ export default function KdbWelcome() {
             <p className="text-2xl">
                 Please select an option from the menu below
             </p>
-            <PdfSearch />
         </div>
     )
 }

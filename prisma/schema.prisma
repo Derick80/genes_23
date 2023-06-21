@@ -45,40 +45,40 @@ model AcmgGermlineGene {
 
 model Clinvar {
   id String @id @unique @default(cuid())
-  alleleid Int? 
-type  String?
-name String?
-geneid Int?
-genesymbol String
-hgnc_id String?
-clinicalsignificance String?
-clinsigsimple Int?
-lastevaluated String?
-rsid String?
-dbvar String?
-rcvaccession String?
-phenotypeids String?
-phenotypelist String?
-origin String?
-originsimple String?
-assembly String?
-chromosomeaccession String?
-chromosome String?
-start Int?
-stop Int?
-referenceallele String?
-alternateallele String?
-cytogenetic String?
-reviewstatus String?
-numbersubmitters Int?
-guidelines String?
-testingscope String?
-otherids String?
-submittercategories String?
-variationid Int?
-positionvcf String?
-referenceallelevcf String?
-alternateallelevcf String?
+ alleleId Int
+    type String
+    name String
+    geneid Int
+    genesymbol String
+    hgnc_id String
+    clinicalsignificance String
+    clinsigsimple Int
+    lastevaluated String
+    rsid Int
+    dbvar String
+    rcvaccession String
+    phenotypeids String
+    phenotypelist String
+    origin String
+    originsimple String
+    assembly String
+    chromosomeaccession String
+    chromosome String
+    start Int
+    stop Int
+    referenceallele String
+    alternateallele String
+    cytogenetic String
+    reviewstatus String
+    numbersubmitters Int
+    guidelines String
+    testedingtr String
+    otherids String
+    submittercategories Int
+    variationid Int
+    positionvcf Int
+    referenceallelevcf String
+    alternateallelevcf String
 
 @@index([genesymbol])
 
@@ -165,6 +165,20 @@ model PdfLibrary {
   journal String
   pubYear Int
   doi String
-  
+  notesHistory String[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt @default(now()  )
+  pdfNotes PdfNotes[]
+   
 
+}
+// store notes for each pdf in the library and keep a history of notes
+
+model PdfNotes {
+  id String @id @unique @default(cuid())
+  pdfLibrary PdfLibrary @relation(fields: [pdfLibraryId], references: [id], onDelete: Cascade)
+  pdfLibraryId String
+  notes String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

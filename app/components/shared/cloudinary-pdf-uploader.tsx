@@ -1,10 +1,22 @@
 import { useFetcher } from '@remix-run/react'
+import React from 'react'
 
 type PdfUploaderProps = {
     setUrl: React.Dispatch<React.SetStateAction<string>>
 }
 export default function PdfUploader({ setUrl }: PdfUploaderProps) {
+    const [selectedFile, setSelectedFile] = React.useState<Boolean>(false)
+
     const pdfFetcher = useFetcher()
+
+    const handleDisabledState = () => {
+        if (!selectedFile) {
+            setSelectedFile(true)
+            setUrl(pdfFetcher.data?.pdfUrl)
+        }
+
+        return false
+    }
 
     const handlePdfUpload = async () => {
         pdfFetcher.submit({
@@ -13,6 +25,7 @@ export default function PdfUploader({ setUrl }: PdfUploaderProps) {
             action: `/actions/pdf`,
         })
         pdfFetcher.data?.pdfUrl && setUrl(pdfFetcher.data.pdfUrl)
+        setSelectedFile(true)
     }
 
     return (
@@ -30,14 +43,16 @@ export default function PdfUploader({ setUrl }: PdfUploaderProps) {
                     name="pdfUrl"
                     accept="application/pdf"
                 />
-                <button type="submit">Upload</button>
+                <button disabled={!selectedFile} type="submit">
+                    Upload
+                </button>
             </pdfFetcher.Form>
             {pdfFetcher.data?.pdfUrl && (
                 <div>
                     <input
                         type="text"
                         name="pdfUrl"
-                        onChange={setUrl(pdfFetcher.data?.pdfUrl)}
+                        onChange={void setUrl(pdfFetcher.data?.pdfUrl)}
                     />
                 </div>
             )}

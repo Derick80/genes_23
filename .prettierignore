@@ -28,3 +28,4 @@ prisma/acmg_clinvartojson.json
 prisma/gnomad_lof_metrics.json
 prisma/gnoma-lof.ts
 .netlify/
+prisma/

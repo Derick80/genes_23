@@ -1,16 +1,15 @@
 import { PrismaClient } from '@prisma/client'
 import acmgClinvar from './acmg_clinvartojson.json'
-
+import { smaller_df_1 } from './smaller_df_1'
 const prisma = new PrismaClient()
 
 export async function seedACMGClinvar() {
     await prisma.clinvar.createMany({
-        data: acmgClinvar,
+        data: smaller_df_1,
         skipDuplicates: true,
     })
 }
-
-seedACMGClinvar()
+await seedACMGClinvar()
     .catch((e) => {
         console.error(e)
         process.exit(1)
