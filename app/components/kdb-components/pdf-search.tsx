@@ -1,11 +1,28 @@
+import { redirect } from '@remix-run/node'
 import { Form, useNavigate, useSearchParams } from '@remix-run/react'
 import React from 'react'
+import { set } from 'zod'
 export function shouldRevalidate() {
     return true
 }
+type SearchTarget = 'kdb' | 'variants' | 'criterion' | 'genes'
 
-export default function PdfSearch() {
-    const [searchParams] = useSearchParams()
+const placeholderText = {
+    kdb: 'Search the KDB for PMID, PMCID, Author, Title"',
+    variants: 'Search Variants',
+    criterion: 'Search Criterion',
+    genes: 'Search Genes',
+}
+
+type SearchProps = {
+    searchSourceName: string
+}
+
+export default function PdfSearch({ searchSourceName }: SearchProps) {
+    const placeholder = placeholderText[searchSourceName as SearchTarget]
+    console.log('placeholder', placeholder)
+
+    const [searchParams, setSearchParams] = useSearchParams()
     const formRef = React.useRef<HTMLFormElement>(null)
     const navigate = useNavigate()
     function handleClear(e: React.MouseEvent<HTMLButtonElement>) {
@@ -14,9 +31,28 @@ export default function PdfSearch() {
         searchParams.delete('filter')
 
         formRef.current?.reset()
+        // navigate(-1)
         navigate(`/kdb/`, {
             replace: true,
         })
+        return redirect('/kdb')
+    }
+    function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
+        const { value } = e.currentTarget
+        console.log('value', value)
+
+        if (value === null) {
+            setSearchParams('')
+            navigate(`/kdb/`, {
+                replace: true,
+            })
+        } else {
+            setSearchParams(value)
+        }
+        navigate(`/kdb/?filter=${value}`, {
+            replace: true,
+        })
+        return redirect('/kdb')
     }
 
     return (
@@ -30,10 +66,18 @@ export default function PdfSearch() {
                     className="border-input ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-white placeholder:text-[8px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                     type="text"
                     name="filter"
-                    placeholder="Search for PMID, PMCID, Author, Title"
+                    placeholder={placeholder}
                     // defaultValue={searchParams.get('filter' ) || ''}
                 />
-                {searchParams.get('filter') ? (
+                <div className="flex gap-2">
+                    <button
+                        className="rounded-xl bg-blue-300 px-3 py-2 font-semibold text-blue-600 transition duration-300 ease-in-out hover:-translate-y-1 hover:bg-yellow-400"
+                        type="submit"
+                        onClick={(e) => handleClick(e)}
+                    >
+                        Search
+                    </button>
+
                     <button
                         className="w-1/2 rounded-xl bg-red-300 px-3 py-2 font-semibold text-blue-600 transition duration-300 ease-in-out hover:-translate-y-1 hover:bg-yellow-400"
                         onClick={(e) => handleClear(e)}
@@ -41,14 +85,7 @@ export default function PdfSearch() {
                     >
                         Clear
                     </button>
-                ) : (
-                    <button
-                        className="rounded-xl bg-blue-300 px-3 py-2 font-semibold text-blue-600 transition duration-300 ease-in-out hover:-translate-y-1 hover:bg-yellow-400"
-                        type="submit"
-                    >
-                        Search
-                    </button>
-                )}
+                </div>
             </Form>
         </div>
     )

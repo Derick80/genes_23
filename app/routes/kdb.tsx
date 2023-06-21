@@ -1,9 +1,10 @@
 import type { Prisma } from '@prisma/client'
 import type { LoaderArgs } from '@remix-run/node'
 import { json } from '@remix-run/node'
-import { NavLink } from '@remix-run/react'
+import { NavLink, useLoaderData } from '@remix-run/react'
 import KdbWelcome from '~/components/kdb-components/kdb-welcome'
 import PdfList from '~/components/kdb-components/pdf-library-list'
+import PdfSearch from '~/components/kdb-components/pdf-search'
 import { prisma } from '~/server/prisma.server'
 export function shouldRevalidate() {
     return true
@@ -55,7 +56,16 @@ export async function loader({ request, params }: LoaderArgs) {
         where: {
             ...textFilter,
         },
-    })
+        include: {
+            pdfNotes: {
+                take: 1,
+                orderBy: {
+                    createdAt: 'desc',
+                },
+            },
+        },
+        
+    }) 
 
     // const pdfLibrary = await getPdfLibrary( textFilter);
 
@@ -67,15 +77,24 @@ export async function loader({ request, params }: LoaderArgs) {
 }
 
 export default function KdbIndex() {
+    const data = useLoaderData<typeof loader>()
     return (
-        <div className="mt-15 mb-10 flex h-screen  w-full flex-col items-center justify-center md:flex-row">
-            <div className="flex  w-full flex-col items-center justify-center border-2 border-green-500 md:h-screen md:w-1/5">
+        <div className="mt-15 mb-10 flex flex-col  justify-center overflow-auto md:flex-row ">
+            <div className="itesms-center flex w-full flex-col md:h-full md:w-1/5">
+                <PdfSearch searchSourceName="kdb" />
                 <NavLink to="/kdb/new">add new pdf</NavLink>
             </div>
 
-            <div className="flex h-full w-full flex-col items-center gap-2 border-2  border-red-500 md:h-screen md:w-4/5">
+            <div className="flex w-full flex-col items-center   gap-2  md:h-full md:w-4/5">
                 <KdbWelcome />
-                <PdfList />
+             {
+                data.pdfLibrary.map((pdf) => {
+                    return <PdfList key={pdf.id} pdfLibrary={pdf} />
+                }
+                )}
+                
+
+
             </div>
         </div>
     )

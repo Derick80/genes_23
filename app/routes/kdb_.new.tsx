@@ -11,7 +11,6 @@ import {
 
 export async function action({ request, params }: ActionArgs) {
     const formData = await request.formData()
-    console.log(Object.fromEntries(formData.entries()), 'formData')
 
     const pdfUrl = formData.get('pdfUrl') as string
     const searchPmid = (await getPMSearchTerm(pdfUrl)) as string
@@ -62,6 +61,7 @@ export default function Wip() {
     }>()
 
     const [url, setUrl] = React.useState<string>('')
+
     return (
         <div className="mb-20 flex flex-col items-center justify-center">
             <PdfUploader setUrl={setUrl} />

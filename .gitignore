@@ -15,3 +15,5 @@ prisma/seed-acmg-clinvar.ts
 prisma/gnomad_lof_metrics.json
 # Local Netlify folder
 .netlify
+prisma/smaller_df_1.json
+prisma/smaller_df_1.ts
