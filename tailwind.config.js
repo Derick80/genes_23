@@ -2,8 +2,15 @@
 module.exports = {
   content: ["./app/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans:['Roboto', 'sans-serif'],
+
+    },
+
   },
   plugins: [    require('@tailwindcss/typography'),
 ],
-};
+
+}
+}
