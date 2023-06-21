@@ -548,6 +548,7 @@ function EditAbstract({ pdfId }) {
 // app/components/kdb-components/pdf-library-list.tsx
 var import_jsx_dev_runtime5 = require("react/jsx-dev-runtime");
 function PdfList({ pdfLibrary }) {
+  var _a;
   let [edit, setEdit] = import_react6.default.useState(!1);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: " flex w-full flex-col gap-2 ", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
     "div",
@@ -778,36 +779,39 @@ function PdfList({ pdfLibrary }) {
                       lineNumber: 131,
                       columnNumber: 45
                     }, this),
-                    pdfLibrary.pdfNotes.map((note) => /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
+                    (_a = pdfLibrary == null ? void 0 : pdfLibrary.pdfNotes) == null ? void 0 : _a.map((note) => /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
                       "div",
                       {
                         className: "flex flex-col gap-2",
-                        children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { dangerouslySetInnerHTML: { __html: note.notes }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
-                          import_react5.Link,
-                          {
-                            to: `/kdb/${note.pdfLibraryId}/annotate`,
-                            children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "text-xs font-bold underline", children: "annotate:" }, void 0, !1, {
-                              fileName: "app/components/kdb-components/pdf-library-list.tsx",
-                              lineNumber: 145,
-                              columnNumber: 49
-                            }, this)
-                          },
-                          void 0,
-                          !1,
-                          {
+                        children: [
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { dangerouslySetInnerHTML: { __html: note.notes } }, void 0, !1, {
                             fileName: "app/components/kdb-components/pdf-library-list.tsx",
-                            lineNumber: 142,
+                            lineNumber: 140,
                             columnNumber: 59
-                          },
-                          this
-                        ) }, void 0, !1, {
-                          fileName: "app/components/kdb-components/pdf-library-list.tsx",
-                          lineNumber: 140,
-                          columnNumber: 59
-                        }, this)
+                          }, this),
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
+                            import_react5.Link,
+                            {
+                              to: `/kdb/${note.pdfLibraryId}/annotate`,
+                              children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "text-xs font-bold underline", children: "annotate:" }, void 0, !1, {
+                                fileName: "app/components/kdb-components/pdf-library-list.tsx",
+                                lineNumber: 145,
+                                columnNumber: 49
+                              }, this)
+                            },
+                            void 0,
+                            !1,
+                            {
+                              fileName: "app/components/kdb-components/pdf-library-list.tsx",
+                              lineNumber: 142,
+                              columnNumber: 59
+                            },
+                            this
+                          )
+                        ]
                       },
                       note.id,
-                      !1,
+                      !0,
                       {
                         fileName: "app/components/kdb-components/pdf-library-list.tsx",
                         lineNumber: 137,
@@ -874,38 +878,38 @@ function AccordianTriggerBar(props) {
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "flex flex-col items-center gap-1 md:items-start ", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "text-xs font-bold underline", children: "Journal" }, void 0, !1, {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
-          lineNumber: 183,
+          lineNumber: 182,
           columnNumber: 21
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "text-xs font-bold", children: kdbEntry.journal }, void 0, !1, {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
-          lineNumber: 184,
+          lineNumber: 183,
           columnNumber: 21
         }, this)
       ] }, void 0, !0, {
         fileName: "app/components/kdb-components/pdf-library-list.tsx",
-        lineNumber: 182,
+        lineNumber: 181,
         columnNumber: 17
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "grow" }, void 0, !1, {
         fileName: "app/components/kdb-components/pdf-library-list.tsx",
-        lineNumber: 186,
+        lineNumber: 185,
         columnNumber: 17
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(AccordianNavBar, { kdbEntry }, void 0, !1, {
         fileName: "app/components/kdb-components/pdf-library-list.tsx",
-        lineNumber: 188,
+        lineNumber: 187,
         columnNumber: 17
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "grow" }, void 0, !1, {
         fileName: "app/components/kdb-components/pdf-library-list.tsx",
-        lineNumber: 189,
+        lineNumber: 188,
         columnNumber: 17
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "flex flex-col items-center  gap-1", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "text-xs font-bold underline", children: "Publication Year" }, void 0, !1, {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
-          lineNumber: 192,
+          lineNumber: 191,
           columnNumber: 21
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "text-xs font-bold", children: [
@@ -914,12 +918,12 @@ function AccordianTriggerBar(props) {
           ")"
         ] }, void 0, !0, {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
-          lineNumber: 195,
+          lineNumber: 194,
           columnNumber: 21
         }, this)
       ] }, void 0, !0, {
         fileName: "app/components/kdb-components/pdf-library-list.tsx",
-        lineNumber: 191,
+        lineNumber: 190,
         columnNumber: 17
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "flex flex-col items-center gap-1 pl-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
@@ -932,32 +936,32 @@ function AccordianTriggerBar(props) {
           children: open ? /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "flex flex-col items-center gap-1 md:items-end", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "text-xs font-bold", children: "Hide Details" }, void 0, !1, {
               fileName: "app/components/kdb-components/pdf-library-list.tsx",
-              lineNumber: 206,
+              lineNumber: 205,
               columnNumber: 33
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react_icons2.ChevronUpIcon, {}, void 0, !1, {
               fileName: "app/components/kdb-components/pdf-library-list.tsx",
-              lineNumber: 209,
+              lineNumber: 208,
               columnNumber: 33
             }, this)
           ] }, void 0, !0, {
             fileName: "app/components/kdb-components/pdf-library-list.tsx",
-            lineNumber: 205,
+            lineNumber: 204,
             columnNumber: 29
           }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "flex flex-col items-center gap-1 md:items-end", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "text-xs font-bold", children: "View Details" }, void 0, !1, {
               fileName: "app/components/kdb-components/pdf-library-list.tsx",
-              lineNumber: 213,
+              lineNumber: 212,
               columnNumber: 33
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react_icons2.ChevronDownIcon, {}, void 0, !1, {
               fileName: "app/components/kdb-components/pdf-library-list.tsx",
-              lineNumber: 216,
+              lineNumber: 215,
               columnNumber: 33
             }, this)
           ] }, void 0, !0, {
             fileName: "app/components/kdb-components/pdf-library-list.tsx",
-            lineNumber: 212,
+            lineNumber: 211,
             columnNumber: 29
           }, this)
         },
@@ -965,18 +969,18 @@ function AccordianTriggerBar(props) {
         !1,
         {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
-          lineNumber: 198,
+          lineNumber: 197,
           columnNumber: 21
         },
         this
       ) }, void 0, !1, {
         fileName: "app/components/kdb-components/pdf-library-list.tsx",
-        lineNumber: 197,
+        lineNumber: 196,
         columnNumber: 17
       }, this)
     ] }, void 0, !0, {
       fileName: "app/components/kdb-components/pdf-library-list.tsx",
-      lineNumber: 181,
+      lineNumber: 180,
       columnNumber: 13
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_framer_motion.AnimatePresence, { children: open && /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
@@ -988,7 +992,7 @@ function AccordianTriggerBar(props) {
         transition: { type: "tween" },
         children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "flex  flex-col items-stretch", children }, void 0, !1, {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
-          lineNumber: 231,
+          lineNumber: 230,
           columnNumber: 25
         }, this)
       },
@@ -996,18 +1000,18 @@ function AccordianTriggerBar(props) {
       !1,
       {
         fileName: "app/components/kdb-components/pdf-library-list.tsx",
-        lineNumber: 224,
+        lineNumber: 223,
         columnNumber: 21
       },
       this
     ) }, void 0, !1, {
       fileName: "app/components/kdb-components/pdf-library-list.tsx",
-      lineNumber: 222,
+      lineNumber: 221,
       columnNumber: 13
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/kdb-components/pdf-library-list.tsx",
-    lineNumber: 180,
+    lineNumber: 179,
     columnNumber: 9
   }, this);
 }
@@ -1015,7 +1019,7 @@ function AccordianNavBar({ kdbEntry }) {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "flex flex-col items-center gap-1", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("p", { className: "text-xs font-bold underline", children: "Links" }, void 0, !1, {
       fileName: "app/components/kdb-components/pdf-library-list.tsx",
-      lineNumber: 244,
+      lineNumber: 243,
       columnNumber: 13
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "flex flex-row items-center justify-between gap-2 text-xs", children: [
@@ -1032,7 +1036,7 @@ function AccordianNavBar({ kdbEntry }) {
         !1,
         {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
-          lineNumber: 247,
+          lineNumber: 246,
           columnNumber: 17
         },
         this
@@ -1050,7 +1054,7 @@ function AccordianNavBar({ kdbEntry }) {
         !1,
         {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
-          lineNumber: 256,
+          lineNumber: 255,
           columnNumber: 21
         },
         this
@@ -1068,7 +1072,7 @@ function AccordianNavBar({ kdbEntry }) {
         !1,
         {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
-          lineNumber: 265,
+          lineNumber: 264,
           columnNumber: 17
         },
         this
@@ -1086,19 +1090,19 @@ function AccordianNavBar({ kdbEntry }) {
         !1,
         {
           fileName: "app/components/kdb-components/pdf-library-list.tsx",
-          lineNumber: 273,
+          lineNumber: 272,
           columnNumber: 17
         },
         this
       )
     ] }, void 0, !0, {
       fileName: "app/components/kdb-components/pdf-library-list.tsx",
-      lineNumber: 246,
+      lineNumber: 245,
       columnNumber: 13
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/kdb-components/pdf-library-list.tsx",
-    lineNumber: 243,
+    lineNumber: 242,
     columnNumber: 9
   }, this);
 }
@@ -4620,7 +4624,7 @@ function KdbIndex() {
 var wip_exports = {};
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-M4P5JIFM.js", imports: ["/build/_shared/chunk-ZWGWGGVF.js", "/build/_shared/chunk-XU7DNSPJ.js", "/build/_shared/chunk-GIAAE3CH.js", "/build/_shared/chunk-OENXDVSZ.js", "/build/_shared/chunk-FYE7RXT4.js", "/build/_shared/chunk-UWV35TSL.js", "/build/_shared/chunk-BOXFZXVX.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-VA6TLHT6.js", imports: ["/build/_shared/chunk-TNP56VJC.js", "/build/_shared/chunk-JHVWG4IG.js", "/build/_shared/chunk-W4JOHJUN.js", "/build/_shared/chunk-2KKE22B5.js", "/build/_shared/chunk-NMZL6IDN.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-DCILL3CY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/actions.pdf": { id: "routes/actions.pdf", parentId: "root", path: "actions/pdf", index: void 0, caseSensitive: void 0, module: "/build/routes/actions.pdf-K73GFXMQ.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-YI6HWIZ4.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-NH7H44TS.js", imports: ["/build/_shared/chunk-VLOORRQ2.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/clinvar": { id: "routes/clinvar", parentId: "root", path: "clinvar", index: void 0, caseSensitive: void 0, module: "/build/routes/clinvar-O5UVHCSM.js", imports: ["/build/_shared/chunk-4T5KGPBP.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-DMCH22JE.js", imports: ["/build/_shared/chunk-4T5KGPBP.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-D6KH52FF.js", imports: ["/build/_shared/chunk-NMZL6IDN.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-7ZKICJR6.js", imports: ["/build/_shared/chunk-JNOKBHGH.js", "/build/_shared/chunk-VLOORRQ2.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/genes": { id: "routes/genes", parentId: "root", path: "genes", index: void 0, caseSensitive: void 0, module: "/build/routes/genes-K2VSHV7R.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/genes.server": { id: "routes/genes.server", parentId: "routes/genes", path: "server", index: void 0, caseSensitive: void 0, module: "/build/routes/genes.server-HPSUZRDK.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb": { id: "routes/kdb", parentId: "root", path: "kdb", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb-TD2XXKCS.js", imports: ["/build/_shared/chunk-SEFY2VSP.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb.$pdfId.edit-abstract": { id: "routes/kdb.$pdfId.edit-abstract", parentId: "routes/kdb", path: ":pdfId/edit-abstract", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb.$pdfId.edit-abstract-VIGQUX6B.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.$pdfId": { id: "routes/kdb_.$pdfId", parentId: "root", path: "kdb/:pdfId", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.$pdfId-LLNRUSAD.js", imports: ["/build/_shared/chunk-P745DJB6.js", "/build/_shared/chunk-SX3R7FK7.js", "/build/_shared/chunk-JNOKBHGH.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.$pdfId_.annotate": { id: "routes/kdb_.$pdfId_.annotate", parentId: "root", path: "kdb/:pdfId/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.$pdfId_.annotate-7YHTREJG.js", imports: ["/build/_shared/chunk-SEFY2VSP.js", "/build/_shared/chunk-SX3R7FK7.js", "/build/_shared/chunk-JNOKBHGH.js", "/build/_shared/chunk-VLOORRQ2.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.new": { id: "routes/kdb_.new", parentId: "root", path: "kdb/new", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.new-53MXJL4C.js", imports: ["/build/_shared/chunk-P745DJB6.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-QWZVHSWK.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-CTGCT3TJ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-XD5MILNS.js", imports: ["/build/_shared/chunk-K7T7BSZM.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-CHJADSQ2.js", imports: ["/build/_shared/chunk-TNP56VJC.js", "/build/_shared/chunk-2KKE22B5.js", "/build/_shared/chunk-NMZL6IDN.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-ZP5XECGE.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/wip": { id: "routes/wip", parentId: "root", path: "wip", index: void 0, caseSensitive: void 0, module: "/build/routes/wip-4BDBACDH.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "c2f2b758", hmr: { runtime: "/build/_shared/chunk-FYE7RXT4.js", timestamp: 1687318424304 }, url: "/build/manifest-C2F2B758.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-M4P5JIFM.js", imports: ["/build/_shared/chunk-ZWGWGGVF.js", "/build/_shared/chunk-XU7DNSPJ.js", "/build/_shared/chunk-GIAAE3CH.js", "/build/_shared/chunk-OENXDVSZ.js", "/build/_shared/chunk-FYE7RXT4.js", "/build/_shared/chunk-UWV35TSL.js", "/build/_shared/chunk-BOXFZXVX.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-VA6TLHT6.js", imports: ["/build/_shared/chunk-TNP56VJC.js", "/build/_shared/chunk-JHVWG4IG.js", "/build/_shared/chunk-W4JOHJUN.js", "/build/_shared/chunk-2KKE22B5.js", "/build/_shared/chunk-NMZL6IDN.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-DCILL3CY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/actions.pdf": { id: "routes/actions.pdf", parentId: "root", path: "actions/pdf", index: void 0, caseSensitive: void 0, module: "/build/routes/actions.pdf-K73GFXMQ.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-YI6HWIZ4.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-NH7H44TS.js", imports: ["/build/_shared/chunk-VLOORRQ2.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/clinvar": { id: "routes/clinvar", parentId: "root", path: "clinvar", index: void 0, caseSensitive: void 0, module: "/build/routes/clinvar-O5UVHCSM.js", imports: ["/build/_shared/chunk-4T5KGPBP.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-DMCH22JE.js", imports: ["/build/_shared/chunk-4T5KGPBP.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-D6KH52FF.js", imports: ["/build/_shared/chunk-NMZL6IDN.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-7ZKICJR6.js", imports: ["/build/_shared/chunk-JNOKBHGH.js", "/build/_shared/chunk-VLOORRQ2.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/genes": { id: "routes/genes", parentId: "root", path: "genes", index: void 0, caseSensitive: void 0, module: "/build/routes/genes-K2VSHV7R.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/genes.server": { id: "routes/genes.server", parentId: "routes/genes", path: "server", index: void 0, caseSensitive: void 0, module: "/build/routes/genes.server-HPSUZRDK.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb": { id: "routes/kdb", parentId: "root", path: "kdb", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb-SWSJSOIM.js", imports: ["/build/_shared/chunk-NRT7HMQY.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb.$pdfId.edit-abstract": { id: "routes/kdb.$pdfId.edit-abstract", parentId: "routes/kdb", path: ":pdfId/edit-abstract", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb.$pdfId.edit-abstract-VIGQUX6B.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.$pdfId": { id: "routes/kdb_.$pdfId", parentId: "root", path: "kdb/:pdfId", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.$pdfId-LLNRUSAD.js", imports: ["/build/_shared/chunk-P745DJB6.js", "/build/_shared/chunk-SX3R7FK7.js", "/build/_shared/chunk-JNOKBHGH.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.$pdfId_.annotate": { id: "routes/kdb_.$pdfId_.annotate", parentId: "root", path: "kdb/:pdfId/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.$pdfId_.annotate-NWO35NVN.js", imports: ["/build/_shared/chunk-NRT7HMQY.js", "/build/_shared/chunk-SX3R7FK7.js", "/build/_shared/chunk-JNOKBHGH.js", "/build/_shared/chunk-VLOORRQ2.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.new": { id: "routes/kdb_.new", parentId: "root", path: "kdb/new", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.new-53MXJL4C.js", imports: ["/build/_shared/chunk-P745DJB6.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-QWZVHSWK.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-CTGCT3TJ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-XD5MILNS.js", imports: ["/build/_shared/chunk-K7T7BSZM.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-CHJADSQ2.js", imports: ["/build/_shared/chunk-TNP56VJC.js", "/build/_shared/chunk-2KKE22B5.js", "/build/_shared/chunk-NMZL6IDN.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-ZP5XECGE.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/wip": { id: "routes/wip", parentId: "root", path: "wip", index: void 0, caseSensitive: void 0, module: "/build/routes/wip-4BDBACDH.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "31bdcb0e", hmr: { runtime: "/build/_shared/chunk-FYE7RXT4.js", timestamp: 1687318657646 }, url: "/build/manifest-31BDCB0E.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { unstable_dev: !0, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !1, v2_headers: !1, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_react_stream_exports }, dev = { port: 3001 }, routes = {

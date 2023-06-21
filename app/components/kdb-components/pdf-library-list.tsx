@@ -132,12 +132,12 @@ export default function PdfList({ pdfLibrary }: PdfListProps) {
                                                 Notes:
                                             </p>
                                             {
-                                                pdfLibrary.pdfNotes.map((note) => {
+                                                pdfLibrary?.pdfNotes?.map((note) => {
                                                     return (
                                                         <div
                                                             key={note.id}
                                                         className="flex flex-col gap-2">
-                                                          <div dangerouslySetInnerHTML={{__html: note.notes}}>
+                                                          <div dangerouslySetInnerHTML={{__html: note.notes}}/>
 
                                                           <Link
                                                 to={`/kdb/${note.pdfLibraryId}/annotate`}
@@ -146,7 +146,6 @@ export default function PdfList({ pdfLibrary }: PdfListProps) {
                                                     annotate:
                                                 </p>
                                             </Link>
-                                                          </div>
 
                                                             </div>
                                                     )
