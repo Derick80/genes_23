@@ -6,4 +6,6 @@ import type { PdfNotes as PrismaPdfNotes } from '@prisma/client'
 export type PdfNotes = SerializeFrom<PrismaPdfNotes>
 export type PdfLibrary = SerializeFrom<PrismaPdfLibrary>
 
-export type myPdfLibrary =  PdfLibrary & PdfNotes
+export type myPdfLibrary =  PdfLibrary & {
+    pdfNotes: PdfNotes[]
+}

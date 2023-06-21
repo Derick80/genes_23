@@ -65,7 +65,7 @@ export async function loader({ request, params }: LoaderArgs) {
             },
         },
         
-    })
+    }) 
 
     // const pdfLibrary = await getPdfLibrary( textFilter);
 

@@ -6,13 +6,12 @@ import {
 import { Link } from '@remix-run/react'
 import { AnimatePresence, motion } from 'framer-motion'
 import React, { useCallback } from 'react'
-import type { PdfLibrary } from '~/types/kdb-types'
+import type { PdfLibrary, myPdfLibrary } from '~/types/kdb-types'
 import EditAbstract from './pdf-edit-abstract'
-import { SerializeFrom } from '@remix-run/node'
-import { PdfNotes } from '@prisma/client'
+
 
 type PdfListProps = {
-    pdfLibrary: PdfLibrary 
+    pdfLibrary: myPdfLibrary 
 }
 
 export default function PdfList({ pdfLibrary }: PdfListProps) {
@@ -124,10 +123,36 @@ export default function PdfList({ pdfLibrary }: PdfListProps) {
                                                 </p>
                                             </Link>
                                         </div>
-                                        {
-                                            pdfLibrary.
-                                        }
-                                    </div>
+                                       
+                                     
+                                    </div> <div
+                                            className="flex flex-col gap-2"
+                                    >
+                                            <p className="text-xs font-bold underline">
+                                                Notes:
+                                            </p>
+                                            {
+                                                pdfLibrary.pdfNotes.map((note) => {
+                                                    return (
+                                                        <div
+                                                            key={note.id}
+                                                        className="flex flex-col gap-2">
+                                                          <div dangerouslySetInnerHTML={{__html: note.notes}}>
+
+                                                          <Link
+                                                to={`/kdb/${note.pdfLibraryId}/annotate`}
+                                            >
+                                                <p className="text-xs font-bold underline">
+                                                    annotate:
+                                                </p>
+                                            </Link>
+                                                          </div>
+
+                                                            </div>
+                                                    )
+                                                })
+                                            }
+                                        </div>
                                 </div>
                             </li>
                         </ul>
