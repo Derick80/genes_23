@@ -18,7 +18,7 @@ type SearchProps = {
     searchSourceName: string
 }
 
-export default function PdfSearch({ searchSourceName }: SearchProps) {
+export default function Search({ searchSourceName }: SearchProps) {
     const placeholder = placeholderText[searchSourceName as SearchTarget]
     console.log('placeholder', placeholder)
 
@@ -32,10 +32,10 @@ export default function PdfSearch({ searchSourceName }: SearchProps) {
 
         formRef.current?.reset()
         // navigate(-1)
-        navigate(`/kdb/`, {
+        navigate(`/${searchSourceName}/`, {
             replace: true,
         })
-        return redirect('/kdb')
+        return redirect(`/${searchSourceName}/`)
     }
     function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
         const { value } = e.currentTarget
@@ -43,16 +43,16 @@ export default function PdfSearch({ searchSourceName }: SearchProps) {
 
         if (value === null) {
             setSearchParams('')
-            navigate(`/kdb/`, {
+            navigate(`/${searchSourceName}/`, {
                 replace: true,
             })
         } else {
             setSearchParams(value)
         }
-        navigate(`/kdb/?filter=${value}`, {
+        navigate(`/${searchSourceName}/?filter=${value}`, {
             replace: true,
         })
-        return redirect('/kdb')
+        return redirect(`/${searchSourceName}/?filter=${value}`)
     }
 
     return (

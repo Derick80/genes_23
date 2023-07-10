@@ -71,7 +71,7 @@ export const criterions = [
         evidenceTypeShort: 'Functional',
         criterionBaseWeight: 'Strong',
         definition:
-            'S: Well-established in vitro or in vivo functional studies supportive of a damaging effect on the gene or gene product',
+            'Well established in vitro or in vivo functional studies supportive of a damaging effect on the gene or gene product.',
         example: '',
         caveat: 'Functional studies that have been validated and shown to be reproducible and robust in a clinical diagnostic laboratory setting are considered the most well-established.',
     },

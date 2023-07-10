@@ -71,13 +71,6 @@ export default function Wip() {
                     className="flex w-full flex-col items-center justify-center"
                     method="POST"
                 >
-                    <input
-                        className="w-full text-black"
-                        type="text"
-                        name="pdfUrl"
-                        defaultValue={url}
-                        onChange={(e) => setUrl(e.target.value)}
-                    />
                     {actionData?.pdfEntry?.error && (
                         <div className="text-red-500">
                             {actionData.pdfEntry.error}

@@ -5,7 +5,7 @@ type PdfUploaderProps = {
     setUrl: React.Dispatch<React.SetStateAction<string>>
 }
 export default function PdfUploader({ setUrl }: PdfUploaderProps) {
-    const [selectedFile, setSelectedFile] = React.useState<Boolean>(false)
+    const [selectedFile, setSelectedFile] = React.useState<boolean>(false)
 
     const pdfFetcher = useFetcher()
 

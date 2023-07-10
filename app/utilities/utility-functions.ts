@@ -1,6 +1,8 @@
 import { useMatches } from '@remix-run/react'
 import { useMemo } from 'react'
 import type { ZodError, ZodSchema } from 'zod'
+import { clsx, type ClassValue } from 'clsx'
+import { twMerge } from 'tailwind-merge'
 
 // This function is used to get the data from the routes
 
@@ -48,4 +50,8 @@ export async function validateAction<ActionInput>({
             ),
         }
     }
+}
+
+export function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs))
 }
