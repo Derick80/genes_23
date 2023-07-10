@@ -15,7 +15,6 @@ model User {
   email String @unique
   password String
   username String @unique
-  posts Post[]
 
 }
 
@@ -26,12 +25,12 @@ model Post {
   description String
   content String
   imgUrl String
-  author User @relation(fields: [authorId], references: [id], onDelete: Cascade)
   authorId String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt @default(now())
   categories Category[]
-
+  @@index([title, slug])
+  
 }
 
 model Category {

@@ -147,7 +147,7 @@ __export(root_exports, {
 var import_node2 = require("@remix-run/node"), import_react3 = require("@remix-run/react");
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-EIDVB5PK.css";
+var tailwind_default = "/build/_assets/tailwind-PUDUBTT5.css";
 
 // app/components/layout.tsx
 var import_remix = require("@clerk/remix"), import_react_icons = require("@radix-ui/react-icons"), import_react2 = require("@remix-run/react"), import_jsx_dev_runtime2 = require("react/jsx-dev-runtime");
@@ -2255,6 +2255,123 @@ flex`,
   );
 }
 
+// app/routes/actions.files.ts
+var actions_files_exports = {};
+__export(actions_files_exports, {
+  action: () => action4
+});
+var import_node8 = require("@remix-run/node");
+
+// app/server/cloudinary.server.ts
+var import_cloudinary = __toESM(require("cloudinary")), import_node7 = require("@remix-run/node");
+import_cloudinary.default.v2.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
+async function uploadPdfToCloudinary(data, filename2) {
+  return new Promise(async (resolve, reject) => {
+    let uploadStream = import_cloudinary.default.v2.uploader.upload_stream(
+      {
+        cloud_name: "dch-photo",
+        folder: "alleles_pdf",
+        use_filename: !0,
+        unique_filename: !1,
+        public_id: filename2
+      },
+      (error, result) => {
+        if (error) {
+          reject(error);
+          return;
+        }
+        resolve(result);
+      }
+    );
+    await (0, import_node7.writeAsyncIterableToWritable)(data, uploadStream);
+  });
+}
+var pdfUploadHandler = (0, import_node7.unstable_composeUploadHandlers)(
+  async ({ name, data, filename: filename2 }) => {
+    if (name !== "pdfUrl")
+      return;
+    let updatedFileName = (filename2 == null ? void 0 : filename2.replace(/\.[^/.]+$/, "")) || "no_file_name";
+    console.log(
+      "updatedFileName from cloudinary server file",
+      updatedFileName
+    );
+    let uploadedPdf = await uploadPdfToCloudinary(
+      data,
+      updatedFileName
+    );
+    return console.log("uploadedPdf from cloudinary server file", uploadedPdf), uploadedPdf.secure_url;
+  },
+  (0, import_node7.unstable_createMemoryUploadHandler)()
+);
+async function cloudinaryPdfUpload(request) {
+  let formData = await (0, import_node7.unstable_parseMultipartFormData)(
+    request,
+    pdfUploadHandler
+  );
+  return console.log(
+    Object.fromEntries(formData),
+    "formData from cloudinary server file"
+  ), formData.get("pdfUrl");
+}
+async function uploadFileToCloudinary(data, filename2) {
+  return new Promise(async (resolve, reject) => {
+    let uploadStream = import_cloudinary.default.v2.uploader.upload_stream(
+      {
+        cloud_name: "dch-photo",
+        folder: "alleles_blog",
+        use_filename: !0,
+        unique_filename: !1,
+        public_id: filename2
+      },
+      (error, result) => {
+        if (error) {
+          reject(error);
+          return;
+        }
+        resolve(result);
+      }
+    );
+    await (0, import_node7.writeAsyncIterableToWritable)(data, uploadStream);
+  });
+}
+var blogImageUploadHandler = (0, import_node7.unstable_composeUploadHandlers)(
+  async ({ name, data, filename: filename2 }) => {
+    if (name !== "imgUrl")
+      return;
+    let updatedFileName = (filename2 == null ? void 0 : filename2.replace(/\.[^/.]+$/, "")) || "no_file_name";
+    console.log(
+      "updatedFileName from cloudinary server file",
+      updatedFileName
+    );
+    let uploadedImage = await uploadFileToCloudinary(
+      data,
+      updatedFileName
+    );
+    return console.log("uploadedImage from cloudinary server file", uploadedImage), uploadedImage.secure_url;
+  },
+  (0, import_node7.unstable_createMemoryUploadHandler)()
+);
+async function cloudindaryBlogImageUpload(request) {
+  let formData = await (0, import_node7.unstable_parseMultipartFormData)(
+    request,
+    blogImageUploadHandler
+  );
+  return console.log(
+    Object.fromEntries(formData),
+    "formData from cloudinary server file"
+  ), formData.get("imgUrl");
+}
+
+// app/routes/actions.files.ts
+async function action4({ request, params }) {
+  let imgUrl = await cloudindaryBlogImageUpload(request);
+  return console.log("imgUrl from action function", imgUrl), (0, import_node8.json)({ imgUrl });
+}
+
 // app/routes/genes.server.ts
 var genes_server_exports = {};
 __export(genes_server_exports, {
@@ -2280,7 +2397,7 @@ __export(variants_id_exports, {
   default: () => VariantRoute2,
   loader: () => loader6
 });
-var import_node8 = require("@remix-run/node"), import_react15 = require("@remix-run/react");
+var import_node10 = require("@remix-run/node"), import_react15 = require("@remix-run/react");
 
 // app/routes/variants.tsx
 var variants_exports = {};
@@ -2291,7 +2408,7 @@ __export(variants_exports, {
   default: () => VariantRoute,
   loader: () => loader5
 });
-var import_node7 = require("@remix-run/node");
+var import_node9 = require("@remix-run/node");
 
 // app/acmg-functions-utilities/variants.ts
 var variants = [
@@ -2392,7 +2509,7 @@ var variants = [
 // app/routes/variants.tsx
 var import_react13 = require("@remix-run/react"), import_react_icons3 = require("@radix-ui/react-icons"), import_react14 = __toESM(require("react")), import_jsx_dev_runtime12 = require("react/jsx-dev-runtime");
 async function loader5({ request, params }) {
-  return (0, import_node7.json)({ variants });
+  return (0, import_node9.json)({ variants });
 }
 function VariantRoute() {
   let data = (0, import_react13.useLoaderData)();
@@ -2902,9 +3019,9 @@ var import_jsx_dev_runtime13 = require("react/jsx-dev-runtime");
 async function loader6({ request, params }) {
   let id = params.id;
   if (!id)
-    return (0, import_node8.redirect)("/variants");
+    return (0, import_node10.redirect)("/variants");
   let variant = await variants.find((variant2) => variant2.id === id);
-  return variant ? (0, import_node8.json)({ variant }) : (0, import_node8.redirect)("/variants");
+  return variant ? (0, import_node10.json)({ variant }) : (0, import_node10.redirect)("/variants");
 }
 function VariantRoute2() {
   let data = (0, import_react15.useLoaderData)();
@@ -2954,68 +3071,10 @@ function VariantRoute2() {
 // app/routes/actions.pdf.ts
 var actions_pdf_exports = {};
 __export(actions_pdf_exports, {
-  action: () => action4
+  action: () => action5
 });
 var import_node11 = require("@remix-run/node");
-
-// app/server/cloudinary.server.ts
-var import_cloudinary = __toESM(require("cloudinary")), import_node9 = require("@remix-run/node"), import_node10 = require("@remix-run/node");
-import_cloudinary.default.v2.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET
-});
-async function uploadPdfToCloudinary(data, filename2) {
-  return new Promise(async (resolve, reject) => {
-    let uploadStream = import_cloudinary.default.v2.uploader.upload_stream(
-      {
-        cloud_name: "dch-photo",
-        folder: "alleles_pdf",
-        use_filename: !0,
-        unique_filename: !1,
-        public_id: filename2
-      },
-      (error, result) => {
-        if (error) {
-          reject(error);
-          return;
-        }
-        resolve(result);
-      }
-    );
-    await (0, import_node10.writeAsyncIterableToWritable)(data, uploadStream);
-  });
-}
-var pdfUploadHandler = (0, import_node10.unstable_composeUploadHandlers)(
-  async ({ name, data, filename: filename2 }) => {
-    if (name !== "pdfUrl")
-      return;
-    let updatedFileName = (filename2 == null ? void 0 : filename2.replace(/\.[^/.]+$/, "")) || "no_file_name";
-    console.log(
-      "updatedFileName from cloudinary server file",
-      updatedFileName
-    );
-    let uploadedPdf = await uploadPdfToCloudinary(
-      data,
-      updatedFileName
-    );
-    return console.log("uploadedPdf from cloudinary server file", uploadedPdf), uploadedPdf.secure_url;
-  },
-  (0, import_node10.unstable_createMemoryUploadHandler)()
-);
-async function cloudinaryPdfUpload(request) {
-  let formData = await (0, import_node9.unstable_parseMultipartFormData)(
-    request,
-    pdfUploadHandler
-  );
-  return console.log(
-    Object.fromEntries(formData),
-    "formData from cloudinary server file"
-  ), formData.get("pdfUrl");
-}
-
-// app/routes/actions.pdf.ts
-async function action4({ request, params }) {
+async function action5({ request, params }) {
   let pdfUrl = await cloudinaryPdfUpload(request);
   return console.log("pdfUrl from action function", pdfUrl), (0, import_node11.json)({ pdfUrl });
 }
@@ -3120,7 +3179,7 @@ function KdbPdfItemRoute() {
 // app/routes/calculator/route.tsx
 var route_exports = {};
 __export(route_exports, {
-  action: () => action5,
+  action: () => action6,
   default: () => CalculatorRoute,
   loader: () => loader8
 });
@@ -3711,7 +3770,7 @@ async function loader8({ request, params }) {
   }, {});
   return (0, import_node13.json)({ functionalData, allDataByEvidenceType, criteria });
 }
-async function action5({ request, params }) {
+async function action6({ request, params }) {
   return (0, import_node13.json)({
     message: "success"
   });
@@ -4109,7 +4168,7 @@ function ClinVarIndexRoute() {
 // app/routes/kdb.new.tsx
 var kdb_new_exports = {};
 __export(kdb_new_exports, {
-  action: () => action6,
+  action: () => action7,
   default: () => Wip
 });
 var import_node16 = require("@remix-run/node"), import_react26 = require("@remix-run/react"), import_react27 = __toESM(require("react"));
@@ -4201,7 +4260,7 @@ function PdfUploader({ setUrl }) {
 
 // app/routes/kdb.new.tsx
 var import_jsx_dev_runtime24 = require("react/jsx-dev-runtime");
-async function action6({ request, params }) {
+async function action7({ request, params }) {
   let pdfUrl = (await request.formData()).get("pdfUrl"), searchPmid = await getPMSearchTerm(pdfUrl), data = await getSemanticScholorArticleDetails(searchPmid);
   console.log("data, from semantic scholor", data);
   let {
@@ -4485,21 +4544,466 @@ function BetaRoute() {
 // app/routes/blog/route.tsx
 var route_exports2 = {};
 __export(route_exports2, {
+  action: () => action8,
   default: () => BlogIndex,
   loader: () => loader12
 });
-var import_node18 = require("@remix-run/node"), import_react31 = require("@remix-run/react"), import_jsx_dev_runtime32 = require("react/jsx-dev-runtime");
-async function loader12({ request, params }) {
-  return (0, import_node18.json)({
-    message: "Hello from the server!"
+var import_ssr2 = require("@clerk/remix/ssr.server"), import_node18 = require("@remix-run/node"), import_react35 = require("@remix-run/react"), import_zod4 = require("zod");
+
+// app/server/blog.server.ts
+async function getAllPosts() {
+  return await prisma.post.findMany({});
+}
+async function createPost(input) {
+  return await prisma.post.create({
+    data: {
+      title: input.title,
+      description: input.description,
+      slug: input.slug,
+      content: input.content,
+      imgUrl: input.imgUrl,
+      authorId: input.authorId,
+      categories: {
+        connectOrCreate: input.categories.map((category) => ({
+          where: { label: category },
+          create: { label: category }
+        }))
+      }
+    }
   });
 }
+async function updatePost(input) {
+  return await prisma.post.update({
+    where: { id: input.id },
+    data: {
+      title: input.title,
+      slug: input.slug,
+      description: input.description,
+      content: input.content,
+      imgUrl: input.imgUrl,
+      authorId: input.authorId,
+      categories: {
+        connectOrCreate: input.categories.map((category) => ({
+          where: { label: category },
+          create: { label: category }
+        }))
+      }
+    }
+  });
+}
+async function deletePost(id) {
+  return await prisma.post.delete({
+    where: { id }
+  });
+}
+
+// app/routes/blog/blog-form.tsx
+var import_react33 = require("@remix-run/react"), import_react34 = __toESM(require("react"));
+
+// app/components/shared/file-uploader.tsx
+var import_react31 = require("@remix-run/react"), import_react32 = __toESM(require("react")), import_jsx_dev_runtime32 = require("react/jsx-dev-runtime");
+function BlogImageUploader({ setUrl }) {
+  var _a, _b;
+  let [selectedFile, setSelectedFile] = import_react32.default.useState(!1), fileFetcher = (0, import_react31.useFetcher)(), handleImageUpload = async () => {
+    var _a2;
+    fileFetcher.submit({
+      imgUrl: "imgUrl",
+      key: "imgUrl",
+      action: "/actions/files"
+    }), (_a2 = fileFetcher.data) != null && _a2.imgUrl && setUrl(fileFetcher.data.imgUrl), setSelectedFile(!0);
+  };
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(import_jsx_dev_runtime32.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(
+      fileFetcher.Form,
+      {
+        method: "post",
+        encType: "multipart/form-data",
+        action: "/actions/files",
+        onChange: handleImageUpload,
+        className: "flex flex-col items-center justify-center",
+        children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(
+            "input",
+            {
+              className: "border-input ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+              type: "file",
+              name: "imgUrl",
+              accept: "image/*"
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/components/shared/file-uploader.tsx",
+              lineNumber: 31,
+              columnNumber: 17
+            },
+            this
+          ),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(
+            "button",
+            {
+              className: "border-input ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+              disabled: !selectedFile,
+              type: "submit",
+              children: "Upload"
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/components/shared/file-uploader.tsx",
+              lineNumber: 37,
+              columnNumber: 17
+            },
+            this
+          )
+        ]
+      },
+      void 0,
+      !0,
+      {
+        fileName: "app/components/shared/file-uploader.tsx",
+        lineNumber: 24,
+        columnNumber: 13
+      },
+      this
+    ),
+    ((_a = fileFetcher.data) == null ? void 0 : _a.imgUrl) && /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)(
+      "input",
+      {
+        type: "text",
+        name: "imgUrl",
+        onChange: void setUrl((_b = fileFetcher.data) == null ? void 0 : _b.imgUrl)
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/components/shared/file-uploader.tsx",
+        lineNumber: 47,
+        columnNumber: 21
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/components/shared/file-uploader.tsx",
+      lineNumber: 46,
+      columnNumber: 17
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/shared/file-uploader.tsx",
+    lineNumber: 23,
+    columnNumber: 9
+  }, this);
+}
+
+// app/routes/blog/blog-form.tsx
+var import_jsx_dev_runtime33 = require("react/jsx-dev-runtime");
+function BlogForm() {
+  var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l, _m;
+  let data = (0, import_react33.useLoaderData)(), actionData = (0, import_react33.useActionData)(), {
+    title,
+    slug,
+    description,
+    content,
+    imgUrl,
+    categories,
+    authorId,
+    id
+  } = (data == null ? void 0 : data.post) || {}, formState = {
+    title,
+    slug,
+    description,
+    content,
+    imgUrl,
+    categories,
+    authorId,
+    id
+  }, [state, setState] = import_react34.default.useState(formState), [url, setUrl] = import_react34.default.useState("");
+  function updateFormState(event, key) {
+    let value = event.target.value;
+    setState((prevState) => ({
+      ...prevState,
+      [key]: value
+    }));
+  }
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("div", { className: "flex min-h-screen flex-col items-center justify-center py-2", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(BlogImageUploader, { setUrl }, void 0, !1, {
+      fileName: "app/routes/blog/blog-form.tsx",
+      lineNumber: 60,
+      columnNumber: 13
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(
+      import_react33.Form,
+      {
+        className: "flex flex-col items-center justify-center",
+        method: "post",
+        children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("label", { htmlFor: "title", children: "Title" }, void 0, !1, {
+            fileName: "app/routes/blog/blog-form.tsx",
+            lineNumber: 66,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(
+            "input",
+            {
+              type: "text",
+              name: "title",
+              id: "title",
+              className: "text black rounded border border-gray-400 px-4 py-2",
+              defaultValue: (_a = data == null ? void 0 : data.post) == null ? void 0 : _a.title,
+              onChange: (event) => updateFormState(event, "title")
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/blog/blog-form.tsx",
+              lineNumber: 67,
+              columnNumber: 17
+            },
+            this
+          ),
+          ((_b = actionData == null ? void 0 : actionData.errors) == null ? void 0 : _b.title) && /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("div", { className: "text-red-500", children: (_c = actionData == null ? void 0 : actionData.errors) == null ? void 0 : _c.title }, void 0, !1, {
+            fileName: "app/routes/blog/blog-form.tsx",
+            lineNumber: 76,
+            columnNumber: 21
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("label", { htmlFor: "slug", children: "Slug" }, void 0, !1, {
+            fileName: "app/routes/blog/blog-form.tsx",
+            lineNumber: 80,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("div", { className: "flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("p", { className: "text black rounded-l border border-gray-400 px-4 py-2", children: (_d = data.post) == null ? void 0 : _d.slug }, void 0, !1, {
+            fileName: "app/routes/blog/blog-form.tsx",
+            lineNumber: 82,
+            columnNumber: 21
+          }, this) }, void 0, !1, {
+            fileName: "app/routes/blog/blog-form.tsx",
+            lineNumber: 81,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("label", { htmlFor: "description", children: "Description" }, void 0, !1, {
+            fileName: "app/routes/blog/blog-form.tsx",
+            lineNumber: 86,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(
+            "input",
+            {
+              type: "text",
+              name: "description",
+              id: "description",
+              className: "text black rounded border border-gray-400 px-4 py-2",
+              defaultValue: (_e = data == null ? void 0 : data.post) == null ? void 0 : _e.description,
+              onChange: (event) => updateFormState(event, "description")
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/blog/blog-form.tsx",
+              lineNumber: 87,
+              columnNumber: 17
+            },
+            this
+          ),
+          ((_f = actionData == null ? void 0 : actionData.errors) == null ? void 0 : _f.description) && /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("div", { className: "text-red-500", children: (_g = actionData == null ? void 0 : actionData.errors) == null ? void 0 : _g.description }, void 0, !1, {
+            fileName: "app/routes/blog/blog-form.tsx",
+            lineNumber: 96,
+            columnNumber: 21
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("label", { htmlFor: "content", children: "Content" }, void 0, !1, {
+            fileName: "app/routes/blog/blog-form.tsx",
+            lineNumber: 101,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(
+            "input",
+            {
+              type: "textarea",
+              name: "content",
+              id: "content",
+              className: "text black rounded border border-gray-400 px-4 py-2",
+              defaultValue: (_h = data == null ? void 0 : data.post) == null ? void 0 : _h.content,
+              onChange: (event) => updateFormState(event, "content")
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/blog/blog-form.tsx",
+              lineNumber: 102,
+              columnNumber: 17
+            },
+            this
+          ),
+          ((_i = actionData == null ? void 0 : actionData.errors) == null ? void 0 : _i.content) && /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("div", { className: "text-red-500", children: (_j = actionData == null ? void 0 : actionData.errors) == null ? void 0 : _j.content }, void 0, !1, {
+            fileName: "app/routes/blog/blog-form.tsx",
+            lineNumber: 111,
+            columnNumber: 21
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("input", { type: "hidden", name: "id", value: (_k = data == null ? void 0 : data.post) == null ? void 0 : _k.id }, void 0, !1, {
+            fileName: "app/routes/blog/blog-form.tsx",
+            lineNumber: 116,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(
+            "input",
+            {
+              type: "hidden",
+              name: "authorId",
+              value: (_l = data == null ? void 0 : data.post) == null ? void 0 : _l.authorId
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/blog/blog-form.tsx",
+              lineNumber: 117,
+              columnNumber: 17
+            },
+            this
+          ),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(
+            "input",
+            {
+              type: "text",
+              name: "imgUrl",
+              value: url || ((_m = data == null ? void 0 : data.post) == null ? void 0 : _m.imgUrl),
+              className: "text black rounded border border-gray-400 px-4 py-2",
+              onChange: (event) => updateFormState(event, "imgUrl")
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/blog/blog-form.tsx",
+              lineNumber: 122,
+              columnNumber: 17
+            },
+            this
+          ),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(
+            "button",
+            {
+              type: "submit",
+              className: "rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700",
+              name: "intent",
+              value: "create",
+              children: "Create"
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/routes/blog/blog-form.tsx",
+              lineNumber: 130,
+              columnNumber: 17
+            },
+            this
+          )
+        ]
+      },
+      void 0,
+      !0,
+      {
+        fileName: "app/routes/blog/blog-form.tsx",
+        lineNumber: 62,
+        columnNumber: 13
+      },
+      this
+    )
+  ] }, void 0, !0, {
+    fileName: "app/routes/blog/blog-form.tsx",
+    lineNumber: 59,
+    columnNumber: 9
+  }, this);
+}
+
+// app/routes/blog/route.tsx
+var import_jsx_dev_runtime34 = require("react/jsx-dev-runtime");
+async function loader12(args) {
+  let { userId } = await (0, import_ssr2.getAuth)(args);
+  console.log(userId, "userId");
+  let posts = await getAllPosts();
+  return posts.length === 0 ? (0, import_node18.json)(
+    {
+      status: 404,
+      message: "No posts found"
+    },
+    {
+      status: 404
+    }
+  ) : (0, import_node18.json)({
+    posts
+  });
+}
+var postSchema = import_zod4.z.object({
+  intent: import_zod4.z.string(),
+  title: import_zod4.z.string(),
+  slug: import_zod4.z.string().optional(),
+  description: import_zod4.z.string(),
+  content: import_zod4.z.string(),
+  imgUrl: import_zod4.z.string(),
+  categories: import_zod4.z.array(import_zod4.z.string()),
+  postId: import_zod4.z.string().optional()
+});
+async function action8(args, { request }) {
+  let { userId } = await (0, import_ssr2.getAuth)(args);
+  if (!userId)
+    return (0, import_node18.json)({ errors: ["Unauthorized"] }, { status: 401 });
+  console.log(userId, "userId");
+  let { formData, errors } = await validateAction({
+    request,
+    schema: postSchema
+  });
+  if (errors)
+    return (0, import_node18.json)({ errors }, { status: 422 });
+  let { intent, title, description, content, imgUrl, categories, postId } = formData;
+  switch (intent) {
+    case "create": {
+      let slug = title.toLowerCase().replace(/\s/g, "-"), created = await createPost({
+        title,
+        slug,
+        description,
+        content,
+        imgUrl,
+        categories,
+        authorId: userId
+      });
+      return (0, import_node18.json)({ created }, { status: 201 });
+    }
+    case "update": {
+      let slug = title.toLowerCase().replace(/\s/g, "-");
+      if (!postId)
+        return (0, import_node18.json)({ errors: ["Invalid Form Dat"] }, { status: 400 });
+      let updated = await updatePost({
+        id: postId,
+        title,
+        slug,
+        description,
+        content,
+        imgUrl,
+        categories,
+        authorId: userId
+      });
+      return (0, import_node18.json)({ updated }, { status: 200 });
+    }
+    case "delete": {
+      if (!postId)
+        return (0, import_node18.json)({ errors: ["Invalid Form Dat"] }, { status: 400 });
+      let deleted = await deletePost(postId);
+      return (0, import_node18.json)({ deleted }, { status: 200 });
+    }
+    default:
+      return (0, import_node18.json)({ errors: ["Invalid Form Dat"] }, { status: 400 });
+  }
+}
 function BlogIndex() {
-  let data = (0, import_react31.useLoaderData)();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime32.jsxDEV)("div", { className: "", children: "data here" }, void 0, !1, {
+  let data = (0, import_react35.useLoaderData)();
+  return console.log(data, "data"), /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)("div", { className: "flex flex-col items-center", children: [
+    "data here",
+    /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)(BlogForm, {}, void 0, !1, {
+      fileName: "app/routes/blog/route.tsx",
+      lineNumber: 118,
+      columnNumber: 13
+    }, this)
+  ] }, void 0, !0, {
     fileName: "app/routes/blog/route.tsx",
-    lineNumber: 13,
-    columnNumber: 12
+    lineNumber: 116,
+    columnNumber: 9
   }, this);
 }
 
@@ -4510,11 +5014,11 @@ __export(kdb_exports, {
   loader: () => loader13,
   shouldRevalidate: () => shouldRevalidate
 });
-var import_react_icons8 = require("@radix-ui/react-icons"), import_node20 = require("@remix-run/node"), import_react34 = require("@remix-run/react");
+var import_react_icons8 = require("@radix-ui/react-icons"), import_node20 = require("@remix-run/node"), import_react38 = require("@remix-run/react");
 
 // app/components/shadcnui/accordion.tsx
-var React10 = __toESM(require("react")), AccordionPrimitive = __toESM(require("@radix-ui/react-accordion")), import_lucide_react2 = require("lucide-react");
-var import_jsx_dev_runtime33 = require("react/jsx-dev-runtime"), Accordion = AccordionPrimitive.Root, AccordionItem = React10.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(
+var React12 = __toESM(require("react")), AccordionPrimitive = __toESM(require("@radix-ui/react-accordion")), import_lucide_react2 = require("lucide-react");
+var import_jsx_dev_runtime35 = require("react/jsx-dev-runtime"), Accordion = AccordionPrimitive.Root, AccordionItem = React12.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)(
   AccordionPrimitive.Item,
   {
     ref,
@@ -4531,7 +5035,7 @@ var import_jsx_dev_runtime33 = require("react/jsx-dev-runtime"), Accordion = Acc
   this
 ));
 AccordionItem.displayName = "AccordionItem";
-var AccordionTrigger = React10.forwardRef(({ className, children, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(AccordionPrimitive.Header, { className: "flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(
+var AccordionTrigger = React12.forwardRef(({ className, children, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)(AccordionPrimitive.Header, { className: "flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)(
   AccordionPrimitive.Trigger,
   {
     ref,
@@ -4542,7 +5046,7 @@ var AccordionTrigger = React10.forwardRef(({ className, children, ...props }, re
     ...props,
     children: [
       children,
-      /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(import_lucide_react2.ChevronDown, { className: "h-4 w-4 transition-transform duration-200" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)(import_lucide_react2.ChevronDown, { className: "h-4 w-4 transition-transform duration-200" }, void 0, !1, {
         fileName: "app/components/shadcnui/accordion.tsx",
         lineNumber: 36,
         columnNumber: 13
@@ -4563,7 +5067,7 @@ var AccordionTrigger = React10.forwardRef(({ className, children, ...props }, re
   columnNumber: 5
 }, this));
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
-var AccordionContent = React10.forwardRef(({ className, children, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)(
+var AccordionContent = React12.forwardRef(({ className, children, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)(
   AccordionPrimitive.Content,
   {
     ref,
@@ -4572,7 +5076,7 @@ var AccordionContent = React10.forwardRef(({ className, children, ...props }, re
       className
     ),
     ...props,
-    children: /* @__PURE__ */ (0, import_jsx_dev_runtime33.jsxDEV)("div", { className: "pb-4 pt-0", children }, void 0, !1, {
+    children: /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)("div", { className: "pb-4 pt-0", children }, void 0, !1, {
       fileName: "app/components/shadcnui/accordion.tsx",
       lineNumber: 54,
       columnNumber: 9
@@ -4590,16 +5094,16 @@ var AccordionContent = React10.forwardRef(({ className, children, ...props }, re
 AccordionContent.displayName = AccordionPrimitive.Content.displayName;
 
 // app/components/kdb-components/kdb-welcome.tsx
-var import_jsx_dev_runtime34 = require("react/jsx-dev-runtime");
+var import_jsx_dev_runtime36 = require("react/jsx-dev-runtime");
 function KdbWelcome() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)("div", { className: "flex w-full flex-col items-center gap-2 border-2 border-purple-500 p-2", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)("p", { className: "text-2xl", children: "Welcome to the KDB" }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("div", { className: "flex w-full flex-col items-center gap-2 border-2 border-purple-500 p-2", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("p", { className: "text-2xl", children: "Welcome to the KDB" }, void 0, !1, {
       fileName: "app/components/kdb-components/kdb-welcome.tsx",
       lineNumber: 11,
       columnNumber: 13
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)(Accordion, { type: "single", collapsible: !0, className: "w-full", children: /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)(AccordionItem, { value: "documentation", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)(AccordionTrigger, { className: "text-xl", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)(Accordion, { type: "single", collapsible: !0, className: "w-full", children: /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)(AccordionItem, { value: "documentation", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)(AccordionTrigger, { className: "text-xl", children: [
         " ",
         "Documentation"
       ] }, void 0, !0, {
@@ -4607,7 +5111,7 @@ function KdbWelcome() {
         lineNumber: 14,
         columnNumber: 21
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)(AccordionContent, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime34.jsxDEV)("p", { className: "text-lg", children: "The KDB is a database of knowledge about the effects of variants on human health." }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)(AccordionContent, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("p", { className: "text-lg", children: "The KDB is a database of knowledge about the effects of variants on human health." }, void 0, !1, {
         fileName: "app/components/kdb-components/kdb-welcome.tsx",
         lineNumber: 19,
         columnNumber: 25
@@ -4633,7 +5137,7 @@ function KdbWelcome() {
 }
 
 // app/components/shared/search.tsx
-var import_node19 = require("@remix-run/node"), import_react32 = require("@remix-run/react"), import_react33 = __toESM(require("react")), import_jsx_dev_runtime35 = require("react/jsx-dev-runtime");
+var import_node19 = require("@remix-run/node"), import_react36 = require("@remix-run/react"), import_react37 = __toESM(require("react")), import_jsx_dev_runtime37 = require("react/jsx-dev-runtime");
 var placeholderText = {
   kdb: 'Search the KDB for PMID, PMCID, Author, Title"',
   variants: "Search Variants",
@@ -4643,7 +5147,7 @@ var placeholderText = {
 function Search({ searchSourceName }) {
   let placeholder = placeholderText[searchSourceName];
   console.log("placeholder", placeholder);
-  let [searchParams, setSearchParams] = (0, import_react32.useSearchParams)(), formRef = import_react33.default.useRef(null), navigate = (0, import_react32.useNavigate)();
+  let [searchParams, setSearchParams] = (0, import_react36.useSearchParams)(), formRef = import_react37.default.useRef(null), navigate = (0, import_react36.useNavigate)();
   function handleClear(e) {
     var _a;
     return e.preventDefault(), searchParams.delete("filter"), (_a = formRef.current) == null || _a.reset(), navigate(`/${searchSourceName}/`, {
@@ -4658,14 +5162,14 @@ function Search({ searchSourceName }) {
       replace: !0
     }), (0, import_node19.redirect)(`/${searchSourceName}/?filter=${value}`);
   }
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)("div", { className: "flex flex-col  items-center gap-2 border-2 border-purple-500 p-1 md:p-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)(
-    import_react32.Form,
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "flex flex-col  items-center gap-2 border-2 border-purple-500 p-1 md:p-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(
+    import_react36.Form,
     {
       ref: formRef,
       className: "flex w-full flex-col items-center gap-2",
       method: "GET",
       children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)(
+        /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(
           "input",
           {
             className: "border-input ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-white placeholder:text-[8px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
@@ -4682,8 +5186,8 @@ function Search({ searchSourceName }) {
           },
           this
         ),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)("div", { className: "flex gap-2", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)(
+        /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)("div", { className: "flex gap-2", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(
             "button",
             {
               className: "rounded-xl bg-blue-300 px-3 py-2 font-semibold text-blue-600 transition duration-300 ease-in-out hover:-translate-y-1 hover:bg-yellow-400",
@@ -4700,7 +5204,7 @@ function Search({ searchSourceName }) {
             },
             this
           ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime35.jsxDEV)(
+          /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(
             "button",
             {
               className: "w-1/2 rounded-xl bg-red-300 px-3 py-2 font-semibold text-blue-600 transition duration-300 ease-in-out hover:-translate-y-1 hover:bg-yellow-400",
@@ -4740,7 +5244,7 @@ function Search({ searchSourceName }) {
 }
 
 // app/routes/kdb.tsx
-var import_jsx_dev_runtime36 = require("react/jsx-dev-runtime");
+var import_jsx_dev_runtime38 = require("react/jsx-dev-runtime");
 function shouldRevalidate() {
   return !0;
 }
@@ -4799,16 +5303,16 @@ async function loader13({ request, params }) {
   return (0, import_node20.json)({ pdfLibrary });
 }
 function KdbIndex() {
-  let data = (0, import_react34.useLoaderData)();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("div", { className: "mt-15 mb-10 flex flex-col justify-center gap-2 overflow-auto md:flex-row ", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("div", { className: "itesms-center flex w-full flex-col md:h-full md:w-1/5", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)(Search, { searchSourceName: "kdb" }, void 0, !1, {
+  let data = (0, import_react38.useLoaderData)();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("div", { className: "mt-15 mb-10 flex flex-col justify-center gap-2 overflow-auto md:flex-row ", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("div", { className: "itesms-center flex w-full flex-col md:h-full md:w-1/5", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(Search, { searchSourceName: "kdb" }, void 0, !1, {
         fileName: "app/routes/kdb.tsx",
         lineNumber: 85,
         columnNumber: 17
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)(import_react34.NavLink, { className: "flex flex-col items-center", to: "/kdb/new", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)(import_react_icons8.FileIcon, {}, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(import_react38.NavLink, { className: "flex flex-col items-center", to: "/kdb/new", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(import_react_icons8.FileIcon, {}, void 0, !1, {
           fileName: "app/routes/kdb.tsx",
           lineNumber: 87,
           columnNumber: 21
@@ -4819,7 +5323,7 @@ function KdbIndex() {
         lineNumber: 86,
         columnNumber: 17
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)(import_react34.Outlet, {}, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(import_react38.Outlet, {}, void 0, !1, {
         fileName: "app/routes/kdb.tsx",
         lineNumber: 90,
         columnNumber: 17
@@ -4829,22 +5333,22 @@ function KdbIndex() {
       lineNumber: 84,
       columnNumber: 13
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("div", { className: "flex w-full flex-col items-center   gap-2  md:h-full md:w-4/5", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)(KdbWelcome, {}, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("div", { className: "flex w-full flex-col items-center   gap-2  md:h-full md:w-4/5", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(KdbWelcome, {}, void 0, !1, {
         fileName: "app/routes/kdb.tsx",
         lineNumber: 94,
         columnNumber: 17
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("p", { className: "text-2xl font-bold", children: "PDF Library" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("p", { className: "text-2xl font-bold", children: "PDF Library" }, void 0, !1, {
         fileName: "app/routes/kdb.tsx",
         lineNumber: 95,
         columnNumber: 17
       }, this),
-      data.pdfLibrary.length === 0 ? /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("p", { className: "text-xl font-bold", children: "No PDFs found. Add a new PDF to get started." }, void 0, !1, {
+      data.pdfLibrary.length === 0 ? /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("p", { className: "text-xl font-bold", children: "No PDFs found. Add a new PDF to get started." }, void 0, !1, {
         fileName: "app/routes/kdb.tsx",
         lineNumber: 97,
         columnNumber: 21
-      }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)("p", { className: "text-xl font-bold", children: [
+      }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)("p", { className: "text-xl font-bold", children: [
         data.pdfLibrary.length,
         " PDFs found."
       ] }, void 0, !0, {
@@ -4852,7 +5356,7 @@ function KdbIndex() {
         lineNumber: 101,
         columnNumber: 21
       }, this),
-      data.pdfLibrary.map((pdf) => /* @__PURE__ */ (0, import_jsx_dev_runtime36.jsxDEV)(PdfList, { pdfLibrary: pdf }, pdf.id, !1, {
+      data.pdfLibrary.map((pdf) => /* @__PURE__ */ (0, import_jsx_dev_runtime38.jsxDEV)(PdfList, { pdfLibrary: pdf }, pdf.id, !1, {
         fileName: "app/routes/kdb.tsx",
         lineNumber: 106,
         columnNumber: 28
@@ -4874,9 +5378,9 @@ var wip_exports = {};
 __export(wip_exports, {
   default: () => Wip2
 });
-var import_jsx_dev_runtime37 = require("react/jsx-dev-runtime");
+var import_jsx_dev_runtime39 = require("react/jsx-dev-runtime");
 function Wip2() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime37.jsxDEV)(
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime39.jsxDEV)(
     "div",
     {
       className: "",
@@ -4894,7 +5398,7 @@ function Wip2() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-QK52UZHC.js", imports: ["/build/_shared/chunk-E67AV4XX.js", "/build/_shared/chunk-EWCUFBFP.js", "/build/_shared/chunk-SPRRWYPW.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-FENW5DJ7.js", imports: ["/build/_shared/chunk-K7GFDEA5.js", "/build/_shared/chunk-NER5NE4M.js", "/build/_shared/chunk-W4JOHJUN.js", "/build/_shared/chunk-G7CHZRZX.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-I6YSUNXM.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/actions.pdf": { id: "routes/actions.pdf", parentId: "root", path: "actions/pdf", index: void 0, caseSensitive: void 0, module: "/build/routes/actions.pdf-K73GFXMQ.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-ZKQBQX6U.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/blog": { id: "routes/blog", parentId: "root", path: "blog", index: void 0, caseSensitive: void 0, module: "/build/routes/blog-FIXC7MX5.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-HZWMJVVF.js", imports: ["/build/_shared/chunk-7ML7EQ56.js", "/build/_shared/chunk-6PXFN3DO.js", "/build/_shared/chunk-X5IR57N3.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/clinvar": { id: "routes/clinvar", parentId: "root", path: "clinvar", index: void 0, caseSensitive: void 0, module: "/build/routes/clinvar-5MPT5C56.js", imports: ["/build/_shared/chunk-4T5KGPBP.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-KZEB5ISW.js", imports: ["/build/_shared/chunk-4T5KGPBP.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-XGTJA4W6.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-ZSBG3VJZ.js", imports: ["/build/_shared/chunk-WNIKL44T.js", "/build/_shared/chunk-JNOKBHGH.js", "/build/_shared/chunk-6PXFN3DO.js", "/build/_shared/chunk-X5IR57N3.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/genes": { id: "routes/genes", parentId: "root", path: "genes", index: void 0, caseSensitive: void 0, module: "/build/routes/genes-FJBOTZ27.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/genes.server": { id: "routes/genes.server", parentId: "routes/genes", path: "server", index: void 0, caseSensitive: void 0, module: "/build/routes/genes.server-HPSUZRDK.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb": { id: "routes/kdb", parentId: "root", path: "kdb", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb-C4HKACKJ.js", imports: ["/build/_shared/chunk-7ML7EQ56.js", "/build/_shared/chunk-5O4DMOV5.js", "/build/_shared/chunk-WNIKL44T.js", "/build/_shared/chunk-X5IR57N3.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb.$pdfId.edit-abstract": { id: "routes/kdb.$pdfId.edit-abstract", parentId: "routes/kdb", path: ":pdfId/edit-abstract", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb.$pdfId.edit-abstract-VIGQUX6B.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb.documentation": { id: "routes/kdb.documentation", parentId: "routes/kdb", path: "documentation", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb.documentation-KKWSWYPZ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb.new": { id: "routes/kdb.new", parentId: "routes/kdb", path: "new", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb.new-KTACWQ6F.js", imports: ["/build/_shared/chunk-P745DJB6.js", "/build/_shared/chunk-G7CHZRZX.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.$pdfId": { id: "routes/kdb_.$pdfId", parentId: "root", path: "kdb/:pdfId", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.$pdfId-DYZYJKSU.js", imports: ["/build/_shared/chunk-P745DJB6.js", "/build/_shared/chunk-NZBLJ67W.js", "/build/_shared/chunk-JNOKBHGH.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.$pdfId_.annotate": { id: "routes/kdb_.$pdfId_.annotate", parentId: "root", path: "kdb/:pdfId/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.$pdfId_.annotate-Y2PCFUGD.js", imports: ["/build/_shared/chunk-5O4DMOV5.js", "/build/_shared/chunk-NZBLJ67W.js", "/build/_shared/chunk-WNIKL44T.js", "/build/_shared/chunk-JNOKBHGH.js", "/build/_shared/chunk-6PXFN3DO.js", "/build/_shared/chunk-X5IR57N3.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-QSZIK2MK.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-LLQVCYKA.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-IGMKWM25.js", imports: ["/build/_shared/chunk-YDWUB5OZ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-NM3FORVK.js", imports: ["/build/_shared/chunk-K7GFDEA5.js", "/build/_shared/chunk-G7CHZRZX.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-ZP5XECGE.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/wip": { id: "routes/wip", parentId: "root", path: "wip", index: void 0, caseSensitive: void 0, module: "/build/routes/wip-NHR2RVMG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "475e8e64", hmr: void 0, url: "/build/manifest-475E8E64.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-QK52UZHC.js", imports: ["/build/_shared/chunk-E67AV4XX.js", "/build/_shared/chunk-EWCUFBFP.js", "/build/_shared/chunk-SPRRWYPW.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-UU7I2KU2.js", imports: ["/build/_shared/chunk-TLLKLDIT.js", "/build/_shared/chunk-K7GFDEA5.js", "/build/_shared/chunk-NER5NE4M.js", "/build/_shared/chunk-W4JOHJUN.js", "/build/_shared/chunk-G7CHZRZX.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-I6YSUNXM.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/actions.files": { id: "routes/actions.files", parentId: "root", path: "actions/files", index: void 0, caseSensitive: void 0, module: "/build/routes/actions.files-TACLVR6G.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/actions.pdf": { id: "routes/actions.pdf", parentId: "root", path: "actions/pdf", index: void 0, caseSensitive: void 0, module: "/build/routes/actions.pdf-K73GFXMQ.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/beta": { id: "routes/beta", parentId: "root", path: "beta", index: void 0, caseSensitive: void 0, module: "/build/routes/beta-ZKQBQX6U.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/blog": { id: "routes/blog", parentId: "root", path: "blog", index: void 0, caseSensitive: void 0, module: "/build/routes/blog-D6PQAJXC.js", imports: ["/build/_shared/chunk-WNIKL44T.js", "/build/_shared/chunk-JNOKBHGH.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/calculator": { id: "routes/calculator", parentId: "root", path: "calculator", index: void 0, caseSensitive: void 0, module: "/build/routes/calculator-HZWMJVVF.js", imports: ["/build/_shared/chunk-7ML7EQ56.js", "/build/_shared/chunk-6PXFN3DO.js", "/build/_shared/chunk-X5IR57N3.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/clinvar": { id: "routes/clinvar", parentId: "root", path: "clinvar", index: void 0, caseSensitive: void 0, module: "/build/routes/clinvar-5MPT5C56.js", imports: ["/build/_shared/chunk-4T5KGPBP.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion": { id: "routes/criterion", parentId: "root", path: "criterion", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion-KZEB5ISW.js", imports: ["/build/_shared/chunk-4T5KGPBP.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion.help": { id: "routes/criterion.help", parentId: "routes/criterion", path: "help", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion.help-XGTJA4W6.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/criterion_.$splat": { id: "routes/criterion_.$splat", parentId: "root", path: "criterion/:splat", index: void 0, caseSensitive: void 0, module: "/build/routes/criterion_.$splat-ZSBG3VJZ.js", imports: ["/build/_shared/chunk-WNIKL44T.js", "/build/_shared/chunk-JNOKBHGH.js", "/build/_shared/chunk-6PXFN3DO.js", "/build/_shared/chunk-X5IR57N3.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/genes": { id: "routes/genes", parentId: "root", path: "genes", index: void 0, caseSensitive: void 0, module: "/build/routes/genes-FJBOTZ27.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/genes.server": { id: "routes/genes.server", parentId: "routes/genes", path: "server", index: void 0, caseSensitive: void 0, module: "/build/routes/genes.server-HPSUZRDK.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb": { id: "routes/kdb", parentId: "root", path: "kdb", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb-C4HKACKJ.js", imports: ["/build/_shared/chunk-7ML7EQ56.js", "/build/_shared/chunk-5O4DMOV5.js", "/build/_shared/chunk-WNIKL44T.js", "/build/_shared/chunk-X5IR57N3.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb.$pdfId.edit-abstract": { id: "routes/kdb.$pdfId.edit-abstract", parentId: "routes/kdb", path: ":pdfId/edit-abstract", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb.$pdfId.edit-abstract-VIGQUX6B.js", imports: void 0, hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb.documentation": { id: "routes/kdb.documentation", parentId: "routes/kdb", path: "documentation", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb.documentation-KKWSWYPZ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb.new": { id: "routes/kdb.new", parentId: "routes/kdb", path: "new", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb.new-KTACWQ6F.js", imports: ["/build/_shared/chunk-P745DJB6.js", "/build/_shared/chunk-G7CHZRZX.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.$pdfId": { id: "routes/kdb_.$pdfId", parentId: "root", path: "kdb/:pdfId", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.$pdfId-DYZYJKSU.js", imports: ["/build/_shared/chunk-P745DJB6.js", "/build/_shared/chunk-NZBLJ67W.js", "/build/_shared/chunk-JNOKBHGH.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/kdb_.$pdfId_.annotate": { id: "routes/kdb_.$pdfId_.annotate", parentId: "root", path: "kdb/:pdfId/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/kdb_.$pdfId_.annotate-Y2PCFUGD.js", imports: ["/build/_shared/chunk-5O4DMOV5.js", "/build/_shared/chunk-NZBLJ67W.js", "/build/_shared/chunk-WNIKL44T.js", "/build/_shared/chunk-JNOKBHGH.js", "/build/_shared/chunk-6PXFN3DO.js", "/build/_shared/chunk-X5IR57N3.js", "/build/_shared/chunk-4T5KGPBP.js"], hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in": { id: "routes/sign-in", parentId: "root", path: "sign-in", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in-QSZIK2MK.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up": { id: "routes/sign-up", parentId: "root", path: "sign-up", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up-LLQVCYKA.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants": { id: "routes/variants", parentId: "root", path: "variants", index: void 0, caseSensitive: void 0, module: "/build/routes/variants-IGMKWM25.js", imports: ["/build/_shared/chunk-YDWUB5OZ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants.$id": { id: "routes/variants.$id", parentId: "routes/variants", path: ":id", index: void 0, caseSensitive: void 0, module: "/build/routes/variants.$id-NM3FORVK.js", imports: ["/build/_shared/chunk-K7GFDEA5.js", "/build/_shared/chunk-G7CHZRZX.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/variants_.$id.annotate": { id: "routes/variants_.$id.annotate", parentId: "root", path: "variants/:id/annotate", index: void 0, caseSensitive: void 0, module: "/build/routes/variants_.$id.annotate-ZP5XECGE.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/wip": { id: "routes/wip", parentId: "root", path: "wip", index: void 0, caseSensitive: void 0, module: "/build/routes/wip-NHR2RVMG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "c0d152a8", hmr: void 0, url: "/build/manifest-C0D152A8.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { v2_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !1, v2_headers: !0, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_react_stream_exports }, routes = {
@@ -4953,6 +5457,14 @@ var assetsBuildDirectory = "public/build", future = { v2_dev: !1, unstable_postc
     index: void 0,
     caseSensitive: void 0,
     module: criterion_help_exports
+  },
+  "routes/actions.files": {
+    id: "routes/actions.files",
+    parentId: "root",
+    path: "actions/files",
+    index: void 0,
+    caseSensitive: void 0,
+    module: actions_files_exports
   },
   "routes/genes.server": {
     id: "routes/genes.server",
