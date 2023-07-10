@@ -15,9 +15,30 @@ model User {
   email String @unique
   password String
   username String @unique
+  posts Post[]
 
 }
 
+model Post {
+  id String @id @unique @default(cuid())
+  title String
+  slug String @unique
+  description String
+  content String
+  imgUrl String
+  author User @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  authorId String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt @default(now())
+  categories Category[]
+
+}
+
+model Category {
+  id String @id @unique @default(cuid())
+  label String @unique
+  posts Post[]
+}
 
 model Gene {
   id String @id @unique @default(cuid())
