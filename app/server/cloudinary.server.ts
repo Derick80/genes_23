@@ -1,9 +1,9 @@
 import cloudinary from 'cloudinary'
 import type { UploadHandler } from '@remix-run/node'
-import { unstable_parseMultipartFormData } from '@remix-run/node'
 import {
     unstable_composeUploadHandlers,
     unstable_createMemoryUploadHandler,
+    unstable_parseMultipartFormData,
     writeAsyncIterableToWritable,
 } from '@remix-run/node'
 
@@ -79,4 +79,70 @@ export async function cloudinaryPdfUpload(request: Request) {
 
     const pdfUrl = formData.get('pdfUrl' || '') as string
     return pdfUrl
+}
+
+export async function uploadFileToCloudinary(
+    data: AsyncIterable<Uint8Array>,
+    filename: string
+) {
+    const uploadPromise = new Promise(async (resolve, reject) => {
+        const uploadStream = cloudinary.v2.uploader.upload_stream(
+            {
+                cloud_name: 'dch-photo',
+                folder: 'alleles_blog',
+                use_filename: true,
+                unique_filename: false,
+                public_id: filename,
+            },
+
+            (error, result) => {
+                if (error) {
+                    reject(error)
+                    return
+                }
+                resolve(result)
+            }
+        )
+        await writeAsyncIterableToWritable(data, uploadStream)
+    })
+    return uploadPromise
+}
+export const blogImageUploadHandler: UploadHandler = unstable_composeUploadHandlers(
+    async ({ name, data, filename }) => {
+        if (name !== 'imgUrl') {
+            return undefined
+        }
+        // use the filename to create a new file in cloudinary but not the file extension
+
+        const updatedFileName =
+            filename?.replace(/\.[^/.]+$/, '') || 'no_file_name'
+        console.log(
+            'updatedFileName from cloudinary server file',
+            updatedFileName
+        )
+        const uploadedImage = (await uploadFileToCloudinary(
+            data,
+            updatedFileName
+        )) as string
+        console.log('uploadedImage from cloudinary server file', uploadedImage)
+
+        // @ts-ignore
+        // this ignore came from the source i followed.  I think I kinda solved this by adding the type to the uploadImage function
+
+        return uploadedImage.secure_url
+    },
+    unstable_createMemoryUploadHandler()
+)
+export async function cloudindaryBlogImageUpload(request: Request) {
+    const formData = await unstable_parseMultipartFormData(
+        request,
+        blogImageUploadHandler
+    )
+    console.log(
+        Object.fromEntries(formData),
+        'formData from cloudinary server file'
+    )
+
+    const imgUrl = formData.get('imgUrl' || '') as string
+    return imgUrl
 }
