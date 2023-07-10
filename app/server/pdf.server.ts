@@ -72,7 +72,7 @@ export async function getSemanticScholorArticleDetails(pmid: string) {
         'abstract,authors,externalIds,fieldsOfStudy,influentialCitationCount,paperId,title,url,venue,year'
 
     const builtUrl = `https://api.semanticscholar.org/graph/v1/paper/${typeofId}:${pmid}?fields=${fields}`
-    // console.log(builtUrl, 'builtUrl from getSemanticScholorArticleDetails')
+    console.log(builtUrl, 'builtUrl from getSemanticScholorArticleDetails')
 
     const response = await fetch(builtUrl)
     const data = (await response.json()) as Root

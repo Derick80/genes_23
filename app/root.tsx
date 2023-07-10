@@ -26,6 +26,7 @@ export const meta: V2_MetaFunction = () => {
             content: 'ACMG Variant Classifications Powered by Remix-run',
         },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'charset', content: 'utf-8' },
     ]
 }
 
